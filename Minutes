@@ -1,0 +1,21 @@
+// Eaxample 
+
+Minutes
+
+Meeting date: 11/02/2001, 7:00 PM to 10:10 PM
+Location: Dougan Computer Lab
+Attending: Celia Burton, Ikuro Moriya, Veronica Sanchez, Robert Yip
+Absent: no one
+Facilitator: Ikuro Moriya
+Minutes Taker: Celia Burton
+
+Discussion summary: We discussed the grade and comments that we received from the instructor on the Requirements deliverable. 
+Veronica agreed to meet with the instructor on Monday during his office hours to discuss some of his comment. 
+Rob will try and come too, if traffic allows. In terms of the Design deliverable, Rob explained the research he had done on the 
+API for Java classes to help in reading and parsing web pages, etc. This changed the UML class diagram a bit and he passed out 
+copies of the changes he saw needed to be made due to his research. Rob suggested we take the diagram and individually continue 
+working on it and complete the sequence diagrams over the weekend as best we can. Veronica brought up that we are all a little 
+vague on the graph still, so we should all research graphs and we can discuss again on Monday when we make a final draft of class 
+diagram. Celia, Rob, Veronica and Ikuro are to individually finish the UML class diagram and to complete the sequence diagrams 
+for our 2 user-goal level use cases and have done by Monday. Ikuro will post the revised SRS to the document repository so we can 
+all access it for our sequence diagrams.
