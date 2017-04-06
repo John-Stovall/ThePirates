@@ -1,0 +1,20 @@
+.header {
+    background-color: aqua;
+    width: 100%;
+    text-align: center;
+}
+
+.body {
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
