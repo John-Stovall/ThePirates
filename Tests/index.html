@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="main.js"></script>
+
+<!-- HTML's equivalent to importing external resources and setting a lot of metadata.-->
 <head>
+    <title>Home - Program Name</title>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel = "stylesheet" href = "main.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <link rel="apple-touch-icon-precomposed" href="appleIcon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="main.css">     <!-- Use the CSS file. -->
+    <script src="main.js"></script>             <!-- Use the Javascript file. -->
 </head>
-<body>
-    <div class = "header">
-        Insert page title here.
-    </div>
-    <div class = "body">
-        <div class = "main">
-            Some cool content here.
-            <p>
-                Here is a test button.
-                <input id = "testButton1" type = "button" value = "Some Button" onclick = "testFunction();"/>
-            </p>
-                Lets add two numbers together:<br>
-                <input id = "testBox" type = "number"/><br>
-                <input id = "testBox2" type = "number"/><br>
-                <input id = "testSubmit" type = "submit" onclick = "testFunction2();"/>
-                <br><br>
-                The total was:
-                <a id = "displaySum">
-                </a>
-            </p>
+
+<body class="global">
+<div class="header">
+    <a href ="http://">
+        <div class="nav-button">
+            =
         </div>
+    </a>
+    Home
+    <div class="nav-button spacer"></div>
+</div>
+<div class="container">
+    <div class="main">
+        Some cool content here.
+        <p>
+            Here is a test button.
+            <input id="testButton1" type="button" value="Some Button" onclick="testFunction();"/>
+        </p>
+        <p>
+            Lets add two numbers together:<br>
+            <input id="testBox" type="number" title="Input Box"/> <br>
+            <input id="testBox2" type="number" title="Input Box"/> <br>
+            <input id="testSubmit" type="submit" onclick="testFunction2();"/>
+        </p>
+        The total was: <b id="displaySum"></b>
     </div>
-    <div class = "footer">
-        Copyright 2017 - The Pirates
-    </div>
+</div>
+<div class="footer">
+    Copyright 2017 - The Pirates
+</div>
 </body>
 </html>
+
+<!-- Here is a good reference for HTML tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element -->

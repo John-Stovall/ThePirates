@@ -1,11 +1,7 @@
-/**
- * Created by Robert on 4/5/17.
- */
-
 var sum = JSON.parse(localStorage["data"]); //Load the sum
 
 //This function is called when the page is first loaded.
-//Load any nessessary information here.
+//Load any necessary information here.
 onload = function() {
     updateHTML();
 };
