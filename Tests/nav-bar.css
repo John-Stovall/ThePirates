@@ -1,0 +1,63 @@
+/** The button in the top corner. */
+.nav-button {
+    float: left;
+    background: linear-gradient(#4CAF50, #388E3C);
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border: none;
+}
+
+/** The space holding the list. */
+.list {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+/** Each element of the list */
+.list-content {
+    display: none;
+    position: absolute;
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 0 20px #9E9E9E;
+    z-index: 1;
+}
+
+
+/** When you hover each element in the list. */
+.list:hover .list-content {
+    display: block;
+}
+
+
+/** Each link of the list. */
+.list-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/** When you hover over each link. */
+.list-content a:hover {
+    background-color: #f1f1f1
+}
+
+/** An invisible space in the right corner so the title centers properly */
+.spacer {
+    float: right;
+}
+
+/** The green bar at the top. */
+.header {
+    color: white;
+    background: linear-gradient(#4CAF50, #388E3C);
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px #9E9E9E;
+}
