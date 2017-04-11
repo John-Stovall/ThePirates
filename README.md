@@ -11,7 +11,11 @@
 ## Links:
 
 [Minutes](https://github.com/John-Stovall/ThePirates/blob/master/Minutes)
+
 [Task Matrices](#)
+
 [Check-Ins](#)
+
 [Deliverables](#)
+
 [Email Us](mailto:robertcordingly@gmail.com,r.cordingly@comcast.net)
