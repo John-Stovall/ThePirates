@@ -28,10 +28,9 @@ public class Main {
         GUI.window.add(new GSpacer(5));
         GUI.window.add(new GSpacer(32, Color.gray));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GButton(25, Color.blue) {
+        GUI.window.add(new GButton(25, Color.blue, Color.red, "Submit") {
             @Override
             public void clickAction() {
-                System.out.println("Clicked home");
                 GUI.window.gotoPage("home");
             }
         });
@@ -45,11 +44,35 @@ public class Main {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Register New Account:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GButton(25, Color.blue) {
+        GUI.window.add(new GButton(25, Color.blue, Color.green,"Go Register") {
             @Override
             public void clickAction() {
-                System.out.println("Clicked register");
                 GUI.window.gotoPage("register");
+            }
+        });
+        GUI.window.add(new GSpacer(5));
+        GUI.window.add(new GButton(25, Color.blue, Color.magenta, "About Us") {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("about");
+            }
+        });
+
+        //Build the about pages
+        GUI.window.gotoPage("about");
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GText("About Us"));
+
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GText("Robert Cordingly"));
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GText("Add your names here..."));
+
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GButton(25, Color.blue, Color.pink, "Go Back") {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("home");
             }
         });
 
