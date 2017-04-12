@@ -3,7 +3,6 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,12 +26,17 @@ public final class GUI extends JFrame {
         super();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(new Dimension(1280,720));
+        setMinimumSize(new Dimension(320, 640));
         setVisible(true);
         setTitle("Hello World!");
         setLocationRelativeTo(null);
         add(panel, BorderLayout.CENTER);
         panel.repaint();
         pages.put("default", new ArrayList<>());
+    }
+
+    public void redraw() {
+        panel.repaint();
     }
 
     public void maxMinimumWidth(final int max) {

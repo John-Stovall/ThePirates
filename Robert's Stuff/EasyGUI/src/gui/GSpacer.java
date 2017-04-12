@@ -42,6 +42,10 @@ public class GSpacer implements GUIComponent {
         this.color = color;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
     public void setHeight(final int height) {
         this.height = height;
     }
