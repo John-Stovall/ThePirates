@@ -1,21 +1,59 @@
-// Eaxample 
 
-Minutes
-
-Meeting date: 11/02/2001, 7:00 PM to 10:10 PM
-Location: Dougan Computer Lab
-Attending: Celia Burton, Ikuro Moriya, Veronica Sanchez, Robert Yip
+Meeting date: 04/06/17, 7:20 PM to 8:20 PM
+Location: CP 106
+Attending: Robert, Rand, Reagan, Ryan 
 Absent: no one
-Facilitator: Ikuro Moriya
-Minutes Taker: Celia Burton
+Facilitator: Rand
+Minutes Taker: Reagan 
 
-Discussion summary: We discussed the grade and comments that we received from the instructor on the Requirements deliverable. 
-Veronica agreed to meet with the instructor on Monday during his office hours to discuss some of his comment. 
-Rob will try and come too, if traffic allows. In terms of the Design deliverable, Rob explained the research he had done on the 
-API for Java classes to help in reading and parsing web pages, etc. This changed the UML class diagram a bit and he passed out 
-copies of the changes he saw needed to be made due to his research. Rob suggested we take the diagram and individually continue 
-working on it and complete the sequence diagrams over the weekend as best we can. Veronica brought up that we are all a little 
-vague on the graph still, so we should all research graphs and we can discuss again on Monday when we make a final draft of class 
-diagram. Celia, Rob, Veronica and Ikuro are to individually finish the UML class diagram and to complete the sequence diagrams 
-for our 2 user-goal level use cases and have done by Monday. Ikuro will post the revised SRS to the document repository so we can 
-all access it for our sequence diagrams.
+First Meeting
+Discussion summary: Disscusing what we want in a meeting, esstablishing that meetings should be short and frequent
+to make sure everyone is one the same page. Make sure everyone brings computers. Weekly Reports: Make sure the weekly report
+is posted on canvas, everyone must reply. TeamName is "The Pirates". Talk about user stories.
+as a user I'd like the program to be easy,
+...I'd like the program to save online automatically
+...cost/benifit analysis
+...i'd like the program to collect data
+...i'd like the program to 
+
+listing what is on list 2 and what we think is possible:
+---------| cross platform |  mobility  |  database  | votes
+Website:          yes		yes	    yes         2
+Desktop:	  yes		no	    yes		2
+Mobile:		  no*		yes         yes
+
+What would it take to break the tie?
+For website. GUI's in java take a bit, HTML will be easier
+For Destop: we're all familiar with it. 
+Decided for HTML page:
+Objectives everyone look up javascript.
+
+
+
+Meeting date: 04/10/17, 7:20 PM to _____ PM
+Location: CP 106
+Attending: _____ 
+Absent: no one
+Facilitator: Robert
+Minutes Taker: Rand
+
+Meeting date: 04/17/17, 7:20 PM to _____ PM
+Location: CP 106
+Attending: _____ 
+Absent: no one
+Facilitator: Ryan
+Minutes Taker: Robert
+
+Meeting date: 04/24/17, 7:20 PM to _____ PM
+Location: CP 106
+Attending: _____ 
+Absent: no one
+Facilitator: Reagan
+Minutes Taker: Ryan
+
+Meeting date: 01/01/17, 7:20 PM to _____ PM
+Location: CP 106
+Attending: _____ 
+Absent: no one
+Facilitator: Rand
+Minutes Taker: Reagan
