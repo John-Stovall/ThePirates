@@ -1,0 +1,103 @@
+package gui;
+
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+
+public class gooey {
+
+    private String userDir = System.getProperty("user.home");
+    private final JFileChooser myJFC = new JFileChooser(userDir + "/Desktop");
+    private JFrame myFrame;
+    
+	public void start() {
+		//creates the frame which everything will be held.
+		myFrame = new JFrame("DIY Saver");
+		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//creates the panel, which is inside the frame for our buttons.
+		JPanel myPanel = new JPanel();
+		myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.LINE_AXIS));
+		
+		JMenuBar myMenuBar = new JMenuBar();
+		myFrame.setJMenuBar(myMenuBar);
+		
+		//creates the menu bar.
+		JMenu fileMenu = new JMenu("File");
+		JMenu aboutMenu = new JMenu("About");
+		myMenuBar.add(fileMenu);
+		myMenuBar.add(aboutMenu);
+		
+		//creates the items of the menu bar.
+		JMenuItem saveItem = new JMenuItem("Save");
+		aboutMenu.add(createAboutMenuItem());
+		fileMenu.add(saveItem);
+		
+		//creates the buttons for selecting new/existing user.
+		JButton newUserButton = new JButton("New User");
+		
+		//adds the buttons to the panel, and the panel to the frame.
+		//also creates some space between the buttons.
+		myPanel.add(Box.createRigidArea(new Dimension(15,0)));
+		myPanel.add(newUserButton);		
+		myPanel.add(Box.createRigidArea(new Dimension(15,0)));
+		myPanel.add(createExistingUserButton());		
+		myPanel.add(Box.createRigidArea(new Dimension(15,0)));	
+		myFrame.add(myPanel);
+		myFrame.pack();
+		
+		//makes it so the frame is rendered.
+		myFrame.setVisible(true);
+	}
+	
+	//creates the action listener for the 'Existing User' button.
+	private JButton createExistingUserButton() {
+	    final JButton button = new JButton("Existing User");
+	    button.addActionListener(new ActionListener() {
+	        
+	        @Override
+	            public void actionPerformed(final ActionEvent theEvent) {
+	            myJFC.setDialogTitle("Choose Existing User File");
+	            final int returnVal = myJFC.showOpenDialog(button);
+	            if (returnVal == JFileChooser.APPROVE_OPTION) {
+	                /*
+	                 * this is where we would call a method that
+	                 * loads all the previous user information.
+	                 */
+	            }
+	        }
+	    });
+	    return button;
+	}
+	
+	//creates the action listener for the 'Who Dun It' menu item.
+	private JMenuItem createAboutMenuItem() {
+        final JMenuItem aboutMenuItem = new JMenuItem("Who Dun it???");
+        
+        aboutMenuItem.addActionListener(new ActionListener() {               
+            @Override
+            public void actionPerformed(final ActionEvent theEvent) {
+                JOptionPane.showMessageDialog(myFrame,
+                                              "TCSS 360\n"
+                                              + "Ryan Hansen\n"
+                                              + "Your Name\n"
+                                              + "Another Name\n"
+                                              + "One Mo Time",
+                                              "THIS IS WHO DUN IT YOU FOOL!", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });        
+        return aboutMenuItem;
+    }   
+}
