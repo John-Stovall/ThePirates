@@ -4,6 +4,9 @@ onload = function() {
     updateHTML();
 };
 
+/**
+ * This function takes the input from the name and email textboxes and saves it.
+ */
 function submitEmail() {
     localStorage["name"] = JSON.stringify(document.getElementById("name").value);
     localStorage["email"] = JSON.stringify(document.getElementById("email").value);
