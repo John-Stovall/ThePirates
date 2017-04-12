@@ -121,5 +121,16 @@ public class main {
             }
 		});
 	}
-
 }
+
+
+// So This is a java package with 2 class files that I just copied/pasted into this one file
+// one github. I havent quite figured out how to upload properly to github but I'll work on it.
+// to test this, You'll have to have:
+// 
+// add lines 110-124 in the main class
+// add lines 1-103 into another class named gooey (naming conventions are slightly skewed for smiles in this short term).
+//
+// I am going to touch this up tomorrow and try to figure out how to upload it properly to github 
+// after splitting the code up into more classes to make it easier to read and flow better.
+
