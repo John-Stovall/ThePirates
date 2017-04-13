@@ -64,9 +64,9 @@ public class Main {
         GUI.window.add(new GText("About Us"));
 
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Robert Cordingly"));
-        GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Add your names here..."));
+        GUI.window.add(new GText("Robert Cordingly", new Font("Helvetica", Font.PLAIN, 20)));
+        GUI.window.add(new GSpacer(15));
+        GUI.window.add(new GText("Add your names here...", new Font("Helvetica", Font.PLAIN, 20)));
 
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GButton(25, Color.blue, Color.pink, "Go Back") {

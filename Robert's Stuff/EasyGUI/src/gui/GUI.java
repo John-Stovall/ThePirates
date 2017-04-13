@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public final class GUI extends JFrame {
 
-    public static GUI window = new GUI();
+    public static final GUI window = new GUI();
 
     private Map<String, ArrayList<GUIComponent>> pages = new HashMap<>();
 
@@ -80,8 +80,18 @@ public final class GUI extends JFrame {
     private class DrawPanel extends JPanel {
 
         @Override
-        public void paintComponent(Graphics g) {
+        public void paintComponent(Graphics theGraphics) {
+
+            Graphics2D g = (Graphics2D) theGraphics;
+
             super.paintComponent(g);
+
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                    RenderingHints.VALUE_ANTIALIAS_ON);
+
+            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+                    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
             final int x = (getWidth() > maxWidth) ? (getWidth() - maxWidth) / 2 : 0;
             int y = 0;
             for (GUIComponent c : pages.get(currentPage)) {

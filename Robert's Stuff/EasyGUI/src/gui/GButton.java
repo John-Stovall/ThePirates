@@ -81,7 +81,9 @@ public class GButton implements GUIComponent, MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    public void clickAction() {
-
-    }
+    /**
+     * When you create a button override this method to add
+     * custom functionality to certain buttons.
+     */
+    public void clickAction() {}
 }
