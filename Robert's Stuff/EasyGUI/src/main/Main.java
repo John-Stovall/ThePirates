@@ -51,11 +51,11 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Name:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GSpacer(32, Color.gray));
+                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Email:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GSpacer(32, Color.gray));
+                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.red, "Submit") {
                     @Override

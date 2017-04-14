@@ -46,10 +46,6 @@ public class GSpacer implements GUIComponent {
         return color;
     }
 
-    public void setHeight(final int height) {
-        this.height = height;
-    }
-
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         if (visible) {

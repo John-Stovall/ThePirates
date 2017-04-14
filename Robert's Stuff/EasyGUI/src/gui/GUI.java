@@ -2,6 +2,7 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
@@ -40,10 +41,6 @@ public final class GUI extends JFrame {
         panel.repaint();
     }
 
-    public void maxMinimumWidth(final int max) {
-        maxWidth = max;
-    }
-
     public void add(final GUIComponent c) {
         components.add(c);
         panel.repaint();
@@ -64,12 +61,18 @@ public final class GUI extends JFrame {
             if (c instanceof MouseListener) {
                 removeMouseListener((MouseListener) c);
             }
+            if (c instanceof KeyListener) {
+                removeKeyListener((KeyListener) c);
+            }
         }
         components.clear();
         page.build();
         for (GUIComponent c : components) {
             if (c instanceof MouseListener) {
                 addMouseListener((MouseListener) c);
+            }
+            if (c instanceof KeyListener) {
+                addKeyListener((KeyListener) c);
             }
         }
         panel.repaint();
