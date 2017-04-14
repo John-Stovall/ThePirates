@@ -51,7 +51,16 @@ public final class GUI extends JFrame {
 
     public void add(final GUIComponent c) {
         components.add(c);
-        panel.repaint();
+        if (c instanceof KeyListener) {
+            addKeyListener((KeyListener) c);
+        }
+        if (c instanceof MouseListener) {
+            addMouseListener((MouseListener) c);
+        }
+        if (c instanceof JPanel) {
+            panel.add((JPanel) c);
+            ((JPanel)c).revalidate();
+        }
         panel.setVisible(true);
     }
 
@@ -65,6 +74,7 @@ public final class GUI extends JFrame {
     }
 
     public void gotoPage(final GUIPage page) {
+        panel.removeAll();
         for (GUIComponent c : components) {
             if (c instanceof MouseListener) {
                 removeMouseListener((MouseListener) c);
@@ -73,23 +83,15 @@ public final class GUI extends JFrame {
                 removeKeyListener((KeyListener) c);
             }
             if (c instanceof JPanel) {
-                panel.add((JPanel) c);
+                panel.remove((JPanel) c);
+                ((JPanel)c).revalidate();
             }
         }
         components.clear();
         page.build();
-        for (GUIComponent c : components) {
-            if (c instanceof MouseListener) {
-                addMouseListener((MouseListener) c);
-            }
-            if (c instanceof KeyListener) {
-                addKeyListener((KeyListener) c);
-            }
-            if (c instanceof JPanel) {
-                panel.remove((JPanel) c);
-            }
-        }
+        panel.revalidate();
         panel.repaint();
+        //panel.repaint();
     }
 
     private class DrawPanel extends JPanel {
@@ -104,6 +106,9 @@ public final class GUI extends JFrame {
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
                 y += c.draw(g, x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
+                if (c instanceof GWrapper) {
+                    ((GWrapper) c).build(x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
+                }
             }
         }
     }
