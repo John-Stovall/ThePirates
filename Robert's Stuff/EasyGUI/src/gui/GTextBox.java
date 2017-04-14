@@ -1,13 +1,15 @@
 package gui;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
  * Created by Robert on 4/12/17.
  */
-public class GButton implements GUIComponent, MouseListener {
+public class GTextBox implements GUIComponent, MouseListener, KeyListener {
 
     private int height;
 
@@ -21,18 +23,24 @@ public class GButton implements GUIComponent, MouseListener {
 
     private Color hover;
 
-    private boolean pressed = false;
+    private boolean pressed;
+
+    private boolean selected;
 
     private Font font;
 
     private String text;
 
-    public GButton(final int height, final Color main, final Color hover, final String text) {
+    public GTextBox(final int height, final Color main, final Color hover, final String text) {
         this.color = main;
         this.hover = hover;
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
+    }
+
+    public String getText() {
+        return text;
     }
 
     @Override
@@ -48,7 +56,13 @@ public class GButton implements GUIComponent, MouseListener {
         this.width = width;
         g.setColor(Color.white);
         g.setFont(font);
-        g.drawString(text, x, y + font.getSize());
+        if (selected) {
+            g.setColor(Color.black);
+            g.drawString(text + "|", x, y + font.getSize());
+            g.drawRect(x, y, width, height);
+        } else {
+            g.drawString(text, x, y + font.getSize());
+        }
         return height;
     }
 
@@ -57,6 +71,7 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        selected = false;
         if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2) {
             pressed = true;
             GUI.window.redraw();
@@ -66,7 +81,7 @@ public class GButton implements GUIComponent, MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2 && pressed) {
-            clickAction();
+            selected = true;
         }
         pressed = false;
         GUI.window.redraw();
@@ -78,9 +93,22 @@ public class GButton implements GUIComponent, MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    /**
-     * When you create a button override this method to add
-     * custom functionality to certain buttons.
-     */
-    public void clickAction() {}
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (selected) {
+            if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+                text = text.substring(0, text.length() - 1);
+            } else {
+                text += e.getKeyChar();
+            }
+            GUI.window.redraw();
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {}
+
+    @Override
+    public void keyReleased(KeyEvent e) {}
 }

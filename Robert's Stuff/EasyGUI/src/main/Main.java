@@ -2,6 +2,7 @@ package main;
 
 import gui.*;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Main {
@@ -14,6 +15,13 @@ public class Main {
         User.getUsers().add(new User("Jill", "123@comcast.net"));
 
         start();
+
+        final GMenuBar menu = new GMenuBar(40);
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 1"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 2"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 3"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 4"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 5"));
 
         final GUIPage login = new GUIPage("login") {
             @Override
@@ -51,11 +59,11 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Name:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GSpacer(32, Color.gray));
+                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Email:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GSpacer(32, Color.gray));
+                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.red, "Submit") {
                     @Override
@@ -69,6 +77,7 @@ public class Main {
         final GUIPage home = new GUIPage("home") {
             @Override
             public void build() {
+                GUI.window.add(menu);
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
@@ -94,6 +103,7 @@ public class Main {
         final GUIPage about = new GUIPage("about") {
             @Override
             public void build() {
+                GUI.window.add(menu);
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("About Us"));
 

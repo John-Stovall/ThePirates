@@ -2,13 +2,16 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/11/17.
  */
-public final class GUI extends JFrame {
+public final class GUI extends JFrame implements MouseWheelListener {
 
     public static final GUI window = new GUI();
 
@@ -17,6 +20,8 @@ public final class GUI extends JFrame {
     private ArrayList<GUIComponent> components = new ArrayList<>();
 
     private int maxWidth = 720;
+
+    private int scrollOffset;
 
     private DrawPanel panel = new DrawPanel();
 
@@ -29,6 +34,8 @@ public final class GUI extends JFrame {
         setTitle("Hello World!");
         setLocationRelativeTo(null);
         add(panel, BorderLayout.CENTER);
+        addMouseWheelListener(this);
+        panel.setLayout(null);
         panel.repaint();
     }
 
@@ -36,20 +43,71 @@ public final class GUI extends JFrame {
         pages.add(page);
     }
 
-    public void redraw() {
+    void redraw() {
         panel.repaint();
     }
 
-    public void maxMinimumWidth(final int max) {
-        maxWidth = max;
-    }
-
+    /**
+     * This method adds a GUIComponent to the current page.
+     *
+     * @param c The GUIComponent to add.
+     */
     public void add(final GUIComponent c) {
         components.add(c);
-        panel.repaint();
+        addListeners(c);
+        if (c instanceof JPanel) {
+            panel.add((JPanel) c);
+            ((JPanel)c).revalidate();
+        }
         panel.setVisible(true);
     }
 
+    /**
+     * This method recursively loops through all components in all lists
+     * and adds listeners that they use.
+     *
+     * @param c The GUIComponent to add listeners from.
+     */
+    private void addListeners(final GUIComponent c) {
+        if (c instanceof KeyListener) {
+            addKeyListener((KeyListener) c);
+        }
+        if (c instanceof MouseListener) {
+            addMouseListener((MouseListener) c);
+        }
+        if (c instanceof GMenuBar) {
+            for (GUIComponent g : ((GMenuBar) c).components) {
+                addListeners(g);
+            }
+        }
+    }
+
+    /**
+     * This method recursively loops through all components in all lists
+     * and removes the listeners that they use.
+     *
+     * @param c The GUIComponent to remove listeners from.
+     */
+    private void removeListeners(final GUIComponent c) {
+        if (c instanceof MouseListener) {
+            removeMouseListener((MouseListener) c);
+        }
+        if (c instanceof KeyListener) {
+            removeKeyListener((KeyListener) c);
+        }
+        if (c instanceof GMenuBar) {
+            for (GUIComponent g : ((GMenuBar) c).components) {
+                removeListeners(g);
+            }
+        }
+    }
+
+    /**
+     * If you don't have access to the particular page object you can use
+     * the pages's name to final the correct page to go to. A little slow but works.
+     *
+     * @param page The NAME of the page to go to.
+     */
     public void gotoPage(final String page) {
         for (GUIPage p : pages) {
             if (p.getName().equals(page)) {
@@ -59,36 +117,51 @@ public final class GUI extends JFrame {
         }
     }
 
+    /**
+     * Remove all objects from the page and call the new Page object's build method
+     * to reassemble the page.
+     *
+     * @param page The page to build.
+     */
     public void gotoPage(final GUIPage page) {
+        panel.removeAll();
         for (GUIComponent c : components) {
-            if (c instanceof MouseListener) {
-                removeMouseListener((MouseListener) c);
+            removeListeners(c);
+            if (c instanceof JPanel) {
+                panel.remove((JPanel) c);
+                ((JPanel)c).revalidate();
             }
         }
         components.clear();
         page.build();
-        for (GUIComponent c : components) {
-            if (c instanceof MouseListener) {
-                addMouseListener((MouseListener) c);
-            }
-        }
+        panel.revalidate();
         panel.repaint();
     }
 
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        scrollOffset -= e.getUnitsToScroll();
+        repaint();
+    }
+
+    /**
+     * This class handles all of the drawing.
+     */
     private class DrawPanel extends JPanel {
         @Override
         public void paintComponent(Graphics theGraphics) {
             Graphics2D g = (Graphics2D) theGraphics;
             super.paintComponent(g);
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
-            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-                    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             final int x = (getWidth() > maxWidth) ? (getWidth() - maxWidth) / 2 : 0;
-            int y = 0;
+            int y = scrollOffset;
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
                 y += c.draw(g, x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
+                if (c instanceof GWrapper) {
+                    ((GWrapper) c).build(x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
+                }
             }
         }
     }
