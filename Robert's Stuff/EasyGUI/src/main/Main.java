@@ -72,7 +72,7 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText("Hello"));
+                GUI.window.add(new GText("Hello", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.green,"Log Out") {
