@@ -16,6 +16,13 @@ public class Main {
 
         start();
 
+        final GMenuBar menu = new GMenuBar(40);
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 1"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 2"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 3"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 4"));
+        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 5"));
+
         final GUIPage login = new GUIPage("login") {
             @Override
             public void build() {
@@ -41,7 +48,6 @@ public class Main {
                         GUI.window.gotoPage("register");
                     }
                 });
-                GUI.window.add((GUIComponent) new GWrapper(50, new JButton("Hello")));
             }
         };
 
@@ -71,6 +77,7 @@ public class Main {
         final GUIPage home = new GUIPage("home") {
             @Override
             public void build() {
+                GUI.window.add(menu);
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
@@ -96,6 +103,7 @@ public class Main {
         final GUIPage about = new GUIPage("about") {
             @Override
             public void build() {
+                GUI.window.add(menu);
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("About Us"));
 
