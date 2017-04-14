@@ -51,23 +51,34 @@ public class Main {
             }
         };
 
+        //Create the "register" page..
         final GUIPage register = new GUIPage("register") {
             @Override
             public void build() {
+
+                //Instantiate the Checkboxes...
+                GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
+                GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
+
+                //Place all the stuff in the right order...
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Register Account"));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Name:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
+                GUI.window.add(name);
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Email:"));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GTextBox(32, Color.gray, Color.white, ""));
+                GUI.window.add(email);
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.red, "Submit") {
                     @Override
                     public void clickAction() {
+                        //Program the submit button to do stuff...
+
+                        //This is where you would program to make sure the name and email are good...
+                        User.getUsers().add(new User(name.getText(), email.getText()));
                         GUI.window.gotoPage("login");
                     }
                 });
