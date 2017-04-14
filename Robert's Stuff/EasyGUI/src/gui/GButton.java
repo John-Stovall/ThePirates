@@ -11,11 +11,11 @@ public class GButton implements GUIComponent, MouseListener {
 
     private int height;
 
-    private int x = 0;
+    private int x;
 
-    private int y = 0;
+    private int y;
 
-    private int width = 0;
+    private int width;
 
     private Color color;
 
@@ -27,22 +27,12 @@ public class GButton implements GUIComponent, MouseListener {
 
     private String text;
 
-    private GUIPage page;
-
     public GButton(final int height, final Color main, final Color hover, final String text) {
         this.color = main;
         this.hover = hover;
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
-    }
-
-    public void setFont(final Font font) {
-        this.font = font;
-    }
-
-    public void setPage(final GUIPage page) {
-        this.page = page;
     }
 
     @Override
@@ -92,9 +82,5 @@ public class GButton implements GUIComponent, MouseListener {
      * When you create a button override this method to add
      * custom functionality to certain buttons.
      */
-    public void clickAction() {
-        if (page != null) {
-            GUI.window.gotoPage(page);
-        }
-    }
+    public void clickAction() {}
 }

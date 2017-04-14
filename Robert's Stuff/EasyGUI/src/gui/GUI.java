@@ -30,7 +30,15 @@ public final class GUI extends JFrame {
         setTitle("Hello World!");
         setLocationRelativeTo(null);
         add(panel, BorderLayout.CENTER);
+        panel.setLayout(null);
         panel.repaint();
+
+//        JPanel test = new JPanel();
+//        test.add(new JButton("Hello!"));
+//        test.setLocation(20, 20);
+//        test.setSize(50, 50);
+//        test.setBackground(Color.red);
+//        panel.add(test);
     }
 
     public void addPage(final GUIPage page) {
@@ -64,6 +72,9 @@ public final class GUI extends JFrame {
             if (c instanceof KeyListener) {
                 removeKeyListener((KeyListener) c);
             }
+            if (c instanceof JPanel) {
+                panel.add((JPanel) c);
+            }
         }
         components.clear();
         page.build();
@@ -74,6 +85,9 @@ public final class GUI extends JFrame {
             if (c instanceof KeyListener) {
                 addKeyListener((KeyListener) c);
             }
+            if (c instanceof JPanel) {
+                panel.remove((JPanel) c);
+            }
         }
         panel.repaint();
     }
@@ -83,10 +97,8 @@ public final class GUI extends JFrame {
         public void paintComponent(Graphics theGraphics) {
             Graphics2D g = (Graphics2D) theGraphics;
             super.paintComponent(g);
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
-            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-                    RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             final int x = (getWidth() > maxWidth) ? (getWidth() - maxWidth) / 2 : 0;
             int y = 0;
             for (GUIComponent c : components) {

@@ -2,6 +2,7 @@ package main;
 
 import gui.*;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Main {
@@ -40,6 +41,7 @@ public class Main {
                         GUI.window.gotoPage("register");
                     }
                 });
+                GUI.window.add((GUIComponent) new GWrapper(50, new JButton("Hello")));
             }
         };
 
