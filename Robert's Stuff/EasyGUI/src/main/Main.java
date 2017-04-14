@@ -8,13 +8,12 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args) {
+        start();
 
         User.getUsers().add(new User("Jim", "JimBob@gmail.com"));
         User.getUsers().add(new User("Joe", "asdf@aol.com"));
         User.getUsers().add(new User("John", "fdsa@msn.com"));
         User.getUsers().add(new User("Jill", "123@comcast.net"));
-
-        start();
 
         final GMenuBar menu = new GMenuBar(40);
         menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 1"));
@@ -141,6 +140,10 @@ public class Main {
         GUI.window.gotoPage(login);
     }
 
+    /**
+     * This HAS to be the first reference to GUI.window so that it initializes the singleton
+     * in here. It's really hacky and I don't like it but whatever.
+     */
     private static void start() {
         EventQueue.invokeLater(new Runnable() {
             @Override

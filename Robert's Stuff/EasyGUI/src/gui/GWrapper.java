@@ -6,7 +6,8 @@ import java.awt.*;
 /**
  * Created by Robert on 4/14/17.
  *
- * This class is broken, don't use it.
+ * This class is not that good. Avoid using it if possible and it's only
+ * been tested using JButton.
  */
 public class GWrapper extends JPanel implements GUIComponent {
 
@@ -21,7 +22,6 @@ public class GWrapper extends JPanel implements GUIComponent {
 
     public void build(int x, int y, int width) {
         setLayout(new BorderLayout());
-        setBackground(Color.red);
         setLocation(x, y);
         setSize(width, height);
         add(item, BorderLayout.CENTER);
@@ -32,9 +32,7 @@ public class GWrapper extends JPanel implements GUIComponent {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        System.out.println("Am I being called?");
         repaint();
         return height;
     }
-
 }

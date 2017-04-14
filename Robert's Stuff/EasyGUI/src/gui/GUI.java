@@ -104,7 +104,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     /**
      * If you don't have access to the particular page object you can use
-     * the pages's name to final the correct page to go to. A little slow but works.
+     * the pages's name to find the correct page to go to. A little slow but works.
      *
      * @param page The NAME of the page to go to.
      */
