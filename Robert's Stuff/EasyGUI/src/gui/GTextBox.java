@@ -104,7 +104,22 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
             if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE && text.length() > 0) {
                 text = text.substring(0, text.length() - 1);
             } else {
-                text += e.getKeyChar();
+                if (e.getKeyChar() != KeyEvent.VK_TAB) {
+                    text += e.getKeyChar();
+                }
+            }
+
+            if (e.getKeyChar() == KeyEvent.VK_TAB) {
+                System.out.println("Called");
+                boolean found = false;
+                for (GUIComponent c : GUI.window.getItems()) {
+                    if (c == this) {
+                        found = true;
+                    } else if (found && c instanceof GTextBox) {
+                        selected = false;
+                        ((GTextBox)c).selected = true;
+                    }
+                }
             }
             GUI.window.redraw();
         }
