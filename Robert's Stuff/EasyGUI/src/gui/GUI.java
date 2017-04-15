@@ -28,6 +28,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
     private GUI() {
         super();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setFocusTraversalKeysEnabled(false);
         setSize(new Dimension(1280,720));
         setMinimumSize(new Dimension(320, 640));
         setVisible(true);
@@ -41,6 +42,10 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     public void addPage(final GUIPage page) {
         pages.add(page);
+    }
+
+    ArrayList<GUIComponent> getItems() {
+        return components;
     }
 
     void redraw() {
@@ -73,7 +78,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
             addKeyListener((KeyListener) c);
         }
         if (c instanceof MouseListener) {
-            addMouseListener((MouseListener) c);
+            panel.addMouseListener((MouseListener) c);
         }
         if (c instanceof GMenuBar) {
             for (GUIComponent g : ((GMenuBar) c).components) {
@@ -90,7 +95,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
      */
     private void removeListeners(final GUIComponent c) {
         if (c instanceof MouseListener) {
-            removeMouseListener((MouseListener) c);
+            panel.removeMouseListener((MouseListener) c);
         }
         if (c instanceof KeyListener) {
             removeKeyListener((KeyListener) c);

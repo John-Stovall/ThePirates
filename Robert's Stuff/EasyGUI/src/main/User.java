@@ -3,7 +3,7 @@ package main;
 import java.util.ArrayList;
 
 /**
- * Created by Bobby on 4/12/17.
+ * Created by Robert on 4/12/17.
  */
 public class User {
 

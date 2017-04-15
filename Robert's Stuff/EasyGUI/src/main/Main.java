@@ -2,7 +2,6 @@ package main;
 
 import gui.*;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class Main {
@@ -10,18 +9,21 @@ public class Main {
     public static void main(String[] args) {
         start();
 
-        User.getUsers().add(new User("Jim", "JimBob@gmail.com"));
-        User.getUsers().add(new User("Joe", "asdf@aol.com"));
-        User.getUsers().add(new User("John", "fdsa@msn.com"));
-        User.getUsers().add(new User("Jill", "123@comcast.net"));
+        //Create some testing users...
+//        User.getUsers().add(new User("Jim", "JimBob@gmail.com"));
+//        User.getUsers().add(new User("Joe", "asdf@aol.com"));
+//        User.getUsers().add(new User("John", "fdsa@msn.com"));
+//        User.getUsers().add(new User("Jill", "123@comcast.net"));
 
+        //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 1"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 2"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 3"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 4"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 5"));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 5", new Font("Helvetica", Font.PLAIN, 20)));
 
+        //Build the login page..
         final GUIPage login = new GUIPage("login") {
             @Override
             public void build() {
@@ -33,6 +35,7 @@ public class Main {
                     GButton button = new GButton(25, Color.blue, Color.red, u.getName() + ": " + u.getEmail()) {
                         @Override
                         public void clickAction() {
+                            User.setLoadedUser(u);
                             GUI.window.gotoPage("home");
                         }
                     };
@@ -56,12 +59,12 @@ public class Main {
             public void build() {
 
                 //Instantiate the Checkboxes...
-                GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
-                GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
+                GTextBox name = new GTextBox(32, Color.darkGray, Color.gray, "");
+                GTextBox email = new GTextBox(32, Color.darkGray, Color.gray, "");
 
                 //Place all the stuff in the right order...
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText("Register Account"));
+                GUI.window.add(new GText("Create Account"));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Name:"));
                 GUI.window.add(new GSpacer(5));
@@ -77,13 +80,28 @@ public class Main {
                         //Program the submit button to do stuff...
 
                         //This is where you would program to make sure the name and email are good...
-                        User.getUsers().add(new User(name.getText(), email.getText()));
-                        GUI.window.gotoPage("login");
+
+                        //This is the code for a successful login.
+                        User validUser = new User(name.getText(), email.getText());
+                        User.getUsers().add(validUser);
+                        User.setLoadedUser(validUser);
+                        GUI.window.gotoPage("home");
                     }
                 });
+
+                if (!User.getUsers().isEmpty()) {
+                    GUI.window.add(new GSpacer(5));
+                    GUI.window.add(new GButton(25, Color.blue, Color.red, "Back") {
+                        @Override
+                        public void clickAction() {
+                            GUI.window.gotoPage("login");
+                        }
+                    });
+                }
             }
         };
 
+        //Build the home page...
         final GUIPage home = new GUIPage("home") {
             @Override
             public void build() {
@@ -91,7 +109,7 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText("Hello", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "!", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.green,"Log Out") {
@@ -110,6 +128,7 @@ public class Main {
             }
         };
 
+        //Build the about page...
         final GUIPage about = new GUIPage("about") {
             @Override
             public void build() {
@@ -137,7 +156,11 @@ public class Main {
         GUI.window.addPage(about);
         GUI.window.addPage(home);
 
-        GUI.window.gotoPage(login);
+        if (User.getUsers().isEmpty()) {
+            GUI.window.gotoPage(register);
+        } else {
+            GUI.window.gotoPage(login);
+        }
     }
 
     /**
