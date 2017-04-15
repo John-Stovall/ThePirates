@@ -33,6 +33,7 @@ public class Main {
                     GButton button = new GButton(25, Color.blue, Color.red, u.getName() + ": " + u.getEmail()) {
                         @Override
                         public void clickAction() {
+                            User.setLoadedUser(u);
                             GUI.window.gotoPage("home");
                         }
                     };
@@ -91,7 +92,7 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText("Hello", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "!", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GButton(25, Color.blue, Color.green,"Log Out") {

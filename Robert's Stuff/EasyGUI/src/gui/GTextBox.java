@@ -39,6 +39,11 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         this.text = text;
     }
 
+    /**
+     * This method returns whatever text is in the textbox.
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
@@ -93,11 +98,10 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-
     @Override
     public void keyTyped(KeyEvent e) {
         if (selected) {
-            if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+            if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE && text.length() > 0) {
                 text = text.substring(0, text.length() - 1);
             } else {
                 text += e.getKeyChar();

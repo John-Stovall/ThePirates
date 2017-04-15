@@ -47,7 +47,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         }
         g.setColor(Color.white);
         for (int i = 0; i < 3; i++) {
-            g.fillRect((int)(height / 8), (int)(height / 7.0 * (((i + 1) * 2) - 1)), (int)(height / 8) * 6, (int)(height / 7));
+            g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)), (height / 8) * 6, height / 7);
         }
         totalHeight = y2 - height;
         return height;
