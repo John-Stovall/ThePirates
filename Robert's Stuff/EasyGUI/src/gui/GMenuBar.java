@@ -22,7 +22,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     private int totalHeight;
 
-    protected ArrayList<GUIComponent> components = new ArrayList<>();
+    ArrayList<GUIComponent> components = new ArrayList<>();
 
     public GMenuBar(final int height) {
         this.height = height;
@@ -47,7 +47,8 @@ public class GMenuBar implements GUIComponent, MouseListener {
         }
         g.setColor(Color.white);
         for (int i = 0; i < 3; i++) {
-            g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)), (height / 8) * 6, height / 7);
+            g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)),
+                    (height / 8) * 6, height / 7);
         }
         totalHeight = y2 - height;
         return height;
@@ -69,7 +70,8 @@ public class GMenuBar implements GUIComponent, MouseListener {
         if ((e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pressed) &&
         !(e.getX() > 0 && e.getX() < dropdownWidth && e.getY() > height && e.getY() < height + totalHeight)) {
             selected = !selected;
-        } else if (!(e.getX() > 0 && e.getX() < dropdownWidth && e.getY() > height && e.getY() < height + totalHeight)) {
+        } else if (!(e.getX() > 0 && e.getX() < dropdownWidth
+                && e.getY() > height && e.getY() < height + totalHeight)) {
             selected = false;
         }
         pressed = false;
