@@ -20,7 +20,7 @@ public class GWrapper extends JPanel implements GUIComponent {
         this.item = item;
     }
 
-    public void build(int x, int y, int width) {
+    void build(int x, int y, int width) {
         setLayout(new BorderLayout());
         setLocation(x, y);
         setSize(width, height);
