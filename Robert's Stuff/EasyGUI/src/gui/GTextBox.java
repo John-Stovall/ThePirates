@@ -72,7 +72,7 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     @Override
     public void mousePressed(MouseEvent e) {
         selected = false;
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2) {
+        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
             pressed = true;
             GUI.window.redraw();
         }
@@ -80,7 +80,7 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2 && pressed) {
+        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
             selected = true;
         }
         pressed = false;

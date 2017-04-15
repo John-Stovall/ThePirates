@@ -16,6 +16,10 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     private boolean pressed = false;
 
+    private int width;
+
+    private int totalHeight;
+
     protected ArrayList<GUIComponent> components = new ArrayList<>();
 
     public GMenuBar(final int height) {
@@ -28,15 +32,18 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
+        this.width = width;
         g.setColor(Color.darkGray);
         g.fillRect(0, 0, GUI.window.getWidth(), height);
         g.setColor(Color.gray);
         int y2 = height;
-        if (selected) {
+        if (selected || pressed) {
+            g.fillRect(0, 0, height, height);
             for (GUIComponent c : components) {
                 y2 += c.draw(g, 0, y2, 200);
             }
         }
+        totalHeight = y2 - height;
         return height;
     }
 
@@ -45,18 +52,22 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        selected = false;
         if (e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height) {
             pressed = true;
             GUI.window.redraw();
+        } else {
+            selected = false;
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pressed) {
-            selected = true;
+        if ((e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pressed) &&
+        !(e.getX() > 0 && e.getX() < width && e.getY() > height && e.getY() < height + totalHeight)) {
+            selected = !selected;
         }
+        System.out.println(e.getX());
+        System.out.println(e.getY());
         pressed = false;
         GUI.window.redraw();
     }

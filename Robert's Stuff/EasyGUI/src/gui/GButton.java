@@ -57,7 +57,7 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2) {
+        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
             pressed = true;
             GUI.window.redraw();
         }
@@ -65,7 +65,7 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y + height && e.getY() < y + height * 2 && pressed) {
+        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
             clickAction();
         }
         pressed = false;
