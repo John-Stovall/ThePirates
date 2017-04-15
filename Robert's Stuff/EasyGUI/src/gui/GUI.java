@@ -21,6 +21,8 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     private int maxWidth = 720;
 
+    private int sidePadding = 8;
+
     private int scrollOffset;
 
     private DrawPanel panel = new DrawPanel();
@@ -129,6 +131,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
      * @param page The page to build.
      */
     public void gotoPage(final GUIPage page) {
+        scrollOffset = 0;
         panel.removeAll();
         for (GUIComponent c : components) {
             removeListeners(c);
@@ -159,11 +162,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
             super.paintComponent(g);
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-            final int x = (getWidth() > maxWidth) ? (getWidth() - maxWidth) / 2 : 0;
+            final int x = (getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2;
             int y = scrollOffset;
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
-                y += c.draw(g, x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
+                y += c.draw(g, x, y, (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding);
                 if (c instanceof GWrapper) {
                     ((GWrapper) c).build(x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
                 }
