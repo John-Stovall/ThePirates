@@ -83,7 +83,10 @@ public final class GUI extends JFrame implements MouseWheelListener {
             panel.addMouseListener((MouseListener) c);
         }
         if (c instanceof GMenuBar) {
-            for (GUIComponent g : ((GMenuBar) c).components) {
+            for (GUIComponent g : ((GMenuBar) c).pageComponents) {
+                addListeners(g);
+            }
+            for (GUIComponent g : ((GMenuBar) c).accountComponents) {
                 addListeners(g);
             }
         }
@@ -103,7 +106,10 @@ public final class GUI extends JFrame implements MouseWheelListener {
             removeKeyListener((KeyListener) c);
         }
         if (c instanceof GMenuBar) {
-            for (GUIComponent g : ((GMenuBar) c).components) {
+            for (GUIComponent g : ((GMenuBar) c).pageComponents) {
+                removeListeners(g);
+            }
+            for (GUIComponent g : ((GMenuBar) c).accountComponents) {
                 removeListeners(g);
             }
         }

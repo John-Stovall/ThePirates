@@ -17,11 +17,15 @@ public class Main {
 
         //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
-        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 5", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 5", new Font("Helvetica", Font.PLAIN, 20)));
+
+        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
 
         //Build the login page..
         final GUIPage login = new GUIPage("login") {
