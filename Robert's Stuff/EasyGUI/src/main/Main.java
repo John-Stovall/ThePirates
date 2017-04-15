@@ -16,11 +16,11 @@ public class Main {
         User.getUsers().add(new User("Jill", "123@comcast.net"));
 
         final GMenuBar menu = new GMenuBar(40);
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 1"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 2"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 3"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 4"));
-        menu.add(new GButton(20, Color.gray, Color.darkGray, "Page 5"));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.add(new GButton(40, Color.gray, Color.darkGray, "Page 5", new Font("Helvetica", Font.PLAIN, 20)));
 
         final GUIPage login = new GUIPage("login") {
             @Override
@@ -56,8 +56,8 @@ public class Main {
             public void build() {
 
                 //Instantiate the Checkboxes...
-                GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
-                GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
+                GTextBox name = new GTextBox(32, Color.darkGray, Color.gray, "");
+                GTextBox email = new GTextBox(32, Color.darkGray, Color.gray, "");
 
                 //Place all the stuff in the right order...
                 GUI.window.add(new GSpacer(25));

@@ -35,6 +35,14 @@ public class GButton implements GUIComponent, MouseListener {
         this.text = text;
     }
 
+    public GButton(final int height, final Color main, final Color hover, final String text , final Font font) {
+        this.color = main;
+        this.hover = hover;
+        this.height = height;
+        this.font = font;
+        this.text = text;
+    }
+
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         if (pressed) {
@@ -48,7 +56,11 @@ public class GButton implements GUIComponent, MouseListener {
         this.width = width;
         g.setColor(Color.white);
         g.setFont(font);
-        g.drawString(text, x, y + font.getSize());
+
+
+        int textWidth = g.getFontMetrics().stringWidth(text);
+
+        g.drawString(text, x + width / 2 - textWidth / 2, y + font.getSize());
         return height;
     }
 

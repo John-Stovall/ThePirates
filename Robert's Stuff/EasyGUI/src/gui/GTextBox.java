@@ -45,7 +45,7 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        if (pressed) {
+        if (pressed || selected) {
             g.setColor(hover);
         } else {
             g.setColor(color);
@@ -56,12 +56,12 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         this.width = width;
         g.setColor(Color.white);
         g.setFont(font);
+        g.setColor(Color.black);
         if (selected) {
-            g.setColor(Color.black);
-            g.drawString(text + "|", x, y + font.getSize());
+            g.drawString(text + "|", x + 4, y + font.getSize());
             g.drawRect(x, y, width, height);
         } else {
-            g.drawString(text, x, y + font.getSize());
+            g.drawString(text, x + 4, y + font.getSize());
         }
         return height;
     }

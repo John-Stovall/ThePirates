@@ -19,8 +19,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="122" column="78" lean-forward="false" selection-start-line="122" selection-start-column="78" selection-end-line="122" selection-end-column="78" />
+            <state relative-caret-position="542">
+              <caret line="59" column="64" lean-forward="false" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,7 +33,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="e#253#254#0" expanded="false" />
+                <element signature="e#283#284#0" expanded="false" />
+                <element signature="e#325#326#0" expanded="false" />
+                <element signature="e#358#359#0" expanded="false" />
+                <element signature="e#389#390#0" expanded="false" />
+                <element signature="e#416#417#0" expanded="false" />
+                <element signature="e#456#457#0" expanded="false" />
+                <element signature="e#488#489#0" expanded="false" />
+                <element signature="e#546#547#0" expanded="false" />
+                <element signature="e#574#575#0" expanded="false" />
+                <element signature="e#616#617#0" expanded="false" />
+                <element signature="e#650#651#0" expanded="false" />
+                <element signature="e#843#844#0" expanded="false" />
+                <element signature="e#874#875#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +71,8 @@
       <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="67" column="89" lean-forward="false" selection-start-line="67" selection-start-column="89" selection-end-line="67" selection-end-column="89" />
+            <state relative-caret-position="388">
+              <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,14 +80,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTextBox.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GTextBox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="82" column="64" lean-forward="false" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
+            <state relative-caret-position="435">
+              <caret line="63" column="36" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#draw#0;class#GTextBox#0" expanded="false" />
                 <element signature="method#keyTyped#0;class#GTextBox#0" expanded="false" />
               </folding>
             </state>
@@ -94,18 +108,18 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+            <state relative-caret-position="658">
+              <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GMenuBar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GMenuBar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,7 +130,7 @@
       <file leaf-file-name="GWrapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="540">
               <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,11 +177,11 @@
         <option value="$PROJECT_DIR$/src/gui/GUIPage.java" />
         <option value="$PROJECT_DIR$/src/gui/GSpacer.java" />
         <option value="$PROJECT_DIR$/src/gui/GWrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
-        <option value="$PROJECT_DIR$/src/gui/GTextBox.java" />
-        <option value="$PROJECT_DIR$/src/gui/GButton.java" />
         <option value="$PROJECT_DIR$/src/gui/GMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/gui/GButton.java" />
+        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/gui/GTextBox.java" />
       </list>
     </option>
   </component>
@@ -662,12 +676,12 @@
       <workItem from="1492153201612" duration="2292000" />
       <workItem from="1492203235051" duration="3212000" />
       <workItem from="1492211320953" duration="1707000" />
-      <workItem from="1492227579997" duration="1860000" />
+      <workItem from="1492227579997" duration="2568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28427000" />
+    <option name="totallyTimeSpent" value="29135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
@@ -1106,16 +1120,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#253#254#0" expanded="false" />
+            <element signature="e#283#284#0" expanded="false" />
+            <element signature="e#325#326#0" expanded="false" />
+            <element signature="e#358#359#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#416#417#0" expanded="false" />
+            <element signature="e#456#457#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#546#547#0" expanded="false" />
+            <element signature="e#574#575#0" expanded="false" />
+            <element signature="e#616#617#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#843#844#0" expanded="false" />
+            <element signature="e#874#875#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1133,13 +1152,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="122" column="78" lean-forward="false" selection-start-line="122" selection-start-column="78" selection-end-line="122" selection-end-column="78" />
+        <state relative-caret-position="540">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="95" column="12" lean-forward="false" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,10 +1200,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="67" column="89" lean-forward="false" selection-start-line="67" selection-start-column="89" selection-end-line="67" selection-end-column="89" />
+        <state relative-caret-position="542">
+          <caret line="59" column="64" lean-forward="false" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1165,30 +1212,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="82" column="64" lean-forward="false" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
+        <state relative-caret-position="435">
+          <caret line="63" column="36" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#draw#0;class#GTextBox#0" expanded="false" />
             <element signature="method#keyTyped#0;class#GTextBox#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
