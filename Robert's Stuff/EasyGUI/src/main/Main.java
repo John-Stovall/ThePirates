@@ -17,15 +17,30 @@ public class Main {
 
         //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Home", new Font("Helvetica", Font.PLAIN, 20)) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("home");
+            }
+        });
         menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
         menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
         menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 5", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("about");
+            }
+        });
 
         menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
         menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("login");
+            }
+        });
 
         //Build the login page..
         final GUIPage login = new GUIPage("login") {
@@ -109,26 +124,15 @@ public class Main {
         final GUIPage home = new GUIPage("home") {
             @Override
             public void build() {
-                GUI.window.add(menu);
+                GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Home"));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.blue, Color.green,"Log Out") {
-                    @Override
-                    public void clickAction() {
-                        GUI.window.gotoPage("login");
-                    }
-                });
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.blue, Color.magenta, "About Us") {
-                    @Override
-                    public void clickAction() {
-                        GUI.window.gotoPage("about");
-                    }
-                });
+                GUI.window.add(menu);
             }
         };
 
@@ -136,7 +140,7 @@ public class Main {
         final GUIPage about = new GUIPage("about") {
             @Override
             public void build() {
-                GUI.window.add(menu);
+                GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("About Us"));
 
@@ -146,12 +150,7 @@ public class Main {
                 GUI.window.add(new GText("Add your names here...", new Font("Helvetica", Font.PLAIN, 20)));
 
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GButton(25, Color.blue, Color.pink, "Go Back") {
-                    @Override
-                    public void clickAction() {
-                        GUI.window.gotoPage("home");
-                    }
-                });
+                GUI.window.add(menu);
             }
         };
 
