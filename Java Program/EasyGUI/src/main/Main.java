@@ -4,6 +4,8 @@ import gui.*;
 
 import java.awt.*;
 
+import java.util.regex.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -157,7 +159,12 @@ public class Main {
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Robert Cordingly", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(15));
-                GUI.window.add(new GText("Add your names here...", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GText("Ryan Hansen", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GSpacer(15));
+                GUI.window.add(new GText("Rand Almaroof", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GSpacer(15));
+                GUI.window.add(new GText("Reagan Stovall", new Font("Helvetica", Font.PLAIN, 20)));
+                GUI.window.add(new GSpacer(15));
 
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(menu);
@@ -177,14 +184,15 @@ public class Main {
     }
     
     /**
-     * This is a simple character counter that returns true if there are
-     * less than 4 characters. 
+     * This is a simple character counter that returns false if there are
+     * less than 3 characters.
+     *
      * @param name
      * @return
      */
     public static boolean testName(String name){
-    	if(name.length() < 4){
-    		System.out.println("Less than 4 characters");
+    	if(name.length() < 3){
+    		System.out.println("Less than 3 characters");
     		return false;
     	}else{
     		System.out.println("LengthTest Passed");

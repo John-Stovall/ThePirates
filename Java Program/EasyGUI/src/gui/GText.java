@@ -43,11 +43,7 @@ public class GText implements GUIComponent {
                 }
                 if (g.getFontMetrics().stringWidth(text.substring(lastIndex, i) + sidePadding) > width) {
                     if (spaceIndex != -1) {
-                        if (text.substring(lastIndex, spaceIndex).charAt(0) == ' ') {
-                            lines.add(text.substring(lastIndex + 1, spaceIndex));
-                        } else {
-                            lines.add(text.substring(lastIndex, spaceIndex));
-                        }
+                        lines.add(text.substring(lastIndex, spaceIndex).trim());
                         lastIndex = spaceIndex;
                         spaceIndex = -1;
                     } else {
@@ -56,11 +52,8 @@ public class GText implements GUIComponent {
                     }
                 }
             }
-            if (text.substring(lastIndex).charAt(0) == ' ') {
-                lines.add(text.substring(lastIndex + 1));
-            } else {
-                lines.add(text.substring(lastIndex));
-            }
+            lines.add(text.substring(lastIndex).trim());
+
 
             for (int i = 0; i < lines.size(); i++) {
                 g.drawString(lines.get(i), x, y + font.getSize() * (i + 1));
