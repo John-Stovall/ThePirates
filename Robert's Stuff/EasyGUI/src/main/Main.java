@@ -98,13 +98,23 @@ public class Main {
                     public void clickAction() {
                         //Program the submit button to do stuff...
 
-                        //This is where you would program to make sure the name and email are good...
-
-                        //This is the code for a successful login.
-                        User validUser = new User(name.getText(), email.getText());
-                        User.getUsers().add(validUser);
-                        User.setLoadedUser(validUser);
-                        GUI.window.gotoPage("home");
+                        // Apologies, I only know how to code ugly.
+                    	boolean textBoxFail = false;
+                    	String myName = name.getText().trim();
+                    	String myEmail = email.getText().trim();
+                    	
+                    	// the two functions are set up this way for junit testing
+                    	if(!testName(myName) || !testEmail(myEmail)){
+                    		textBoxFail = true; //fails the test
+                    	}
+                    	
+                    	if(!textBoxFail){
+	                        //This is the code for a successful login.
+	                        User validUser = new User(myName, myEmail);
+	                        User.getUsers().add(validUser);
+	                        User.setLoadedUser(validUser);
+	                        GUI.window.gotoPage("home");
+                    	}
                     }
                 });
 
@@ -164,6 +174,47 @@ public class Main {
         } else {
             GUI.window.gotoPage(login);
         }
+    }
+    
+    /**
+     * This is a simple character counter that returns true if there are
+     * less than 4 characters. 
+     * @param name
+     * @return
+     */
+    public static boolean testName(String name){
+    	if(name.length() < 4){
+    		System.out.println("Less than 4 characters");
+    		return false;
+    	}else{
+    		System.out.println("LengthTest Passed");
+    		return true;
+    	}
+    }
+    
+    /**
+     * This tests that there is an @ sign and a '.com' a bit lacking,
+     * but we can expand it if we want.
+     *  
+     * @param email
+     * @return
+     */
+    public static boolean testEmail(String email){
+    	// contains @
+    	if(email.indexOf('@') == -1){
+    		System.out.println("has doesn't have an @");
+    		return false;
+    	}else{
+    		System.out.println("@test Passed");
+    	}
+    	// contains a '.com' at the end 
+    	if(!email.toLowerCase().endsWith(".com")) {
+    		System.out.println("does not end with .com");
+    		return false;
+    	}else{
+    		System.out.println(".com-test Passed");
+    	}
+		return true;
     }
 
     /**
