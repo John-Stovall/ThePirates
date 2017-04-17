@@ -11,7 +11,7 @@ public class JTest {
 	@Test
 	public void test1() {
 		String test1 = "bob";
-		Assert.assertTrue(Main.testName(test1));
+		Assert.assertFalse(Main.testName(test1));
 	}
 	@Test
 	public void test2() {
@@ -25,8 +25,8 @@ public class JTest {
 	}
 	@Test
 	public void test4() {
-		String test4 = "  bob";
-		Assert.assertTrue(Main.testName(test4));
+		String test4 = "  bob  ";
+		Assert.assertFalse(Main.testName(test4.trim()));
 	}
 
 	//emailTests
@@ -38,7 +38,7 @@ public class JTest {
 	@Test
 	public void test6() {
 		String test6 = "boby.uwt.edu";
-		Assert.assertTrue(Main.testEmail(test6));
+		Assert.assertFalse(Main.testEmail(test6));
 	}
 	@Test
 	public void test7() {
@@ -48,7 +48,7 @@ public class JTest {
 	@Test
 	public void test8() {
 		String test8 = "  bob.aol.com";
-		Assert.assertTrue(Main.testEmail(test8));
+		Assert.assertFalse(Main.testEmail(test8));
 	}
 
 }
