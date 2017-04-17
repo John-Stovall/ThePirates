@@ -28,7 +28,7 @@ public class JTest {
 		String test4 = "  bob";
 		Assert.assertTrue(Main.testName(test4));
 	}
-	
+
 	//emailTests
 	@Test
 	public void test5() {

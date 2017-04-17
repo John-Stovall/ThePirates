@@ -4,6 +4,8 @@ import gui.*;
 
 import java.awt.*;
 
+import java.util.regex.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -177,14 +179,15 @@ public class Main {
     }
     
     /**
-     * This is a simple character counter that returns true if there are
-     * less than 4 characters. 
+     * This is a simple character counter that returns false if there are
+     * less than 3 characters.
+     *
      * @param name
      * @return
      */
     public static boolean testName(String name){
-    	if(name.length() < 4){
-    		System.out.println("Less than 4 characters");
+    	if(name.length() < 3){
+    		System.out.println("Less than 3 characters");
     		return false;
     	}else{
     		System.out.println("LengthTest Passed");
