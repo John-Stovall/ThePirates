@@ -18,4 +18,4 @@
 
 [Deliverables](#)
 
-[Email Us](mailto:robertcordingly@gmail.com,r.cordingly@comcast.net,reaganstovall@gmail.com)
+[Email Us](mailto:robertcordingly@gmail.com,r.cordingly@comcast.net,reaganstovall@gmail.com,Rand3@uw.edu,ryanchansen@hotmail.com)
