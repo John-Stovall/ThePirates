@@ -2,10 +2,7 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 /**
@@ -22,6 +19,8 @@ public final class GUI extends JFrame implements MouseWheelListener {
     private int maxWidth = 720;
 
     private int sidePadding = 8;
+
+    protected static int horizontalOffset = 0;
 
     private int scrollOffset;
 
@@ -40,6 +39,16 @@ public final class GUI extends JFrame implements MouseWheelListener {
         addMouseWheelListener(this);
         panel.setLayout(null);
         panel.repaint();
+
+
+        Timer clock = new Timer(1000 / 30, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel.repaint();
+            }
+        });
+        clock.start();
+
     }
 
     public void addPage(final GUIPage page) {
@@ -50,9 +59,9 @@ public final class GUI extends JFrame implements MouseWheelListener {
         return components;
     }
 
-    void redraw() {
-        panel.repaint();
-    }
+    //void redraw() {
+    //    panel.repaint();
+    //}
 
     /**
      * This method adds a GUIComponent to the current page.
@@ -149,13 +158,13 @@ public final class GUI extends JFrame implements MouseWheelListener {
         components.clear();
         page.build();
         panel.revalidate();
-        panel.repaint();
+        //panel.repaint();
     }
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         scrollOffset -= e.getUnitsToScroll();
-        repaint();
+        //repaint();
     }
 
     /**
@@ -166,9 +175,10 @@ public final class GUI extends JFrame implements MouseWheelListener {
         public void paintComponent(Graphics theGraphics) {
             Graphics2D g = (Graphics2D) theGraphics;
             super.paintComponent(g);
+
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-            final int x = (getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2;
+            final int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
             int y = scrollOffset;
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
