@@ -33,6 +33,10 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     private int accountTotalHeight;
 
+
+    /** Lower numbers are faster! */
+    private double scrollSpeed = 7.0;
+
     ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
     ArrayList<GUIComponent> accountComponents = new ArrayList<>();
@@ -107,11 +111,11 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
         //Process slide over animation
         if (pageSelected) {
-            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / 5.0);
+            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
         } else if (accountSelected) {
-            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / 5.0);
+            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
         } else {
-            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / 5.0)) * (Math.signum((-GUI.horizontalOffset) / 5.0));
+            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / scrollSpeed)) * (Math.signum((-GUI.horizontalOffset) / scrollSpeed));
         }
 
         return height;
