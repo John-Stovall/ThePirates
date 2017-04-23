@@ -27,6 +27,8 @@ public class GButton implements GUIComponent, MouseListener {
 
     private String text;
 
+    private boolean isActive = true;
+
     public GButton(final int height, final Color main, final Color hover, final String text) {
         this.color = main;
         this.hover = hover;
@@ -43,6 +45,10 @@ public class GButton implements GUIComponent, MouseListener {
         this.text = text;
     }
 
+    public void setActive(boolean state) {
+        isActive = state;
+    }
+
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         if (pressed) {
@@ -57,7 +63,6 @@ public class GButton implements GUIComponent, MouseListener {
         g.setColor(Color.white);
         g.setFont(font);
 
-
         int textWidth = g.getFontMetrics().stringWidth(text);
 
         g.drawString(text, x + width / 2 - textWidth / 2, y + font.getSize());
@@ -69,9 +74,8 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
+        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && isActive) {
             pressed = true;
-            //GUI.window.redraw();
         }
     }
 
@@ -81,7 +85,6 @@ public class GButton implements GUIComponent, MouseListener {
             clickAction();
         }
         pressed = false;
-        //GUI.window.redraw();
     }
 
     @Override

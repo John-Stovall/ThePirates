@@ -42,30 +42,27 @@ public class GMenuBar implements GUIComponent, MouseListener {
     }
 
     public void addPage(GUIComponent c) {
+        if (c instanceof GButton) {
+            ((GButton) c).setActive(false);
+        }
         pageComponents.add(c);
     }
 
 
-    public void addAcount(GUIComponent c) {
+    public void addAccount(GUIComponent c) {
+        if (c instanceof GButton) {
+            ((GButton) c).setActive(false);
+        }
         accountComponents.add(c);
     }
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        dropdownWidth = Math.min((int) Math.round(GUI.window.getWidth() * 0.8), 512);
-
-        if (pageSelected) {
-            GUI.horizontalOffset += Math.round((dropdownWidth - GUI.horizontalOffset) / 5.0);
-        } else if (accountSelected) {
-            GUI.horizontalOffset += (-dropdownWidth - GUI.horizontalOffset) / 5.0;
-        } else {
-            GUI.horizontalOffset += (-GUI.horizontalOffset) / 5;
-        }
-
+        dropdownWidth = Math.min((int) Math.round(GUI.getWindowWidth() * 0.8), 512);
 
         this.width = width;
         g.setColor(Color.darkGray);
-        g.fillRect(0, 0, GUI.window.getWidth(), height);
+        g.fillRect(0, 0, GUI.getWindowWidth(), height);
 
         //Draw the page bar.
         g.setColor(Color.gray);
@@ -86,9 +83,9 @@ public class GMenuBar implements GUIComponent, MouseListener {
         //Draw the account bar.
         g.setColor(Color.gray);
         int y3 = height;
-        int newX = GUI.window.getWidth() - dropdownWidth;
+        int newX = GUI.getWindowWidth() - dropdownWidth;
         if (accountSelected || accountPressed) {
-            g.fillRect(GUI.window.getWidth() - height, 0, height, height);
+            g.fillRect(GUI.getWindowWidth() - height, 0, height, height);
         }
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
@@ -96,7 +93,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         g.setColor(Color.white);
         Graphics2D g2d = ((Graphics2D) g);
 
-        Ellipse2D circle = new Ellipse2D.Double(GUI.window.getWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
+        Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
         g2d.fill(circle);
         accountTotalHeight = y3 - height;
 
@@ -106,7 +103,16 @@ public class GMenuBar implements GUIComponent, MouseListener {
         String text = User.getLoadedUser().getName();
         int length = g.getFontMetrics().stringWidth(text);
 
-        g.drawString(text, GUI.window.getWidth() - height - length - 4, height - 10);
+        g.drawString(text, GUI.getWindowWidth() - height - length - 4, height - 10);
+
+        //Process slide over animation
+        if (pageSelected) {
+            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / 5.0);
+        } else if (accountSelected) {
+            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / 5.0);
+        } else {
+            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / 5.0)) * (Math.signum((-GUI.horizontalOffset) / 5.0));
+        }
 
         return height;
     }
@@ -120,7 +126,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
             pagePressed = true;
             //GUI.window.redraw();
         }
-        if (e.getX() > GUI.window.getWidth() - height && e.getX() < GUI.window.getWidth() && e.getY() > 0 && e.getY() < height) {
+        if (e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
             accountPressed = true;
             //GUI.window.redraw();
         }
@@ -131,20 +137,30 @@ public class GMenuBar implements GUIComponent, MouseListener {
         if ((e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pagePressed) &&
         !(e.getX() > 0 && e.getX() < dropdownWidth && e.getY() > height && e.getY() < height + pageTotalHeight)) {
             pageSelected = !pageSelected;
-        } else if (!(e.getX() > 0 && e.getX() < dropdownWidth
-                && e.getY() > height && e.getY() < height + pageTotalHeight)) {
+        } else {
             pageSelected = false;
         }
+        for (GUIComponent c : pageComponents) {
+            if (c instanceof GButton) {
+                ((GButton) c).setActive(pageSelected);
+            }
+        }
 
-        if ((e.getX() > GUI.window.getWidth() - height && e.getX() < GUI.window.getWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
-                !(e.getX() > GUI.window.getWidth() - dropdownWidth && e.getX() < GUI.window.getWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
+        if ((e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
+                !(e.getX() > GUI.getWindowWidth() - dropdownWidth && e.getX() < GUI.getWindowWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
             accountSelected = !accountSelected;
-        } else if (!(e.getX() > GUI.window.getWidth() - dropdownWidth && e.getX() < GUI.window.getWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
+        } else {
             accountSelected = false;
         }
+
+        for (GUIComponent c : accountComponents) {
+            if (c instanceof GButton) {
+                ((GButton) c).setActive(accountSelected);
+            }
+        }
+
         pagePressed = false;
         accountPressed = false;
-        //GUI.window.redraw();
     }
 
     @Override

@@ -24,10 +24,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     private int scrollOffset;
 
-    private DrawPanel panel = new DrawPanel();
+    private static DrawPanel panel;
 
     private GUI() {
         super();
+        panel = new DrawPanel();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setFocusTraversalKeysEnabled(false);
         setSize(new Dimension(1280,720));
@@ -59,9 +60,9 @@ public final class GUI extends JFrame implements MouseWheelListener {
         return components;
     }
 
-    //void redraw() {
-    //    panel.repaint();
-    //}
+    public static int getWindowWidth() {
+        return panel.getWidth();
+    }
 
     /**
      * This method adds a GUIComponent to the current page.
@@ -178,7 +179,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-            final int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
+            int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
             int y = scrollOffset;
             for (GUIComponent c : components) {
                 g.setColor(Color.black);

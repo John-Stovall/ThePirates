@@ -35,9 +35,9 @@ public class Main {
             }
         });
 
-        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAcount(new GButton(40, Color.gray, Color.darkGray, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("login");
@@ -119,6 +119,18 @@ public class Main {
                     	}
                     }
                 });
+
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add(new GButton(25, Color.blue, Color.red, "Skip Login") {
+                    @Override
+                    public void clickAction() {
+                        User validUser = new User("Jimbo", "jimbo@gmail.com");
+                        User.getUsers().add(validUser);
+                        User.setLoadedUser(validUser);
+                        GUI.window.gotoPage("home");
+                    }
+                });
+
 
                 if (!User.getUsers().isEmpty()) {
                     GUI.window.add(new GSpacer(5));
