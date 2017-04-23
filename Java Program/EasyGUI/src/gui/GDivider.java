@@ -10,8 +10,6 @@ public class GDivider implements GUIComponent {
 
     private int cellWidth;
 
-    private int cellHeight;
-
     ArrayList<GUIComponent> components = new ArrayList<>();
 
     public GDivider(final int cellWidth) {
@@ -40,7 +38,7 @@ public class GDivider implements GUIComponent {
                 maxHeight = 0;
             }
         }
-            rowHeight += maxHeight;
+        rowHeight += maxHeight;
 
         return rowHeight;
     }
