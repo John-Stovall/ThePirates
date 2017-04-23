@@ -41,6 +41,7 @@ public class Main {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("login");
+                GUI.window.horizontalOffset = 0;
             }
         });
 
@@ -52,17 +53,20 @@ public class Main {
                 GUI.window.add(new GText("Select Account"));
                 GUI.window.add(new GSpacer(25));
 
+                GDivider div = new GDivider(240);
+
                 for (User u : User.getUsers()) {
-                    GButton button = new GButton(25, Color.blue, Color.red, u.getName() + ": " + u.getEmail()) {
+                    div.add(new GButton(25, Color.blue, Color.red, u.getName() + ": " + u.getEmail()) {
                         @Override
                         public void clickAction() {
                             User.setLoadedUser(u);
                             GUI.window.gotoPage("home");
                         }
-                    };
-                    GUI.window.add(button);
-                    GUI.window.add(new GSpacer(10));
+                    });
+                    //GUI.window.add(button);
+                    //GUI.window.add(new GSpacer(10));
                 }
+                GUI.window.add(div);
 
                 GUI.window.add(new GSpacer(15));
                 GUI.window.add(new GButton(25, Color.blue, Color.red, "Add new Account") {

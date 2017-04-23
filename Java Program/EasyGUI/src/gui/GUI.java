@@ -20,7 +20,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     private int sidePadding = 8;
 
-    protected static int horizontalOffset = 0;
+    public static int horizontalOffset = 0;
 
     private int scrollOffset;
 
@@ -42,12 +42,13 @@ public final class GUI extends JFrame implements MouseWheelListener {
         panel.repaint();
 
 
-        Timer clock = new Timer(1000 / 30, new ActionListener() {
+        Timer clock = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 panel.repaint();
             }
         });
+
         clock.start();
 
     }
@@ -100,6 +101,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
                 addListeners(g);
             }
         }
+        if (c instanceof GDivider) {
+            for (GUIComponent g : ((GDivider) c).components) {
+                addListeners(g);
+            }
+        }
     }
 
     /**
@@ -120,6 +126,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
                 removeListeners(g);
             }
             for (GUIComponent g : ((GMenuBar) c).accountComponents) {
+                removeListeners(g);
+            }
+        }
+        if (c instanceof GDivider) {
+            for (GUIComponent g : ((GDivider) c).components) {
                 removeListeners(g);
             }
         }
