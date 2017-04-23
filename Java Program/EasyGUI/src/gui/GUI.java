@@ -24,10 +24,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     private int scrollOffset;
 
-    private DrawPanel panel = new DrawPanel();
+    private static DrawPanel panel;
 
     private GUI() {
         super();
+        panel = new DrawPanel();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setFocusTraversalKeysEnabled(false);
         setSize(new Dimension(1280,720));
@@ -59,9 +60,9 @@ public final class GUI extends JFrame implements MouseWheelListener {
         return components;
     }
 
-    //void redraw() {
-    //    panel.repaint();
-    //}
+    public static int getWindowWidth() {
+        return panel.getWidth();
+    }
 
     /**
      * This method adds a GUIComponent to the current page.
