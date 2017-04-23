@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GButton.java" afterPath="$PROJECT_DIR$/src/gui/GButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMenuBar.java" afterPath="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUI.java" afterPath="$PROJECT_DIR$/src/gui/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GButton.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="465">
+              <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="e#1054#1055#0" expanded="true" />
                 <element signature="e#1086#1087#0" expanded="true" />
@@ -123,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GMenuBar.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GMenuBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="771">
-              <caret line="156" column="39" lean-forward="true" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+            <state relative-caret-position="382">
+              <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -188,8 +185,8 @@
         <option value="$PROJECT_DIR$/src/gui/GTextBox.java" />
         <option value="$PROJECT_DIR$/src/gui/GUI.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/gui/GMenuBar.java" />
         <option value="$PROJECT_DIR$/src/gui/GButton.java" />
+        <option value="$PROJECT_DIR$/src/gui/GMenuBar.java" />
       </list>
     </option>
   </component>
@@ -778,7 +775,7 @@
       <workItem from="1492826547860" duration="100000" />
       <workItem from="1492827037286" duration="1999000" />
       <workItem from="1492831303777" duration="957000" />
-      <workItem from="1492920486784" duration="951000" />
+      <workItem from="1492920486784" duration="1842000" />
     </task>
     <task id="LOCAL-00001" summary="Testing github in IntelliJ">
       <created>1492415888552</created>
@@ -794,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492828982015</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed a bug where the sidebar and page contents would be out of&#10;sync when the slide animation was playing.&#10;&#10;Buttons can no longer be pressed while an animation is playing. This&#10;will prevent future potential bugs.">
+      <created>1492921526685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492921526685</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43534000" />
+    <option name="totallyTimeSpent" value="44425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
@@ -871,7 +875,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Testing github in IntelliJ" />
     <MESSAGE value="Added slide over animation and am quite happy with how it turned out. &#10;&#10;It fixed the button overlap bug but introduces a problem if you change&#10;pages with the menubar open. That should be a really easy fix though." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added slide over animation and am quite happy with how it turned out. &#10;&#10;It fixed the button overlap bug but introduces a problem if you change&#10;pages with the menubar open. That should be a really easy fix though." />
+    <MESSAGE value="Fixed a bug where the sidebar and page contents would be out of&#10;sync when the slide animation was playing.&#10;&#10;Buttons can no longer be pressed while an animation is playing. This&#10;will prevent future potential bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug where the sidebar and page contents would be out of&#10;sync when the slide animation was playing.&#10;&#10;Buttons can no longer be pressed while an animation is playing. This&#10;will prevent future potential bugs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1250,14 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1295,16 +1292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <element signature="method#draw#0;class#GSpacer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
@@ -1331,22 +1318,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="156" column="39" lean-forward="true" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="465">
+          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
             <element signature="e#1054#1055#0" expanded="true" />
             <element signature="e#1086#1087#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="method#draw#0;class#GSpacer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

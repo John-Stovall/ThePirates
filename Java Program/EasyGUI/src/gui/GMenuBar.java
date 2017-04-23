@@ -107,11 +107,11 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
         //Process slide over animation
         if (pageSelected) {
-            GUI.horizontalOffset += Math.round((dropdownWidth - GUI.horizontalOffset) / 5.0);
+            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / 5.0);
         } else if (accountSelected) {
-            GUI.horizontalOffset += (-dropdownWidth - GUI.horizontalOffset) / 5.0;
+            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / 5.0);
         } else {
-            GUI.horizontalOffset += (-GUI.horizontalOffset) / 5;
+            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / 5.0)) * (Math.signum((-GUI.horizontalOffset) / 5.0));
         }
 
         return height;
