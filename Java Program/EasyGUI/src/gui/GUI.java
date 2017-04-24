@@ -26,6 +26,8 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     private static DrawPanel panel;
 
+    private static GUIPage currentPage;
+
     private GUI() {
         super();
         panel = new DrawPanel();
@@ -170,13 +172,16 @@ public final class GUI extends JFrame implements MouseWheelListener {
         components.clear();
         page.build();
         panel.revalidate();
-        //panel.repaint();
+        currentPage = page;
+    }
+
+    public static String getPageTitle() {
+        return currentPage.getName();
     }
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         scrollOffset -= e.getUnitsToScroll();
-        //repaint();
     }
 
     /**
