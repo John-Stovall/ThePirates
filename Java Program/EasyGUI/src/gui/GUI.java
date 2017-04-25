@@ -7,27 +7,41 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/11/17.
+ *
+ * This is the main class that does all the rendering.
  */
 public final class GUI extends JFrame implements MouseWheelListener {
 
+    /** The window itself. */
     public static final GUI window = new GUI();
 
+    /** All of the pages to use. */
     private ArrayList<GUIPage> pages = new ArrayList<>();
 
+    /** All of the current loaded GUIComponents. */
     private ArrayList<GUIComponent> components = new ArrayList<>();
 
+    /** The max width of the window's contents before it starts adding padding. */
     private int maxWidth = 720;
 
+    /** The padding added to the sides of all components. */
     private int sidePadding = 8;
 
+    /** The horizontal offset of components. Used in the slide-over animation. */
     public static int horizontalOffset = 0;
 
+    /** The vertical offset controlled by scrolling. */
     private int scrollOffset;
 
+    /** The drawing panel that everything is drawn to. */
     private static DrawPanel panel;
 
+    /** The currently loaded page. */
     private static GUIPage currentPage;
 
+    /**
+     * Starts the GUI with some basic settings.
+     */
     private GUI() {
         super();
         panel = new DrawPanel();
@@ -43,26 +57,39 @@ public final class GUI extends JFrame implements MouseWheelListener {
         panel.setLayout(null);
         panel.repaint();
 
-
+        /** The animation clock. */
         Timer clock = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 panel.repaint();
             }
         });
-
         clock.start();
-
     }
 
+    /**
+     * Add a GUIPage to the list of pages.
+     *
+     * @param page The page to add.
+     */
     public void addPage(final GUIPage page) {
         pages.add(page);
     }
 
+    /**
+     * Returned the list of currently loaded components.
+     *
+     * @return The ArrayList of components
+     */
     ArrayList<GUIComponent> getItems() {
         return components;
     }
 
+    /**
+     * Gets the inner width of the window.
+     *
+     * @return The width of the panel
+     */
     public static int getWindowWidth() {
         return panel.getWidth();
     }
@@ -175,6 +202,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
         currentPage = page;
     }
 
+    /**
+     * Gets the title of the currently loaded page.
+     *
+     * @return The title of the page.
+     */
     public static String getPageTitle() {
         return currentPage.getName();
     }
@@ -197,6 +229,8 @@ public final class GUI extends JFrame implements MouseWheelListener {
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
             int y = scrollOffset;
+
+            /** Loop through the list of currently loaded components and call their draw methods. */
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
                 y += c.draw(g, x, y, (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding);

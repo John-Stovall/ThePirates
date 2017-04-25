@@ -10,43 +10,70 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/14/17.
+ *
+ * This class is by far the messiest class out of all of them and
+ * this handles ALL of the logic and stuff for the menu bar.
+ *
+ * I'll clean it up eventually.
  */
 public class GMenuBar implements GUIComponent, MouseListener {
 
+    /** The height of the menu bar. */
     private int height;
 
+    /** Whether the left button has been properly pressed. */
     private boolean pageSelected = false;
 
+    /** Whether the right button has been pressed. */
     private boolean accountPressed = false;
 
+    /** Whether the left button has been pressed. */
     private boolean pagePressed = false;
 
+    /** Wheather the right button has been properly pressed. */
     private boolean accountSelected = false;
 
+    /** It's the width of something, I don't remember. */
     private int width;
 
+    /** The width of the slide over menus. */
     private int dropdownWidth;
 
+    /** The padding slide over menus have off the screen. */
     private int tabPadding = 8;
 
+    /** The width, in pixels, of the username. */
     private int nameWidth;
 
+    /** The total height of the left side bar. */
     private int pageTotalHeight;
 
+    /** The total height of the right side bar. */
     private int accountTotalHeight;
 
-
-    /** Lower numbers are faster! */
+    /** How fast the menus scroll. Lower numbers are faster and exponential! */
     private double scrollSpeed = 7.0;
 
+    /** The GUIComponents in the left menu. */
     ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
+    /** The GUIComponents in the right menu. */
     ArrayList<GUIComponent> accountComponents = new ArrayList<>();
 
+    /**
+     * Create a menu bar with some height.
+     *
+     * @param height The height.
+     */
     public GMenuBar(final int height) {
         this.height = height;
     }
 
+    /**
+     * Adds a component to the left menu bar.
+     *
+     * @param c The component to add.
+     */
     public void addPage(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);
@@ -54,7 +81,11 @@ public class GMenuBar implements GUIComponent, MouseListener {
         pageComponents.add(c);
     }
 
-
+    /**
+     * Adds a component to the right menu bar.
+     *
+     * @param c The component to add.
+     */
     public void addAccount(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);

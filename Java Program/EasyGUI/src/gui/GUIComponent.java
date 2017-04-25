@@ -4,6 +4,8 @@ import java.awt.*;
 
 /**
  * Created by Robert on 4/11/17.
+ *
+ * The basis of the entire component based GUI system.
  */
 public interface GUIComponent {
 
@@ -17,5 +19,4 @@ public interface GUIComponent {
      * @return The height of this object.
      */
     int draw(Graphics g, final int x, final int y, final int width);
-
 }

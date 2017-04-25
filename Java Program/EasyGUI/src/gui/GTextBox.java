@@ -8,29 +8,49 @@ import java.awt.event.MouseListener;
 
 /**
  * Created by Robert on 4/12/17.
+ *
+ * This class handles all the stuffs for the text boxes. Ya.
  */
 public class GTextBox implements GUIComponent, MouseListener, KeyListener {
 
+    /** The height of the button. Used to get mouse clicks. */
     private int height;
 
+    /** The x position of the button. Used to get mouse clicks. */
     private int x;
 
+    /** The y position of the button. Used to get mouse clicks. */
     private int y;
 
+    /** The width of the button. Used to get mouse clicks. */
     private int width;
 
+    /** The 'standby' color of the button. */
     private Color color;
 
+    /** The color the button changes to when you click it. */
     private Color hover;
 
-    private boolean pressed;
+    /** Whether the button is pressed or not. */
+    private boolean pressed = false;
 
+    /** Whether the text box has been properly clicked on. */
     private boolean selected;
 
+    /** The font of the text in the text box. */
     private Font font;
 
+    /** The currently typed text in the text box. */
     private String text;
 
+    /**
+     * Create a super awesome text box!
+     *
+     * @param height The height of the text box.
+     * @param main The main color of the text box.
+     * @param hover The secondary color of the text box.
+     * @param text The starting text in the box. Leave this blank for the most part.
+     */
     public GTextBox(final int height, final Color main, final Color hover, final String text) {
         this.color = main;
         this.hover = hover;
@@ -40,9 +60,9 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     }
 
     /**
-     * This method returns whatever text is in the textbox.
+     * This method returns whatever text is in the text box.
      *
-     * @return
+     * @return The typed text.
      */
     public String getText() {
         return text;

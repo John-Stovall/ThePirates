@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/12/17.
+ *
+ * Ultra basic user class. You guys can figure this out.
  */
 public class User {
 
