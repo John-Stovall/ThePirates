@@ -31,6 +31,7 @@ public class GText implements GUIComponent {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         g.setFont(font);
+        g.setColor(Color.BLACK);
         int h;
 
         if (g.getFontMetrics().stringWidth(text) > width) {

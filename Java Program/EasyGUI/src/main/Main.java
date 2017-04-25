@@ -56,20 +56,29 @@ public class Main {
                 GDivider div = new GDivider(240);
 
                 for (User u : User.getUsers()) {
-                    div.add(new GButton(25, Color.blue, Color.red, u.getName() + ": " + u.getEmail()) {
+                    GDivider subdiv = new GDivider(240);
+                    subdiv.add(new GText(u.getName()));
+                    subdiv.add(new GSpacer(5));
+                    subdiv.add(new GSpacer(1, Color.BLACK));
+                    subdiv.add(new GSpacer(5));
+                    subdiv.add(new GText(u.getEmail(), new Font("Helvetica", Font.PLAIN, 20)));
+                    subdiv.add(new GSpacer(10));
+
+                    subdiv.add(new GButton(25, Color.darkGray, Color.gray, "Login") {
                         @Override
                         public void clickAction() {
                             User.setLoadedUser(u);
                             GUI.window.gotoPage("home");
                         }
                     });
+                    div.add(subdiv);
                     //GUI.window.add(button);
                     //GUI.window.add(new GSpacer(10));
                 }
                 GUI.window.add(div);
 
                 GUI.window.add(new GSpacer(15));
-                GUI.window.add(new GButton(25, Color.blue, Color.red, "Add new Account") {
+                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Add new Account") {
                     @Override
                     public void clickAction() {
                         GUI.window.gotoPage("register");
@@ -84,8 +93,8 @@ public class Main {
             public void build() {
 
                 //Instantiate the Checkboxes...
-                GTextBox name = new GTextBox(32, Color.darkGray, Color.gray, "");
-                GTextBox email = new GTextBox(32, Color.darkGray, Color.gray, "");
+                GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
+                GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
 
                 //Place all the stuff in the right order...
                 GUI.window.add(new GSpacer(25));
@@ -99,7 +108,7 @@ public class Main {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(email);
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.blue, Color.red, "Submit") {
+                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Submit") {
                     @Override
                     public void clickAction() {
                         //Program the submit button to do stuff...
@@ -125,7 +134,7 @@ public class Main {
                 });
 
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.blue, Color.red, "Skip Login") {
+                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Skip Login") {
                     @Override
                     public void clickAction() {
                         User validUser = new User("Jimbo", "jimbo@gmail.com");
@@ -138,7 +147,7 @@ public class Main {
 
                 if (!User.getUsers().isEmpty()) {
                     GUI.window.add(new GSpacer(5));
-                    GUI.window.add(new GButton(25, Color.blue, Color.red, "Back") {
+                    GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Back") {
                         @Override
                         public void clickAction() {
                             GUI.window.gotoPage("login");

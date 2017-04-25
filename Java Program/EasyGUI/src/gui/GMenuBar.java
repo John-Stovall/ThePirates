@@ -29,6 +29,8 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     private int tabPadding = 8;
 
+    private int nameWidth;
+
     private int pageTotalHeight;
 
     private int accountTotalHeight;
@@ -89,7 +91,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         int y3 = height;
         int newX = GUI.getWindowWidth() - dropdownWidth;
         if (accountSelected || accountPressed) {
-            g.fillRect(GUI.getWindowWidth() - height, 0, height, height);
+            g.fillRect(GUI.getWindowWidth() - height - nameWidth - 16, 0, height + nameWidth + 16, height);
         }
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
@@ -106,6 +108,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         //Draw name
         String text = User.getLoadedUser().getName();
         int length = g.getFontMetrics().stringWidth(text);
+        nameWidth = length - 4;
 
         g.drawString(text, GUI.getWindowWidth() - height - length - 4, height - 10);
 
@@ -138,7 +141,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
             pagePressed = true;
             //GUI.window.redraw();
         }
-        if (e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
+        if (e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
             accountPressed = true;
             //GUI.window.redraw();
         }
@@ -158,7 +161,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
             }
         }
 
-        if ((e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
+        if ((e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
                 !(e.getX() > GUI.getWindowWidth() - dropdownWidth && e.getX() < GUI.getWindowWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
             accountSelected = !accountSelected;
         } else {
