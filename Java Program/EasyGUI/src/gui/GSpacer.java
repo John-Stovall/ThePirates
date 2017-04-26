@@ -4,6 +4,8 @@ import java.awt.*;
 
 /**
  * Created by Robert on 4/12/17.
+ *
+ * This class is so you can make blank spaces used for positioning things in places.
  */
 public class GSpacer implements GUIComponent {
 
@@ -34,10 +36,20 @@ public class GSpacer implements GUIComponent {
         setColor(color);
     }
 
+    /**
+     * Sets the spacer to visible or not. Probably useless.
+     *
+     * @param visible Should the spacer be visible?
+     */
     public void setVisible(final boolean visible) {
         this.visible = visible;
     }
 
+    /**
+     * Sets the color of the spacer if you ever need to do that for some reason.
+     *
+     * @param color The color of the spacer.
+     */
     public void setColor(final Color color) {
         this.color = color;
     }

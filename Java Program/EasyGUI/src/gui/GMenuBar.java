@@ -10,41 +10,70 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/14/17.
+ *
+ * This class is by far the messiest class out of all of them and
+ * this handles ALL of the logic and stuff for the menu bar.
+ *
+ * I'll clean it up eventually.
  */
 public class GMenuBar implements GUIComponent, MouseListener {
 
+    /** The height of the menu bar. */
     private int height;
 
+    /** Whether the left button has been properly pressed. */
     private boolean pageSelected = false;
 
+    /** Whether the right button has been pressed. */
     private boolean accountPressed = false;
 
+    /** Whether the left button has been pressed. */
     private boolean pagePressed = false;
 
+    /** Wheather the right button has been properly pressed. */
     private boolean accountSelected = false;
 
+    /** It's the width of something, I don't remember. */
     private int width;
 
+    /** The width of the slide over menus. */
     private int dropdownWidth;
 
+    /** The padding slide over menus have off the screen. */
     private int tabPadding = 8;
 
+    /** The width, in pixels, of the username. */
+    private int nameWidth;
+
+    /** The total height of the left side bar. */
     private int pageTotalHeight;
 
+    /** The total height of the right side bar. */
     private int accountTotalHeight;
 
-
-    /** Lower numbers are faster! */
+    /** How fast the menus scroll. Lower numbers are faster and exponential! */
     private double scrollSpeed = 7.0;
 
+    /** The GUIComponents in the left menu. */
     ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
+    /** The GUIComponents in the right menu. */
     ArrayList<GUIComponent> accountComponents = new ArrayList<>();
 
+    /**
+     * Create a menu bar with some height.
+     *
+     * @param height The height.
+     */
     public GMenuBar(final int height) {
         this.height = height;
     }
 
+    /**
+     * Adds a component to the left menu bar.
+     *
+     * @param c The component to add.
+     */
     public void addPage(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);
@@ -52,7 +81,11 @@ public class GMenuBar implements GUIComponent, MouseListener {
         pageComponents.add(c);
     }
 
-
+    /**
+     * Adds a component to the right menu bar.
+     *
+     * @param c The component to add.
+     */
     public void addAccount(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);
@@ -89,7 +122,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         int y3 = height;
         int newX = GUI.getWindowWidth() - dropdownWidth;
         if (accountSelected || accountPressed) {
-            g.fillRect(GUI.getWindowWidth() - height, 0, height, height);
+            g.fillRect(GUI.getWindowWidth() - height - nameWidth - 16, 0, height + nameWidth + 16, height);
         }
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
@@ -106,6 +139,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         //Draw name
         String text = User.getLoadedUser().getName();
         int length = g.getFontMetrics().stringWidth(text);
+        nameWidth = length - 4;
 
         g.drawString(text, GUI.getWindowWidth() - height - length - 4, height - 10);
 
@@ -138,7 +172,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
             pagePressed = true;
             //GUI.window.redraw();
         }
-        if (e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
+        if (e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
             accountPressed = true;
             //GUI.window.redraw();
         }
@@ -158,7 +192,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
             }
         }
 
-        if ((e.getX() > GUI.getWindowWidth() - height && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
+        if ((e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
                 !(e.getX() > GUI.getWindowWidth() - dropdownWidth && e.getX() < GUI.getWindowWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
             accountSelected = !accountSelected;
         } else {

@@ -5,32 +5,71 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/12/17.
+ *
+ * GText is exactly what its name is. Text. Text will
+ * auto fit the assigned area so you don't know
+ * the width or height of the space the text will fill, it just will.
+ *
  */
 public class GText implements GUIComponent {
 
+    /** The text. */
     private String text;
 
+    /** The default font. */
     private Font font = new Font("Helvetica", Font.PLAIN, 32);
 
+    /** The default color. */
+    private Color color = Color.black;
+
+    /** The padding on the left and right side of text. */
     private int sidePadding = 5;
 
+    /**
+     * Basic constructor to create text with default settings.
+     *
+     * @param text The text.
+     */
     public GText(final String text) {
         this.text = text;
     }
 
-    public GText(final String title, final Font font) {
-        this.text = title;
+    /**
+     * Creates text with a font.
+     *
+     * @param text The text.
+     * @param font The font.
+     */
+    public GText(final String text, final Font font) {
+        this.text = text;
         setFont(font);
     }
 
+    /**
+     * Creates text with a font and color.
+     *
+     * @param text The text.
+     * @param font The font.
+     * @param color The color.
+     */
+    public GText(final String text, final Font font, final Color color) {
+        this(text, font);
+        this.color = color;
+    }
+
+    /**
+     * Sets the font of the text.
+     *
+     * @param font The font to change to.
+     */
     public void setFont(final Font font) {
         this.font = font;
     }
 
-
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         g.setFont(font);
+        g.setColor(color);
         int h;
 
         if (g.getFontMetrics().stringWidth(text) > width) {
