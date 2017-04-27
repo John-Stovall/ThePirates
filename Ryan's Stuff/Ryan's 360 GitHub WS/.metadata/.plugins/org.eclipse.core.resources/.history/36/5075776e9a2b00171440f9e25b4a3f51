@@ -1,0 +1,8 @@
+
+public class InsulationProject extends AbstractProject {
+
+	public InsulationProject() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

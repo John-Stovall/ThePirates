@@ -1,0 +1,39 @@
+
+public abstract class AbstractProject implements Project {
+
+	private double initialCost;
+	private double monthlyCost;
+	private int quantity;
+	private double pricePerUnit;
+	private double electricityUsage;
+	private double gasUsage;
+	private double WaterUsage;
+	
+	public double getIntialCost() {
+		return initialCost;
+	}
+	
+	public double getMonthlyCost() {
+		return monthlyCost;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public double getPricePerUnit() {
+		return pricePerUnit;
+	}
+	
+	public double getElectricityUsage() {
+		return electricityUsage;
+	}
+	
+	public double getGasUsage() {
+		return gasUsage;
+	}
+	
+	public double getWaterUsage() {
+		return WaterUsage;
+	}
+}
