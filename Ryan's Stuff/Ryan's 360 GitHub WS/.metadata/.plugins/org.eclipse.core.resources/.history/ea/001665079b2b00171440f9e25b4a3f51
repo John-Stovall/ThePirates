@@ -1,0 +1,23 @@
+
+/**
+ * @author Ryan Hansen
+ *
+ * Insulation Project class.
+ * Used for creating a new insulation project.
+ */
+public class InsulationProject extends AbstractProject {
+
+	/**
+	 * default version ID for serialization
+	 */
+	private static final long serialVersionUID = -1950641840941379037L;
+
+	//
+	private int rValue;
+	
+	public InsulationProject(int theRValue) {
+		this.rValue = theRValue;
+		this.setWaterUsage(-1.0);
+	}
+
+}
