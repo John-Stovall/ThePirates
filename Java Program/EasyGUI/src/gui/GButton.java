@@ -41,6 +41,9 @@ public class GButton implements GUIComponent, MouseListener {
     /** Whether button can be clicked or not. */
     private boolean isActive = true;
 
+    /** The amount of padding to be added to the side of the button. */
+    private int padding = 0;
+
     /**
      * Create a button!
      *
@@ -58,6 +61,24 @@ public class GButton implements GUIComponent, MouseListener {
     }
 
     /**
+     * Create a somewhat special button!
+     *
+     * @param height The height of the button.
+     * @param main The main color of the button.
+     * @param hover The secondary color of the button.
+     * @param text The text on the button.
+     * @param padding The amount of padding to be added to the left and right side of the button.
+     */
+    public GButton(final int height, final Color main, final Color hover, final String text, final int padding) {
+        this.color = main;
+        this.hover = hover;
+        this.height = height;
+        this.font = new Font("Helvetica", Font.PLAIN, height - 6);
+        this.text = text;
+        this.padding = padding;
+    }
+
+    /**
      * Create a mystical button!
      *
      * @param height The height of the button.
@@ -66,12 +87,32 @@ public class GButton implements GUIComponent, MouseListener {
      * @param text The text on the button.
      * @param font The font of the button.
      */
-    public GButton(final int height, final Color main, final Color hover, final String text , final Font font) {
+    public GButton(final int height, final Color main, final Color hover, final String text, final Font font) {
         this.color = main;
         this.hover = hover;
         this.height = height;
         this.font = font;
         this.text = text;
+    }
+
+    /**
+     * Create a super special awesome button!
+     *
+     * @param height The height of the button.
+     * @param main The main color of the button.
+     * @param hover The secondary color of the button.
+     * @param text The text on the button.
+     * @param font The font of the button.
+     * @param padding The amount of padding to be added to the left and right side of the button.
+     */
+    public GButton(final int height, final Color main, final Color hover, final String text,
+                   final Font font, final int padding) {
+        this.color = main;
+        this.hover = hover;
+        this.height = height;
+        this.font = font;
+        this.text = text;
+        this.padding = padding;
     }
 
     /**
@@ -90,7 +131,7 @@ public class GButton implements GUIComponent, MouseListener {
         } else {
             g.setColor(color);
         }
-        g.fillRect(x, y, width, height);
+        g.fillRect(x + padding / 2, y, width - padding, height);
         this.x = x;
         this.y = y;
         this.width = width;
@@ -114,14 +155,14 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && isActive) {
+        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && isActive) {
             pressed = true;
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
+        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
             clickAction();
         }
         pressed = false;
