@@ -41,17 +41,22 @@ public class Main {
         });
 
         menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Edit Account", new Font("Helvetica", Font.PLAIN, 20)) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("Edit Account");
+            }
+        });
         menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("login");
+                GUI.window.gotoPage("Login");
                 GUI.window.horizontalOffset = 0;
             }
         });
 
         //Build the login page..
-        final GUIPage login = new GUIPage("login") {
+        final GUIPage login = new GUIPage("Login") {
             @Override
             public void build() {
                 GUI.window.add(new GSpacer(25));
@@ -73,7 +78,7 @@ public class Main {
                         @Override
                         public void clickAction() {
                             User.setLoadedUser(u);
-                            GUI.window.gotoPage("home");
+                            GUI.window.gotoPage("Home");
                         }
                     });
                     div.add(subdiv);
@@ -86,14 +91,14 @@ public class Main {
                 GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Add new Account") {
                     @Override
                     public void clickAction() {
-                        GUI.window.gotoPage("register");
+                        GUI.window.gotoPage("Register");
                     }
                 });
             }
         };
 
         //Create the "register" page..
-        final GUIPage register = new GUIPage("register") {
+        final GUIPage register = new GUIPage("Register") {
             @Override
             public void build() {
 
@@ -133,7 +138,7 @@ public class Main {
 	                        User validUser = new User(myName, myEmail);
 	                        User.getUsers().add(validUser);
 	                        User.setLoadedUser(validUser);
-	                        GUI.window.gotoPage("home");
+	                        GUI.window.gotoPage("Home");
                     	}
                     }
                 });
@@ -145,7 +150,7 @@ public class Main {
                         User validUser = new User("Jimbo", "jimbo@gmail.com");
                         User.getUsers().add(validUser);
                         User.setLoadedUser(validUser);
-                        GUI.window.gotoPage("home");
+                        GUI.window.gotoPage("Home");
                     }
                 });
 
@@ -155,15 +160,66 @@ public class Main {
                     GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Back") {
                         @Override
                         public void clickAction() {
-                            GUI.window.gotoPage("login");
+                            GUI.window.gotoPage("Login");
                         }
                     });
                 }
             }
         };
 
+
+        //Create the "Edit Account" page..
+        final GUIPage edit = new GUIPage("Edit Account") {
+            @Override
+            public void build() {
+
+                GUI.window.add(new GSpacer(40));
+
+                //Instantiate the Checkboxes...
+                GTextBox name = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getName());
+                GTextBox email = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getEmail());
+
+                //Place all the stuff in the right order...
+                GUI.window.add(new GSpacer(25));
+                GUI.window.add(new GText("Edit Account"));
+                GUI.window.add(new GSpacer(25));
+                GUI.window.add(new GText("Name:"));
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add(name);
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add(new GText("Email:"));
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add(email);
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Submit") {
+                    @Override
+                    public void clickAction() {
+                        //Program the submit button to do stuff...
+
+                        // Apologies, I only know how to code ugly.
+                        boolean textBoxFail = false;
+                        String myName = name.getText().trim();
+                        String myEmail = email.getText().trim();
+
+                        // the two functions are set up this way for junit testing
+                        if (!testName(myName) || !testEmail(myEmail)) {
+                            textBoxFail = true; //fails the test
+                        }
+
+                        if (!textBoxFail) {
+                            //This is the code for a successful login.
+                            User.getLoadedUser().setName(myName);
+                            User.getLoadedUser().setEmail(myEmail);
+                            GUI.window.gotoPage("Home");
+                        }
+                    }
+                });
+                GUI.window.add(menu);
+            }
+        };
+
         //Build the home page...
-        final GUIPage home = new GUIPage("home") {
+        final GUIPage home = new GUIPage("Home") {
             @Override
             public void build() {
                 GUI.window.add(new GSpacer(40));
@@ -179,7 +235,7 @@ public class Main {
         };
 
         //Build the about page...
-        final GUIPage about = new GUIPage("about") {
+        final GUIPage about = new GUIPage("About") {
             @Override
             public void build() {
                 GUI.window.add(new GSpacer(40));
@@ -205,6 +261,7 @@ public class Main {
         GUI.window.addPage(register);
         GUI.window.addPage(about);
         GUI.window.addPage(home);
+        GUI.window.addPage(edit);
 
         if (User.getUsers().isEmpty()) {
             GUI.window.gotoPage(register);
