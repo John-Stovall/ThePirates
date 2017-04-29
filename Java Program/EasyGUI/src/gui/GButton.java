@@ -98,8 +98,14 @@ public class GButton implements GUIComponent, MouseListener {
         g.setFont(font);
 
         int textWidth = g.getFontMetrics().stringWidth(text);
+        int textHeight = g.getFontMetrics().getHeight();
 
-        g.drawString(text, x + width / 2 - textWidth / 2, y + font.getSize());
+        g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
+
+        g.setColor(color.darker());
+
+        //g.fillRect(x, y + height - 2, width, 2);
+
         return height;
     }
 
