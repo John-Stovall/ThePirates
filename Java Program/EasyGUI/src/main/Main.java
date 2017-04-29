@@ -24,25 +24,25 @@ public class Main {
 
         //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Home", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Home", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("home");
             }
         });
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.gray, Color.darkGray, "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("about");
             }
         });
 
-        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addAccount(new GButton(40, Color.gray, Color.darkGray, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("login");

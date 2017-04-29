@@ -1,5 +1,6 @@
 package gui;
 
+import com.sun.prism.paint.Gradient;
 import main.User;
 
 import java.awt.*;
@@ -53,6 +54,14 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
     /** How fast the menus scroll. Lower numbers are faster and exponential! */
     private double scrollSpeed = 7.0;
+    
+    private static final Color mainColor = Color.decode("#43A047");
+    
+    private static final Color secondaryColor = Color.decode("#2E7D32");
+
+    private static final Color textColor = Color.white;
+
+    private static final Color sideColor = Color.decode("#2E7D32");
 
     /** The GUIComponents in the left menu. */
     ArrayList<GUIComponent> pageComponents = new ArrayList<>();
@@ -96,13 +105,31 @@ public class GMenuBar implements GUIComponent, MouseListener {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         dropdownWidth = Math.min((int) Math.round(GUI.getWindowWidth() * 0.8), 512);
-
         this.width = width;
-        g.setColor(Color.darkGray);
+
+        Graphics2D g2d = ((Graphics2D) g);
+
+        //Draw the main rectangle.
+        g.setColor(mainColor);
         g.fillRect(0, 0, GUI.getWindowWidth(), height);
 
+        //Draw the little rectangle.
+        g.setColor(mainColor.darker());
+        g.fillRect(0, height - 2, GUI.getWindowWidth(), 2);
+
+        //Draw drop shadow.
+        GradientPaint shadow = new GradientPaint(0, 0, Color.BLACK, 0, 55, new Color(0, 0, 0, 0));
+        g2d.setPaint(shadow);
+        g2d.fillRect(0, height, GUI.getWindowWidth(), 50);
+
+        //Reset g2d.
+        g2d = ((Graphics2D) g);
+
         //Draw the page bar.
-        g.setColor(Color.gray);
+        g.setColor(sideColor);
+        g.fillRect(GUI.horizontalOffset - dropdownWidth - tabPadding, height, dropdownWidth, GUI.window.getHeight());
+
+        g.setColor(secondaryColor);
         int y2 = height;
         if (pageSelected || pagePressed) {
             g.fillRect(0, 0, height, height);
@@ -110,7 +137,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         for (GUIComponent c : pageComponents) {
             y2 += c.draw(g, GUI.horizontalOffset - dropdownWidth - tabPadding, y2, dropdownWidth);
         }
-        g.setColor(Color.white);
+        g.setColor(textColor);
         for (int i = 0; i < 3; i++) {
             g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)),
                     (height / 8) * 6, height / 7);
@@ -118,17 +145,19 @@ public class GMenuBar implements GUIComponent, MouseListener {
         pageTotalHeight = y2 - height;
 
         //Draw the account bar.
-        g.setColor(Color.gray);
-        int y3 = height;
+        g.setColor(sideColor);
         int newX = GUI.getWindowWidth() - dropdownWidth;
+        g.fillRect(newX + dropdownWidth + GUI.horizontalOffset + tabPadding, height, dropdownWidth, GUI.window.getHeight());
+
+        g.setColor(secondaryColor);
+        int y3 = height;
         if (accountSelected || accountPressed) {
             g.fillRect(GUI.getWindowWidth() - height - nameWidth - 16, 0, height + nameWidth + 16, height);
         }
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
         }
-        g.setColor(Color.white);
-        Graphics2D g2d = ((Graphics2D) g);
+        g.setColor(textColor);
 
         Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
         g2d.fill(circle);
