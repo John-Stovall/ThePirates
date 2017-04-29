@@ -16,31 +16,29 @@ public class Main {
     public static void main(String[] args) {
         start();
 
-        //Create some testing users...
-//        User.getUsers().add(new User("Jim", "JimBob@gmail.com"));
-//        User.getUsers().add(new User("Joe", "asdf@aol.com"));
-//        User.getUsers().add(new User("John", "fdsa@msn.com"));
-//        User.getUsers().add(new User("Jill", "123@comcast.net"));
-
         //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
         menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Home", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("home");
+                GUI.window.gotoPage("Home");
             }
         });
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 2", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 3", new Font("Helvetica", Font.PLAIN, 20)));
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 4", new Font("Helvetica", Font.PLAIN, 20)));
+        menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
+        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage("Home");
+            }
+        });
+        menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
         menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("about");
+                GUI.window.gotoPage("About");
             }
         });
 
-        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Page 1", new Font("Helvetica", Font.PLAIN, 20)));
         menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Edit Account", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
@@ -74,7 +72,7 @@ public class Main {
                     subdiv.add(new GText(u.getEmail(), new Font("Helvetica", Font.PLAIN, 20)));
                     subdiv.add(new GSpacer(10));
 
-                    subdiv.add(new GButton(25, Color.darkGray, Color.gray, "Login") {
+                    subdiv.add(new GButton(25, Color.darkGray, Color.gray, "Login", 4) {
                         @Override
                         public void clickAction() {
                             User.setLoadedUser(u);
@@ -191,7 +189,7 @@ public class Main {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(email);
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Submit") {
+                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Save Changes") {
                     @Override
                     public void clickAction() {
                         //Program the submit button to do stuff...
