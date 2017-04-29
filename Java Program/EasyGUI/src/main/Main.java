@@ -28,7 +28,7 @@ public class Main {
         menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("Home");
+                GUI.window.gotoPage("New Project");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
@@ -52,6 +52,37 @@ public class Main {
                 GUI.window.horizontalOffset = 0;
             }
         });
+
+        //Build the New Project page.
+        final GUIPage newProject = new GUIPage("New Project") {
+            @Override
+            public void build() {
+                GUI.window.add(new GSpacer(80));
+                GDivider div = new GDivider(240);
+                GDivider cell1 = new GDivider(240);
+                cell1.add(new GButton(277, Color.darkGray, Color.gray, "Insulation", new Font("Helvetica", Font.PLAIN, 20),32));
+                cell1.add(new GSpacer(32));
+                GDivider cell2 = new GDivider(240);
+                cell2.add(new GButton(277, Color.darkGray, Color.gray, "Lights", new Font("Helvetica", Font.PLAIN, 20),32));
+                cell2.add(new GSpacer(32));
+                GDivider cell3 = new GDivider(240);
+                cell3.add(new GButton(277, Color.darkGray, Color.gray, "Refrigerator", new Font("Helvetica", Font.PLAIN, 20),32));
+                cell3.add(new GSpacer(32));
+                GDivider cell4 = new GDivider(240);
+                cell4.add(new GButton(277, Color.darkGray, Color.gray, "Washing Machine", new Font("Helvetica", Font.PLAIN, 20),32));
+                cell4.add(new GSpacer(32));
+                GDivider cell5 = new GDivider(240);
+                cell5.add(new GButton(277, Color.darkGray, Color.gray, "Dryer", new Font("Helvetica", Font.PLAIN, 20),32));
+                cell5.add(new GSpacer(32));
+                div.add(cell1);
+                div.add(cell2);
+                div.add(cell3);
+                div.add(cell4);
+                div.add(cell5);
+                GUI.window.add(div);
+                GUI.window.add(menu);
+            }
+        };
 
         //Build the login page..
         final GUIPage login = new GUIPage("Login") {
@@ -80,8 +111,6 @@ public class Main {
                         }
                     });
                     div.add(subdiv);
-                    //GUI.window.add(button);
-                    //GUI.window.add(new GSpacer(10));
                 }
                 GUI.window.add(div);
 
@@ -170,7 +199,6 @@ public class Main {
         final GUIPage edit = new GUIPage("Edit Account") {
             @Override
             public void build() {
-
                 GUI.window.add(new GSpacer(40));
 
                 //Instantiate the Checkboxes...
@@ -260,6 +288,7 @@ public class Main {
         GUI.window.addPage(about);
         GUI.window.addPage(home);
         GUI.window.addPage(edit);
+        GUI.window.addPage(newProject);
 
         if (User.getUsers().isEmpty()) {
             GUI.window.gotoPage(register);
