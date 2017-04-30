@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GButton.java" afterPath="$PROJECT_DIR$/src/gui/GButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMenuBar.java" afterPath="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +133,8 @@
       <file leaf-file-name="GMenuBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="167" column="19" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
+            <state relative-caret-position="342">
+              <caret line="170" column="31" lean-forward="true" selection-start-line="170" selection-start-column="31" selection-end-line="170" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1493512857000" expanded="true" signature="221:260" ph="/**...*/" />
@@ -873,7 +870,7 @@
       <workItem from="1493432248282" duration="2512000" />
       <workItem from="1493454758585" duration="89000" />
       <workItem from="1493496128565" duration="3741000" />
-      <workItem from="1493510717742" duration="2167000" />
+      <workItem from="1493510717742" duration="2223000" />
     </task>
     <task id="LOCAL-00001" summary="Testing github in IntelliJ">
       <created>1492415888552</created>
@@ -952,11 +949,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493498717620</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Buttons can now display images on them. Added images to the placeholder&#10;buttons on the new project page. Moved the menu bar title.">
+      <created>1493512943093</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1493512943093</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61972000" />
+    <option name="totallyTimeSpent" value="62028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
@@ -1032,7 +1036,8 @@
     <MESSAGE value="Added Edit Account page." />
     <MESSAGE value="Buttons have a few new constructors that allow padding to be added&#10;around the sides of the button." />
     <MESSAGE value="Started designing the New Project page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started designing the New Project page." />
+    <MESSAGE value="Buttons can now display images on them. Added images to the placeholder&#10;buttons on the new project page. Moved the menu bar title." />
+    <option name="LAST_COMMIT_MESSAGE" value="Buttons can now display images on them. Added images to the placeholder&#10;buttons on the new project page. Moved the menu bar title." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1650,8 +1655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="167" column="19" lean-forward="true" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
+        <state relative-caret-position="342">
+          <caret line="170" column="31" lean-forward="true" selection-start-line="170" selection-start-column="31" selection-end-line="170" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1493512857000" expanded="true" signature="221:260" ph="/**...*/" />
