@@ -176,9 +176,7 @@ public class GMenuBar implements GUIComponent, MouseListener {
         String roomName = GUI.getPageTitle();
         int nameLength = g.getFontMetrics().stringWidth(roomName);
 
-        if (GUI.getWindowWidth() - height - height - length - 4 - 8 > nameLength) {
-            g.drawString(roomName, GUI.getWindowWidth() / 2 - length / 2 - nameLength, height - 10);
-        }
+        g.drawString(roomName, height + 4, height - 10);
 
         //Process slide over animation
         if (pageSelected) {
