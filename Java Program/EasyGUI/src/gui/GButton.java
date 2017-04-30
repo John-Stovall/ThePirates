@@ -3,6 +3,7 @@ package gui;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.ImageObserver;
 
 /**
  * Created by Robert on 4/12/17.
@@ -43,6 +44,9 @@ public class GButton implements GUIComponent, MouseListener {
 
     /** The amount of padding to be added to the side of the button. */
     private int padding = 0;
+
+    /** The image to be drawn on this button. */
+    private Image icon;
 
     /**
      * Create a button!
@@ -116,6 +120,27 @@ public class GButton implements GUIComponent, MouseListener {
     }
 
     /**
+     * Create a the GREATEST BUTTON THE WORLD HAS EVER SEEN!!!
+     *
+     * @param height The height of the button.
+     * @param main The main color of the button.
+     * @param hover The secondary color of the button.
+     * @param text The text on the button.
+     * @param font The font of the button.
+     * @param padding The amount of padding to be added to the left and right side of the button.
+     */
+    public GButton(final int height, final Color main, final Color hover, final String text,
+                   final Font font, final int padding, final Image icon) {
+        this.color = main;
+        this.hover = hover;
+        this.height = height;
+        this.font = font;
+        this.text = text;
+        this.padding = padding;
+        this.icon = icon;
+    }
+
+    /**
      * Set whether the button can be pressed or not.
      *
      * @param state Can it be pressed?
@@ -141,11 +166,15 @@ public class GButton implements GUIComponent, MouseListener {
         int textWidth = g.getFontMetrics().stringWidth(text);
         int textHeight = g.getFontMetrics().getHeight();
 
-        g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
+        if (icon != null) {
+            double imageRatio = icon.getHeight(null) / icon.getWidth(null);
+            int imageHeight = (int) ((width - padding * 2) * imageRatio);
+            g.drawImage(icon, x + padding, y + padding, width - padding * 2, imageHeight, null);
+            g.drawString(text, x + width / 2 - textWidth / 2, y + imageHeight + padding + (height - imageHeight) / 2 + textHeight / 2 - 4);
 
-        g.setColor(color.darker());
-
-        //g.fillRect(x, y + height - 2, width, 2);
+        } else {
+            g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
+        }
 
         return height;
     }

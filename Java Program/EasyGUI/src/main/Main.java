@@ -2,8 +2,12 @@ package main;
 
 import gui.*;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.regex.*;
 
 /**
@@ -28,7 +32,7 @@ public class Main {
         menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("New Project");
+                GUI.window.gotoPage("New");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
@@ -49,30 +53,56 @@ public class Main {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Login");
-                GUI.window.horizontalOffset = 0;
+                GUI.horizontalOffset = 0;
             }
         });
 
-        //Build the New Project page.
-        final GUIPage newProject = new GUIPage("New Project") {
+        //Build the New page.
+        final GUIPage newProject = new GUIPage("New") {
             @Override
             public void build() {
                 GUI.window.add(new GSpacer(80));
                 GDivider div = new GDivider(240);
                 GDivider cell1 = new GDivider(240);
-                cell1.add(new GButton(277, Color.darkGray, Color.gray, "Insulation", new Font("Helvetica", Font.PLAIN, 20),32));
+                BufferedImage image;
+                try {
+                    image = ImageIO.read(new File("img/insulation.png"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                cell1.add(new GButton(277, Color.darkGray, Color.gray, "Insulation", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell1.add(new GSpacer(32));
                 GDivider cell2 = new GDivider(240);
-                cell2.add(new GButton(277, Color.darkGray, Color.gray, "Lights", new Font("Helvetica", Font.PLAIN, 20),32));
+                try {
+                    image = ImageIO.read(new File("img/lightbulb.png"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                cell2.add(new GButton(277, Color.darkGray, Color.gray, "Lights", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell2.add(new GSpacer(32));
                 GDivider cell3 = new GDivider(240);
-                cell3.add(new GButton(277, Color.darkGray, Color.gray, "Refrigerator", new Font("Helvetica", Font.PLAIN, 20),32));
+                try {
+                    image = ImageIO.read(new File("img/fridge.png"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                cell3.add(new GButton(277, Color.darkGray, Color.gray, "Refrigerator", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell3.add(new GSpacer(32));
                 GDivider cell4 = new GDivider(240);
-                cell4.add(new GButton(277, Color.darkGray, Color.gray, "Washing Machine", new Font("Helvetica", Font.PLAIN, 20),32));
+                try {
+                    image = ImageIO.read(new File("img/washingMachine.gif"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                cell4.add(new GButton(277, Color.darkGray, Color.gray, "Washing Machine", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell4.add(new GSpacer(32));
                 GDivider cell5 = new GDivider(240);
-                cell5.add(new GButton(277, Color.darkGray, Color.gray, "Dryer", new Font("Helvetica", Font.PLAIN, 20),32));
+                try {
+                    image = ImageIO.read(new File("img/dryer.gif"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                cell5.add(new GButton(277, Color.darkGray, Color.gray, "Dryer", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell5.add(new GSpacer(32));
                 div.add(cell1);
                 div.add(cell2);
