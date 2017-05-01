@@ -43,7 +43,7 @@ public class GGraph implements GUIComponent {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(2));
 
-        int ticks = 10;
+        int ticks = height / 30;
 
         g.setFont(new Font("Helvetica", Font.PLAIN, 12));
         for (int i = 0; i < ticks; i++) {
