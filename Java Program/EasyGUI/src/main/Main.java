@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.regex.*;
 
 /**
@@ -178,19 +179,10 @@ public class Main {
                 GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Submit") {
                     @Override
                     public void clickAction() {
-                        //Program the submit button to do stuff...
-
-                        // Apologies, I only know how to code ugly.
-                    	boolean textBoxFail = false;
-                    	String myName = name.getText().trim();
-                    	String myEmail = email.getText().trim();
+                        String myName = name.getText().trim();
+                        String myEmail = email.getText().trim();
                     	
-                    	// the two functions are set up this way for junit testing
-                    	if(!testName(myName) || !testEmail(myEmail)){
-                    		textBoxFail = true; //fails the test
-                    	}
-                    	
-                    	if(!textBoxFail){
+                    	if(testName(myName) && testEmail(myEmail)){
 	                        //This is the code for a successful login.
 	                        User validUser = new User(myName, myEmail);
 	                        User.getUsers().add(validUser);
@@ -204,7 +196,7 @@ public class Main {
                 GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Skip Login") {
                     @Override
                     public void clickAction() {
-                        User validUser = new User("Jimbo", "jimbo@gmail.com");
+                        User validUser = new User("You", "");
                         User.getUsers().add(validUser);
                         User.setLoadedUser(validUser);
                         GUI.window.gotoPage("Home");
@@ -250,20 +242,10 @@ public class Main {
                 GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Save Changes") {
                     @Override
                     public void clickAction() {
-                        //Program the submit button to do stuff...
-
-                        // Apologies, I only know how to code ugly.
-                        boolean textBoxFail = false;
                         String myName = name.getText().trim();
                         String myEmail = email.getText().trim();
 
-                        // the two functions are set up this way for junit testing
-                        if (!testName(myName) || !testEmail(myEmail)) {
-                            textBoxFail = true; //fails the test
-                        }
-
-                        if (!textBoxFail) {
-                            //This is the code for a successful login.
+                        if (testName(myName) && testEmail(myEmail)) {
                             User.getLoadedUser().setName(myName);
                             User.getLoadedUser().setEmail(myEmail);
                             GUI.window.gotoPage("Home");
@@ -280,7 +262,22 @@ public class Main {
             public void build() {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText("Home"));
+                GUI.window.add(new GText("Projected Earnings:"));
+                GUI.window.add(new GSpacer(25));
+                ArrayList<double[]> data = new ArrayList<>();
+                data.add(new double[] {5, 2});
+                data.add(new double[] {10, 7});
+                data.add(new double[] {8, 5});
+                data.add(new double[] {1, 9});
+                data.add(new double[] {4, 6});
+                data.add(new double[] {1, 3});
+                data.add(new double[] {5, 2});
+                data.add(new double[] {10, 7});
+                data.add(new double[] {8, 5});
+                data.add(new double[] {1, 9});
+                data.add(new double[] {4, 6});
+                data.add(new double[] {1, 3});
+                GUI.window.add(new GGraph(data));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", new Font("Helvetica", Font.PLAIN, 20)));
                 GUI.window.add(new GSpacer(25));
