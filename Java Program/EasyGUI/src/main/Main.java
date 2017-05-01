@@ -17,40 +17,44 @@ import java.util.regex.*;
  * project.
  */
 public class Main {
+    
+    private static Color mainColor = Color.decode("#2E7D32");
+    
+    private static Color secondaryColor = Color.decode("#388E3C");
 
     public static void main(String[] args) {
         start();
 
         //Assemble the menu bar..
         final GMenuBar menu = new GMenuBar(40);
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Home", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "Home", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Home");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("New");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("About");
             }
         });
 
-        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Edit Account", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Edit Account", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Edit Account");
             }
         });
-        menu.addAccount(new GButton(40, Color.decode("#2E7D32"), Color.decode("#388E3C"), "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Login");
@@ -71,7 +75,7 @@ public class Main {
                 } catch (Exception ex) {
                     image = null;
                 }
-                cell1.add(new GButton(277, Color.darkGray, Color.gray, "Insulation", new Font("Helvetica", Font.PLAIN, 20),32, image));
+                cell1.add(new GButton(277, mainColor, secondaryColor, "Insulation", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell1.add(new GSpacer(32));
                 GDivider cell2 = new GDivider(240);
                 try {
@@ -79,7 +83,7 @@ public class Main {
                 } catch (Exception ex) {
                     image = null;
                 }
-                cell2.add(new GButton(277, Color.darkGray, Color.gray, "Lights", new Font("Helvetica", Font.PLAIN, 20),32, image));
+                cell2.add(new GButton(277, mainColor, secondaryColor, "Lights", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell2.add(new GSpacer(32));
                 GDivider cell3 = new GDivider(240);
                 try {
@@ -87,7 +91,7 @@ public class Main {
                 } catch (Exception ex) {
                     image = null;
                 }
-                cell3.add(new GButton(277, Color.darkGray, Color.gray, "Refrigerator", new Font("Helvetica", Font.PLAIN, 20),32, image));
+                cell3.add(new GButton(277, mainColor, secondaryColor, "Refrigerator", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell3.add(new GSpacer(32));
                 GDivider cell4 = new GDivider(240);
                 try {
@@ -95,7 +99,7 @@ public class Main {
                 } catch (Exception ex) {
                     image = null;
                 }
-                cell4.add(new GButton(277, Color.darkGray, Color.gray, "Washing Machine", new Font("Helvetica", Font.PLAIN, 20),32, image));
+                cell4.add(new GButton(277, mainColor, secondaryColor, "Washing Machine", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell4.add(new GSpacer(32));
                 GDivider cell5 = new GDivider(240);
                 try {
@@ -103,7 +107,7 @@ public class Main {
                 } catch (Exception ex) {
                     image = null;
                 }
-                cell5.add(new GButton(277, Color.darkGray, Color.gray, "Dryer", new Font("Helvetica", Font.PLAIN, 20),32, image));
+                cell5.add(new GButton(277, mainColor, secondaryColor, "Dryer", new Font("Helvetica", Font.PLAIN, 20),32, image));
                 cell5.add(new GSpacer(32));
                 div.add(cell1);
                 div.add(cell2);
@@ -127,31 +131,36 @@ public class Main {
 
                 for (User u : User.getUsers()) {
                     GDivider subdiv = new GDivider(240);
-                    subdiv.add(new GText(u.getName()));
-                    subdiv.add(new GSpacer(5));
-                    subdiv.add(new GSpacer(1, Color.BLACK));
-                    subdiv.add(new GSpacer(5));
-                    subdiv.add(new GText(u.getEmail(), new Font("Helvetica", Font.PLAIN, 20)));
-                    subdiv.add(new GSpacer(10));
 
-                    subdiv.add(new GButton(25, Color.darkGray, Color.gray, "Login", 4) {
+                    BufferedImage image;
+                    try {
+                        image = ImageIO.read(new File("img/userIcon1.png"));
+                    } catch (Exception ex) {
+                        image = null;
+                    }
+                    subdiv.add(new GButton(277, mainColor, secondaryColor, u.getName(), new Font("Helvetica", Font.PLAIN, 20),32, image) {
                         @Override
                         public void clickAction() {
                             User.setLoadedUser(u);
                             GUI.window.gotoPage("Home");
                         }
                     });
+                    subdiv.add(new GSpacer(32));
                     div.add(subdiv);
                 }
                 GUI.window.add(div);
 
                 GUI.window.add(new GSpacer(15));
-                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Add new Account") {
+
+                GDivider centerbutton = new GDivider(240);
+                centerbutton.add(new GSpacer(0));
+                centerbutton.add(new GButton(40, mainColor, secondaryColor, "Add new Account", new Font("Helvetica", Font.PLAIN, 20)) {
                     @Override
                     public void clickAction() {
                         GUI.window.gotoPage("Register");
                     }
                 });
+                GUI.window.add(centerbutton);
             }
         };
 
@@ -176,7 +185,7 @@ public class Main {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(email);
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Submit") {
+                GUI.window.add(new GButton(25, mainColor, secondaryColor, "Submit") {
                     @Override
                     public void clickAction() {
                         String myName = name.getText().trim();
@@ -193,7 +202,7 @@ public class Main {
                 });
 
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Skip Login") {
+                GUI.window.add(new GButton(25, mainColor, secondaryColor, "Skip Login") {
                     @Override
                     public void clickAction() {
                         User validUser = new User("You", "");
@@ -206,7 +215,7 @@ public class Main {
 
                 if (!User.getUsers().isEmpty()) {
                     GUI.window.add(new GSpacer(5));
-                    GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Back") {
+                    GUI.window.add(new GButton(25, mainColor, secondaryColor, "Back") {
                         @Override
                         public void clickAction() {
                             GUI.window.gotoPage("Login");
@@ -239,7 +248,7 @@ public class Main {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(email);
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, Color.darkGray, Color.gray, "Save Changes") {
+                GUI.window.add(new GButton(25, mainColor, secondaryColor, "Save Changes") {
                     @Override
                     public void clickAction() {
                         String myName = name.getText().trim();
