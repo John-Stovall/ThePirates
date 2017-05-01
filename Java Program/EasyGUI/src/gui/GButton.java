@@ -48,6 +48,11 @@ public class GButton implements GUIComponent, MouseListener {
     /** The image to be drawn on this button. */
     private Image icon;
 
+    /** The progress through the hover animation. */
+    private int hoverAnimation = 0;
+
+    private boolean triggered = false;
+
     /**
      * Create a button!
      *
@@ -151,12 +156,21 @@ public class GButton implements GUIComponent, MouseListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        if (pressed) {
-            g.setColor(hover);
-        } else {
-            g.setColor(color);
-        }
+        g.setColor(color);
         g.fillRect(x + padding / 2, y, width - padding, height);
+
+        g.setColor(hover);
+        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
+        if (hoverAnimation < width && pressed) {
+            hoverAnimation += Math.ceil((width - hoverAnimation) / 3.0);
+        } else if (!pressed) {
+            hoverAnimation += Math.ceil(Math.abs((-hoverAnimation) / 3.0)) * (Math.signum((-hoverAnimation) / 3.0));
+        }
+
+        if (triggered && hoverAnimation >= width) {
+            triggered = false;
+        }
+
         this.x = x;
         this.y = y;
         this.width = width;
@@ -193,6 +207,7 @@ public class GButton implements GUIComponent, MouseListener {
     public void mouseReleased(MouseEvent e) {
         if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
             clickAction();
+            triggered = true;
         }
         pressed = false;
     }
