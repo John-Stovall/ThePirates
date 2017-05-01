@@ -28,16 +28,20 @@ public class GGraph implements GUIComponent {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        int height = (int) (width * 0.5625);
+
+        int height = (int) (width * 0.35);
         int paneX = (int) (width / 1.1);
         int paneY = (int) (height / 1.1);
         int offsetX = x + (int) (width * 0.05);
         int offsetY = y + (int) (height * 0.05) / 2;
-        g.setColor(Color.decode("#E8F5E9"));
-        g.fillRect(offsetX, offsetY, paneX, paneY);
+        //g.setColor(Color.decode("#E8F5E9"));
+        //g.fillRect(offsetX, offsetY, paneX, paneY);
         g.setColor(Color.black);
         g.drawLine(offsetX, offsetY, offsetX, offsetY + paneY);
         g.drawLine(offsetX, offsetY + paneY, offsetX + paneX, offsetY + paneY);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(2));
 
         int ticks = 10;
 
@@ -46,19 +50,23 @@ public class GGraph implements GUIComponent {
             g.drawString(Integer.toString((int)(Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
         }
 
-        for (int i = 0; i < times.size() + 1; i++) {
-            g.drawString(Integer.toString(i), (int) (offsetX + paneX / times.size() * i), offsetY + paneY + 20);
+        for (int i = 0; i < times.size(); i++) {
+            g.drawString(Integer.toString(i), (int) (offsetX + paneX / (times.size() - 1) * i), offsetY + paneY + 20);
         }
         int lastX = 0;
         int lastY = 0;
-        for (int i = 0; i < times.size(); i++) {
-            double[] e = times.get(i);
-            for (int j = 0; j < e.length; j++) {
+        double[] e = times.get(0);
+        for (int j = 0; j < e.length; j++) {
+            for (int i = 0; i < times.size(); i++) {
+                e = times.get(i);
+
                 g.setColor(lines[j]);
-                int xPos = offsetX + (int) (paneX / times.size() * i);
+                int xPos = offsetX + (int) (paneX / (times.size() - 1) * i);
                 int yPos = offsetY + (int) (paneY - e[j] / largestValue * paneY);
-                g.fillOval(xPos, yPos, 4, 4);
-                g.drawLine(lastX, lastY, xPos, yPos);
+                g.fillOval(xPos - 2, yPos - 2, 4, 4);
+                if (i != 0) {
+                    g2d.drawLine(lastX, lastY, xPos, yPos);
+                }
                 lastX = xPos;
                 lastY = yPos;
             }
