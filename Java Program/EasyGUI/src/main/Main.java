@@ -170,7 +170,7 @@ public class Main {
             public void build() {
 
                 //Instantiate the Checkboxes...
-                GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
+                GTextBox name = new GTextBox(32, Color.gray, Color.white, "", 10);
                 GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
 
                 //Place all the stuff in the right order...
@@ -197,7 +197,14 @@ public class Main {
 	                        User.getUsers().add(validUser);
 	                        User.setLoadedUser(validUser);
 	                        GUI.window.gotoPage("Home");
-                    	}
+                    	} else {
+                            if (!testName(myName)) {
+                                name.failed("* Name must be at least 3 characters.");
+                            }
+                            if (!testEmail(myEmail)) {
+                                email.failed("* Must be a valid email.");
+                            }
+                        }
                     }
                 });
 
@@ -233,7 +240,7 @@ public class Main {
                 GUI.window.add(new GSpacer(40));
 
                 //Instantiate the Checkboxes...
-                GTextBox name = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getName());
+                GTextBox name = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getName(), 10);
                 GTextBox email = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getEmail());
 
                 //Place all the stuff in the right order...
@@ -258,6 +265,13 @@ public class Main {
                             User.getLoadedUser().setName(myName);
                             User.getLoadedUser().setEmail(myEmail);
                             GUI.window.gotoPage("Home");
+                        } else {
+                            if (!testName(myName)) {
+                                name.failed("* Name must be at least 3 characters.");
+                            }
+                            if (!testEmail(myEmail)) {
+                                email.failed("* Must be a valid email.");
+                            }
                         }
                     }
                 });
@@ -360,14 +374,12 @@ public class Main {
     public static boolean testEmail(String email){
     	// contains @
     	if(email.indexOf('@') == -1){
-    		System.out.println("has doesn't have an @");
     		return false;
     	}else{
     		System.out.println("@test Passed");
     	}
     	// contains a '.com' at the end 
     	if(!email.toLowerCase().endsWith(".com")) {
-    		System.out.println("does not end with .com");
     		return false;
     	}else{
     		System.out.println(".com-test Passed");
