@@ -1,6 +1,6 @@
 # TCSS 360 Project - The Pirates
 
-### Last Update: April 16th 2017
+### Last Update: May 1st 2017
 
 # Team Members:
 - Robert Cordingly
@@ -16,6 +16,6 @@
 
 [Check-Ins](#)
 
-[Deliverables](#)
+[Deliverable 1](https://github.com/John-Stovall/ThePirates/blob/master/Deliverable.pdf)
 
 [Email Us](mailto:robertcordingly@gmail.com,reaganstovall@gmail.com,Rand3@uw.edu,ryanchansen@hotmail.com)
