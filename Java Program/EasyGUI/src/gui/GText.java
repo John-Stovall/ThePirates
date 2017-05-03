@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * GText is exactly what its name is. Text. Text will
  * auto fit the assigned area so you don't know
  * the width or height of the space the text will fill, it just will.
- *
+ * 
  */
 public class GText implements GUIComponent {
 
