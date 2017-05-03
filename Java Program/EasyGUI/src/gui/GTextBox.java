@@ -52,7 +52,11 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     /** The message to be displayed when a failed even has triggered. */
     private String failedMessage = "Invalid Input!";
 
+    /** Just a number representing the time for this box. */
     private double ticks = 0;
+
+    /** The position of the failed message. */
+    private int failMessagePos = 0;
 
     /**
      * Create a super awesome text box!
@@ -96,6 +100,11 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         return text;
     }
 
+    /**
+     * Open the error message for this text box.
+     *
+     * @param message The error to show.
+     */
     public void failed(final String message) {
         failed = true;
         failedMessage = message;
@@ -108,12 +117,24 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
 
         ticks += 0.02;
 
+        if (failed) {
+            failMessagePos += (50 - failMessagePos) / 10.0;
+        } else {
+            failMessagePos += (-failMessagePos) / 10.0;
+        }
+
+        g.setColor(Color.red);
+        g.setFont(new Font("Helvetica", Font.PLAIN, 16));
+        g.drawString(failedMessage, x, y + failMessagePos + height / 2);
+
         if (pressed || selected) {
             g.setColor(hover);
         } else {
             g.setColor(color);
         }
+
         g.fillRect(x, y, width, height);
+
         this.x = x;
         this.y = y;
         this.width = width;
@@ -134,12 +155,9 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         if (failed) {
             g.setColor(Color.red);
             g.drawRect(x, y, width, height);
-            g.setFont(new Font("Helvetica", Font.PLAIN, 16));
-            g.drawString(failedMessage, x, y + height + 20);
-            return height + 24;
         }
 
-        return height;
+        return height + failMessagePos;
     }
 
     @Override

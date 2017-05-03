@@ -199,26 +199,14 @@ public class Main {
 	                        GUI.window.gotoPage("Home");
                     	} else {
                             if (!testName(myName)) {
-                                name.failed("* Name must be at least 3 characters.");
+                                name.failed("• Name must be at least 3 characters.");
                             }
                             if (!testEmail(myEmail)) {
-                                email.failed("* Must be a valid email.");
+                                email.failed("• Must be a valid email.");
                             }
                         }
                     }
                 });
-
-                GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GButton(25, mainColor, secondaryColor, "Skip Login") {
-                    @Override
-                    public void clickAction() {
-                        User validUser = new User("You", "");
-                        User.getUsers().add(validUser);
-                        User.setLoadedUser(validUser);
-                        GUI.window.gotoPage("Home");
-                    }
-                });
-
 
                 if (!User.getUsers().isEmpty()) {
                     GUI.window.add(new GSpacer(5));
@@ -226,6 +214,17 @@ public class Main {
                         @Override
                         public void clickAction() {
                             GUI.window.gotoPage("Login");
+                        }
+                    });
+                } else {
+                    GUI.window.add(new GSpacer(5));
+                    GUI.window.add(new GButton(25, mainColor, secondaryColor, "Skip Login") {
+                        @Override
+                        public void clickAction() {
+                            User validUser = new User("You", "");
+                            User.getUsers().add(validUser);
+                            User.setLoadedUser(validUser);
+                            GUI.window.gotoPage("Home");
                         }
                     });
                 }
@@ -267,10 +266,10 @@ public class Main {
                             GUI.window.gotoPage("Home");
                         } else {
                             if (!testName(myName)) {
-                                name.failed("* Name must be at least 3 characters.");
+                                name.failed("• Name must be at least 3 characters.");
                             }
                             if (!testEmail(myEmail)) {
-                                email.failed("* Must be a valid email.");
+                                email.failed("• Must be a valid email.");
                             }
                         }
                     }
@@ -355,11 +354,9 @@ public class Main {
      * @return
      */
     public static boolean testName(String name){
-    	if(name.length() < 3){
-    		System.out.println("Less than 3 characters");
+    	if (name.length() < 3) {
     		return false;
-    	}else{
-    		System.out.println("LengthTest Passed");
+    	} else {
     		return true;
     	}
     }
@@ -373,16 +370,12 @@ public class Main {
      */
     public static boolean testEmail(String email){
     	// contains @
-    	if(email.indexOf('@') == -1){
+    	if (email.indexOf('@') == -1) {
     		return false;
-    	}else{
-    		System.out.println("@test Passed");
     	}
     	// contains a '.com' at the end 
     	if(!email.toLowerCase().endsWith(".com")) {
     		return false;
-    	}else{
-    		System.out.println(".com-test Passed");
     	}
 		return true;
     }
