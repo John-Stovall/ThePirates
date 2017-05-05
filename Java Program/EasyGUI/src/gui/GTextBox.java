@@ -58,6 +58,8 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     /** The position of the failed message. */
     private int failMessagePos = 0;
 
+    private GText textObj;
+
     /**
      * Create a super awesome text box!
      *
@@ -72,6 +74,7 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
+        textObj = new GText(text, font);
     }
 
     /**
@@ -89,6 +92,7 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
         this.maxLength = maxLength;
+        textObj = new GText(text, font);
     }
 
     /**
@@ -116,16 +120,21 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     public int draw(Graphics g, int x, int y, int width) {
 
         ticks += 0.02;
+        int boxHeight = textObj.draw(g, x + 4, y, width - 8) + 6;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = boxHeight;
 
         if (failed) {
-            failMessagePos += (50 - failMessagePos) / 10.0;
+            failMessagePos += ((boxHeight / 2 + 35) - failMessagePos) / 10.0;
         } else {
             failMessagePos += (-failMessagePos) / 10.0;
         }
 
         g.setColor(Color.red);
         g.setFont(new Font("Helvetica", Font.PLAIN, 16));
-        g.drawString(failedMessage, x, y + failMessagePos + height / 2);
+        g.drawString(failedMessage, x, y + failMessagePos + boxHeight / 2);
 
         if (pressed || selected) {
             g.setColor(hover);
@@ -133,31 +142,29 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
             g.setColor(color);
         }
 
-        g.fillRect(x, y, width, height);
+        g.fillRect(x, y, width, boxHeight);
 
-        this.x = x;
-        this.y = y;
-        this.width = width;
         g.setColor(Color.white);
         g.setFont(font);
         g.setColor(Color.black);
+
+        textObj.setText(text);
+
         if (selected) {
             if (((int)ticks) % 2 == 0) {
-                g.drawString(text + "|", x + 4, y + font.getSize());
-            } else {
-                g.drawString(text, x + 4, y + font.getSize());
+                textObj.setText(text + "|");
             }
-            g.drawRect(x, y, width, height);
-        } else {
-            g.drawString(text, x + 4, y + font.getSize());
+            g.drawRect(x, y, width, boxHeight);
         }
+
+        textObj.draw(g, x + 4, y, width - 8);
 
         if (failed) {
             g.setColor(Color.red);
-            g.drawRect(x, y, width, height);
+            g.drawRect(x, y, width, boxHeight);
         }
 
-        return height + failMessagePos;
+        return boxHeight + Math.max(failMessagePos - boxHeight / 2 + 10, 0);
     }
 
     @Override
@@ -208,7 +215,6 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
                     }
                 }
             }
-            //GUI.window.redraw();
         }
     }
 
