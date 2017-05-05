@@ -1,0 +1,8 @@
+
+public class ProjectManager {
+
+	public ProjectManager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

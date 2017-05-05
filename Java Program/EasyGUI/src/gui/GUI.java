@@ -39,6 +39,9 @@ public final class GUI extends JFrame implements MouseWheelListener {
     /** The currently loaded page. */
     private static GUIPage currentPage;
 
+    /** The height of the currently drawn page. */
+    private static int pageHeight;
+
     /**
      * Starts the GUI with some basic settings.
      */
@@ -213,7 +216,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
-        scrollOffset -= e.getUnitsToScroll();
+        if (pageHeight > panel.getHeight()) {
+            scrollOffset -= e.getUnitsToScroll();
+            if (scrollOffset > 0) scrollOffset = 0;
+            if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
+        }
     }
 
     /**
@@ -238,6 +245,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
                     ((GWrapper) c).build(x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
                 }
             }
+            pageHeight = y - scrollOffset;
         }
     }
 }

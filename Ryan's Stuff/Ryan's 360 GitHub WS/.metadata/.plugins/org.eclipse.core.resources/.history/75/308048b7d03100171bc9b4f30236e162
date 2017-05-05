@@ -1,0 +1,44 @@
+package project;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+public class ProjectManager {
+
+	public static ArrayList<Project> projectList = new ArrayList<Project>();
+	
+	public static void createInsulation(String theName) {
+		InsulationProject newProject = new InsulationProject();
+		newProject.setName(theName);
+		projectList.add(newProject);
+	}
+	
+	public static void save() {
+		//long name making it easy to search for
+		String filename = "ThePiratesProjectSave";
+		
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream(filename));			
+			oos.writeObject(projectList);	
+			oos.flush();
+		} catch (FileNotFoundException e){
+			System.out.print(e);
+		} catch (IOException e){
+			System.out.print(e);
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+					System.out.print("oos closing error\n");
+					System.out.print(e);
+				}
+			}
+		}
+		
+		
+	}
+}

@@ -1,8 +1,0 @@
-
-public class InsulationProject extends AbstractProject {
-
-	public InsulationProject() {
-		this.setWaterUsage(-1.0);
-	}
-
-}

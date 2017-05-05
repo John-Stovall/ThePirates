@@ -107,4 +107,13 @@ public class GText implements GUIComponent {
 
         return h;
     }
+
+    /**
+     * This method sets the text that this text object draws.
+     *
+     * @param text
+     */
+    public void setText(String text) {
+        this.text = text;
+    }
 }
