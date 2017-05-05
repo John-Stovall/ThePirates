@@ -22,7 +22,7 @@ public class ProjectManager {
 		// a insulation project when it comes time to load from the saved file.
 		String totalName = ("INS" + theName);
 		
-		newProject.setName(totalName);
+		newProject.setName(theName);
 		projectList.add(newProject);
 	}
 	
