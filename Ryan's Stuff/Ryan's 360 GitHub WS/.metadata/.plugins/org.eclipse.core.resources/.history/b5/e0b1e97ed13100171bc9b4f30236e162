@@ -1,0 +1,24 @@
+package testerpackage;
+
+import project.*;
+
+public class main {
+
+	public static void main(String[] args) {
+		ProjectManager.createInsulation("First One");
+		
+		
+		
+		System.out.println(ProjectManager.projectList.get(0));
+		
+		
+		String theName = "poop";
+		
+		String totalName = ("INS" + theName);
+		
+		System.out.println(totalName);
+		
+		
+	}
+
+}

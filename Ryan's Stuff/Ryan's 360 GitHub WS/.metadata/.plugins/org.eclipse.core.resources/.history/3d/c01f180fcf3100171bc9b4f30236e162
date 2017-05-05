@@ -1,0 +1,10 @@
+package testerPackage;
+
+
+public class main {
+
+	public static void main(String[] args) {
+		createInsulation("First One");
+	}
+
+}

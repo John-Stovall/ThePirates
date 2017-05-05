@@ -1,0 +1,15 @@
+package testerpackage;
+
+import project.*;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		ProjectManager.createInsulation("First Insulation Project Name");
+				
+		System.out.println(ProjectManager.projectList.get(0).getName());
+
+	}
+
+}

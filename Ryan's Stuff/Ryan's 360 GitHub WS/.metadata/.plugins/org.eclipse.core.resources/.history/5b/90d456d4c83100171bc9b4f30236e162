@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+public class ProjectManager {
+
+	private ArrayList<Project> projectList = new ArrayList<Project>();
+	
+	public void createInsulation(String theName) {
+		InsulationProject newProject = new InsulationProject();
+	}
+}
