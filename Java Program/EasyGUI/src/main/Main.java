@@ -67,7 +67,7 @@ public class Main {
             @Override
             public void build() {
                 GUI.window.add(new GSpacer(80));
-                GDivider div = new GDivider(240);
+                GDivider div = new GDivider(240, 3);
                 GDivider cell1 = new GDivider(240);
                 BufferedImage image;
                 try {
@@ -127,7 +127,7 @@ public class Main {
                 GUI.window.add(new GText("Select Account"));
                 GUI.window.add(new GSpacer(25));
 
-                GDivider div = new GDivider(240);
+                GDivider div = new GDivider(240, 3);
 
                 for (User u : User.getUsers()) {
                     GDivider subdiv = new GDivider(240);
@@ -152,14 +152,16 @@ public class Main {
 
                 GUI.window.add(new GSpacer(15));
 
-                GDivider centerbutton = new GDivider(240);
-                centerbutton.add(new GSpacer(0));
-                centerbutton.add(new GButton(40, mainColor, secondaryColor, "Add new Account", new Font("Helvetica", Font.PLAIN, 20)) {
+                GDivider centerbutton = new GDivider(240, 1);
+                GDivider innerDiv = new GDivider(240, 3);
+                innerDiv.add(new GSpacer(0));
+                innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", new Font("Helvetica", Font.PLAIN, 20)) {
                     @Override
                     public void clickAction() {
                         GUI.window.gotoPage("Register");
                     }
                 });
+                centerbutton.add(innerDiv);
                 GUI.window.add(centerbutton);
             }
         };
