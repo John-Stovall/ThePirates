@@ -31,7 +31,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     private int maxWidth = 720;
 
     /** The padding added to the sides of all components. */
-    private int sidePadding = 8;
+    private int sidePadding = 24;
 
     /** The horizontal offset of components. Used in the slide-over animation. */
     public static int horizontalOffset = 0;

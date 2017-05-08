@@ -14,6 +14,8 @@ public class GGraph implements GUIComponent {
 
     private Color[] lines = {Color.black, Color.red};
 
+    private double[] animation;
+
     public GGraph(final ArrayList<double[]> dataPoints) {
         times = dataPoints;
         for (double[] e : times) {
@@ -23,13 +25,14 @@ public class GGraph implements GUIComponent {
                 }
             }
         }
+        animation = new double[times.size()];
     }
 
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        int height = (int) (width * 0.35);
+        int height = (int) ((width * 0.35));
         int paneX = (int) (width / 1.1);
         int paneY = (int) (height / 1.1);
         int offsetX = x + (int) (width * 0.05);
@@ -44,6 +47,7 @@ public class GGraph implements GUIComponent {
         g2d.setStroke(new BasicStroke(2));
 
         int ticks = height / 30;
+        if (ticks < 2) ticks = 2;
 
         g.setFont(new Font("Helvetica", Font.PLAIN, 12));
         for (int i = 0; i < ticks; i++) {
@@ -62,15 +66,28 @@ public class GGraph implements GUIComponent {
 
                 g.setColor(lines[j]);
                 int xPos = offsetX + (int) (paneX / (times.size() - 1) * i);
-                int yPos = offsetY + (int) (paneY - e[j] / largestValue * paneY);
-                g.fillOval(xPos - 2, yPos - 2, 4, 4);
-                if (i != 0) {
-                    g2d.drawLine(lastX, lastY, xPos, yPos);
+                int yPos = offsetY + (int)((int) (paneY - e[j] / largestValue * paneY) * animation[i]);
+                if (animation[i] > 0) {
+                    g.fillOval(xPos - 2, yPos - 2, 4, 4);
+                    if (i != 0) {
+                        g2d.drawLine(lastX, lastY, xPos, yPos);
+                    }
                 }
                 lastX = xPos;
                 lastY = yPos;
             }
         }
+
+        for (int i = 0; i < times.size(); i++) {
+            if (i == 0) {
+                animation[i] += (1 - animation[i]) / 10.0;
+            } else {
+                if (animation[i - 1] > 0.5) {
+                    animation[i] += (1 - animation[i]) / 10.0;
+                }
+            }
+        }
+
         return height;
     }
 
