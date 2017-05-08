@@ -1,11 +1,9 @@
 package gui;
 
-import com.sun.prism.paint.Gradient;
 import main.User;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 
@@ -31,7 +29,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
     /** Whether the left button has been pressed. */
     private boolean pagePressed = false;
 
-    /** Wheather the right button has been properly pressed. */
+    /** Whether the right button has been properly pressed. */
     private boolean accountSelected = false;
 
     /** It's the width of something, I don't remember. */
@@ -54,20 +52,24 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     /** How fast the menus scroll. Lower numbers are faster and exponential! */
     private double scrollSpeed = 7.0;
-    
+
+    /** The main color of the menu bar. */
     private static final Color mainColor = Color.decode("#43A047");
-    
+
+    /** The secondary color of the menu bar. */
     private static final Color secondaryColor = Color.decode("#2E7D32");
 
+    /** The color of the text in the menu bar. */
     private static final Color textColor = Color.white;
 
+    /** The color of the side bars. */
     private static final Color sideColor = Color.decode("#2E7D32");
 
     /** The GUIComponents in the left menu. */
-    ArrayList<GUIComponent> pageComponents = new ArrayList<>();
+    private ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
     /** The GUIComponents in the right menu. */
-    ArrayList<GUIComponent> accountComponents = new ArrayList<>();
+    private ArrayList<GUIComponent> accountComponents = new ArrayList<>();
 
     /**
      * Create a menu bar with some height.
@@ -174,7 +176,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
         //Draw Page title if there is room.
         String roomName = GUI.getPageTitle();
-        int nameLength = g.getFontMetrics().stringWidth(roomName);
 
         g.drawString(roomName, height + 4, height - 10);
 

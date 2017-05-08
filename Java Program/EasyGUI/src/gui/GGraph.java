@@ -5,23 +5,36 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/30/17.
+ *
+ * This class draws a simple graph of a supplied data array.
  */
 public class GGraph implements GUIComponent {
 
+    /** All of the data that this graph will draw. */
     private static ArrayList<double[]> times;
 
+    /** The largest value in the data. */
     private double largestValue = 0;
 
+    /** The color of the various lines. */
     private Color[] lines = {Color.black, Color.red};
 
+    /** Used for the intro animation. */
     private double[] animation;
 
+    /**
+     * Creates a graph with the supplied data points.
+     *
+     * @param dataPoints The lines of the graph. Each element of the outer ArrayList is
+     *                   a x point of the graph while each element of the double array is the y
+     *                   value of a line on the graph.
+     */
     public GGraph(final ArrayList<double[]> dataPoints) {
         times = dataPoints;
         for (double[] e : times) {
-            for (int y = 0; y < e.length; y++) {
-                if (largestValue < e[y]) {
-                    largestValue = e[y];
+            for (double anE : e) {
+                if (largestValue < anE) {
+                    largestValue = anE;
                 }
             }
         }
@@ -37,8 +50,7 @@ public class GGraph implements GUIComponent {
         int paneY = (int) (height / 1.1);
         int offsetX = x + (int) (width * 0.05);
         int offsetY = y + (int) (height * 0.05) / 2;
-        //g.setColor(Color.decode("#E8F5E9"));
-        //g.fillRect(offsetX, offsetY, paneX, paneY);
+
         g.setColor(Color.black);
         g.drawLine(offsetX, offsetY, offsetX, offsetY + paneY);
         g.drawLine(offsetX, offsetY + paneY, offsetX + paneX, offsetY + paneY);
@@ -55,7 +67,7 @@ public class GGraph implements GUIComponent {
         }
 
         for (int i = 0; i < times.size(); i++) {
-            g.drawString(Integer.toString(i), (int) (offsetX + paneX / (times.size() - 1) * i), offsetY + paneY + 20);
+            g.drawString(Integer.toString(i), offsetX + paneX / (times.size() - 1) * i, offsetY + paneY + 20);
         }
         int lastX = 0;
         int lastY = 0;
@@ -65,7 +77,7 @@ public class GGraph implements GUIComponent {
                 e = times.get(i);
 
                 g.setColor(lines[j]);
-                int xPos = offsetX + (int) (paneX / (times.size() - 1) * i);
+                int xPos = offsetX + paneX / (times.size() - 1) * i;
                 int yPos = offsetY + (int)((int) (paneY - e[j] / largestValue * paneY) * animation[i]);
                 if (animation[i] > 0) {
                     g.fillOval(xPos - 2, yPos - 2, 4, 4);
@@ -90,6 +102,4 @@ public class GGraph implements GUIComponent {
 
         return height;
     }
-
-
 }
