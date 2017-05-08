@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * I'll clean it up eventually.
  */
-public class GMenuBar implements GUIComponent, MouseListener {
+public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     /** The height of the menu bar. */
     private int height;
@@ -191,22 +191,21 @@ public class GMenuBar implements GUIComponent, MouseListener {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
-
-    @Override
-    public void mousePressed(MouseEvent e) {
+    public boolean mousePressed(MouseEvent e) {
+        boolean result = false;
         if (e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height) {
             pagePressed = true;
-            //GUI.window.redraw();
+            result = true;
         }
         if (e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
             accountPressed = true;
-            //GUI.window.redraw();
+            result = true;
         }
+        return result;
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public boolean mouseReleased(MouseEvent e) {
         if ((e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pagePressed) &&
         !(e.getX() > 0 && e.getX() < dropdownWidth && e.getY() > height && e.getY() < height + pageTotalHeight)) {
             pageSelected = !pageSelected;
@@ -234,11 +233,15 @@ public class GMenuBar implements GUIComponent, MouseListener {
 
         pagePressed = false;
         accountPressed = false;
+
+        return pageSelected || accountSelected;
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
+    public ArrayList<ArrayList<GUIComponent>> getComponents() {
+        ArrayList<ArrayList<GUIComponent>> list = new ArrayList<>();
+        list.add(pageComponents);
+        list.add(accountComponents);
+        return list;
+    }
 }

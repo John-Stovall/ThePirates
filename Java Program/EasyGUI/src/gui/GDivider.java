@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * GDivider allows you to place components both horizontally and vertically.
  */
-public class GDivider implements GUIComponent {
+public class GDivider implements GUIComponent, GSubList {
 
     /** The width of the cell. */
     private int cellWidth;
@@ -29,7 +29,7 @@ public class GDivider implements GUIComponent {
     }
 
     /**
-     * Creates a divder with a scaling width. It will divide the
+     * Creates a divider with a scaling width. It will divide the
      * width into the provided number of cells. If the cells get less than
      * the minimum width then they will be split into new rows.
      *
@@ -85,5 +85,12 @@ public class GDivider implements GUIComponent {
         }
         rowHeight += maxHeight;
         return rowHeight;
+    }
+
+    @Override
+    public ArrayList<ArrayList<GUIComponent>> getComponents() {
+        ArrayList<ArrayList<GUIComponent>> list = new ArrayList<>();
+        list.add(components);
+        return list;
     }
 }

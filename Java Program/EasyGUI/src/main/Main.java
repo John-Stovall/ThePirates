@@ -7,9 +7,7 @@ import java.awt.*;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.regex.*;
 
 /**
  * Main is used to build all the the page layouts. Eventually this will be broken up into
@@ -17,9 +15,9 @@ import java.util.regex.*;
  * project.
  */
 public class Main {
-    
+
     private static Color mainColor = Color.decode("#2E7D32");
-    
+
     private static Color secondaryColor = Color.decode("#388E3C");
 
     public static void main(String[] args) {
@@ -192,14 +190,14 @@ public class Main {
                     public void clickAction() {
                         String myName = name.getText().trim();
                         String myEmail = email.getText().trim();
-                    	
-                    	if(testName(myName) && testEmail(myEmail)){
-	                        //This is the code for a successful login.
-	                        User validUser = new User(myName, myEmail);
-	                        User.getUsers().add(validUser);
-	                        User.setLoadedUser(validUser);
-	                        GUI.window.gotoPage("Home");
-                    	} else {
+
+                        if(testName(myName) && testEmail(myEmail)){
+                            //This is the code for a successful login.
+                            User validUser = new User(myName, myEmail);
+                            User.getUsers().add(validUser);
+                            User.setLoadedUser(validUser);
+                            GUI.window.gotoPage("Home");
+                        } else {
                             if (!testName(myName)) {
                                 name.failed("• Name must be at least 3 characters.");
                             }
@@ -347,7 +345,7 @@ public class Main {
             GUI.window.gotoPage(login);
         }
     }
-    
+
     /**
      * This is a simple character counter that returns false if there are
      * less than 3 characters.
@@ -356,30 +354,30 @@ public class Main {
      * @return
      */
     public static boolean testName(String name){
-    	if (name.length() < 3) {
-    		return false;
-    	} else {
-    		return true;
-    	}
+        if (name.length() < 3) {
+            return false;
+        } else {
+            return true;
+        }
     }
-    
+
     /**
      * This tests that there is an @ sign and a '.com' a bit lacking,
      * but we can expand it if we want.
-     *  
+     *
      * @param email
      * @return
      */
     public static boolean testEmail(String email){
-    	// contains @
-    	if (email.indexOf('@') == -1) {
-    		return false;
-    	}
-    	// contains a '.com' at the end 
-    	if(!email.toLowerCase().endsWith(".com")) {
-    		return false;
-    	}
-		return true;
+        // contains @
+        if (email.indexOf('@') == -1) {
+            return false;
+        }
+        // contains a '.com' at the end
+        if(!email.toLowerCase().endsWith(".com")) {
+            return false;
+        }
+        return true;
     }
 
     /**

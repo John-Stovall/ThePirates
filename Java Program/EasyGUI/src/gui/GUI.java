@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * This is the main class that does all the rendering.
  */
-public final class GUI extends JFrame implements MouseWheelListener {
+public final class GUI extends JFrame implements MouseWheelListener, MouseListener, KeyListener {
 
     /** The window itself. */
     public static final GUI window = new GUI();
@@ -20,6 +20,12 @@ public final class GUI extends JFrame implements MouseWheelListener {
 
     /** All of the current loaded GUIComponents. */
     private ArrayList<GUIComponent> components = new ArrayList<>();
+
+    /** All of the GUIComponents that use the MouseListener. */
+    private ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
+
+    /** All of the GUIComponents that use the KeyListener. */
+    private ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
     /** The max width of the window's contents before it starts adding padding. */
     private int maxWidth = 720;
@@ -56,7 +62,9 @@ public final class GUI extends JFrame implements MouseWheelListener {
         setTitle("Hello World!");
         setLocationRelativeTo(null);
         add(panel, BorderLayout.CENTER);
-        addMouseWheelListener(this);
+        panel.addMouseWheelListener(this);
+        panel.addMouseListener(this);
+        addKeyListener(this);
         panel.setLayout(null);
         panel.repaint();
 
@@ -104,68 +112,11 @@ public final class GUI extends JFrame implements MouseWheelListener {
      */
     public void add(final GUIComponent c) {
         components.add(c);
-        addListeners(c);
         if (c instanceof JPanel) {
             panel.add((JPanel) c);
             ((JPanel)c).revalidate();
         }
         panel.setVisible(true);
-    }
-
-    /**
-     * This method recursively loops through all components in all lists
-     * and adds listeners that they use.
-     *
-     * @param c The GUIComponent to add listeners from.
-     */
-    private void addListeners(final GUIComponent c) {
-        if (c instanceof KeyListener) {
-            addKeyListener((KeyListener) c);
-        }
-        if (c instanceof MouseListener) {
-            panel.addMouseListener((MouseListener) c);
-        }
-        if (c instanceof GMenuBar) {
-            for (GUIComponent g : ((GMenuBar) c).pageComponents) {
-                addListeners(g);
-            }
-            for (GUIComponent g : ((GMenuBar) c).accountComponents) {
-                addListeners(g);
-            }
-        }
-        if (c instanceof GDivider) {
-            for (GUIComponent g : ((GDivider) c).components) {
-                addListeners(g);
-            }
-        }
-    }
-
-    /**
-     * This method recursively loops through all components in all lists
-     * and removes the listeners that they use.
-     *
-     * @param c The GUIComponent to remove listeners from.
-     */
-    private void removeListeners(final GUIComponent c) {
-        if (c instanceof MouseListener) {
-            panel.removeMouseListener((MouseListener) c);
-        }
-        if (c instanceof KeyListener) {
-            removeKeyListener((KeyListener) c);
-        }
-        if (c instanceof GMenuBar) {
-            for (GUIComponent g : ((GMenuBar) c).pageComponents) {
-                removeListeners(g);
-            }
-            for (GUIComponent g : ((GMenuBar) c).accountComponents) {
-                removeListeners(g);
-            }
-        }
-        if (c instanceof GDivider) {
-            for (GUIComponent g : ((GDivider) c).components) {
-                removeListeners(g);
-            }
-        }
     }
 
     /**
@@ -193,16 +144,41 @@ public final class GUI extends JFrame implements MouseWheelListener {
         scrollOffset = 0;
         panel.removeAll();
         for (GUIComponent c : components) {
-            removeListeners(c);
             if (c instanceof JPanel) {
                 panel.remove((JPanel) c);
                 ((JPanel)c).revalidate();
             }
         }
         components.clear();
+        mouseComponents.clear();
+        keyComponents.clear();
         page.build();
         panel.revalidate();
         currentPage = page;
+        constructLists(components);
+    }
+
+    /**
+     * This loops through all of the GUIComponents and
+     * through any sublists like GDivider and GMenuBar.
+     * It gets all of the GUIComponents that use listeners and adds them to their own lists.
+     *
+     * @param list
+     */
+    private void constructLists(ArrayList<GUIComponent> list) {
+        for (GUIComponent c : list) {
+            if (c instanceof  GMouseListener) {
+                mouseComponents.add((GMouseListener) c);
+            }
+            if (c instanceof  GKeyListener) {
+                keyComponents.add((GKeyListener) c);
+            }
+            if (c instanceof GSubList) {
+                for (ArrayList<GUIComponent> lists : ((GSubList) c).getComponents()) {
+                    constructLists(lists);
+                }
+            }
+        }
     }
 
     /**
@@ -210,7 +186,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
      *
      * @return The title of the page.
      */
-    public static String getPageTitle() {
+    static String getPageTitle() {
         return currentPage.getName();
     }
 
@@ -222,6 +198,42 @@ public final class GUI extends JFrame implements MouseWheelListener {
             if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
         }
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {}
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        for (GMouseListener c : mouseComponents) {
+            if (c.mousePressed(e)) break;
+        }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        for (GMouseListener c : mouseComponents) {
+            if (c.mouseReleased(e)) break;
+        }
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        for (GKeyListener c : keyComponents) {
+            c.keyTyped(e);
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {}
+
+    @Override
+    public void keyReleased(KeyEvent e) {}
 
     /**
      * This class handles all of the drawing.
@@ -237,7 +249,7 @@ public final class GUI extends JFrame implements MouseWheelListener {
             int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
             int y = scrollOffset;
 
-            /** Loop through the list of currently loaded components and call their draw methods. */
+            // Loop through the list of currently loaded components and call their draw methods.
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
                 y += c.draw(g, x, y, (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding);
