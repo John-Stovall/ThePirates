@@ -10,7 +10,7 @@ import java.awt.*;
 public interface GUIComponent {
 
     /**
-     * Draw the elements for this object.
+     * Draw the elements for this object every frame.
      *
      * @param g The graphics object to draw to.
      * @param x The x origin of this object.

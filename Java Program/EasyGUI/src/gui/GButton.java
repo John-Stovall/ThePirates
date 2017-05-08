@@ -10,7 +10,7 @@ import java.awt.image.ImageObserver;
  *
  * This class handles a logic and stuff for buttons.
  */
-public class GButton implements GUIComponent, MouseListener {
+public class GButton implements GUIComponent, GMouseListener {
 
     /** The height of the button. Used to get mouse clicks. */
     private int height;
@@ -193,30 +193,27 @@ public class GButton implements GUIComponent, MouseListener {
         return height;
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {}
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public boolean mousePressed(MouseEvent e) {
         if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && isActive) {
             pressed = true;
+            return true;
         }
+        return false;
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public boolean mouseReleased(MouseEvent e) {
+        boolean result = false;
         if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
             clickAction();
             triggered = true;
+            result = true;
         }
         pressed = false;
+        return result;
     }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
 
     /**
      * When you create a button override this method to add

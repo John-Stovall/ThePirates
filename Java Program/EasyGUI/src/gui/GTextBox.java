@@ -11,7 +11,7 @@ import java.awt.event.MouseListener;
  *
  * This class handles all the stuffs for the text boxes. Ya.
  */
-public class GTextBox implements GUIComponent, MouseListener, KeyListener {
+public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
 
     /** The height of the button. Used to get mouse clicks. */
     private int height;
@@ -168,30 +168,27 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
-
-    @Override
-    public void mousePressed(MouseEvent e) {
+    public boolean mousePressed(MouseEvent e) {
+        boolean result = false;
         selected = false;
         if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
             pressed = true;
+            result = true;
             failed = false;
         }
+        return result;
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public boolean mouseReleased(MouseEvent e) {
+        boolean result = false;
         if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
             selected = true;
+            result = true;
         }
         pressed = false;
+        return result;
     }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -217,10 +214,4 @@ public class GTextBox implements GUIComponent, MouseListener, KeyListener {
             }
         }
     }
-
-    @Override
-    public void keyPressed(KeyEvent e) {}
-
-    @Override
-    public void keyReleased(KeyEvent e) {}
 }
