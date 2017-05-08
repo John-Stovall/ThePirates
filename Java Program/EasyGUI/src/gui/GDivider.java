@@ -16,7 +16,7 @@ public class GDivider implements GUIComponent, GSubList {
     private int cells = 0;
 
     /** The list of components this object holds. */
-    ArrayList<GUIComponent> components = new ArrayList<>();
+    private ArrayList<GUIComponent> components = new ArrayList<>();
 
     /**
      * Create a divider with a provided width.
