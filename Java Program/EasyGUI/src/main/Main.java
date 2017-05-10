@@ -13,7 +13,8 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args) {
-        start();
+
+        GUI.window.setTitle("DIY Program");
 
         GUI.window.addPage(new Login());
         GUI.window.addPage(new RegisterAccount());
@@ -30,15 +31,9 @@ public class Main {
     }
 
     /**
-     * This HAS to be the first reference to GUI.window so that it initializes the singleton
-     * in here. It's really hacky and I don't like it but whatever.
+     * Old code that we don't need anymore apparently. Leaving it there in case we run into problems without it.
      */
-    private static void start() {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                GUI.window.setTitle("DIY Program");
-            }
-        });
-    }
+    //private static void start() {
+        //EventQueue.invokeLater(() -> GUI.window.setTitle("DIY Program"));
+    //}
 }
