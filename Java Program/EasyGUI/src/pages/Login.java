@@ -4,12 +4,13 @@ import gui.*;
 import main.User;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
- * Created by robertcordingly on 5/10/17.
+ * Created by Robert on 5/10/17.
+ *
+ * This class handles the Login page.
  */
 public class Login extends GUIPage {
     /**
@@ -36,7 +37,7 @@ public class Login extends GUIPage {
             } catch (Exception ex) {
                 image = null;
             }
-            subdiv.add(new GButton(277, mainColor, secondaryColor, u.getName(), new Font("Helvetica", Font.PLAIN, 20),32, image) {
+            subdiv.add(new GButton(277, mainColor, secondaryColor, u.getName(), defaultFont,32, image) {
                 @Override
                 public void clickAction() {
                     User.setLoadedUser(u);
@@ -53,7 +54,7 @@ public class Login extends GUIPage {
         GDivider centerbutton = new GDivider(240, 1);
         GDivider innerDiv = new GDivider(240, 3);
         innerDiv.add(new GSpacer(0));
-        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", new Font("Helvetica", Font.PLAIN, 20)) {
+        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Register");

@@ -12,11 +12,17 @@ public abstract class GUIPage {
     /** The name of the page. */
     private String name;
 
+    /** The menu bar. */
     protected static GMenuBar menu;
 
-    protected static Color mainColor = Color.decode("#2E7D32");
+    /** The primary color used by many different things. */
+    protected static final Color mainColor = Color.decode("#2E7D32");
 
-    protected static Color secondaryColor = Color.decode("#388E3C");
+    /** The secondary color used by many different things. */
+    protected static final Color secondaryColor = Color.decode("#388E3C");
+    
+    /** The default font used by many different things. */
+    protected static final Font defaultFont = new Font("Helvetica", Font.PLAIN, 20);
 
     /**
      * Create a page and sets it's name.
@@ -26,34 +32,34 @@ public abstract class GUIPage {
     public GUIPage(final String name) {
 
         menu = new GMenuBar(40);
-        menu.addPage(new GButton(40, mainColor, secondaryColor, "Home", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "Home", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Home");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, mainColor, secondaryColor, "+ New Project", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "+ New Project", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("New");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, mainColor, secondaryColor, "About Us", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addPage(new GButton(40, mainColor, secondaryColor, "About Us", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("About");
             }
         });
 
-        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Edit Account", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Edit Account", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Edit Account");
             }
         });
-        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Log Out", new Font("Helvetica", Font.PLAIN, 20)) {
+        menu.addAccount(new GButton(40, mainColor, secondaryColor, "Log Out", defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Login");
@@ -67,9 +73,9 @@ public abstract class GUIPage {
     /**
      * Returns the name of the page.
      *
-     * @return
+     * @return The name of the page.
      */
-    public String getName() {
+    String getName() {
         return name;
     }
 

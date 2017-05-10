@@ -1,12 +1,15 @@
 package pages;
 
+import control.General;
 import gui.*;
 import main.User;
 
 import java.awt.*;
 
 /**
- * Created by robertcordingly on 5/10/17.
+ * Created by Robert on 5/10/17.
+ *
+ * This class handles the Register Account page.
  */
 public class RegisterAccount extends GUIPage {
 
@@ -42,17 +45,17 @@ public class RegisterAccount extends GUIPage {
                 String myName = name.getText().trim();
                 String myEmail = email.getText().trim();
 
-                if(testName(myName) && testEmail(myEmail)){
+                if(General.testName(myName) && General.testEmail(myEmail)){
                     //This is the code for a successful login.
                     User validUser = new User(myName, myEmail);
                     User.getUsers().add(validUser);
                     User.setLoadedUser(validUser);
                     GUI.window.gotoPage("Home");
                 } else {
-                    if (!testName(myName)) {
+                    if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
                     }
-                    if (!testEmail(myEmail)) {
+                    if (!General.testEmail(myEmail)) {
                         email.failed("• Must be a valid email.");
                     }
                 }
@@ -79,39 +82,5 @@ public class RegisterAccount extends GUIPage {
                 }
             });
         }
-    }
-
-    /**
-     * This is a simple character counter that returns false if there are
-     * less than 3 characters.
-     *
-     * @param name
-     * @return
-     */
-    private static boolean testName(String name){
-        if (name.length() < 3) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    /**
-     * This tests that there is an @ sign and a '.com' a bit lacking,
-     * but we can expand it if we want.
-     *
-     * @param email
-     * @return
-     */
-    private static boolean testEmail(String email){
-        // contains @
-        if (email.indexOf('@') == -1) {
-            return false;
-        }
-        // contains a '.com' at the end
-        if(!email.toLowerCase().endsWith(".com")) {
-            return false;
-        }
-        return true;
     }
 }
