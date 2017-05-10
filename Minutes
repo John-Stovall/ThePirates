@@ -14,7 +14,7 @@ as a user I'd like the program to be easy,
 ...I'd like the program to save online automatically
 ...cost/benifit analysis
 ...i'd like the program to collect data
-...i'd like the program to 
+n...i'd like the program to 
 
 listing what is on list 2 and what we think is possible:
 ---------| cross platform |  mobility  |  database  | votes
@@ -24,7 +24,7 @@ Mobile:		  no*		yes         yes
 
 What would it take to break the tie?
 For website. GUI's in java take a bit, HTML will be easier
-For Destop: we're all familiar with it. 
+aFor Destop: we're all familiar with it. 
 Decided for HTML page:
 Objectives everyone look up javascript.
 
@@ -34,7 +34,7 @@ Meeting date: 04/13/17, 5:40 PM to 7:20 PM
 Location: CP 325
 Attending: Robert, Rand, Reagan, Ryan 
 Absent: no one
-Facilitator: Robert
+yFacilitator: Robert
 Minutes Taker: Rand
 
 Discussion summary: 
@@ -42,7 +42,7 @@ Discussion summary:
 •	The group make paper sketches for the few program GUI frames (Start-up, Home, Side Menu, Bill Estimator, New Project).
 •	Robert has a sample start-up menu. 
 •	Reagan is working on J-Unit for iteration 1.
-Objectives:
+MObjectives:
 •	Modify the start-up frame to take user input 
 •	Finish J-unit for start-up frame
 •	Write and submit iteration 1 through Canvas. 
@@ -91,10 +91,25 @@ Next Topic: Phone use; can swing be used on android? Answer yes. CodeNameOne. it
 extension into inteliJ. Reagan will work on getting the app on Phone.
 Rand has made Insulation page. Ryan has made UML. 
 
-Meeting date: 01/01/17, 7:20 PM to _____ PM
-Location: CP 106
-Attending: _____ 
+Meeting date: 05/09/17, 7:20 PM to 8:00 PM
+Location: CP 206
+Attending: Robert, Rand, Reagan, Ryan
 Absent: no one
 Facilitator: Robert
 Minutes Taker: Rand
+Notes: Modifying GUI plan, Modifying UML design, Introducing Mobile APP plan for revision, Introducing Insullation Calculator. 
+Next Topic: Robert and Rand agreed to construct classes that will connect UML with the current main 
+         class obtained in the project. 
+Next Topic: Ryan is revising and improving UML design according to notes taken last Thursday.
+Next Topic: Reagan introduced mobile app structure to the group. Revisions are in process to the mobile app structure.
+Next Topic: Robert has reduced the running time of the project by modifying the mouseListener(). 
+Next Topic: Robert and Reagan introduced a calculator for insullation projects. 
 
+
+
+Meeting date: ________, 7:20 PM to ___ PM
+Location: CP 206
+Attending: Robert, Rand, Reagan, Ryan
+Absent: no one
+Facilitator: Ryan
+Minutes Taker: Robert
