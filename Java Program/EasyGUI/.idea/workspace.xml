@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="Added more fields to GUIPage that other pages will share. For example default colors and fonts.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/control/General.java" />
+    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUIPage.java" afterPath="$PROJECT_DIR$/src/gui/GUIPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/About.java" afterPath="$PROJECT_DIR$/src/pages/About.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/EditAccount.java" afterPath="$PROJECT_DIR$/src/pages/EditAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.java" afterPath="$PROJECT_DIR$/src/pages/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Login.java" afterPath="$PROJECT_DIR$/src/pages/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/NewProject.java" afterPath="$PROJECT_DIR$/src/pages/NewProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/RegisterAccount.java" afterPath="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/control/General.java" afterPath="$PROJECT_DIR$/src/control/General.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,20 +78,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="General.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="General.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/control/General.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding>
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#494#495#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="About.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="About.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/About.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -253,11 +246,11 @@
         <option value="$PROJECT_DIR$/src/gui/GUIPage.java" />
         <option value="$PROJECT_DIR$/src/pages/Home.java" />
         <option value="$PROJECT_DIR$/src/pages/About.java" />
-        <option value="$PROJECT_DIR$/src/control/General.java" />
         <option value="$PROJECT_DIR$/src/pages/EditAccount.java" />
         <option value="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
         <option value="$PROJECT_DIR$/src/pages/NewProject.java" />
         <option value="$PROJECT_DIR$/src/pages/Login.java" />
+        <option value="$PROJECT_DIR$/src/control/General.java" />
       </list>
     </option>
   </component>
@@ -362,10 +355,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -378,6 +367,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="control" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -900,7 +893,7 @@
       <workItem from="1494373646431" duration="162000" />
       <workItem from="1494379578821" duration="1648000" />
       <workItem from="1494457856674" duration="85000" />
-      <workItem from="1494457945644" duration="2300000" />
+      <workItem from="1494457945644" duration="2406000" />
     </task>
     <task id="LOCAL-00001" summary="Testing github in IntelliJ">
       <created>1492415888552</created>
@@ -1028,11 +1021,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494459112712</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Created the General class, a static class that holds simple methods&#10;that multiple classes use. &#10;&#10;Also removed all Checkstyle errors from the pages classes.">
+      <created>1494460349046</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1494460349046</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91386000" />
+    <option name="totallyTimeSpent" value="91492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1120,7 +1120,8 @@
     <MESSAGE value="Added animation to graphs and increased the amount of padding on the &#10;side of pages." />
     <MESSAGE value="Added a comment." />
     <MESSAGE value="Added more fields to GUIPage that other pages will share. For example default colors and fonts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more fields to GUIPage that other pages will share. For example default colors and fonts." />
+    <MESSAGE value="Created the General class, a static class that holds simple methods&#10;that multiple classes use. &#10;&#10;Also removed all Checkstyle errors from the pages classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the General class, a static class that holds simple methods&#10;that multiple classes use. &#10;&#10;Also removed all Checkstyle errors from the pages classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1470,17 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-58">
@@ -1551,6 +1541,17 @@
             <element signature="imports" expanded="true" />
             <element signature="e#222#223#0" expanded="true" />
             <element signature="e#252#253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
           </folding>
         </state>
       </provider>

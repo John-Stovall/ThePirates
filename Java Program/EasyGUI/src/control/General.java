@@ -11,7 +11,6 @@ public class General {
     private General() {}
 
     /**
-     *
      * This is a simple character counter that returns false if there are
      * less than 3 characters.
      *
