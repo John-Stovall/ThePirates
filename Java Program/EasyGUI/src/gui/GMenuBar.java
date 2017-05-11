@@ -235,7 +235,8 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         pagePressed = false;
         accountPressed = false;
 
-        return pageSelected || accountSelected;
+        //return pageSelected || accountSelected;
+        return false;
     }
 
     @Override
