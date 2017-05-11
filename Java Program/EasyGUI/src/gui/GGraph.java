@@ -22,6 +22,12 @@ public class GGraph implements GUIComponent {
     /** Used for the intro animation. */
     private double[] animation;
 
+    /** The speed at which the animation plays. Higher is exponentially slower. */
+    private double animationSpeed = 3.0;
+
+    /** The point at which the next spot in the graph will start animating. */
+    private double animationThreshold = 0.9;
+
     /**
      * Creates a graph with the supplied data points.
      *
@@ -92,10 +98,10 @@ public class GGraph implements GUIComponent {
 
         for (int i = 0; i < times.size(); i++) {
             if (i == 0) {
-                animation[i] += (1 - animation[i]) / 10.0;
+                animation[i] += (1 - animation[i]) / animationSpeed;
             } else {
-                if (animation[i - 1] > 0.5) {
-                    animation[i] += (1 - animation[i]) / 10.0;
+                if (animation[i - 1] > animationThreshold) {
+                    animation[i] += (1 - animation[i]) / animationSpeed;
                 }
             }
         }
