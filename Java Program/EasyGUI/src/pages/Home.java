@@ -3,6 +3,7 @@ package pages;
 import gui.*;
 import main.User;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -40,6 +41,8 @@ public class Home extends GUIPage {
         GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", defaultFont));
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GSpacer(5));
+        //GUI.window.add((GUIComponent) new GWrapper(50, new JTextField()));
+        //GUI.window.add((GUIComponent) new GWrapper(50, new JButton("This is a magical JButton")));
         GUI.window.add(new GSpacer(5));
         GUI.window.add(menu);
     }
