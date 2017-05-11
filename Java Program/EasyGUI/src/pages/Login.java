@@ -53,11 +53,22 @@ public class Login extends GUIPage {
 
         GDivider centerbutton = new GDivider(240, 1);
         GDivider innerDiv = new GDivider(240, 3);
-        innerDiv.add(new GSpacer(0));
-        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", defaultFont) {
+        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", defaultFont, 8) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Register");
+            }
+        });
+        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Import", defaultFont, 8) {
+            @Override
+            public void clickAction() {
+
+            }
+        });
+        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Export", defaultFont, 8) {
+            @Override
+            public void clickAction() {
+
             }
         });
         centerbutton.add(innerDiv);
