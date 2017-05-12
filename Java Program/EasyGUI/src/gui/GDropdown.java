@@ -3,6 +3,7 @@ package gui;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Robert on 5/11/17.
@@ -15,7 +16,7 @@ public class GDropdown implements GUIComponent, GMouseListener {
     private ArrayList<String> options;
 
     /** The currently selected option. */
-    private String selection = "";
+    private String selection;
 
     /** Whether the dropdown menu is open. */
     private boolean open = false;
@@ -64,6 +65,11 @@ public class GDropdown implements GUIComponent, GMouseListener {
     public GDropdown(ArrayList<String> options) {
         this.options = options;
         selection = options.get(0);
+    }
+
+    public GDropdown(String[] options) {
+        this.options = new ArrayList<String>(Arrays.asList(options));
+        selection = this.options.get(0);
     }
 
     @Override
@@ -149,5 +155,14 @@ public class GDropdown implements GUIComponent, GMouseListener {
      */
     public String getSelection() {
         return selection;
+    }
+
+    /**
+     * Sets the currently selected option to something.
+     *
+     * @param selection What to set the selection to.
+     */
+    public void setSelection(final String selection) {
+        this.selection = selection;
     }
 }
