@@ -93,6 +93,8 @@ public class GDropdown implements GUIComponent, GMouseListener {
             g.fillRect(x + innerPadding, yPos, width - innerPadding * 2, height);
             g.setColor(Color.white);
             g.drawString(s, x + innerPadding + 4, yPos + height - 4);
+            g.setColor(anotherColor);
+            g.drawRect(x + innerPadding, yPos, width - innerPadding * 2, height);
         }
 
         g.setColor(anotherColor);
