@@ -6,8 +6,8 @@ import java.awt.*;
 /**
  * Created by Robert on 4/14/17.
  *
- * This class is not that good. Avoid using it if possible and it's only
- * been tested using JButton.
+ * This class adds compatibility for standard JComponents in the EasyGUI system.
+ * This way you can use JTextFields or other components.
  */
 public class GWrapper extends JPanel implements GUIComponent {
 
@@ -23,32 +23,30 @@ public class GWrapper extends JPanel implements GUIComponent {
      * @param height The height of the area.
      * @param item The swing component that this wrapper will hold.
      */
-    @Deprecated
     public GWrapper(final int height, final JComponent item) {
         this.height = height;
         this.item = item;
-    }
-
-    /**
-     * Called by GUI to setup the swing stuff properly.
-     *
-     * @param x The x position of the wrapper.
-     * @param y The y position of the wrapper.
-     * @param width The width.
-     */
-    void build(int x, int y, int width) {
         setLayout(new BorderLayout());
-        setLocation(x, y);
-        setSize(width, height);
         add(item, BorderLayout.CENTER);
         setVisible(true);
-        revalidate();
-        repaint();
     }
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        repaint();
+        setBounds(0, 0, width, height);
+        setLocation(x, y);
+        setSize(width, height);
+        revalidate();
+        //repaint();
         return height;
+    }
+
+    /**
+     * This method returns the currently help JComponent.
+     *
+     * @return The component used by this wrapper.
+     */
+    public JComponent getComponent() {
+        return item;
     }
 }

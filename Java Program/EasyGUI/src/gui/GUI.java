@@ -252,10 +252,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             // Loop through the list of currently loaded components and call their draw methods.
             for (GUIComponent c : components) {
                 g.setColor(Color.black);
-                y += c.draw(g, x, y, (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding);
-                if (c instanceof GWrapper) {
-                    ((GWrapper) c).build(x, y, (getWidth() > maxWidth) ? maxWidth : getWidth());
-                }
+                int width = (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding;
+                y += c.draw(g, x, y, width);
             }
             pageHeight = y - scrollOffset;
         }
