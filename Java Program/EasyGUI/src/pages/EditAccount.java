@@ -1,5 +1,6 @@
 package pages;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import gui.*;
 import main.User;
 
@@ -47,16 +48,18 @@ public class EditAccount extends GUIPage {
                 String myName = name.getText().trim();
                 String myEmail = email.getText().trim();
 
-                if (General.testName(myName) && General.testEmail(myEmail)) {
+                //TODO: Fix the bug here. You can't change things when you don't change the email.
+                if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail) && !myEmail.equals(User.getLoadedUser().getEmail()))) {
                     User.getLoadedUser().setName(myName);
                     User.getLoadedUser().setEmail(myEmail);
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
-                    }
-                    if (!General.testEmail(myEmail)) {
+                    } if (!General.testEmail(myEmail)) {
                         email.failed("• Must be a valid email.");
+                    } else if (!General.isEmailFree(myEmail)) {
+                        email.failed("• This Email is already taken.");
                     }
                 }
             }

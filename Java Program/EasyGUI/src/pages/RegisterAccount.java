@@ -45,18 +45,18 @@ public class RegisterAccount extends GUIPage {
                 String myName = name.getText().trim();
                 String myEmail = email.getText().trim();
 
-                if(General.testName(myName) && General.testEmail(myEmail)){
-                    //This is the code for a successful login.
-                    User validUser = new User(myName, myEmail);
-                    User.getUsers().add(validUser);
-                    User.setLoadedUser(validUser);
+                if (General.testName(myName) && General.testEmail(myEmail) && General.isEmailFree(myEmail)) {
+                    User newUser = new User(myName, myEmail);
+                    User.getUsers().add(newUser);
+                    User.setLoadedUser(newUser);
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
-                    }
-                    if (!General.testEmail(myEmail)) {
+                    } if (!General.testEmail(myEmail)) {
                         email.failed("• Must be a valid email.");
+                    } else if (!General.isEmailFree(myEmail)) {
+                        email.failed("• This Email is already taken.");
                     }
                 }
             }

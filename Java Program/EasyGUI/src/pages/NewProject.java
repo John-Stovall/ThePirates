@@ -31,7 +31,12 @@ public class NewProject extends GUIPage {
         } catch (Exception ex) {
             image = null;
         }
-        cell1.add(new GButton(277, mainColor, secondaryColor, "Insulation", defaultFont,32, image));
+        cell1.add(new GButton(277, mainColor, secondaryColor, "Insulation", defaultFont,32, image) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(new CreateProject("Insulation"));
+            }
+        });
         cell1.add(new GSpacer(32));
         GDivider cell2 = new GDivider(240);
         try {
@@ -39,7 +44,12 @@ public class NewProject extends GUIPage {
         } catch (Exception ex) {
             image = null;
         }
-        cell2.add(new GButton(277, mainColor, secondaryColor, "Lights", defaultFont,32, image));
+        cell2.add(new GButton(277, mainColor, secondaryColor, "Lights", defaultFont,32, image) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(new CreateProject("Lights"));
+            }
+        });
         cell2.add(new GSpacer(32));
         GDivider cell3 = new GDivider(240);
         try {
@@ -47,7 +57,12 @@ public class NewProject extends GUIPage {
         } catch (Exception ex) {
             image = null;
         }
-        cell3.add(new GButton(277, mainColor, secondaryColor, "Refrigerator", defaultFont,32, image));
+        cell3.add(new GButton(277, mainColor, secondaryColor, "Refrigerator", defaultFont,32, image) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(new CreateProject("Refrigerator"));
+            }
+        });
         cell3.add(new GSpacer(32));
         GDivider cell4 = new GDivider(240);
         try {
@@ -55,7 +70,12 @@ public class NewProject extends GUIPage {
         } catch (Exception ex) {
             image = null;
         }
-        cell4.add(new GButton(277, mainColor, secondaryColor, "Washing Machine", defaultFont,32, image));
+        cell4.add(new GButton(277, mainColor, secondaryColor, "Washing Machine", defaultFont,32, image) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(new CreateProject("Washing Machine"));
+            }
+        });
         cell4.add(new GSpacer(32));
         GDivider cell5 = new GDivider(240);
         try {
@@ -63,7 +83,12 @@ public class NewProject extends GUIPage {
         } catch (Exception ex) {
             image = null;
         }
-        cell5.add(new GButton(277, mainColor, secondaryColor, "Dryer", defaultFont,32, image));
+        cell5.add(new GButton(277, mainColor, secondaryColor, "Dryer", defaultFont,32, image) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(new CreateProject("Dryer"));
+            }
+        });
         cell5.add(new GSpacer(32));
         div.add(cell1);
         div.add(cell2);
