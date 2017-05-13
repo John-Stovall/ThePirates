@@ -7,7 +7,10 @@ import java.awt.*;
 /**
  * Created by Robert on 4/12/17.
  *
- * The GUI is broken into pages. Ya.
+ * A GUIPage defines the build method that will be called by
+ * the GUI when a page is changed. Basically that method will define what
+ * components go on the page and the functions that buttons call also should
+ * be defined here as GUIPages act as the model and bridge between the control and view.
  */
 public abstract class GUIPage {
 
@@ -25,34 +28,39 @@ public abstract class GUIPage {
     public GUIPage(final String name) {
 
         menu = new GMenuBar(40);
-        menu.addPage(new GButton(40, Style.menuSideBarColor, Style.menuSideBarSecondaryColor, "Home", Style.defaultFont) {
+        menu.addPage(new GButton(40, Style.menuSideBarColor,
+                Style.menuSideBarSecondaryColor, "Home", Style.defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Home");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, Style.menuSideBarColor, Style.menuSideBarSecondaryColor, "+ New Project", Style.defaultFont) {
+        menu.addPage(new GButton(40, Style.menuSideBarColor,
+                Style.menuSideBarSecondaryColor, "+ New Project", Style.defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("New");
             }
         });
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
-        menu.addPage(new GButton(40, Style.menuSideBarColor, Style.menuSideBarSecondaryColor, "About Us", Style.defaultFont) {
+        menu.addPage(new GButton(40, Style.menuSideBarColor,
+                Style.menuSideBarSecondaryColor, "About Us", Style.defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("About");
             }
         });
 
-        menu.addAccount(new GButton(40, Style.menuSideBarColor, Style.menuSideBarSecondaryColor, "Edit Account", Style.defaultFont) {
+        menu.addAccount(new GButton(40, Style.menuSideBarColor,
+                Style.menuSideBarSecondaryColor, "Edit Account", Style.defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Edit Account");
             }
         });
-        menu.addAccount(new GButton(40, Style.menuSideBarColor, Style.menuSideBarSecondaryColor, "Log Out", Style.defaultFont) {
+        menu.addAccount(new GButton(40, Style.menuSideBarColor,
+                Style.menuSideBarSecondaryColor, "Log Out", Style.defaultFont) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Login");

@@ -37,7 +37,6 @@ public class GWrapper extends JPanel implements GUIComponent {
         setLocation(x, y);
         setSize(width, height);
         revalidate();
-        //repaint();
         return height;
     }
 

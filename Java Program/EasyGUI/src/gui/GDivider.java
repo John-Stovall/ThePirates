@@ -74,7 +74,8 @@ public class GDivider implements GUIComponent, GSubList {
         int maxHeight = 0;
         for (int i = 0; i < components.size(); i++) {
             GUIComponent part = components.get(i);
-            int lastHeight = part.draw(g, x + (widthPerCell * (i % cellsPerRow)) + cellOffset, y + rowHeight, widthPerCell);
+            int lastHeight = part.draw(g, x + (widthPerCell * (i % cellsPerRow)) + cellOffset,
+                    y + rowHeight, widthPerCell);
             if (lastHeight > maxHeight) {
                 maxHeight = lastHeight;
             }

@@ -13,7 +13,7 @@ public interface GMouseListener {
      * This method is mostly the same as MouseListener's mouse pressed event.
      * The only differences is that it will return a boolean if a mouse event if correctly fired.
      * An example of this is pressing a button. When this method returns true the loop that triggers
-     * all of the mouse events will be broken making it so that when two buttons are on top of eachother
+     * all of the mouse events will be broken making it so that when two buttons are on top of each other
      * only one will be fired.
      *
      * @param e The mouse event.
@@ -25,7 +25,7 @@ public interface GMouseListener {
      * This method is mostly the same as MouseListener's mouse released event.
      * The only differences is that it will return a boolean if a mouse event if correctly fired.
      * An example of this is pressing a button. When this method returns true the loop that triggers
-     * all of the mouse events will be broken making it so that when two buttons are on top of eachother
+     * all of the mouse events will be broken making it so that when two buttons are on top of each other
      * only one will be fired.
      *
      * @param e The mouse event.

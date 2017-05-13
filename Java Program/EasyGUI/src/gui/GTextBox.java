@@ -1,11 +1,11 @@
 package gui;
 
+import control.General;
 import control.Style;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import control.Style;
 
 /**
  * Created by Robert on 4/12/17.
@@ -106,36 +106,32 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        ticks += Style.textBoxFlashSpeed;
+        //Save some variables for later.
         int boxHeight = textObj.draw(g, x + 4, y, width - 8) + 6;
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = boxHeight;
 
-        if (failed) {
-            failMessagePos += ((boxHeight / 2 + 35) - failMessagePos) / Style.textBoxMessageMoveSpeed;
-        } else {
-            failMessagePos += (-failMessagePos) / Style.textBoxMessageMoveSpeed;
-        }
-
+        //Draw the failed message text under everything.
         g.setColor(Style.textBoxErrorColor);
         g.setFont(Style.textBoxFail);
         g.drawString(failedMessage, x, y + failMessagePos + boxHeight / 2);
 
+        //Draw the background rectangle.
         if (pressed || selected) {
             g.setColor(Style.textBoxSecondaryColor);
         } else {
             g.setColor(Style.textBoxColor);
         }
-
         g.fillRect(x, y, width, boxHeight);
 
+        //Set variables for the border rectangle.
         g.setFont(font);
         g.setColor(Style.textBoxBorderColor);
 
+        //Prepare the text, add the | to the end if the timing is correct.
         textObj.setText(text);
-
         if (selected) {
             if (((int)ticks) % 2 == 0) {
                 textObj.setText(text + "|");
@@ -143,12 +139,21 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
             g.drawRect(x, y, width, boxHeight);
         }
 
+        //Draw the text.
         textObj.draw(g, x + 4, y, width - 8);
 
+        //Draw the red border if failed.
         if (failed) {
             g.setColor(Style.textBoxErrorColor);
             g.drawRect(x, y, width, boxHeight);
         }
+
+        //Increment the counter for the cursor.
+        ticks += Style.textBoxFlashSpeed;
+
+        //Increment the animation.
+        failMessagePos += Style.exponentialTweenRound(failMessagePos, (failed) ? (boxHeight / 2 + 25) : 0,
+                Style.textBoxMessageMoveSpeed);
 
         return boxHeight + Math.max(failMessagePos - boxHeight / 2 + 10, 0);
     }
@@ -156,7 +161,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
     @Override
     public boolean mousePressed(MouseEvent e) {
         selected = false;
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
+        if (General.clickedInside(x, y, width, height, e)) {
             pressed = true;
             failed = false;
         }
@@ -165,7 +170,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
 
     @Override
     public boolean mouseReleased(MouseEvent e) {
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
+        if (General.clickedInside(x, y, width, height, e) && pressed) {
             selected = true;
         }
         pressed = false;
@@ -175,6 +180,8 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         if (selected) {
+
+            //Add characters if selected.
             if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE && text.length() > 0) {
                 text = text.substring(0, text.length() - 1);
             } else {
@@ -183,6 +190,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
                 }
             }
 
+            //Allow tabbing between boxes.
             if (e.getKeyChar() == KeyEvent.VK_TAB) {
                 boolean found = false;
                 for (GUIComponent c : GUI.window.getItems()) {

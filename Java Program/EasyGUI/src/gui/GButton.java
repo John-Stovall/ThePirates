@@ -1,5 +1,6 @@
 package gui;
 
+import control.General;
 import control.Style;
 
 import java.awt.*;
@@ -52,8 +53,6 @@ public class GButton implements GUIComponent, GMouseListener {
 
     /** The progress through the hover animation. */
     private int hoverAnimation = 0;
-
-    private boolean triggered = false;
 
     /**
      * Create a button!
@@ -117,8 +116,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param font The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
      */
-    public GButton(final int height, final String text,
-                   final Font font, final int padding) {
+    public GButton(final int height, final String text, final Font font, final int padding) {
         this.height = height;
         this.font = font;
         this.text = text;
@@ -153,40 +151,36 @@ public class GButton implements GUIComponent, GMouseListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        g.setColor(color);
-        g.fillRect(x + padding / 2, y, width - padding, height);
 
-        g.setColor(hover);
-        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
-        if (hoverAnimation < width && pressed) {
-            hoverAnimation += Math.ceil((width - hoverAnimation) / Style.buttonMoveSpeed);
-        } else if (!pressed) {
-            hoverAnimation += Math.ceil(Math.abs((-hoverAnimation)
-                    / Style.buttonMoveSpeed)) * (Math.signum((-hoverAnimation) / Style.buttonMoveSpeed));
-        }
-
-        if (triggered && hoverAnimation >= width) {
-            triggered = false;
-        }
-
+        //Save variables for later.
         this.x = x;
         this.y = y;
         this.width = width;
+
+        //Draw the background rectangle.
+        g.setColor(color);
+        g.fillRect(x + padding / 2, y, width - padding, height);
+        g.setColor(hover);
+        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
+
+        //Prepare variables to draw the text and icon.
         g.setColor(Style.buttonTextColor);
         g.setFont(font);
-
         int textWidth = g.getFontMetrics().stringWidth(text);
         int textHeight = g.getFontMetrics().getHeight();
 
+        //Draw the text and icon in the proper orientation.
         if (icon != null) {
             double imageRatio = icon.getHeight(null) / icon.getWidth(null);
             int imageHeight = (int) ((width - padding * 2) * imageRatio);
             g.drawImage(icon, x + padding, y + padding, width - padding * 2, imageHeight, null);
             g.drawString(text, x + width / 2 - textWidth / 2, y + imageHeight + padding + (height - imageHeight) / 2 + textHeight / 2 - 4);
-
         } else {
             g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
         }
+
+        //Increment the animation.
+        hoverAnimation += Style.exponentialTweenRound(hoverAnimation, (pressed) ? width : 0, Style.buttonMoveSpeed);
 
         return height;
     }
@@ -194,7 +188,7 @@ public class GButton implements GUIComponent, GMouseListener {
 
     @Override
     public boolean mousePressed(MouseEvent e) {
-        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && isActive) {
+        if (General.clickedInside(x + padding / 2, y, width - padding, height, e) && isActive) {
             pressed = true;
             return true;
         }
@@ -204,9 +198,8 @@ public class GButton implements GUIComponent, GMouseListener {
     @Override
     public boolean mouseReleased(MouseEvent e) {
         boolean result = false;
-        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
+        if (General.clickedInside(x + padding / 2, y, width - padding, height, e) && pressed) {
             clickAction();
-            triggered = true;
             result = true;
         }
         pressed = false;

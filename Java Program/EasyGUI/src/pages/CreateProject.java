@@ -3,8 +3,6 @@ package pages;
 import control.Style;
 import gui.*;
 
-import java.awt.*;
-
 /**
  * Created by Robert on 5/11/17.
  *
