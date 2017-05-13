@@ -1,5 +1,6 @@
 package gui;
 
+import control.Style;
 import main.User;
 
 import java.awt.*;
@@ -50,21 +51,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
     /** The total height of the right side bar. */
     private int accountTotalHeight;
 
-    /** How fast the menus scroll. Lower numbers are faster and exponential! */
-    private double scrollSpeed = 7.0;
-
-    /** The main color of the menu bar. */
-    private static final Color mainColor = Color.decode("#43A047");
-
-    /** The secondary color of the menu bar. */
-    private static final Color secondaryColor = Color.decode("#2E7D32");
-
-    /** The color of the text in the menu bar. */
-    private static final Color textColor = Color.white;
-
-    /** The color of the side bars. */
-    private static final Color sideColor = Color.decode("#2E7D32");
-
     /** The GUIComponents in the left menu. */
     private ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
@@ -112,11 +98,11 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         Graphics2D g2d = ((Graphics2D) g);
 
         //Draw the main rectangle.
-        g.setColor(mainColor);
+        g.setColor(Style.menuColor);
         g.fillRect(0, 0, GUI.getWindowWidth(), height);
 
         //Draw the little rectangle.
-        g.setColor(mainColor.darker());
+        g.setColor(Style.menuColor.darker());
         g.fillRect(0, height - 2, GUI.getWindowWidth(), 2);
 
         //Draw drop shadow.
@@ -128,10 +114,10 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         g2d = ((Graphics2D) g);
 
         //Draw the page bar.
-        g.setColor(sideColor);
+        g.setColor(Style.menuSideBarColor);
         g.fillRect(GUI.horizontalOffset - dropdownWidth - tabPadding, height, dropdownWidth, GUI.window.getHeight());
 
-        g.setColor(secondaryColor);
+        g.setColor(Style.menuSideBarColor);
         int y2 = height;
         if (pageSelected || pagePressed) {
             g.fillRect(0, 0, height, height);
@@ -139,7 +125,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         for (GUIComponent c : pageComponents) {
             y2 += c.draw(g, GUI.horizontalOffset - dropdownWidth - tabPadding, y2, dropdownWidth);
         }
-        g.setColor(textColor);
+        g.setColor(Style.menuTextColor);
         for (int i = 0; i < 3; i++) {
             g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)),
                     (height / 8) * 6, height / 7);
@@ -147,11 +133,11 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         pageTotalHeight = y2 - height;
 
         //Draw the account bar.
-        g.setColor(sideColor);
+        g.setColor(Style.menuSideBarColor);
         int newX = GUI.getWindowWidth() - dropdownWidth;
         g.fillRect(newX + dropdownWidth + GUI.horizontalOffset + tabPadding, height, dropdownWidth, GUI.window.getHeight());
 
-        g.setColor(secondaryColor);
+        g.setColor(Style.menuSideBarColor);
         int y3 = height;
         if (accountSelected || accountPressed) {
             g.fillRect(GUI.getWindowWidth() - height - nameWidth - 16, 0, height + nameWidth + 16, height);
@@ -159,7 +145,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
         }
-        g.setColor(textColor);
+        g.setColor(Style.menuTextColor);
 
         Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
         g2d.fill(circle);
@@ -181,11 +167,11 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
         //Process slide over animation
         if (pageSelected) {
-            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
+            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / Style.sidebarSlideSpeed);
         } else if (accountSelected) {
-            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
+            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / Style.sidebarSlideSpeed);
         } else {
-            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / scrollSpeed)) * (Math.signum((-GUI.horizontalOffset) / scrollSpeed));
+            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / Style.sidebarSlideSpeed)) * (Math.signum((-GUI.horizontalOffset) / Style.sidebarSlideSpeed));
         }
 
         return height;
@@ -235,7 +221,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         pagePressed = false;
         accountPressed = false;
 
-        //return pageSelected || accountSelected;
         return false;
     }
 

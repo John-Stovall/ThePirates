@@ -1,5 +1,7 @@
 package gui;
 
+import control.Style;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -17,10 +19,10 @@ public class GText implements GUIComponent {
     private String text;
 
     /** The default font. */
-    private Font font = new Font("Helvetica", Font.PLAIN, 32);
+    private Font font = Style.titleFont;
 
     /** The default color. */
-    private Color color = Color.black;
+    private Color color = Style.defaultTextColor;
 
     /** The padding on the left and right side of text. */
     private int sidePadding = 5;

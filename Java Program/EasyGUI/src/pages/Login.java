@@ -1,5 +1,6 @@
 package pages;
 
+import control.Style;
 import gui.*;
 import main.User;
 
@@ -37,7 +38,7 @@ public class Login extends GUIPage {
             } catch (Exception ex) {
                 image = null;
             }
-            subdiv.add(new GButton(277, mainColor, secondaryColor, u.getName(), defaultFont,32, image) {
+            subdiv.add(new GButton(277, u.getName(), Style.defaultFont, 32, image) {
                 @Override
                 public void clickAction() {
                     User.setLoadedUser(u);
@@ -53,19 +54,19 @@ public class Login extends GUIPage {
 
         GDivider centerbutton = new GDivider(240, 1);
         GDivider innerDiv = new GDivider(240, 3);
-        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Add new Account", defaultFont, 8) {
+        innerDiv.add(new GButton(40, "Add new Account", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Register");
             }
         });
-        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Import", defaultFont, 8) {
+        innerDiv.add(new GButton(40, "Import", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
 
             }
         });
-        innerDiv.add(new GButton(40, mainColor, secondaryColor, "Export", defaultFont, 8) {
+        innerDiv.add(new GButton(40, "Export", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
 

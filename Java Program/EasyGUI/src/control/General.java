@@ -4,7 +4,7 @@ import main.User;
 
 /**
  * Created by Robert on 5/10/17.
- * <p>
+ *
  * This is a class that holds general methods that
  * other classes may more may not use.
  */

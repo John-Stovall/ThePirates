@@ -1,10 +1,11 @@
 package gui;
 
+import control.Style;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import control.Style;
 
 /**
  * Created by Robert on 4/12/17.
@@ -24,12 +25,6 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
 
     /** The width of the button. Used to get mouse clicks. */
     private int width;
-
-    /** The 'standby' color of the button. */
-    private Color color;
-
-    /** The color the button changes to when you click it. */
-    private Color hover;
 
     /** Whether the button is pressed or not. */
     private boolean pressed = false;
@@ -64,13 +59,9 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Create a super awesome text box!
      *
      * @param height The height of the text box.
-     * @param main The main color of the text box.
-     * @param hover The secondary color of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
      */
-    public GTextBox(final int height, final Color main, final Color hover, final String text) {
-        this.color = main;
-        this.hover = hover;
+    public GTextBox(final int height, final String text) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -81,13 +72,9 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Create an even better textbox!
      *
      * @param height The height of the text box.
-     * @param main The main color of the text box.
-     * @param hover The secondary color of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
      */
-    public GTextBox(final int height, final Color main, final Color hover, final String text, final int maxLength) {
-        this.color = main;
-        this.hover = hover;
+    public GTextBox(final int height, final String text, final int maxLength) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -119,7 +106,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        ticks += 0.02;
+        ticks += Style.textBoxFlashSpeed;
         int boxHeight = textObj.draw(g, x + 4, y, width - 8) + 6;
         this.x = x;
         this.y = y;
@@ -127,26 +114,25 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
         this.height = boxHeight;
 
         if (failed) {
-            failMessagePos += ((boxHeight / 2 + 35) - failMessagePos) / 10.0;
+            failMessagePos += ((boxHeight / 2 + 35) - failMessagePos) / Style.textBoxMessageMoveSpeed;
         } else {
-            failMessagePos += (-failMessagePos) / 10.0;
+            failMessagePos += (-failMessagePos) / Style.textBoxMessageMoveSpeed;
         }
 
-        g.setColor(Color.red);
-        g.setFont(new Font("Helvetica", Font.PLAIN, 16));
+        g.setColor(Style.textBoxErrorColor);
+        g.setFont(Style.textBoxFail);
         g.drawString(failedMessage, x, y + failMessagePos + boxHeight / 2);
 
         if (pressed || selected) {
-            g.setColor(hover);
+            g.setColor(Style.textBoxSecondaryColor);
         } else {
-            g.setColor(color);
+            g.setColor(Style.textBoxColor);
         }
 
         g.fillRect(x, y, width, boxHeight);
 
-        g.setColor(Color.white);
         g.setFont(font);
-        g.setColor(Color.black);
+        g.setColor(Style.textBoxBorderColor);
 
         textObj.setText(text);
 
@@ -160,7 +146,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
         textObj.draw(g, x + 4, y, width - 8);
 
         if (failed) {
-            g.setColor(Color.red);
+            g.setColor(Style.textBoxErrorColor);
             g.drawRect(x, y, width, boxHeight);
         }
 
@@ -169,25 +155,21 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
 
     @Override
     public boolean mousePressed(MouseEvent e) {
-        boolean result = false;
         selected = false;
         if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
             pressed = true;
-            result = true;
             failed = false;
         }
-        return result;
+        return false;
     }
 
     @Override
     public boolean mouseReleased(MouseEvent e) {
-        boolean result = false;
         if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
             selected = true;
-            result = true;
         }
         pressed = false;
-        return result;
+        return false;
     }
 
     @Override

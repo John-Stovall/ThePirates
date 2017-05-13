@@ -27,8 +27,8 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(40));
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getName(), 10);
-        GTextBox email = new GTextBox(32, Color.gray, Color.white, User.getLoadedUser().getEmail());
+        GTextBox name = new GTextBox(32, User.getLoadedUser().getName(), 10);
+        GTextBox email = new GTextBox(32, User.getLoadedUser().getEmail());
 
         //Place all the stuff in the right order...
         GUI.window.add(new GSpacer(25));
@@ -42,7 +42,7 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(5));
         GUI.window.add(email);
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GButton(25, mainColor, secondaryColor, "Save Changes") {
+        GUI.window.add(new GButton(25, "Save Changes") {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();

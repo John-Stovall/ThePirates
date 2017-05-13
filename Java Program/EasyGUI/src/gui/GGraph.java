@@ -1,5 +1,7 @@
 package gui;
 
+import control.Style;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -17,16 +19,10 @@ public class GGraph implements GUIComponent {
     private double largestValue = 0;
 
     /** The color of the various lines. */
-    private Color[] lines = {Color.black, Color.red};
+    private Color[] lines = Style.graphBarColors;
 
     /** Used for the intro animation. */
     private double[] animation;
-
-    /** The speed at which the animation plays. Higher is exponentially slower. */
-    private double animationSpeed = 3.0;
-
-    /** The point at which the next spot in the graph will start animating. */
-    private double animationThreshold = 0.9;
 
     /**
      * Creates a graph with the supplied data points.
@@ -67,7 +63,7 @@ public class GGraph implements GUIComponent {
         int ticks = height / 30;
         if (ticks < 2) ticks = 2;
 
-        g.setFont(new Font("Helvetica", Font.PLAIN, 12));
+        g.setFont(Style.graphTicks);
         for (int i = 0; i < ticks; i++) {
             g.drawString(Integer.toString((int)(Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
         }
@@ -98,10 +94,10 @@ public class GGraph implements GUIComponent {
 
         for (int i = 0; i < times.size(); i++) {
             if (i == 0) {
-                animation[i] += (1 - animation[i]) / animationSpeed;
+                animation[i] += (1 - animation[i]) / Style.graphMoveSpeed;
             } else {
-                if (animation[i - 1] > animationThreshold) {
-                    animation[i] += (1 - animation[i]) / animationSpeed;
+                if (animation[i - 1] > Style.graphSpawnThreshold) {
+                    animation[i] += (1 - animation[i]) / Style.graphMoveSpeed;
                 }
             }
         }
