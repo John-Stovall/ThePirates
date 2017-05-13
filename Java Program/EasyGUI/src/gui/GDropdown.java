@@ -1,5 +1,7 @@
 package gui;
 
+import control.Style;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -42,18 +44,6 @@ public class GDropdown implements GUIComponent, GMouseListener {
     /** Progress through the animation. */
     private double animation = 0.0;
 
-    /** The font used by this component. */
-    private static final Font defaultFont = new Font("Helvetica", Font.PLAIN, 20);
-
-    /** The primary color used by many different things. */
-    private static final Color mainColor = Color.decode("#2E7D32");
-
-    /** The secondary color used by many different things. */
-    private static final Color secondaryColor = Color.decode("#388E3C");
-
-    /** Another color. */
-    private static final Color anotherColor = Color.decode("#1B5E20");
-
     /** The padding around the sides of the dropdown portion of the menu. */
     private int innerPadding = 16;
 
@@ -74,24 +64,24 @@ public class GDropdown implements GUIComponent, GMouseListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        g.setFont(defaultFont);
+        g.setFont(Style.defaultFont);
         this.x = x;
         this.y = y;
         this.width = width;
         int h = height;
 
         if (open) {
-            animation += (1 - animation) / 3.0;
+            animation += (1 - animation) / Style.dropdownMoveSpeed;
         } else {
-            animation += (-animation) / 3.0;
+            animation += (-animation) / Style.dropdownMoveSpeed;
         }
 
         for (int i = 0; i < options.size(); i++) {
             String s = options.get(i);
             if (s.equals(selection)) {
-                g.setColor(secondaryColor.brighter());
+                g.setColor(Style.secondaryDropdownColor.brighter());
             } else {
-                g.setColor(secondaryColor);
+                g.setColor(Style.secondaryDropdownColor);
             }
             int yPos = (int) (y + (height * (i + 1)) * animation);
             h += height * animation;
@@ -99,13 +89,13 @@ public class GDropdown implements GUIComponent, GMouseListener {
             g.fillRect(x + innerPadding, yPos, width - innerPadding * 2, height);
             g.setColor(Color.white);
             g.drawString(s, x + innerPadding + 4, yPos + height - 4);
-            g.setColor(anotherColor);
+            g.setColor(Style.dropdownBorderColor);
             g.drawRect(x + innerPadding, yPos, width - innerPadding * 2, height);
         }
 
-        g.setColor(anotherColor);
+        g.setColor(Style.dropdownBorderColor);
         g.drawRect(x, y, width, height);
-        g.setColor(mainColor);
+        g.setColor(Style.primaryDropdownColor);
         g.fillRect(x, y, width, height);
 
         g.setColor(Color.white);

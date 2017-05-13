@@ -24,8 +24,8 @@ public class RegisterAccount extends GUIPage {
     public void build() {
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, Color.gray, Color.white, "", 10);
-        GTextBox email = new GTextBox(32, Color.gray, Color.white, "");
+        GTextBox name = new GTextBox(32, "", 10);
+        GTextBox email = new GTextBox(32, "");
 
         //Place all the stuff in the right order...
         GUI.window.add(new GSpacer(25));
@@ -39,7 +39,7 @@ public class RegisterAccount extends GUIPage {
         GUI.window.add(new GSpacer(5));
         GUI.window.add(email);
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GButton(25, mainColor, secondaryColor, "Submit") {
+        GUI.window.add(new GButton(25, "Submit") {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();
@@ -64,7 +64,7 @@ public class RegisterAccount extends GUIPage {
 
         if (!User.getUsers().isEmpty()) {
             GUI.window.add(new GSpacer(5));
-            GUI.window.add(new GButton(25, mainColor, secondaryColor, "Back") {
+            GUI.window.add(new GButton(25, "Back") {
                 @Override
                 public void clickAction() {
                     GUI.window.gotoPage("Login");
@@ -72,7 +72,7 @@ public class RegisterAccount extends GUIPage {
             });
         } else {
             GUI.window.add(new GSpacer(5));
-            GUI.window.add(new GButton(25, mainColor, secondaryColor, "Skip Login") {
+            GUI.window.add(new GButton(25, "Skip Login") {
                 @Override
                 public void clickAction() {
                     User validUser = new User("You", "");

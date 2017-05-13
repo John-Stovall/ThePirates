@@ -1,5 +1,6 @@
 package pages;
 
+import control.Style;
 import gui.GSpacer;
 import gui.GText;
 import gui.GUI;
@@ -23,13 +24,13 @@ public class About extends GUIPage {
         GUI.window.add(new GText("About Us"));
 
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Robert Cordingly", defaultFont));
+        GUI.window.add(new GText("Robert Cordingly", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GUI.window.add(new GText("Ryan Hansen", defaultFont));
+        GUI.window.add(new GText("Ryan Hansen", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GUI.window.add(new GText("Rand Almaroof", defaultFont));
+        GUI.window.add(new GText("Rand Almaroof", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GUI.window.add(new GText("Reagan Stovall", defaultFont));
+        GUI.window.add(new GText("Reagan Stovall", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
 
         GUI.window.add(new GSpacer(25));

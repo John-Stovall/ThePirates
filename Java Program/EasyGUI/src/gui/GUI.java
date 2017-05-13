@@ -1,5 +1,7 @@
 package gui;
 
+import control.Style;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -69,7 +71,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel.repaint();
 
         /** The animation clock. */
-        Timer clock = new Timer(1000 / 60, new ActionListener() {
+        Timer clock = new Timer(Style.frameRate, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 panel.repaint();

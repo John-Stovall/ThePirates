@@ -1,5 +1,6 @@
 package pages;
 
+import control.Style;
 import gui.*;
 
 import java.awt.*;
@@ -33,7 +34,7 @@ public class CreateProject extends GUIPage {
         GUI.window.add(new GText("Create A Project"));
 
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Project Type:", defaultFont));
+        GUI.window.add(new GText("Project Type:", Style.defaultFont));
 
         GUI.window.add(new GSpacer(15));
 
@@ -42,16 +43,16 @@ public class CreateProject extends GUIPage {
         GUI.window.add(dropdown);
 
         GUI.window.add(new GSpacer(15));
-        GUI.window.add(new GText("Project Name:", defaultFont));
+        GUI.window.add(new GText("Project Name:", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GTextBox name = new GTextBox(32, Color.gray, Color.white, "");
+        GTextBox name = new GTextBox(32, "");
         GUI.window.add(name);
         GUI.window.add(new GSpacer(15));
-        GUI.window.add(new GButton(25, mainColor, secondaryColor, "Create Project") {
+        GUI.window.add(new GButton(25, "Create Project") {
             @Override
             public void clickAction() {
                 if (name.getText().length() == 0) {
-                    name.failed("A name is required.");
+                    name.failed("• A name is required.");
                 } else {
                     //TODO: Program this to do stuff.
                 }
