@@ -4,8 +4,6 @@ import control.General;
 import gui.*;
 import main.User;
 
-import java.awt.*;
-
 /**
  * Created by Robert on 5/10/17.
  *

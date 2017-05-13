@@ -24,9 +24,6 @@ public class GText implements GUIComponent {
     /** The default color. */
     private Color color = Style.defaultTextColor;
 
-    /** The padding on the left and right side of text. */
-    private int sidePadding = 5;
-
     /**
      * Basic constructor to create text with default settings.
      *
@@ -44,7 +41,7 @@ public class GText implements GUIComponent {
      */
     public GText(final String text, final Font font) {
         this.text = text;
-        setFont(font);
+        this.font = font;
     }
 
     /**
@@ -59,15 +56,6 @@ public class GText implements GUIComponent {
         this.color = color;
     }
 
-    /**
-     * Sets the font of the text.
-     *
-     * @param font The font to change to.
-     */
-    public void setFont(final Font font) {
-        this.font = font;
-    }
-
     @Override
     public int draw(Graphics g, int x, int y, int width) {
         g.setFont(font);
@@ -78,6 +66,7 @@ public class GText implements GUIComponent {
             ArrayList<String> lines = new ArrayList<>();
             int spaceIndex = -1;
             int lastIndex = 0;
+            int sidePadding = 5;
             for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == ' ') {
                     spaceIndex = i;
@@ -104,7 +93,6 @@ public class GText implements GUIComponent {
         } else {
             g.drawString(text, x, y + font.getSize());
             h = font.getSize();
-
         }
 
         return h;
@@ -113,9 +101,9 @@ public class GText implements GUIComponent {
     /**
      * This method sets the text that this text object draws.
      *
-     * @param text
+     * @param text The text to change to.
      */
-    public void setText(String text) {
+    void setText(String text) {
         this.text = text;
     }
 }

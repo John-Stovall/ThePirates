@@ -2,6 +2,8 @@ package control;
 
 import main.User;
 
+import java.awt.event.MouseEvent;
+
 /**
  * Created by Robert on 5/10/17.
  *
@@ -10,8 +12,7 @@ import main.User;
  */
 public class General {
 
-    private General() {
-    }
+    private General() {}
 
     /**
      * This is a simple character counter that returns false if there are
@@ -50,6 +51,7 @@ public class General {
      *
      * @param email The email address to check.
      * @return Whether it is taken or not.
+     * @author Robert
      */
     public static boolean isEmailFree(String email) {
         for (User u : User.getUsers()) {
@@ -58,6 +60,21 @@ public class General {
             }
         }
         return true;
+    }
+
+    /**
+     * This method checks to see if you clicked within a rectangle.
+     *
+     * @param x The x position of the top left corner of the rectangle.
+     * @param y The y position of the top left corner of the rectangle.
+     * @param width The width of the rectangle.
+     * @param height The height of the rectangle.
+     * @param e The mouse event object.
+     * @return Whether you clicked inside the box.
+     * @author Robert
+     */
+    public static boolean clickedInside(int x, int y, int width, int height, MouseEvent e) {
+        return (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height);
     }
 
 }

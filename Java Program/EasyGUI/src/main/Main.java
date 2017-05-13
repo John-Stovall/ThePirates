@@ -3,8 +3,6 @@ package main;
 import gui.*;
 import pages.*;
 
-import java.awt.*;
-
 /**
  * Main is used to build all the the page layouts. Eventually this will be broken up into
  * a few classes so that it's not just one gigantic file. Plus each class will represent a
@@ -29,11 +27,4 @@ public class Main {
             GUI.window.gotoPage("Login");
         }
     }
-
-    /**
-     * Old code that we don't need anymore apparently. Leaving it there in case we run into problems without it.
-     */
-    //private static void start() {
-        //EventQueue.invokeLater(() -> GUI.window.setTitle("DIY Program"));
-    //}
 }

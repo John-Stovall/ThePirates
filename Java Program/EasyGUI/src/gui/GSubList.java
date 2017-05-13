@@ -16,5 +16,4 @@ public interface GSubList {
      * @return A list of GUIComponent lists.
      */
     ArrayList<ArrayList<GUIComponent>> getComponents();
-
 }

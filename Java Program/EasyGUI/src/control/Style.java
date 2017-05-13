@@ -61,7 +61,7 @@ public class Style {
     public static final Font textBoxFail                = new Font("Helvetica", Font.PLAIN, 16);
 
     /**
-     * Animations
+     * Animation Variables
      */
 
     public static final int frameRate                   = 1000 / 60;
@@ -79,6 +79,19 @@ public class Style {
     public static final double textBoxMessageMoveSpeed  = 10.0;
 
     public static final double textBoxFlashSpeed        = 0.02;
+
+    /**
+     * Animation Functions
+     */
+
+    public static double exponentialTweenRound(double current, double goal, double speed) {
+        return Math.ceil(Math.abs((goal - current ) / speed)) * (Math.signum((goal - current) / speed));
+    }
+
+    public static double exponentialTween(double current, double goal, double speed) {
+        return (goal - current) / speed;
+
+    }
 
 
 }

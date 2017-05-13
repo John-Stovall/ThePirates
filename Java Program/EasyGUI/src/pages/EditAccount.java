@@ -1,10 +1,7 @@
 package pages;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import gui.*;
 import main.User;
-
-import java.awt.*;
 
 import control.General;
 
@@ -30,7 +27,7 @@ public class EditAccount extends GUIPage {
         GTextBox name = new GTextBox(32, User.getLoadedUser().getName(), 10);
         GTextBox email = new GTextBox(32, User.getLoadedUser().getEmail());
 
-        //Place all the stuff in the right order...
+        //Place all of the components in the right places.
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Edit Account"));
         GUI.window.add(new GSpacer(25));
@@ -42,6 +39,8 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(5));
         GUI.window.add(email);
         GUI.window.add(new GSpacer(5));
+
+        //Add the submit button and program what it does.
         GUI.window.add(new GButton(25, "Save Changes") {
             @Override
             public void clickAction() {
@@ -49,7 +48,8 @@ public class EditAccount extends GUIPage {
                 String myEmail = email.getText().trim();
 
                 //TODO: Fix the bug here. You can't change things when you don't change the email.
-                if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail) && !myEmail.equals(User.getLoadedUser().getEmail()))) {
+                if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail)
+                        && !myEmail.equals(User.getLoadedUser().getEmail()))) {
                     User.getLoadedUser().setName(myName);
                     User.getLoadedUser().setEmail(myEmail);
                     GUI.window.gotoPage("Home");

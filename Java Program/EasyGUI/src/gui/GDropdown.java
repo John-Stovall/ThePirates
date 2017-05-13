@@ -1,5 +1,6 @@
 package gui;
 
+import control.General;
 import control.Style;
 
 import java.awt.*;
@@ -44,9 +45,6 @@ public class GDropdown implements GUIComponent, GMouseListener {
     /** Progress through the animation. */
     private double animation = 0.0;
 
-    /** The padding around the sides of the dropdown portion of the menu. */
-    private int innerPadding = 16;
-
     /**
      * Create a super awesome dropdown menu.
      *
@@ -58,24 +56,21 @@ public class GDropdown implements GUIComponent, GMouseListener {
     }
 
     public GDropdown(String[] options) {
-        this.options = new ArrayList<String>(Arrays.asList(options));
+        this.options = new ArrayList<>(Arrays.asList(options));
         selection = this.options.get(0);
     }
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        g.setFont(Style.defaultFont);
+
+        //Save some variables.
         this.x = x;
         this.y = y;
         this.width = width;
         int h = height;
+        g.setFont(Style.defaultFont);
 
-        if (open) {
-            animation += (1 - animation) / Style.dropdownMoveSpeed;
-        } else {
-            animation += (-animation) / Style.dropdownMoveSpeed;
-        }
-
+        //Draw all the elements in the list.
         for (int i = 0; i < options.size(); i++) {
             String s = options.get(i);
             if (s.equals(selection)) {
@@ -86,6 +81,8 @@ public class GDropdown implements GUIComponent, GMouseListener {
             int yPos = (int) (y + (height * (i + 1)) * animation);
             h += height * animation;
 
+            // The padding around the sides of the dropdown portion of the menu.
+            int innerPadding = 16;
             g.fillRect(x + innerPadding, yPos, width - innerPadding * 2, height);
             g.setColor(Color.white);
             g.drawString(s, x + innerPadding + 4, yPos + height - 4);
@@ -93,11 +90,13 @@ public class GDropdown implements GUIComponent, GMouseListener {
             g.drawRect(x + innerPadding, yPos, width - innerPadding * 2, height);
         }
 
+        //Draw the top item.
         g.setColor(Style.dropdownBorderColor);
         g.drawRect(x, y, width, height);
         g.setColor(Style.primaryDropdownColor);
         g.fillRect(x, y, width, height);
 
+        //Draw the icon.
         g.setColor(Color.white);
         g.drawString(selection, x + 4, y + height - 6);
         if (!open) {
@@ -106,13 +105,15 @@ public class GDropdown implements GUIComponent, GMouseListener {
             g.drawString("^", x + width - 18, y + height - 3);
         }
 
+        //Increment Animation.
+        animation += Style.exponentialTween(animation, (open) ? 1 : 0, Style.dropdownMoveSpeed);
 
         return h;
     }
 
     @Override
     public boolean mousePressed(MouseEvent e) {
-        if (!open && e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height) {
+        if (General.clickedInside(x + padding / 2, y, width - padding / 2, height, e) && !open) {
             pressed = true;
             return true;
         }
@@ -122,14 +123,13 @@ public class GDropdown implements GUIComponent, GMouseListener {
     @Override
     public boolean mouseReleased(MouseEvent e) {
         boolean result = false;
-        if (!open && e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
+        if (General.clickedInside(x + padding / 2, y, width - padding / 2, height, e) && !open && pressed) {
             open = true;
             result = true;
         } else if (open) {
-            if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2) {
-                if (e.getY() > y + height && e.getY() < y + (height * (options.size() + 1))) {
-                    selection = options.get((int) Math.floor((e.getY() - y - height) / height));
-                }
+            if (General.clickedInside(x + padding / 2, y + height,
+                    width - padding, (height * options.size()), e)) {
+                selection = options.get((int) Math.floor((e.getY() - y - height) / height));
             }
             result = false;
             open = false;
