@@ -1,7 +1,0 @@
-
-public class ProjectManager {
-
-	public void createInsulation(String name) {
-		
-	}
-}
