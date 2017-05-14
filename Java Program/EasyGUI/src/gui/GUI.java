@@ -36,7 +36,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     private int sidePadding = 24;
 
     /** The horizontal offset of components. Used in the slide-over animation. */
-    public static int horizontalOffset = 0;
+    static int horizontalOffset = 0;
 
     /** The vertical offset controlled by scrolling. */
     private int scrollOffset;

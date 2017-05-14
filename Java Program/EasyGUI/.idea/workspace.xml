@@ -6,28 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/junit/GeneralTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/junit/JTest.java" afterPath="" />
+    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="Added">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/control/General.java" afterPath="$PROJECT_DIR$/src/control/General.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/control/Style.java" afterPath="$PROJECT_DIR$/src/control/Style.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GButton.java" afterPath="$PROJECT_DIR$/src/gui/GButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GDivider.java" afterPath="$PROJECT_DIR$/src/gui/GDivider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GDropdown.java" afterPath="$PROJECT_DIR$/src/gui/GDropdown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMenuBar.java" afterPath="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMouseListener.java" afterPath="$PROJECT_DIR$/src/gui/GMouseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GSubList.java" afterPath="$PROJECT_DIR$/src/gui/GSubList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GText.java" afterPath="$PROJECT_DIR$/src/gui/GText.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GTextBox.java" afterPath="$PROJECT_DIR$/src/gui/GTextBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUIPage.java" afterPath="$PROJECT_DIR$/src/gui/GUIPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GWrapper.java" afterPath="$PROJECT_DIR$/src/gui/GWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/User.java" afterPath="$PROJECT_DIR$/src/main/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/CreateProject.java" afterPath="$PROJECT_DIR$/src/pages/CreateProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/EditAccount.java" afterPath="$PROJECT_DIR$/src/pages/EditAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.java" afterPath="$PROJECT_DIR$/src/pages/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/RegisterAccount.java" afterPath="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUI.java" afterPath="$PROJECT_DIR$/src/gui/GUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,192 +26,883 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48762262">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Style.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/control/Style.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="618">
-                  <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="General.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/control/General.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1170">
-                  <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RegisterAccount.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-172">
-                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GUIPage.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="About.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CreateProject.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="EditAccount.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GDivider.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GDivider.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
-                  <caret line="77" column="20" lean-forward="false" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NewProject.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GSubList.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GSubList.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GText.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8">
-                  <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GMouseListener.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GMouseListener.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/User.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1260">
-                  <caret line="96" column="33" lean-forward="false" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/Login.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="67" column="11" lean-forward="true" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GSpacer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="533">
-                  <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="General.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/General.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUIPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="About.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/About.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gui.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uml/gui.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="191.60000000000014" y="-2245.0">gui.GMouseListener</node>
+                <node x="1399.911" y="-1986.0">gui.GDivider</node>
+                <node x="2572.411" y="-1953.0">gui.GGraph</node>
+                <node x="1059.411" y="-1552.0">gui.GUI</node>
+                <node x="2453.911" y="-1730.0">gui.GText</node>
+                <node x="1649.911" y="-1964.0">gui.GWrapper</node>
+                <node x="1957.911" y="-1986.0">gui.GSpacer</node>
+                <node x="1592.35" y="-2234.0">gui.GUIComponent</node>
+                <node x="2208.911" y="-1696.5">gui.GKeyListener</node>
+                <node x="1137.411" y="-1142.0">gui.GUI.DrawPanel</node>
+                <node x="2298.4743333333336" y="-1475.0">gui.GTextBox</node>
+                <node x="959.0035000000003" y="-2234.0">gui.GSubList</node>
+                <node x="660.9110000000001" y="-2008.0">gui.GDropdown</node>
+                <node x="1126.411" y="-1708.0">gui.GUIPage</node>
+                <node x="1064.911" y="-1974.5">gui.GMenuBar</node>
+                <node x="244.91100000000006" y="-2052.0">gui.GButton</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="gui.GWrapper" target="gui.GUIComponent">
+                  <point x="0.0" y="-48.0" />
+                  <point x="1793.911" y="-2072.0" />
+                  <point x="1730.475" y="-2072.0" />
+                  <point x="10.625" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUI.DrawPanel">
+                  <point x="140.66666666666652" y="180.0" />
+                  <point x="1411.0776666666666" y="-1167.0" />
+                  <point x="1359.0776666666668" y="-1167.0" />
+                  <point x="88.66666666666674" y="-25.5" />
+                </edge>
+                <edge source="gui.GButton" target="gui.GMouseListener">
+                  <point x="-99.0" y="-136.0" />
+                  <point x="343.91100000000006" y="-2072.0" />
+                  <point x="350.10000000000014" y="-2072.0" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GKeyListener">
+                  <point x="168.79999999999995" y="-180.0" />
+                  <point x="1439.211" y="-1572.0" />
+                  <point x="2265.161" y="-1572.0" />
+                  <point x="-56.25" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUIComponent">
+                  <point x="84.40000000000009" y="-180.0" />
+                  <point x="1354.8110000000001" y="-1582.0" />
+                  <point x="2198.411" y="-1582.0" />
+                  <point x="2198.411" y="-2092.0" />
+                  <point x="1772.975" y="-2092.0" />
+                  <point x="53.125" y="25.5" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GSpacer">
+                  <point x="72.0" y="-37.0" />
+                  <point x="1294.411" y="-1750.0" />
+                  <point x="2072.911" y="-1750.0" />
+                  <point x="0.0" y="70.0" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GUIComponent">
+                  <point x="137.60000000000002" y="-103.0" />
+                  <point x="2608.074333333334" y="-1572.0" />
+                  <point x="2855.911" y="-1572.0" />
+                  <point x="2855.911" y="-2122.0" />
+                  <point x="1836.725" y="-2122.0" />
+                  <point x="116.875" y="25.5" />
+                </edge>
+                <edge source="gui.GDropdown" target="gui.GMouseListener">
+                  <point x="-96.0" y="-92.0" />
+                  <point x="756.9110000000001" y="-2132.0" />
+                  <point x="413.5000000000002" y="-2132.0" />
+                  <point x="63.39999999999998" y="36.5" />
+                </edge>
+                <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+                  <point x="-88.66666666666674" y="-25.5" />
+                  <point x="1181.7443333333333" y="-1167.0" />
+                  <point x="1129.7443333333333" y="-1167.0" />
+                  <point x="-140.66666666666674" y="180.0" />
+                </edge>
+                <edge source="gui.GText" target="gui.GUIComponent">
+                  <point x="0.0" y="-59.0" />
+                  <point x="2561.911" y="-2102.0" />
+                  <point x="1794.225" y="-2102.0" />
+                  <point x="74.375" y="25.5" />
+                </edge>
+                <edge source="gui.GButton" target="gui.GUIComponent">
+                  <point x="99.0" y="-136.0" />
+                  <point x="541.9110000000001" y="-2122.0" />
+                  <point x="1602.975" y="-2122.0" />
+                  <point x="-116.875" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GMouseListener">
+                  <point x="-168.79999999999995" y="-180.0" />
+                  <point x="1101.611" y="-1572.0" />
+                  <point x="18.0" y="-1572.0" />
+                  <point x="18.0" y="-2082.0" />
+                  <point x="223.30000000000018" y="-2082.0" />
+                  <point x="-126.79999999999995" y="36.5" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GButton">
+                  <point x="-72.0" y="-37.0" />
+                  <point x="1150.411" y="-1750.0" />
+                  <point x="442.91100000000006" y="-1750.0" />
+                  <point x="0.0" y="136.0" />
+                </edge>
+                <edge source="gui.GSpacer" target="gui.GUIComponent">
+                  <point x="0.0" y="-70.0" />
+                  <point x="2072.911" y="-2082.0" />
+                  <point x="1751.725" y="-2082.0" />
+                  <point x="31.875" y="25.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GMouseListener">
+                  <point x="-137.5999999999999" y="-103.0" />
+                  <point x="2332.8743333333337" y="-1592.0" />
+                  <point x="91.77433333333352" y="-1592.0" />
+                  <point x="91.77433333333352" y="-2072.0" />
+                  <point x="286.70000000000005" y="-2072.0" />
+                  <point x="-63.40000000000009" y="36.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GKeyListener">
+                  <point x="-68.80000000000018" y="-103.0" />
+                  <point x="2401.6743333333334" y="-1572.0" />
+                  <point x="2377.661" y="-1572.0" />
+                  <point x="56.25" y="25.5" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GMouseListener">
+                  <point x="-118.125" y="-58.5" />
+                  <point x="1104.286" y="-2142.0" />
+                  <point x="476.9000000000001" y="-2142.0" />
+                  <point x="126.80000000000001" y="36.5" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GSubList">
+                  <point x="-39.375" y="-58.5" />
+                  <point x="1183.036" y="-2152.0" />
+                  <point x="1063.5035000000003" y="-2152.0" />
+                  <point x="-104.5" y="25.5" />
+                </edge>
+                <edge source="gui.GDivider" target="gui.GSubList">
+                  <point x="-76.66666666666674" y="-70.0" />
+                  <point x="1438.2443333333333" y="-2132.0" />
+                  <point x="1272.5035000000003" y="-2132.0" />
+                  <point x="104.5" y="25.5" />
+                </edge>
+                <edge source="gui.GDivider" target="gui.GUIComponent">
+                  <point x="0.0" y="-70.0" />
+                  <point x="1514.911" y="-2082.0" />
+                  <point x="1687.975" y="-2082.0" />
+                  <point x="-31.875" y="25.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GText">
+                  <point x="68.80000000000018" y="-103.0" />
+                  <point x="2539.2743333333337" y="-1582.0" />
+                  <point x="2615.911" y="-1582.0" />
+                  <point x="54.0" y="59.0" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GUIComponent">
+                  <point x="39.375" y="-58.5" />
+                  <point x="1261.786" y="-2102.0" />
+                  <point x="1645.475" y="-2102.0" />
+                  <point x="-74.375" y="25.5" />
+                </edge>
+                <edge source="gui.GGraph" target="gui.GUIComponent">
+                  <point x="0.0" y="-37.0" />
+                  <point x="2708.911" y="-2112.0" />
+                  <point x="1815.475" y="-2112.0" />
+                  <point x="95.625" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUIPage">
+                  <point x="-84.40000000000009" y="-180.0" />
+                  <point x="1186.011" y="-1572.0" />
+                  <point x="1174.411" y="-1572.0" />
+                  <point x="-48.0" y="37.0" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GMenuBar">
+                  <point x="-24.0" y="-37.0" />
+                  <point x="1198.411" y="-1760.0" />
+                  <point x="1143.661" y="-1760.0" />
+                  <point x="-78.75" y="58.5" />
+                </edge>
+                <edge source="gui.GDropdown" target="gui.GUIComponent">
+                  <point x="96.0" y="-92.0" />
+                  <point x="948.9110000000001" y="-2112.0" />
+                  <point x="1624.225" y="-2112.0" />
+                  <point x="-95.625" y="25.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="1009.0" y="-2048.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>public</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uml/all.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="1941.7790322580645" y="997.5">pages.CreateProject</node>
+                <node x="3200.0728046594995" y="275.0">gui.GDivider</node>
+                <node x="454.0" y="931.5">main.User</node>
+                <node x="1520.6227822580645" y="297.0">gui.GGraph</node>
+                <node x="1419.9978046594993" y="997.5">pages.Home</node>
+                <node x="0.0" y="843.0">gui.GUI</node>
+                <node x="1795.6227822580645" y="297.0">gui.GText</node>
+                <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
+                <node x="2276.2290322580648" y="1602.0">pages.Login</node>
+                <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
+                <node x="2256.4125000000004" y="11.0">gui.GUIComponent</node>
+                <node x="825.0" y="297.0">gui.GKeyListener</node>
+                <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
+                <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
+                <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
+                <node x="902.0" y="0.0">gui.GMouseListener</node>
+                <node x="2175.2790546594993" y="1713.0">main.Main</node>
+                <node x="2839.25" y="997.5">pages.About</node>
+                <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
+                <node x="1125.325" y="532.0">gui.GTextBox</node>
+                <node x="2932.070833333333" y="11.0">gui.GSubList</node>
+                <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
+                <node x="2515.1000000000004" y="587.0">gui.GUIPage</node>
+                <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
+                <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="pages.RegisterAccount" target="main.User">
+                  <point x="-37.5" y="-25.5" />
+                  <point x="1928.8540322580645" y="1572.0" />
+                  <point x="541.5" y="1572.0" />
+                  <point x="-87.5" y="91.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUI.DrawPanel">
+                  <point x="0.0" y="180.0" />
+                  <point x="0.0" y="-25.5" />
+                </edge>
+                <edge source="gui.GButton" target="gui.GMouseListener">
+                  <point x="-73.5" y="-69.5" />
+                  <point x="1884.5290322580645" y="1233.0" />
+                  <point x="814.5" y="1233.0" />
+                  <point x="814.5" y="173.0" />
+                  <point x="997.0999999999999" y="173.0" />
+                  <point x="-63.40000000000009" y="36.5" />
+                </edge>
+                <edge source="main.Main" target="pages.Login">
+                  <point x="15.333333333333485" y="-25.5" />
+                  <point x="2282.6123879928327" y="1673.0" />
+                  <point x="2345.2290322580648" y="1673.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="pages.RegisterAccount" target="gui.GText">
+                  <point x="-12.5" y="-25.5" />
+                  <point x="1953.8540322580645" y="1562.0" />
+                  <point x="1638.4977822580645" y="1562.0" />
+                  <point x="1638.4977822580645" y="472.0" />
+                  <point x="1907.1852822580645" y="472.0" />
+                  <point x="-15.9375" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GKeyListener">
+                  <point x="0.0" y="-180.0" />
+                  <point x="211.0" y="823.0" />
+                  <point x="137.5999999999999" y="823.0" />
+                  <point x="137.5999999999999" y="512.0" />
+                  <point x="881.25" y="512.0" />
+                  <point x="-56.25" y="25.5" />
+                </edge>
+                <edge source="pages.RegisterAccount" target="gui.GSpacer">
+                  <point x="62.5" y="-25.5" />
+                  <point x="2028.8540322580645" y="1532.0" />
+                  <point x="3130.9246415770613" y="1532.0" />
+                  <point x="3130.9246415770613" y="502.0" />
+                  <point x="3027.4477822580648" y="502.0" />
+                  <point x="16.0" y="47.5" />
+                </edge>
+                <edge source="pages.NewProject" target="gui.GUIPage">
+                  <point x="0.0" y="-25.5" />
+                  <point x="2503.2290322580648" y="1522.0" />
+                  <point x="2828.75" y="1522.0" />
+                  <point x="2828.75" y="793.0" />
+                  <point x="2632.4000000000005" y="793.0" />
+                  <point x="48.30000000000018" y="25.5" />
+                </edge>
+                <edge source="pages.NewProject" target="gui.GButton">
+                  <point x="-55.19999999999982" y="-25.5" />
+                  <point x="2448.029032258065" y="1432.0" />
+                  <point x="2068.2790322580645" y="1432.0" />
+                  <point x="110.25" y="69.5" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GSpacer">
+                  <point x="46.0" y="-25.5" />
+                  <point x="2630.1000000000004" y="502.0" />
+                  <point x="2931.4477822580648" y="502.0" />
+                  <point x="-80.0" y="47.5" />
+                </edge>
+                <edge source="gui.GDropdown" target="gui.GMouseListener">
+                  <point x="-83.75" y="-69.5" />
+                  <point x="1245.6227822580645" y="173.0" />
+                  <point x="1123.9" y="173.0" />
+                  <point x="63.40000000000009" y="36.5" />
+                </edge>
+                <edge source="pages.EditAccount" target="gui.GTextBox">
+                  <point x="-55.19999999999982" y="-25.5" />
+                  <point x="2075.154032258065" y="1482.0" />
+                  <point x="443.5" y="1482.0" />
+                  <point x="443.5" y="763.0" />
+                  <point x="1258.325" y="763.0" />
+                  <point x="0.0" y="80.5" />
+                </edge>
+                <edge source="gui.GButton" target="gui.GUIComponent">
+                  <point x="122.5" y="-69.5" />
+                  <point x="2080.5290322580645" y="1243.0" />
+                  <point x="3189.5728046594995" y="1243.0" />
+                  <point x="3189.5728046594995" y="123.0" />
+                  <point x="2458.2875000000004" y="123.0" />
+                  <point x="74.375" y="25.5" />
+                </edge>
+                <edge source="pages.EditAccount" target="gui.GText">
+                  <point x="-27.59999999999991" y="-25.5" />
+                  <point x="2102.7540322580644" y="1472.0" />
+                  <point x="1671.8727822580645" y="1472.0" />
+                  <point x="1671.8727822580645" y="482.0" />
+                  <point x="1939.0602822580645" y="482.0" />
+                  <point x="15.9375" y="25.5" />
+                </edge>
+                <edge source="pages.About" target="gui.GUIPage">
+                  <point x="-46.0" y="-25.5" />
+                  <point x="2862.25" y="783.0" />
+                  <point x="2646.2" y="783.0" />
+                  <point x="62.09999999999991" y="25.5" />
+                </edge>
+                <edge source="pages.EditAccount" target="gui.GSpacer">
+                  <point x="55.19999999999982" y="-25.5" />
+                  <point x="2185.5540322580646" y="1542.0" />
+                  <point x="3141.9246415770613" y="1542.0" />
+                  <point x="3141.9246415770613" y="492.0" />
+                  <point x="3059.4477822580648" y="492.0" />
+                  <point x="48.0" y="47.5" />
+                </edge>
+                <edge source="pages.NewProject" target="pages.CreateProject">
+                  <point x="-27.59999999999991" y="-25.5" />
+                  <point x="2475.6290322580644" y="1422.0" />
+                  <point x="2115.5290322580645" y="1422.0" />
+                  <point x="2115.5290322580645" y="1223.0" />
+                  <point x="2056.7790322580645" y="1223.0" />
+                  <point x="46.0" y="25.5" />
+                </edge>
+                <edge source="gui.GSpacer" target="gui.GUIComponent">
+                  <point x="0.0" y="-47.5" />
+                  <point x="3011.4477822580648" y="133.0" />
+                  <point x="2437.0375000000004" y="133.0" />
+                  <point x="53.125" y="25.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GKeyListener">
+                  <point x="-106.40000000000009" y="-80.5" />
+                  <point x="1151.925" y="502.0" />
+                  <point x="993.75" y="502.0" />
+                  <point x="56.25" y="25.5" />
+                </edge>
+                <edge source="pages.Home" target="gui.GText">
+                  <point x="0.0" y="-25.5" />
+                  <point x="1488.9978046594993" y="462.0" />
+                  <point x="1875.3102822580645" y="462.0" />
+                  <point x="-47.8125" y="25.5" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GMouseListener">
+                  <point x="-118.125" y="-58.5" />
+                  <point x="2404.9977822580645" y="163.0" />
+                  <point x="1187.3" y="163.0" />
+                  <point x="126.79999999999995" y="36.5" />
+                </edge>
+                <edge source="pages.Home" target="gui.GSpacer">
+                  <point x="27.59999999999991" y="-25.5" />
+                  <point x="1516.5978046594992" y="763.0" />
+                  <point x="1607.0477822580644" y="763.0" />
+                  <point x="1607.0477822580644" y="492.0" />
+                  <point x="2899.4477822580648" y="492.0" />
+                  <point x="-112.0" y="47.5" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GSubList">
+                  <point x="118.125" y="-58.5" />
+                  <point x="2641.2477822580645" y="233.0" />
+                  <point x="3036.570833333333" y="233.0" />
+                  <point x="-104.5" y="25.5" />
+                </edge>
+                <edge source="pages.RegisterAccount" target="gui.GTextBox">
+                  <point x="-62.5" y="-25.5" />
+                  <point x="1903.8540322580645" y="1582.0" />
+                  <point x="432.5" y="1582.0" />
+                  <point x="432.5" y="753.0" />
+                  <point x="1169.6583333333333" y="753.0" />
+                  <point x="-88.66666666666674" y="80.5" />
+                </edge>
+                <edge source="pages.EditAccount" target="gui.GUIPage">
+                  <point x="27.59999999999991" y="-25.5" />
+                  <point x="2157.954032258064" y="1502.0" />
+                  <point x="2673.55" y="1502.0" />
+                  <point x="2673.55" y="813.0" />
+                  <point x="2604.8" y="813.0" />
+                  <point x="20.699999999999818" y="25.5" />
+                </edge>
+                <edge source="gui.GDivider" target="gui.GSubList">
+                  <point x="88.66666666666652" y="-47.5" />
+                  <point x="3421.7394713261656" y="93.0" />
+                  <point x="3245.570833333333" y="93.0" />
+                  <point x="104.5" y="25.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GText">
+                  <point x="53.200000000000045" y="-80.5" />
+                  <point x="1311.525" y="442.0" />
+                  <point x="1811.5602822580645" y="442.0" />
+                  <point x="-111.5625" y="25.5" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GUIPage">
+                  <point x="27.59999999999991" y="-25.5" />
+                  <point x="2038.3790322580644" y="803.0" />
+                  <point x="2563.4000000000005" y="803.0" />
+                  <point x="-20.699999999999818" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.NewProject">
+                  <point x="46.0" y="-25.5" />
+                  <point x="2313.2790546594993" y="1683.0" />
+                  <point x="2503.2290322580648" y="1683.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="pages.Login" target="gui.GDivider">
+                  <point x="55.19999999999982" y="-25.5" />
+                  <point x="2400.4290322580646" y="1572.0" />
+                  <point x="3325.925" y="1572.0" />
+                  <point x="3325.925" y="512.0" />
+                  <point x="3266.5728046594995" y="512.0" />
+                  <point x="-66.5" y="47.5" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GMenuBar">
+                  <point x="-46.0" y="-25.5" />
+                  <point x="2538.1000000000004" y="482.0" />
+                  <point x="2444.3727822580645" y="482.0" />
+                  <point x="-78.75" y="58.5" />
+                </edge>
+                <edge source="pages.Home" target="gui.GGraph">
+                  <point x="-27.59999999999991" y="-25.5" />
+                  <point x="1461.3978046594993" y="733.0" />
+                  <point x="1401.825" y="733.0" />
+                  <point x="1401.825" y="432.0" />
+                  <point x="1648.1227822580645" y="432.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="pages.Login" target="gui.GText">
+                  <point x="-27.59999999999991" y="-25.5" />
+                  <point x="2317.6290322580644" y="1442.0" />
+                  <point x="2143.2790322580645" y="1442.0" />
+                  <point x="2143.2790322580645" y="472.0" />
+                  <point x="2002.8102822580645" y="472.0" />
+                  <point x="79.6875" y="25.5" />
+                </edge>
+                <edge source="gui.GDropdown" target="gui.GUIComponent">
+                  <point x="83.75" y="-69.5" />
+                  <point x="1413.1227822580645" y="193.0" />
+                  <point x="2288.2875000000004" y="193.0" />
+                  <point x="-95.625" y="25.5" />
+                </edge>
+                <edge source="pages.Login" target="gui.GSpacer">
+                  <point x="27.59999999999991" y="-25.5" />
+                  <point x="2372.829032258064" y="1552.0" />
+                  <point x="3152.9246415770613" y="1552.0" />
+                  <point x="3152.9246415770613" y="482.0" />
+                  <point x="3091.4477822580648" y="482.0" />
+                  <point x="80.0" y="47.5" />
+                </edge>
+                <edge source="main.Main" target="pages.About">
+                  <point x="76.66666666666652" y="-25.5" />
+                  <point x="2343.9457213261658" y="1693.0" />
+                  <point x="2908.25" y="1693.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="gui.GWrapper" target="gui.GUIComponent">
+                  <point x="0.0" y="-36.5" />
+                  <point x="2208.1227822580645" y="233.0" />
+                  <point x="2373.2875000000004" y="233.0" />
+                  <point x="-10.625" y="25.5" />
+                </edge>
+                <edge source="pages.Login" target="gui.GUIPage">
+                  <point x="0.0" y="-25.5" />
+                  <point x="2345.2290322580648" y="1512.0" />
+                  <point x="2744.25" y="1512.0" />
+                  <point x="2744.25" y="803.0" />
+                  <point x="2618.6000000000004" y="803.0" />
+                  <point x="34.5" y="25.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUIComponent">
+                  <point x="-84.40000000000009" y="-180.0" />
+                  <point x="126.59999999999991" y="183.0" />
+                  <point x="2267.0375000000004" y="183.0" />
+                  <point x="-116.875" y="25.5" />
+                </edge>
+                <edge source="pages.Home" target="gui.GUIPage">
+                  <point x="55.200000000000045" y="-25.5" />
+                  <point x="1544.1978046594993" y="793.0" />
+                  <point x="2549.6000000000004" y="793.0" />
+                  <point x="-34.5" y="25.5" />
+                </edge>
+                <edge source="pages.Login" target="gui.GButton">
+                  <point x="-55.19999999999982" y="-25.5" />
+                  <point x="2290.029032258065" y="1452.0" />
+                  <point x="1994.7790322580645" y="1452.0" />
+                  <point x="36.75" y="69.5" />
+                </edge>
+                <edge source="main.Main" target="pages.EditAccount">
+                  <point x="-15.333333333333485" y="-25.5" />
+                  <point x="2251.9457213261658" y="1673.0" />
+                  <point x="2130.3540322580648" y="1673.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+                  <point x="-88.66666666666669" y="-25.5" />
+                  <point x="122.33333333333326" y="1243.0" />
+                  <point x="70.33333333333326" y="1243.0" />
+                  <point x="-140.66666666666666" y="180.0" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GTextBox">
+                  <point x="-55.200000000000045" y="-25.5" />
+                  <point x="1955.5790322580644" y="723.0" />
+                  <point x="1346.9916666666668" y="723.0" />
+                  <point x="88.66666666666674" y="80.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GUIComponent">
+                  <point x="0.0" y="-80.5" />
+                  <point x="1258.325" y="422.0" />
+                  <point x="1507.3727822580645" y="422.0" />
+                  <point x="1507.3727822580645" y="203.0" />
+                  <point x="2309.5375000000004" y="203.0" />
+                  <point x="-74.375" y="25.5" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GButton">
+                  <point x="0.0" y="25.5" />
+                  <point x="2010.7790322580645" y="1243.0" />
+                  <point x="1982.5290322580645" y="1243.0" />
+                  <point x="24.5" y="-69.5" />
+                </edge>
+                <edge source="gui.GText" target="gui.GUIComponent">
+                  <point x="0.0" y="-25.5" />
+                  <point x="1923.1227822580645" y="223.0" />
+                  <point x="2352.0375000000004" y="223.0" />
+                  <point x="-31.875" y="25.5" />
+                </edge>
+                <edge source="pages.RegisterAccount" target="gui.GButton">
+                  <point x="12.5" y="-25.5" />
+                  <point x="1978.8540322580645" y="1552.0" />
+                  <point x="1847.7790322580645" y="1552.0" />
+                  <point x="-110.25" y="69.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GMouseListener">
+                  <point x="-168.79999999999995" y="-180.0" />
+                  <point x="42.200000000000045" y="823.0" />
+                  <point x="115.59999999999991" y="823.0" />
+                  <point x="115.59999999999991" y="163.0" />
+                  <point x="933.7" y="163.0" />
+                  <point x="-126.79999999999995" y="36.5" />
+                </edge>
+                <edge source="gui.GButton" target="main.User">
+                  <point x="-122.5" y="-69.5" />
+                  <point x="1835.5290322580645" y="1243.0" />
+                  <point x="716.5" y="1243.0" />
+                  <point x="87.5" y="91.5" />
+                </edge>
+                <edge source="pages.About" target="gui.GText">
+                  <point x="0.0" y="-25.5" />
+                  <point x="2908.25" y="823.0" />
+                  <point x="2925.75" y="823.0" />
+                  <point x="2925.75" y="462.0" />
+                  <point x="2034.6852822580645" y="462.0" />
+                  <point x="111.5625" y="25.5" />
+                </edge>
+                <edge source="pages.About" target="gui.GSpacer">
+                  <point x="46.0" y="-25.5" />
+                  <point x="2954.25" y="823.0" />
+                  <point x="3094.050022401435" y="823.0" />
+                  <point x="3094.050022401435" y="512.0" />
+                  <point x="2995.4477822580648" y="512.0" />
+                  <point x="-16.0" y="47.5" />
+                </edge>
+                <edge source="gui.GUIPage" target="gui.GButton">
+                  <point x="-6.900000000000091" y="25.5" />
+                  <point x="2577.2" y="813.0" />
+                  <point x="2090.2790322580645" y="813.0" />
+                  <point x="2090.2790322580645" y="1233.0" />
+                  <point x="2031.5290322580645" y="1233.0" />
+                  <point x="73.5" y="-69.5" />
+                </edge>
+                <edge source="gui.GTextBox" target="gui.GMouseListener">
+                  <point x="-53.200000000000045" y="-80.5" />
+                  <point x="1205.125" y="492.0" />
+                  <point x="1060.5" y="492.0" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+                <edge source="pages.EditAccount" target="gui.GButton">
+                  <point x="0.0" y="-25.5" />
+                  <point x="2130.3540322580648" y="1462.0" />
+                  <point x="1921.2790322580645" y="1462.0" />
+                  <point x="-36.75" y="69.5" />
+                </edge>
+                <edge source="gui.GDivider" target="gui.GUIComponent">
+                  <point x="0.0" y="-47.5" />
+                  <point x="3333.0728046594995" y="103.0" />
+                  <point x="2500.7875000000004" y="103.0" />
+                  <point x="116.875" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.RegisterAccount">
+                  <point x="-46.0" y="-25.5" />
+                  <point x="2221.2790546594993" y="1683.0" />
+                  <point x="1966.3540322580645" y="1683.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="gui.GMenuBar" target="gui.GUIComponent">
+                  <point x="39.375" y="-58.5" />
+                  <point x="2562.4977822580645" y="143.0" />
+                  <point x="2415.7875000000004" y="143.0" />
+                  <point x="31.875" y="25.5" />
+                </edge>
+                <edge source="pages.Home" target="gui.GDropdown">
+                  <point x="-55.200000000000045" y="-25.5" />
+                  <point x="1433.7978046594992" y="743.0" />
+                  <point x="996.7750000000001" y="743.0" />
+                  <point x="996.7750000000001" y="512.0" />
+                  <point x="1245.6227822580645" y="512.0" />
+                  <point x="-83.75" y="69.5" />
+                </edge>
+                <edge source="gui.GGraph" target="gui.GUIComponent">
+                  <point x="0.0" y="-25.5" />
+                  <point x="1648.1227822580645" y="213.0" />
+                  <point x="2330.7875000000004" y="213.0" />
+                  <point x="-53.125" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.Home">
+                  <point x="-76.66666666666652" y="-25.5" />
+                  <point x="2190.6123879928327" y="1693.0" />
+                  <point x="1488.9978046594993" y="1693.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="pages.NewProject" target="gui.GDivider">
+                  <point x="55.19999999999982" y="-25.5" />
+                  <point x="2558.4290322580646" y="1582.0" />
+                  <point x="3336.925" y="1582.0" />
+                  <point x="3336.925" y="512.0" />
+                  <point x="3399.5728046594995" y="512.0" />
+                  <point x="66.5" y="47.5" />
+                </edge>
+                <edge source="pages.RegisterAccount" target="gui.GUIPage">
+                  <point x="37.5" y="-25.5" />
+                  <point x="2003.8540322580645" y="1492.0" />
+                  <point x="2591.0" y="1492.0" />
+                  <point x="6.900000000000091" y="25.5" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GDropdown">
+                  <point x="-27.59999999999991" y="-25.5" />
+                  <point x="1983.1790322580646" y="713.0" />
+                  <point x="1914.3500000000001" y="713.0" />
+                  <point x="1914.3500000000001" y="412.0" />
+                  <point x="1413.1227822580645" y="412.0" />
+                  <point x="83.75" y="69.5" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GSpacer">
+                  <point x="55.19999999999982" y="-25.5" />
+                  <point x="2065.9790322580643" y="823.0" />
+                  <point x="2873.725022401435" y="823.0" />
+                  <point x="2873.725022401435" y="512.0" />
+                  <point x="2963.4477822580648" y="512.0" />
+                  <point x="-48.0" y="47.5" />
+                </edge>
+                <edge source="gui.GUI" target="gui.GUIPage">
+                  <point x="168.8" y="-180.0" />
+                  <point x="379.79999999999995" y="783.0" />
+                  <point x="2535.8" y="783.0" />
+                  <point x="-48.30000000000018" y="25.5" />
+                </edge>
+                <edge source="gui.GButton" target="pages.CreateProject">
+                  <point x="-24.5" y="-69.5" />
+                  <point x="1933.5290322580645" y="1243.0" />
+                  <point x="1964.7790322580645" y="1243.0" />
+                  <point x="-46.0" y="25.5" />
+                </edge>
+                <edge source="pages.CreateProject" target="gui.GText">
+                  <point x="0.0" y="-25.5" />
+                  <point x="2010.7790322580645" y="482.0" />
+                  <point x="1970.9352822580645" y="482.0" />
+                  <point x="47.8125" y="25.5" />
+                </edge>
+                <edge source="pages.NewProject" target="gui.GSpacer">
+                  <point x="27.59999999999991" y="-25.5" />
+                  <point x="2530.829032258064" y="1562.0" />
+                  <point x="3163.9246415770613" y="1562.0" />
+                  <point x="3163.9246415770613" y="472.0" />
+                  <point x="3123.4477822580648" y="472.0" />
+                  <point x="112.0" y="47.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.9" x="246.66666666666669" y="266.6666666666667" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Fields</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>public</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="-713.0" y="-216.0">pages.CreateProject</node>
+                <node x="-332.0" y="-4.0">main.Main</node>
+                <node x="89.0" y="-115.0">pages.Home</node>
+                <node x="-227.0" y="-115.0">pages.About</node>
+                <node x="-397.0" y="-115.0">pages.RegisterAccount</node>
+                <node x="-69.0" y="-115.0">pages.Login</node>
+                <node x="-555.0" y="-115.0">pages.EditAccount</node>
+                <node x="-713.0" y="-115.0">pages.NewProject</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="main.Main" target="pages.Home">
+                  <point x="76.66666666666663" y="-25.5" />
+                  <point x="-163.33333333333337" y="-24.0" />
+                  <point x="158.0" y="-24.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.About">
+                  <point x="15.333333333333314" y="-25.5" />
+                  <point x="-224.66666666666663" y="-44.0" />
+                  <point x="-158.0" y="-44.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.RegisterAccount">
+                  <point x="-15.333333333333371" y="-25.5" />
+                  <point x="-255.33333333333337" y="-44.0" />
+                  <point x="-322.0" y="-44.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.Login">
+                  <point x="46.0" y="-25.5" />
+                  <point x="-194.0" y="-34.0" />
+                  <point x="0.0" y="-34.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.NewProject">
+                  <point x="-76.66666666666674" y="-25.5" />
+                  <point x="-316.66666666666674" y="-24.0" />
+                  <point x="-644.0" y="-24.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="pages.NewProject" target="pages.CreateProject">
+                  <point x="0.0" y="-25.5" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+                <edge source="main.Main" target="pages.EditAccount">
+                  <point x="-46.0" y="-25.5" />
+                  <point x="-286.0" y="-34.0" />
+                  <point x="-486.0" y="-34.0" />
+                  <point x="0.0" y="25.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-830.0" y="-348.0" />
+              <SelectedNodes>
+                <node>pages.About</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Methods</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>public</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -312,7 +984,6 @@
         <option value="$PROJECT_DIR$/src/pages/Login.java" />
         <option value="$PROJECT_DIR$/src/pages/NewProject.java" />
         <option value="$PROJECT_DIR$/src/gui/GGraph.java" />
-        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
         <option value="$PROJECT_DIR$/src/junit/JTest.java" />
         <option value="$PROJECT_DIR$/src/junit/GeneralTest.java" />
         <option value="$PROJECT_DIR$/src/gui/GWrapper.java" />
@@ -333,6 +1004,7 @@
         <option value="$PROJECT_DIR$/src/pages/Home.java" />
         <option value="$PROJECT_DIR$/src/gui/GUIPage.java" />
         <option value="$PROJECT_DIR$/src/main/User.java" />
+        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
       </list>
     </option>
   </component>
@@ -343,9 +1015,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-2560" />
     <option name="y" value="23" />
     <option name="width" value="2560" />
-    <option name="height" value="1413" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -436,6 +1109,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="uml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -471,10 +1162,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -494,29 +1181,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasyGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasyGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1030,7 +1699,9 @@
       <workItem from="1494626460412" duration="1364000" />
       <workItem from="1494640370602" duration="3628000" />
       <workItem from="1494644019543" duration="8000" />
-      <workItem from="1494658441466" duration="4924000" />
+      <workItem from="1494658441466" duration="4997000" />
+      <workItem from="1494751489629" duration="402000" />
+      <workItem from="1494751987896" duration="1285000" />
     </task>
     <task id="LOCAL-00001" summary="Testing github in IntelliJ">
       <created>1492415888552</created>
@@ -1214,11 +1885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494643923805</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Adding comments and cleaning up my code.">
+      <created>1494663409543</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1494663409543</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112058000" />
+    <option name="totallyTimeSpent" value="113818000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1230,19 +1908,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
+    <frame x="-2560" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1250,6 +1928,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16367188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1266,11 +1945,11 @@
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="573" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1307,7 +1986,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed a bug that would cause page contents to not line up exactly right&#10;(off by a few pixels) after the slide animation. Now it's perfect." />
     <MESSAGE value="Probably fixed the bug that cause part of the screen to be outside&#10;the window on Windows. I don't use Windows so I really don't know it&#10;this actually fixed it, probably did though." />
     <MESSAGE value="Started working on the login screen a bit more. Added a new GDivider&#10;class that allows placing components horizontally together and still&#10;dynamically scales and repositions things properly." />
     <MESSAGE value="Updated the Login Screen to be more similar to the paper prototype and tested GDividers so that we can stack components both horizontally and vertically. It's pretty awesome.&#10;Changed around a bit of the colors mostly getting rid of the super ugly blue and red to the slightly less ugly dark gray and gray.&#10;Increased the account button's click area so you can now just click the name." />
@@ -1332,7 +2010,8 @@
     <MESSAGE value="Added a new dropdown menu component." />
     <MESSAGE value="Added a page that will be used to create projects." />
     <MESSAGE value="Separated most colors, fonts, and animation variables into their&#10;own Style class (in control) to make editing these variable easier." />
-    <option name="LAST_COMMIT_MESSAGE" value="Separated most colors, fonts, and animation variables into their&#10;own Style class (in control) to make editing these variable easier." />
+    <MESSAGE value="Adding comments and cleaning up my code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding comments and cleaning up my code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1345,65 +2024,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="44" column="37" lean-forward="false" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="66" column="27" lean-forward="false" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1513,31 +2133,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="80" column="5" lean-forward="false" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-          <folding>
-            <element signature="e#2845#2846#0" expanded="true" />
-            <element signature="e#2878#2879#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/junit/GeneralTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/Style.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="1275">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1606,17 +2212,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
+        <state relative-caret-position="765">
           <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding />
         </state>
@@ -1624,18 +2222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1652,18 +2240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="30">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="67" column="11" lean-forward="true" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1674,14 +2252,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1698,25 +2275,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
+        <state relative-caret-position="690">
           <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1737,18 +2306,1170 @@
     <entry file="file://$PROJECT_DIR$/src/gui/GMouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/gui.GUI">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>gui.GUI</OriginalElement>
+          <nodes>
+            <node x="" y="">java.awt.event.KeyListener</node>
+            <node x="" y="">java.awt.Frame</node>
+            <node x="" y="">java.awt.Window</node>
+            <node x="" y="">javax.swing.RootPaneContainer</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">gui.GUI</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">java.io.Serializable</node>
+            <node x="" y="">java.util.EventListener</node>
+            <node x="" y="">java.awt.event.MouseWheelListener</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.swing.JFrame</node>
+            <node x="" y="">java.awt.event.MouseListener</node>
+            <node x="" y="">javax.swing.WindowConstants</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7563451776649747" x="680.0" y="257.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/control.General">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>control.General</OriginalElement>
+          <nodes>
+            <node x="" y="">control.General</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="48.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/main.User">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>main.User</OriginalElement>
+          <nodes>
+            <node x="" y="">main.User</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="58.0" y="54.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="96" column="33" lean-forward="false" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        <state relative-caret-position="540">
+          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="67" column="11" lean-forward="false" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uml/GUI">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uml/view.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="1403.4441358024696" y="269.0">gui.GDivider</node>
+            <node x="249.1714506172841" y="0.0">gui.GMouseListener</node>
+            <node x="2155.9347222222223" y="302.0">gui.GGraph</node>
+            <node x="1741.600617283951" y="866.0">pages.About</node>
+            <node x="2037.4347222222225" y="525.0">gui.GText</node>
+            <node x="1008.4347222222225" y="723.0">gui.GUI</node>
+            <node x="2448.9347222222223" y="291.0">gui.GWrapper</node>
+            <node x="1747.6733024691362" y="269.0">gui.GSpacer</node>
+            <node x="1614.3385802469138" y="11.0">gui.GUIComponent</node>
+            <node x="1684.6733024691362" y="558.5">gui.GKeyListener</node>
+            <node x="1086.4347222222225" y="1133.0">gui.GUI.DrawPanel</node>
+            <node x="1973.4347222222225" y="800.0">gui.GTextBox</node>
+            <node x="996.6006172839509" y="11.0">gui.GSubList</node>
+            <node x="248.44413580246942" y="247.0">gui.GDropdown</node>
+            <node x="1076.7344135802473" y="547.0">gui.GUIPage</node>
+            <node x="1068.4441358024696" y="280.5">gui.GMenuBar</node>
+            <node x="652.4441358024695" y="203.0">gui.GButton</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="gui.GWrapper" target="gui.GUIComponent">
+              <point x="0.0" y="-48.0" />
+              <point x="2592.9347222222223" y="153.0" />
+              <point x="1837.4635802469138" y="153.0" />
+              <point x="95.625" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUI.DrawPanel">
+              <point x="140.66666666666674" y="180.0" />
+              <point x="1360.1013888888892" y="1108.0" />
+              <point x="1308.1013888888892" y="1108.0" />
+              <point x="88.66666666666674" y="-25.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GMouseListener">
+              <point x="-99.0" y="-136.0" />
+              <point x="751.4441358024695" y="113.0" />
+              <point x="471.0714506172842" y="113.0" />
+              <point x="63.40000000000009" y="36.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GKeyListener">
+              <point x="168.79999999999995" y="-180.0" />
+              <point x="1388.2347222222224" y="703.0" />
+              <point x="1740.9233024691362" y="703.0" />
+              <point x="-56.25" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIComponent">
+              <point x="84.40000000000009" y="-180.0" />
+              <point x="1303.8347222222226" y="693.0" />
+              <point x="1674.1733024691362" y="693.0" />
+              <point x="1674.1733024691362" y="183.0" />
+              <point x="1752.4635802469138" y="183.0" />
+              <point x="10.625" y="25.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GSpacer">
+              <point x="72.0" y="-37.0" />
+              <point x="1244.7344135802473" y="505.0" />
+              <point x="1805.1733024691362" y="505.0" />
+              <point x="-57.5" y="70.0" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GMouseListener">
+              <point x="-96.0" y="-92.0" />
+              <point x="344.4441358024694" y="183.0" />
+              <point x="407.6714506172841" y="183.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GUIComponent">
+              <point x="137.5999999999999" y="-103.0" />
+              <point x="2283.0347222222226" y="703.0" />
+              <point x="2747.4347222222223" y="703.0" />
+              <point x="2747.4347222222223" y="143.0" />
+              <point x="1858.7135802469138" y="143.0" />
+              <point x="116.875" y="25.5" />
+            </edge>
+            <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+              <point x="-88.66666666666674" y="-25.5" />
+              <point x="1130.7680555555557" y="1108.0" />
+              <point x="1078.7680555555557" y="1108.0" />
+              <point x="-140.66666666666663" y="180.0" />
+            </edge>
+            <edge source="gui.GText" target="gui.GUIComponent">
+              <point x="0.0" y="-59.0" />
+              <point x="2145.4347222222223" y="173.0" />
+              <point x="1794.9635802469138" y="173.0" />
+              <point x="53.125" y="25.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GUIComponent">
+              <point x="99.0" y="-136.0" />
+              <point x="949.4441358024695" y="133.0" />
+              <point x="1646.2135802469138" y="133.0" />
+              <point x="-95.625" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GMouseListener">
+              <point x="-168.79999999999995" y="-180.0" />
+              <point x="1050.6347222222225" y="703.0" />
+              <point x="0.0" y="703.0" />
+              <point x="0.0" y="163.0" />
+              <point x="280.87145061728415" y="163.0" />
+              <point x="-126.79999999999995" y="36.5" />
+            </edge>
+            <edge source="pages.About" target="gui.GUIPage">
+              <point x="-46.66666666666674" y="-37.0" />
+              <point x="1764.9339506172842" y="683.0" />
+              <point x="1236.7344135802473" y="683.0" />
+              <point x="64.0" y="37.0" />
+            </edge>
+            <edge source="pages.About" target="gui.GText">
+              <point x="46.66666666666674" y="-37.0" />
+              <point x="1858.2672839506176" y="703.0" />
+              <point x="2073.4347222222223" y="703.0" />
+              <point x="-72.0" y="59.0" />
+            </edge>
+            <edge source="pages.About" target="gui.GSpacer">
+              <point x="0.0" y="-37.0" />
+              <point x="1811.600617283951" y="693.0" />
+              <point x="1920.1733024691362" y="693.0" />
+              <point x="57.5" y="70.0" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GButton">
+              <point x="-72.0" y="-37.0" />
+              <point x="1100.7344135802473" y="505.0" />
+              <point x="850.4441358024695" y="505.0" />
+              <point x="0.0" y="136.0" />
+            </edge>
+            <edge source="gui.GSpacer" target="gui.GUIComponent">
+              <point x="0.0" y="-70.0" />
+              <point x="1862.6733024691362" y="183.0" />
+              <point x="1773.7135802469138" y="183.0" />
+              <point x="31.875" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GMouseListener">
+              <point x="-137.5999999999999" y="-103.0" />
+              <point x="2007.8347222222226" y="673.0" />
+              <point x="129.37145061728415" y="673.0" />
+              <point x="129.37145061728415" y="173.0" />
+              <point x="344.271450617284" y="173.0" />
+              <point x="-63.40000000000009" y="36.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GKeyListener">
+              <point x="-68.79999999999995" y="-103.0" />
+              <point x="2076.6347222222225" y="663.0" />
+              <point x="1853.4233024691362" y="663.0" />
+              <point x="56.25" y="25.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GMouseListener">
+              <point x="-118.125" y="-58.5" />
+              <point x="1107.8191358024696" y="103.0" />
+              <point x="534.4714506172841" y="103.0" />
+              <point x="126.79999999999995" y="36.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GSubList">
+              <point x="-39.375" y="-58.5" />
+              <point x="1186.5691358024696" y="93.0" />
+              <point x="1101.100617283951" y="93.0" />
+              <point x="-104.5" y="25.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GSubList">
+              <point x="-76.66666666666669" y="-70.0" />
+              <point x="1441.777469135803" y="113.0" />
+              <point x="1310.100617283951" y="113.0" />
+              <point x="104.5" y="25.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GUIComponent">
+              <point x="0.0" y="-70.0" />
+              <point x="1518.4441358024696" y="163.0" />
+              <point x="1709.9635802469138" y="163.0" />
+              <point x="-31.875" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GText">
+              <point x="68.79999999999995" y="-103.0" />
+              <point x="2214.2347222222224" y="703.0" />
+              <point x="2217.4347222222223" y="703.0" />
+              <point x="72.0" y="59.0" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GUIComponent">
+              <point x="39.375" y="-58.5" />
+              <point x="1265.3191358024696" y="143.0" />
+              <point x="1667.4635802469138" y="143.0" />
+              <point x="-74.375" y="25.5" />
+            </edge>
+            <edge source="gui.GGraph" target="gui.GUIComponent">
+              <point x="0.0" y="-37.0" />
+              <point x="2292.4347222222223" y="163.0" />
+              <point x="1816.2135802469138" y="163.0" />
+              <point x="74.375" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIPage">
+              <point x="-84.39999999999998" y="-180.0" />
+              <point x="1135.0347222222226" y="703.0" />
+              <point x="1108.7344135802473" y="703.0" />
+              <point x="-64.0" y="37.0" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GMenuBar">
+              <point x="-24.0" y="-37.0" />
+              <point x="1148.7344135802473" y="505.0" />
+              <point x="1147.1941358024696" y="505.0" />
+              <point x="-78.75" y="58.5" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GUIComponent">
+              <point x="96.0" y="-92.0" />
+              <point x="536.4441358024694" y="123.0" />
+              <point x="1624.9635802469138" y="123.0" />
+              <point x="-116.875" y="25.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="1201.5" y="400.0" />
+          <SelectedNodes>
+            <node>gui.GDivider</node>
+            <node>gui.GMouseListener</node>
+            <node>gui.GGraph</node>
+            <node>pages.About</node>
+            <node>gui.GText</node>
+            <node>gui.GUI</node>
+            <node>gui.GWrapper</node>
+            <node>gui.GSpacer</node>
+            <node>gui.GUIComponent</node>
+            <node>gui.GKeyListener</node>
+            <node>gui.GUI.DrawPanel</node>
+            <node>gui.GTextBox</node>
+            <node>gui.GSubList</node>
+            <node>gui.GDropdown</node>
+            <node>gui.GUIPage</node>
+            <node>gui.GMenuBar</node>
+            <node>gui.GButton</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="-713.0" y="-216.0">pages.CreateProject</node>
+            <node x="-332.0" y="-4.0">main.Main</node>
+            <node x="89.0" y="-115.0">pages.Home</node>
+            <node x="-227.0" y="-115.0">pages.About</node>
+            <node x="-397.0" y="-115.0">pages.RegisterAccount</node>
+            <node x="-69.0" y="-115.0">pages.Login</node>
+            <node x="-555.0" y="-115.0">pages.EditAccount</node>
+            <node x="-713.0" y="-115.0">pages.NewProject</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="main.Main" target="pages.Home">
+              <point x="76.66666666666663" y="-25.5" />
+              <point x="-163.33333333333337" y="-24.0" />
+              <point x="158.0" y="-24.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.About">
+              <point x="15.333333333333314" y="-25.5" />
+              <point x="-224.66666666666663" y="-44.0" />
+              <point x="-158.0" y="-44.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.RegisterAccount">
+              <point x="-15.333333333333371" y="-25.5" />
+              <point x="-255.33333333333337" y="-44.0" />
+              <point x="-322.0" y="-44.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.Login">
+              <point x="46.0" y="-25.5" />
+              <point x="-194.0" y="-34.0" />
+              <point x="0.0" y="-34.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.NewProject">
+              <point x="-76.66666666666674" y="-25.5" />
+              <point x="-316.66666666666674" y="-24.0" />
+              <point x="-644.0" y="-24.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="pages.NewProject" target="pages.CreateProject">
+              <point x="0.0" y="-25.5" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.EditAccount">
+              <point x="-46.0" y="-25.5" />
+              <point x="-286.0" y="-34.0" />
+              <point x="-486.0" y="-34.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-830.0" y="-348.0" />
+          <SelectedNodes>
+            <node>pages.About</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uml/gui.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="191.60000000000014" y="-2245.0">gui.GMouseListener</node>
+            <node x="1399.911" y="-1986.0">gui.GDivider</node>
+            <node x="2572.411" y="-1953.0">gui.GGraph</node>
+            <node x="1059.411" y="-1552.0">gui.GUI</node>
+            <node x="2453.911" y="-1730.0">gui.GText</node>
+            <node x="1649.911" y="-1964.0">gui.GWrapper</node>
+            <node x="1957.911" y="-1986.0">gui.GSpacer</node>
+            <node x="1592.35" y="-2234.0">gui.GUIComponent</node>
+            <node x="2208.911" y="-1696.5">gui.GKeyListener</node>
+            <node x="1137.411" y="-1142.0">gui.GUI.DrawPanel</node>
+            <node x="2298.4743333333336" y="-1475.0">gui.GTextBox</node>
+            <node x="959.0035000000003" y="-2234.0">gui.GSubList</node>
+            <node x="660.9110000000001" y="-2008.0">gui.GDropdown</node>
+            <node x="1126.411" y="-1708.0">gui.GUIPage</node>
+            <node x="1064.911" y="-1974.5">gui.GMenuBar</node>
+            <node x="244.91100000000006" y="-2052.0">gui.GButton</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="gui.GWrapper" target="gui.GUIComponent">
+              <point x="0.0" y="-48.0" />
+              <point x="1793.911" y="-2072.0" />
+              <point x="1730.475" y="-2072.0" />
+              <point x="10.625" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUI.DrawPanel">
+              <point x="140.66666666666652" y="180.0" />
+              <point x="1411.0776666666666" y="-1167.0" />
+              <point x="1359.0776666666668" y="-1167.0" />
+              <point x="88.66666666666674" y="-25.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GMouseListener">
+              <point x="-99.0" y="-136.0" />
+              <point x="343.91100000000006" y="-2072.0" />
+              <point x="350.10000000000014" y="-2072.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GKeyListener">
+              <point x="168.79999999999995" y="-180.0" />
+              <point x="1439.211" y="-1572.0" />
+              <point x="2265.161" y="-1572.0" />
+              <point x="-56.25" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIComponent">
+              <point x="84.40000000000009" y="-180.0" />
+              <point x="1354.8110000000001" y="-1582.0" />
+              <point x="2198.411" y="-1582.0" />
+              <point x="2198.411" y="-2092.0" />
+              <point x="1772.975" y="-2092.0" />
+              <point x="53.125" y="25.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GSpacer">
+              <point x="72.0" y="-37.0" />
+              <point x="1294.411" y="-1750.0" />
+              <point x="2072.911" y="-1750.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GUIComponent">
+              <point x="137.60000000000002" y="-103.0" />
+              <point x="2608.074333333334" y="-1572.0" />
+              <point x="2855.911" y="-1572.0" />
+              <point x="2855.911" y="-2122.0" />
+              <point x="1836.725" y="-2122.0" />
+              <point x="116.875" y="25.5" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GMouseListener">
+              <point x="-96.0" y="-92.0" />
+              <point x="756.9110000000001" y="-2132.0" />
+              <point x="413.5000000000002" y="-2132.0" />
+              <point x="63.39999999999998" y="36.5" />
+            </edge>
+            <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+              <point x="-88.66666666666674" y="-25.5" />
+              <point x="1181.7443333333333" y="-1167.0" />
+              <point x="1129.7443333333333" y="-1167.0" />
+              <point x="-140.66666666666674" y="180.0" />
+            </edge>
+            <edge source="gui.GText" target="gui.GUIComponent">
+              <point x="0.0" y="-59.0" />
+              <point x="2561.911" y="-2102.0" />
+              <point x="1794.225" y="-2102.0" />
+              <point x="74.375" y="25.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GUIComponent">
+              <point x="99.0" y="-136.0" />
+              <point x="541.9110000000001" y="-2122.0" />
+              <point x="1602.975" y="-2122.0" />
+              <point x="-116.875" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GMouseListener">
+              <point x="-168.79999999999995" y="-180.0" />
+              <point x="1101.611" y="-1572.0" />
+              <point x="18.0" y="-1572.0" />
+              <point x="18.0" y="-2082.0" />
+              <point x="223.30000000000018" y="-2082.0" />
+              <point x="-126.79999999999995" y="36.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GButton">
+              <point x="-72.0" y="-37.0" />
+              <point x="1150.411" y="-1750.0" />
+              <point x="442.91100000000006" y="-1750.0" />
+              <point x="0.0" y="136.0" />
+            </edge>
+            <edge source="gui.GSpacer" target="gui.GUIComponent">
+              <point x="0.0" y="-70.0" />
+              <point x="2072.911" y="-2082.0" />
+              <point x="1751.725" y="-2082.0" />
+              <point x="31.875" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GMouseListener">
+              <point x="-137.5999999999999" y="-103.0" />
+              <point x="2332.8743333333337" y="-1592.0" />
+              <point x="91.77433333333352" y="-1592.0" />
+              <point x="91.77433333333352" y="-2072.0" />
+              <point x="286.70000000000005" y="-2072.0" />
+              <point x="-63.40000000000009" y="36.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GKeyListener">
+              <point x="-68.80000000000018" y="-103.0" />
+              <point x="2401.6743333333334" y="-1572.0" />
+              <point x="2377.661" y="-1572.0" />
+              <point x="56.25" y="25.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GMouseListener">
+              <point x="-118.125" y="-58.5" />
+              <point x="1104.286" y="-2142.0" />
+              <point x="476.9000000000001" y="-2142.0" />
+              <point x="126.80000000000001" y="36.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GSubList">
+              <point x="-39.375" y="-58.5" />
+              <point x="1183.036" y="-2152.0" />
+              <point x="1063.5035000000003" y="-2152.0" />
+              <point x="-104.5" y="25.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GSubList">
+              <point x="-76.66666666666674" y="-70.0" />
+              <point x="1438.2443333333333" y="-2132.0" />
+              <point x="1272.5035000000003" y="-2132.0" />
+              <point x="104.5" y="25.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GUIComponent">
+              <point x="0.0" y="-70.0" />
+              <point x="1514.911" y="-2082.0" />
+              <point x="1687.975" y="-2082.0" />
+              <point x="-31.875" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GText">
+              <point x="68.80000000000018" y="-103.0" />
+              <point x="2539.2743333333337" y="-1582.0" />
+              <point x="2615.911" y="-1582.0" />
+              <point x="54.0" y="59.0" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GUIComponent">
+              <point x="39.375" y="-58.5" />
+              <point x="1261.786" y="-2102.0" />
+              <point x="1645.475" y="-2102.0" />
+              <point x="-74.375" y="25.5" />
+            </edge>
+            <edge source="gui.GGraph" target="gui.GUIComponent">
+              <point x="0.0" y="-37.0" />
+              <point x="2708.911" y="-2112.0" />
+              <point x="1815.475" y="-2112.0" />
+              <point x="95.625" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIPage">
+              <point x="-84.40000000000009" y="-180.0" />
+              <point x="1186.011" y="-1572.0" />
+              <point x="1174.411" y="-1572.0" />
+              <point x="-48.0" y="37.0" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GMenuBar">
+              <point x="-24.0" y="-37.0" />
+              <point x="1198.411" y="-1760.0" />
+              <point x="1143.661" y="-1760.0" />
+              <point x="-78.75" y="58.5" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GUIComponent">
+              <point x="96.0" y="-92.0" />
+              <point x="948.9110000000001" y="-2112.0" />
+              <point x="1624.225" y="-2112.0" />
+              <point x="-95.625" y="25.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="1009.0" y="-2048.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uml/all.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="1941.7790322580645" y="997.5">pages.CreateProject</node>
+            <node x="3200.0728046594995" y="275.0">gui.GDivider</node>
+            <node x="454.0" y="931.5">main.User</node>
+            <node x="1520.6227822580645" y="297.0">gui.GGraph</node>
+            <node x="1419.9978046594993" y="997.5">pages.Home</node>
+            <node x="0.0" y="843.0">gui.GUI</node>
+            <node x="1795.6227822580645" y="297.0">gui.GText</node>
+            <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
+            <node x="2276.2290322580648" y="1602.0">pages.Login</node>
+            <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
+            <node x="2256.4125000000004" y="11.0">gui.GUIComponent</node>
+            <node x="825.0" y="297.0">gui.GKeyListener</node>
+            <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
+            <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
+            <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
+            <node x="902.0" y="0.0">gui.GMouseListener</node>
+            <node x="2175.2790546594993" y="1713.0">main.Main</node>
+            <node x="2839.25" y="997.5">pages.About</node>
+            <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
+            <node x="1125.325" y="532.0">gui.GTextBox</node>
+            <node x="2932.070833333333" y="11.0">gui.GSubList</node>
+            <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
+            <node x="2515.1000000000004" y="587.0">gui.GUIPage</node>
+            <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
+            <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="pages.RegisterAccount" target="main.User">
+              <point x="-37.5" y="-25.5" />
+              <point x="1928.8540322580645" y="1572.0" />
+              <point x="541.5" y="1572.0" />
+              <point x="-87.5" y="91.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUI.DrawPanel">
+              <point x="0.0" y="180.0" />
+              <point x="0.0" y="-25.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GMouseListener">
+              <point x="-73.5" y="-69.5" />
+              <point x="1884.5290322580645" y="1233.0" />
+              <point x="814.5" y="1233.0" />
+              <point x="814.5" y="173.0" />
+              <point x="997.0999999999999" y="173.0" />
+              <point x="-63.40000000000009" y="36.5" />
+            </edge>
+            <edge source="main.Main" target="pages.Login">
+              <point x="15.333333333333485" y="-25.5" />
+              <point x="2282.6123879928327" y="1673.0" />
+              <point x="2345.2290322580648" y="1673.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="pages.RegisterAccount" target="gui.GText">
+              <point x="-12.5" y="-25.5" />
+              <point x="1953.8540322580645" y="1562.0" />
+              <point x="1638.4977822580645" y="1562.0" />
+              <point x="1638.4977822580645" y="472.0" />
+              <point x="1907.1852822580645" y="472.0" />
+              <point x="-15.9375" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GKeyListener">
+              <point x="0.0" y="-180.0" />
+              <point x="211.0" y="823.0" />
+              <point x="137.5999999999999" y="823.0" />
+              <point x="137.5999999999999" y="512.0" />
+              <point x="881.25" y="512.0" />
+              <point x="-56.25" y="25.5" />
+            </edge>
+            <edge source="pages.RegisterAccount" target="gui.GSpacer">
+              <point x="62.5" y="-25.5" />
+              <point x="2028.8540322580645" y="1532.0" />
+              <point x="3130.9246415770613" y="1532.0" />
+              <point x="3130.9246415770613" y="502.0" />
+              <point x="3027.4477822580648" y="502.0" />
+              <point x="16.0" y="47.5" />
+            </edge>
+            <edge source="pages.NewProject" target="gui.GUIPage">
+              <point x="0.0" y="-25.5" />
+              <point x="2503.2290322580648" y="1522.0" />
+              <point x="2828.75" y="1522.0" />
+              <point x="2828.75" y="793.0" />
+              <point x="2632.4000000000005" y="793.0" />
+              <point x="48.30000000000018" y="25.5" />
+            </edge>
+            <edge source="pages.NewProject" target="gui.GButton">
+              <point x="-55.19999999999982" y="-25.5" />
+              <point x="2448.029032258065" y="1432.0" />
+              <point x="2068.2790322580645" y="1432.0" />
+              <point x="110.25" y="69.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GSpacer">
+              <point x="46.0" y="-25.5" />
+              <point x="2630.1000000000004" y="502.0" />
+              <point x="2931.4477822580648" y="502.0" />
+              <point x="-80.0" y="47.5" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GMouseListener">
+              <point x="-83.75" y="-69.5" />
+              <point x="1245.6227822580645" y="173.0" />
+              <point x="1123.9" y="173.0" />
+              <point x="63.40000000000009" y="36.5" />
+            </edge>
+            <edge source="pages.EditAccount" target="gui.GTextBox">
+              <point x="-55.19999999999982" y="-25.5" />
+              <point x="2075.154032258065" y="1482.0" />
+              <point x="443.5" y="1482.0" />
+              <point x="443.5" y="763.0" />
+              <point x="1258.325" y="763.0" />
+              <point x="0.0" y="80.5" />
+            </edge>
+            <edge source="gui.GButton" target="gui.GUIComponent">
+              <point x="122.5" y="-69.5" />
+              <point x="2080.5290322580645" y="1243.0" />
+              <point x="3189.5728046594995" y="1243.0" />
+              <point x="3189.5728046594995" y="123.0" />
+              <point x="2458.2875000000004" y="123.0" />
+              <point x="74.375" y="25.5" />
+            </edge>
+            <edge source="pages.EditAccount" target="gui.GText">
+              <point x="-27.59999999999991" y="-25.5" />
+              <point x="2102.7540322580644" y="1472.0" />
+              <point x="1671.8727822580645" y="1472.0" />
+              <point x="1671.8727822580645" y="482.0" />
+              <point x="1939.0602822580645" y="482.0" />
+              <point x="15.9375" y="25.5" />
+            </edge>
+            <edge source="pages.About" target="gui.GUIPage">
+              <point x="-46.0" y="-25.5" />
+              <point x="2862.25" y="783.0" />
+              <point x="2646.2" y="783.0" />
+              <point x="62.09999999999991" y="25.5" />
+            </edge>
+            <edge source="pages.EditAccount" target="gui.GSpacer">
+              <point x="55.19999999999982" y="-25.5" />
+              <point x="2185.5540322580646" y="1542.0" />
+              <point x="3141.9246415770613" y="1542.0" />
+              <point x="3141.9246415770613" y="492.0" />
+              <point x="3059.4477822580648" y="492.0" />
+              <point x="48.0" y="47.5" />
+            </edge>
+            <edge source="pages.NewProject" target="pages.CreateProject">
+              <point x="-27.59999999999991" y="-25.5" />
+              <point x="2475.6290322580644" y="1422.0" />
+              <point x="2115.5290322580645" y="1422.0" />
+              <point x="2115.5290322580645" y="1223.0" />
+              <point x="2056.7790322580645" y="1223.0" />
+              <point x="46.0" y="25.5" />
+            </edge>
+            <edge source="gui.GSpacer" target="gui.GUIComponent">
+              <point x="0.0" y="-47.5" />
+              <point x="3011.4477822580648" y="133.0" />
+              <point x="2437.0375000000004" y="133.0" />
+              <point x="53.125" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GKeyListener">
+              <point x="-106.40000000000009" y="-80.5" />
+              <point x="1151.925" y="502.0" />
+              <point x="993.75" y="502.0" />
+              <point x="56.25" y="25.5" />
+            </edge>
+            <edge source="pages.Home" target="gui.GText">
+              <point x="0.0" y="-25.5" />
+              <point x="1488.9978046594993" y="462.0" />
+              <point x="1875.3102822580645" y="462.0" />
+              <point x="-47.8125" y="25.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GMouseListener">
+              <point x="-118.125" y="-58.5" />
+              <point x="2404.9977822580645" y="163.0" />
+              <point x="1187.3" y="163.0" />
+              <point x="126.79999999999995" y="36.5" />
+            </edge>
+            <edge source="pages.Home" target="gui.GSpacer">
+              <point x="27.59999999999991" y="-25.5" />
+              <point x="1516.5978046594992" y="763.0" />
+              <point x="1607.0477822580644" y="763.0" />
+              <point x="1607.0477822580644" y="492.0" />
+              <point x="2899.4477822580648" y="492.0" />
+              <point x="-112.0" y="47.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GSubList">
+              <point x="118.125" y="-58.5" />
+              <point x="2641.2477822580645" y="233.0" />
+              <point x="3036.570833333333" y="233.0" />
+              <point x="-104.5" y="25.5" />
+            </edge>
+            <edge source="pages.RegisterAccount" target="gui.GTextBox">
+              <point x="-62.5" y="-25.5" />
+              <point x="1903.8540322580645" y="1582.0" />
+              <point x="432.5" y="1582.0" />
+              <point x="432.5" y="753.0" />
+              <point x="1169.6583333333333" y="753.0" />
+              <point x="-88.66666666666674" y="80.5" />
+            </edge>
+            <edge source="pages.EditAccount" target="gui.GUIPage">
+              <point x="27.59999999999991" y="-25.5" />
+              <point x="2157.954032258064" y="1502.0" />
+              <point x="2673.55" y="1502.0" />
+              <point x="2673.55" y="813.0" />
+              <point x="2604.8" y="813.0" />
+              <point x="20.699999999999818" y="25.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GSubList">
+              <point x="88.66666666666652" y="-47.5" />
+              <point x="3421.7394713261656" y="93.0" />
+              <point x="3245.570833333333" y="93.0" />
+              <point x="104.5" y="25.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GText">
+              <point x="53.200000000000045" y="-80.5" />
+              <point x="1311.525" y="442.0" />
+              <point x="1811.5602822580645" y="442.0" />
+              <point x="-111.5625" y="25.5" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GUIPage">
+              <point x="27.59999999999991" y="-25.5" />
+              <point x="2038.3790322580644" y="803.0" />
+              <point x="2563.4000000000005" y="803.0" />
+              <point x="-20.699999999999818" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.NewProject">
+              <point x="46.0" y="-25.5" />
+              <point x="2313.2790546594993" y="1683.0" />
+              <point x="2503.2290322580648" y="1683.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="pages.Login" target="gui.GDivider">
+              <point x="55.19999999999982" y="-25.5" />
+              <point x="2400.4290322580646" y="1572.0" />
+              <point x="3325.925" y="1572.0" />
+              <point x="3325.925" y="512.0" />
+              <point x="3266.5728046594995" y="512.0" />
+              <point x="-66.5" y="47.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GMenuBar">
+              <point x="-46.0" y="-25.5" />
+              <point x="2538.1000000000004" y="482.0" />
+              <point x="2444.3727822580645" y="482.0" />
+              <point x="-78.75" y="58.5" />
+            </edge>
+            <edge source="pages.Home" target="gui.GGraph">
+              <point x="-27.59999999999991" y="-25.5" />
+              <point x="1461.3978046594993" y="733.0" />
+              <point x="1401.825" y="733.0" />
+              <point x="1401.825" y="432.0" />
+              <point x="1648.1227822580645" y="432.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="pages.Login" target="gui.GText">
+              <point x="-27.59999999999991" y="-25.5" />
+              <point x="2317.6290322580644" y="1442.0" />
+              <point x="2143.2790322580645" y="1442.0" />
+              <point x="2143.2790322580645" y="472.0" />
+              <point x="2002.8102822580645" y="472.0" />
+              <point x="79.6875" y="25.5" />
+            </edge>
+            <edge source="gui.GDropdown" target="gui.GUIComponent">
+              <point x="83.75" y="-69.5" />
+              <point x="1413.1227822580645" y="193.0" />
+              <point x="2288.2875000000004" y="193.0" />
+              <point x="-95.625" y="25.5" />
+            </edge>
+            <edge source="pages.Login" target="gui.GSpacer">
+              <point x="27.59999999999991" y="-25.5" />
+              <point x="2372.829032258064" y="1552.0" />
+              <point x="3152.9246415770613" y="1552.0" />
+              <point x="3152.9246415770613" y="482.0" />
+              <point x="3091.4477822580648" y="482.0" />
+              <point x="80.0" y="47.5" />
+            </edge>
+            <edge source="main.Main" target="pages.About">
+              <point x="76.66666666666652" y="-25.5" />
+              <point x="2343.9457213261658" y="1693.0" />
+              <point x="2908.25" y="1693.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="gui.GWrapper" target="gui.GUIComponent">
+              <point x="0.0" y="-36.5" />
+              <point x="2208.1227822580645" y="233.0" />
+              <point x="2373.2875000000004" y="233.0" />
+              <point x="-10.625" y="25.5" />
+            </edge>
+            <edge source="pages.Login" target="gui.GUIPage">
+              <point x="0.0" y="-25.5" />
+              <point x="2345.2290322580648" y="1512.0" />
+              <point x="2744.25" y="1512.0" />
+              <point x="2744.25" y="803.0" />
+              <point x="2618.6000000000004" y="803.0" />
+              <point x="34.5" y="25.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIComponent">
+              <point x="-84.40000000000009" y="-180.0" />
+              <point x="126.59999999999991" y="183.0" />
+              <point x="2267.0375000000004" y="183.0" />
+              <point x="-116.875" y="25.5" />
+            </edge>
+            <edge source="pages.Home" target="gui.GUIPage">
+              <point x="55.200000000000045" y="-25.5" />
+              <point x="1544.1978046594993" y="793.0" />
+              <point x="2549.6000000000004" y="793.0" />
+              <point x="-34.5" y="25.5" />
+            </edge>
+            <edge source="pages.Login" target="gui.GButton">
+              <point x="-55.19999999999982" y="-25.5" />
+              <point x="2290.029032258065" y="1452.0" />
+              <point x="1994.7790322580645" y="1452.0" />
+              <point x="36.75" y="69.5" />
+            </edge>
+            <edge source="main.Main" target="pages.EditAccount">
+              <point x="-15.333333333333485" y="-25.5" />
+              <point x="2251.9457213261658" y="1673.0" />
+              <point x="2130.3540322580648" y="1673.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+              <point x="-88.66666666666669" y="-25.5" />
+              <point x="122.33333333333326" y="1243.0" />
+              <point x="70.33333333333326" y="1243.0" />
+              <point x="-140.66666666666666" y="180.0" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GTextBox">
+              <point x="-55.200000000000045" y="-25.5" />
+              <point x="1955.5790322580644" y="723.0" />
+              <point x="1346.9916666666668" y="723.0" />
+              <point x="88.66666666666674" y="80.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GUIComponent">
+              <point x="0.0" y="-80.5" />
+              <point x="1258.325" y="422.0" />
+              <point x="1507.3727822580645" y="422.0" />
+              <point x="1507.3727822580645" y="203.0" />
+              <point x="2309.5375000000004" y="203.0" />
+              <point x="-74.375" y="25.5" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GButton">
+              <point x="0.0" y="25.5" />
+              <point x="2010.7790322580645" y="1243.0" />
+              <point x="1982.5290322580645" y="1243.0" />
+              <point x="24.5" y="-69.5" />
+            </edge>
+            <edge source="gui.GText" target="gui.GUIComponent">
+              <point x="0.0" y="-25.5" />
+              <point x="1923.1227822580645" y="223.0" />
+              <point x="2352.0375000000004" y="223.0" />
+              <point x="-31.875" y="25.5" />
+            </edge>
+            <edge source="pages.RegisterAccount" target="gui.GButton">
+              <point x="12.5" y="-25.5" />
+              <point x="1978.8540322580645" y="1552.0" />
+              <point x="1847.7790322580645" y="1552.0" />
+              <point x="-110.25" y="69.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GMouseListener">
+              <point x="-168.79999999999995" y="-180.0" />
+              <point x="42.200000000000045" y="823.0" />
+              <point x="115.59999999999991" y="823.0" />
+              <point x="115.59999999999991" y="163.0" />
+              <point x="933.7" y="163.0" />
+              <point x="-126.79999999999995" y="36.5" />
+            </edge>
+            <edge source="gui.GButton" target="main.User">
+              <point x="-122.5" y="-69.5" />
+              <point x="1835.5290322580645" y="1243.0" />
+              <point x="716.5" y="1243.0" />
+              <point x="87.5" y="91.5" />
+            </edge>
+            <edge source="pages.About" target="gui.GText">
+              <point x="0.0" y="-25.5" />
+              <point x="2908.25" y="823.0" />
+              <point x="2925.75" y="823.0" />
+              <point x="2925.75" y="462.0" />
+              <point x="2034.6852822580645" y="462.0" />
+              <point x="111.5625" y="25.5" />
+            </edge>
+            <edge source="pages.About" target="gui.GSpacer">
+              <point x="46.0" y="-25.5" />
+              <point x="2954.25" y="823.0" />
+              <point x="3094.050022401435" y="823.0" />
+              <point x="3094.050022401435" y="512.0" />
+              <point x="2995.4477822580648" y="512.0" />
+              <point x="-16.0" y="47.5" />
+            </edge>
+            <edge source="gui.GUIPage" target="gui.GButton">
+              <point x="-6.900000000000091" y="25.5" />
+              <point x="2577.2" y="813.0" />
+              <point x="2090.2790322580645" y="813.0" />
+              <point x="2090.2790322580645" y="1233.0" />
+              <point x="2031.5290322580645" y="1233.0" />
+              <point x="73.5" y="-69.5" />
+            </edge>
+            <edge source="gui.GTextBox" target="gui.GMouseListener">
+              <point x="-53.200000000000045" y="-80.5" />
+              <point x="1205.125" y="492.0" />
+              <point x="1060.5" y="492.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="pages.EditAccount" target="gui.GButton">
+              <point x="0.0" y="-25.5" />
+              <point x="2130.3540322580648" y="1462.0" />
+              <point x="1921.2790322580645" y="1462.0" />
+              <point x="-36.75" y="69.5" />
+            </edge>
+            <edge source="gui.GDivider" target="gui.GUIComponent">
+              <point x="0.0" y="-47.5" />
+              <point x="3333.0728046594995" y="103.0" />
+              <point x="2500.7875000000004" y="103.0" />
+              <point x="116.875" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.RegisterAccount">
+              <point x="-46.0" y="-25.5" />
+              <point x="2221.2790546594993" y="1683.0" />
+              <point x="1966.3540322580645" y="1683.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="gui.GMenuBar" target="gui.GUIComponent">
+              <point x="39.375" y="-58.5" />
+              <point x="2562.4977822580645" y="143.0" />
+              <point x="2415.7875000000004" y="143.0" />
+              <point x="31.875" y="25.5" />
+            </edge>
+            <edge source="pages.Home" target="gui.GDropdown">
+              <point x="-55.200000000000045" y="-25.5" />
+              <point x="1433.7978046594992" y="743.0" />
+              <point x="996.7750000000001" y="743.0" />
+              <point x="996.7750000000001" y="512.0" />
+              <point x="1245.6227822580645" y="512.0" />
+              <point x="-83.75" y="69.5" />
+            </edge>
+            <edge source="gui.GGraph" target="gui.GUIComponent">
+              <point x="0.0" y="-25.5" />
+              <point x="1648.1227822580645" y="213.0" />
+              <point x="2330.7875000000004" y="213.0" />
+              <point x="-53.125" y="25.5" />
+            </edge>
+            <edge source="main.Main" target="pages.Home">
+              <point x="-76.66666666666652" y="-25.5" />
+              <point x="2190.6123879928327" y="1693.0" />
+              <point x="1488.9978046594993" y="1693.0" />
+              <point x="0.0" y="25.5" />
+            </edge>
+            <edge source="pages.NewProject" target="gui.GDivider">
+              <point x="55.19999999999982" y="-25.5" />
+              <point x="2558.4290322580646" y="1582.0" />
+              <point x="3336.925" y="1582.0" />
+              <point x="3336.925" y="512.0" />
+              <point x="3399.5728046594995" y="512.0" />
+              <point x="66.5" y="47.5" />
+            </edge>
+            <edge source="pages.RegisterAccount" target="gui.GUIPage">
+              <point x="37.5" y="-25.5" />
+              <point x="2003.8540322580645" y="1492.0" />
+              <point x="2591.0" y="1492.0" />
+              <point x="6.900000000000091" y="25.5" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GDropdown">
+              <point x="-27.59999999999991" y="-25.5" />
+              <point x="1983.1790322580646" y="713.0" />
+              <point x="1914.3500000000001" y="713.0" />
+              <point x="1914.3500000000001" y="412.0" />
+              <point x="1413.1227822580645" y="412.0" />
+              <point x="83.75" y="69.5" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GSpacer">
+              <point x="55.19999999999982" y="-25.5" />
+              <point x="2065.9790322580643" y="823.0" />
+              <point x="2873.725022401435" y="823.0" />
+              <point x="2873.725022401435" y="512.0" />
+              <point x="2963.4477822580648" y="512.0" />
+              <point x="-48.0" y="47.5" />
+            </edge>
+            <edge source="gui.GUI" target="gui.GUIPage">
+              <point x="168.8" y="-180.0" />
+              <point x="379.79999999999995" y="783.0" />
+              <point x="2535.8" y="783.0" />
+              <point x="-48.30000000000018" y="25.5" />
+            </edge>
+            <edge source="gui.GButton" target="pages.CreateProject">
+              <point x="-24.5" y="-69.5" />
+              <point x="1933.5290322580645" y="1243.0" />
+              <point x="1964.7790322580645" y="1243.0" />
+              <point x="-46.0" y="25.5" />
+            </edge>
+            <edge source="pages.CreateProject" target="gui.GText">
+              <point x="0.0" y="-25.5" />
+              <point x="2010.7790322580645" y="482.0" />
+              <point x="1970.9352822580645" y="482.0" />
+              <point x="47.8125" y="25.5" />
+            </edge>
+            <edge source="pages.NewProject" target="gui.GSpacer">
+              <point x="27.59999999999991" y="-25.5" />
+              <point x="2530.829032258064" y="1562.0" />
+              <point x="3163.9246415770613" y="1562.0" />
+              <point x="3163.9246415770613" y="472.0" />
+              <point x="3123.4477822580648" y="472.0" />
+              <point x="112.0" y="47.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9" x="246.66666666666669" y="266.6666666666667" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>public</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/About.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1828,5 +3549,55 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="simpleUML.UMLToolWindowPlugin">
+    <General>
+      <option name="birdViewUpdateDelay" value="2000" />
+      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
+    </General>
+    <Classdiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="defaultFieldsExpanded" value="false" />
+      <option name="defaultContructorsExpanded" value="false" />
+      <option name="defaultMethodsExpanded" value="false" />
+      <option name="showParameters" value="true" />
+      <option name="showTooltip" value="true" />
+      <option name="showReturnValues" value="true" />
+      <option name="longModifier" value="true" />
+      <option name="implementsBehaviour" value="1" />
+      <option name="extendsBehaviour" value="1" />
+      <option name="compartmentBehaviour" value="1" />
+      <option name="interfaceBackgroundColor" value="-6494306" />
+      <option name="abstractClassBackgroundColor" value="-1580132" />
+      <option name="classBackgroundColor" value="-6508057" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="quickSourceLinkColor" value="-16776961" />
+      <option name="quickDiagramLinkColor" value="-8454144" />
+      <option name="drawDecorations" value="false" />
+      <option name="hideFieldList" value="" />
+      <option name="showFieldList" value="" />
+      <option name="hideConstructorList" value="" />
+      <option name="showConstructorList" value="" />
+      <option name="hideMethodList" value="" />
+      <option name="showMethodList" value="" />
+      <option name="minimumFigureSize" value="0,0" />
+    </Classdiagram>
+    <Dependencydiagram>
+      <option name="diagramTitleFont" value="SansSerif,1,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="0" />
+    </Dependencydiagram>
+    <Packagediagram>
+      <option name="diagramTitleFont" value="SansSerif,0,12" />
+      <option name="diagramFont" value="SansSerif,0,10" />
+      <option name="packageBackgroundColor" value="-4144960" />
+      <option name="diagramBackgroundColor" value="-1" />
+      <option name="useAntialiasedConnectors" value="true" />
+      <option name="packageNameCompressionLevel" value="2" />
+    </Packagediagram>
   </component>
 </project>
