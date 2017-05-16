@@ -1,0 +1,28 @@
+package testerpackage;
+
+import user.*;
+
+/**
+ * @author Ryan Hansen
+ *
+ * Just using to test my code. will convert this into the JUnit testing later.
+ */
+public class TesterClass {
+
+	public static void main(String[] args) {
+		
+		UserManager.createNewUser("1st User Project Name", "poop@uw.edu");		
+		System.out.println(UserManager.allUsers.get(0).getName());
+		
+		UserManager.createNewUser("2nd User Project Name", "poop@uw.edu");
+		UserManager.createNewUser("3rd User Project Name", "poop@uw.edu");
+		
+		for (int i = 0; i < UserManager.allUsers.size(); i++) {
+			System.out.println(UserManager.allUsers.get(i).getName());			
+		}
+				
+		UserManager.save();
+		
+	}
+
+}

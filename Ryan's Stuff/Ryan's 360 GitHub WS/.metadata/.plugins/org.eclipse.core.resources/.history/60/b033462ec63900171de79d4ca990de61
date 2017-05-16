@@ -1,0 +1,23 @@
+package project;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+/**
+ * @author Ryan Hansen
+ *
+ * This class will serve as the location where projects will be created as well
+ * as saved and loaded for future use.
+ */
+public class ProjectManager {
+
+	public static ArrayList<Project> allUsers = new ArrayList<Project>();
+	
+	public static void createNewUser(String theName) {
+		InsulationProject newProject = new InsulationProject();
+		newProject.setName(theName);
+		allUsers.add(newProject);
+	}	
+}
