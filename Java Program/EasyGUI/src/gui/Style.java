@@ -8,7 +8,7 @@ import java.awt.*;
  * This class simply holds constant variables that relate to colors, fonts, and animations.
  * If we want to change the colors or fonts we only need to change them here instead of all over the place.
  */
-public class Style {
+public final class Style {
 
     /**
      * Blank constructor so this class cannot be

@@ -16,28 +16,28 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     public static final GUI window = new GUI();
 
     /** All of the pages to use. */
-    private ArrayList<GUIPage> pages = new ArrayList<>();
+    private static final ArrayList<GUIPage> pages = new ArrayList<>();
 
     /** All of the current loaded GUIComponents. */
-    private ArrayList<GUIComponent> components = new ArrayList<>();
+    private static final ArrayList<GUIComponent> components = new ArrayList<>();
 
     /** All of the GUIComponents that use the MouseListener. */
-    private ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
+    private static final ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
 
     /** All of the GUIComponents that use the KeyListener. */
-    private ArrayList<GKeyListener> keyComponents = new ArrayList<>();
+    private static final ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
     /** The max width of the window's contents before it starts adding padding. */
-    private int maxWidth = 720;
+    private static final int maxWidth = 720;
 
     /** The padding added to the sides of all components. */
-    private int sidePadding = 24;
+    private static final int sidePadding = 24;
 
     /** The horizontal offset of components. Used in the slide-over animation. */
     static int horizontalOffset = 0;
 
     /** The vertical offset controlled by scrolling. */
-    private int scrollOffset;
+    private static int scrollOffset;
 
     /** The drawing panel that everything is drawn to. */
     private static DrawPanel panel;
@@ -47,6 +47,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /** The height of the currently drawn page. */
     private static int pageHeight;
+
+    /** Changes how fast you can scroll the page. */
+    private static final double scrollSpeedMultiplier = 4.0;
 
     /**
      * Starts the GUI with some basic settings.
@@ -197,9 +200,11 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         if (pageHeight > panel.getHeight()) {
-            scrollOffset -= e.getUnitsToScroll();
+            scrollOffset -= e.getUnitsToScroll() * scrollSpeedMultiplier;
             if (scrollOffset > 0) scrollOffset = 0;
             if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
+        } else if (scrollOffset != 0) {
+            scrollOffset = 0;
         }
     }
 

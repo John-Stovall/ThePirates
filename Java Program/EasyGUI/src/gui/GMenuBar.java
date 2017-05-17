@@ -169,7 +169,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         else goalPosition = 0;
         GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
 
-        return height;
+        return 0;
     }
 
     @Override
