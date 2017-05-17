@@ -1,7 +1,5 @@
 package gui;
 
-import control.Style;
-
 import java.awt.*;
 import java.util.ArrayList;
 

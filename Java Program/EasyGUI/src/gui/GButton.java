@@ -1,12 +1,9 @@
 package gui;
 
 import control.General;
-import control.Style;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.ImageObserver;
 
 /**
  * Created by Robert on 4/12/17.

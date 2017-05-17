@@ -1,7 +1,6 @@
 package gui;
 
 import control.General;
-import control.Style;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
