@@ -23,6 +23,7 @@ public class GDivider implements GUIComponent, GSubList {
      * It will fill rows with as many cells as it can.
      *
      * @param cellWidth The width of each cell in this divider.
+     * @author Robert
      */
     public GDivider(final int cellWidth) {
         this.cellWidth = cellWidth;
@@ -35,6 +36,7 @@ public class GDivider implements GUIComponent, GSubList {
      *
      * @param cellWidth The minimum width of a cell.
      * @param cells The number of cells per row.
+     * @author Robert
      */
     public GDivider(final int cellWidth, final int cells) {
         this(cellWidth);
@@ -45,6 +47,7 @@ public class GDivider implements GUIComponent, GSubList {
      * Add a component to this divider.
      *
      * @param c The component to add.
+     * @author Robert
      */
     public void add(GUIComponent c) {
         components.add(c);

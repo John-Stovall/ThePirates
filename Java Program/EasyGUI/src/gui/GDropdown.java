@@ -49,12 +49,19 @@ public class GDropdown implements GUIComponent, GMouseListener {
      * Create a super awesome dropdown menu.
      *
      * @param options The individual elements of the menu.
+     * @author Robert
      */
     public GDropdown(ArrayList<String> options) {
         this.options = options;
         selection = options.get(0);
     }
 
+    /**
+     * Creates a Dropdown menu from a standard array string.
+     *
+     * @param options The individual elements of the menu.
+     * @author Robert
+     */
     public GDropdown(String[] options) {
         this.options = new ArrayList<>(Arrays.asList(options));
         selection = this.options.get(0);
@@ -142,6 +149,7 @@ public class GDropdown implements GUIComponent, GMouseListener {
      * Get the currently selected option in the drop down menu.
      *
      * @return The currently selected option.
+     * @author Robert
      */
     public String getSelection() {
         return selection;
@@ -151,6 +159,7 @@ public class GDropdown implements GUIComponent, GMouseListener {
      * Sets the currently selected option to something.
      *
      * @param selection What to set the selection to.
+     * @author Robert
      */
     public void setSelection(final String selection) {
         this.selection = selection;

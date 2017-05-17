@@ -28,6 +28,7 @@ public class GText implements GUIComponent {
      * Basic constructor to create text with default settings.
      *
      * @param text The text.
+     * @author Robert
      */
     public GText(final String text) {
         this.text = text;
@@ -38,6 +39,7 @@ public class GText implements GUIComponent {
      *
      * @param text The text.
      * @param font The font.
+     * @author Robert
      */
     public GText(final String text, final Font font) {
         this.text = text;
@@ -50,6 +52,7 @@ public class GText implements GUIComponent {
      * @param text The text.
      * @param font The font.
      * @param color The color.
+     * @author Robert
      */
     public GText(final String text, final Font font, final Color color) {
         this(text, font);
@@ -102,6 +105,7 @@ public class GText implements GUIComponent {
      * This method sets the text that this text object draws.
      *
      * @param text The text to change to.
+     * @author Robert
      */
     void setText(String text) {
         this.text = text;

@@ -30,6 +30,7 @@ public class GGraph implements GUIComponent {
      * @param dataPoints The lines of the graph. Each element of the outer ArrayList is
      *                   a x point of the graph while each element of the double array is the y
      *                   value of a line on the graph.
+     * @author Robert
      */
     public GGraph(final ArrayList<double[]> dataPoints) {
         times = dataPoints;

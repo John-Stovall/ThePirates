@@ -19,6 +19,7 @@ public class GSpacer implements GUIComponent {
      * Creates an invisible spacer.
      *
      * @param height Height of spacer
+     * @author Robert
      */
     public GSpacer(final int height) {
         this.height = height;
@@ -29,6 +30,7 @@ public class GSpacer implements GUIComponent {
      *
      * @param height Height of spacer.
      * @param color The color of the spacer.
+     * @author Robert
      */
     public GSpacer(final int height, final Color color) {
         this(height);
@@ -40,6 +42,7 @@ public class GSpacer implements GUIComponent {
      * Sets the spacer to visible or not. Probably useless.
      *
      * @param visible Should the spacer be visible?
+     * @author Robert
      */
     public void setVisible(final boolean visible) {
         this.visible = visible;
@@ -49,6 +52,7 @@ public class GSpacer implements GUIComponent {
      * Sets the color of the spacer if you ever need to do that for some reason.
      *
      * @param color The color of the spacer.
+     * @author Robert
      */
     public void setColor(final Color color) {
         this.color = color;

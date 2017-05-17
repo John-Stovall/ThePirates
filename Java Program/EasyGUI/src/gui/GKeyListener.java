@@ -13,6 +13,7 @@ public interface GKeyListener {
      * This method is the same as KeyListener's keyTyped method.
      *
      * @param e The key event.
+     * @author Robert
      */
     void keyTyped(KeyEvent e);
 
