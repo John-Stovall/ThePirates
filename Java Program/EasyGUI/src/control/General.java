@@ -1,6 +1,7 @@
 package control;
 
-import main.User;
+import user.User;
+import user.UserManager;
 
 import java.awt.event.MouseEvent;
 
@@ -54,7 +55,7 @@ public class General {
      * @author Robert
      */
     public static boolean isEmailFree(String email) {
-        for (User u : User.getUsers()) {
+        for (User u : UserManager.getUsers()) {
             if (u.getEmail().equals(email)) {
                 return false;
             }

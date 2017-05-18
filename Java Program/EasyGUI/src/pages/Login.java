@@ -2,7 +2,8 @@ package pages;
 
 import gui.Style;
 import gui.*;
-import main.User;
+import user.User;
+import user.UserManager;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -29,7 +30,7 @@ public class Login extends GUIPage {
 
         GDivider div = new GDivider(240, 3);
 
-        for (User u : User.getUsers()) {
+        for (User u : UserManager.getUsers()) {
             GDivider subdiv = new GDivider(240);
 
             BufferedImage image;
@@ -41,7 +42,7 @@ public class Login extends GUIPage {
             subdiv.add(new GButton(277, u.getName(), Style.defaultFont, 32, image) {
                 @Override
                 public void clickAction() {
-                    User.setLoadedUser(u);
+                    UserManager.setLoadedUser(u);
                     GUI.window.gotoPage("Home");
                 }
             });
@@ -70,6 +71,14 @@ public class Login extends GUIPage {
             @Override
             public void clickAction() {
 
+            }
+        });
+        innerDiv.add(new GButton(40, "Clear All Users", Style.defaultFont, 8) {
+            @Override
+            public void clickAction() {
+                UserManager.getUsers().clear();
+                GUI.window.gotoPage("Register");
+                UserManager.save();
             }
         });
         centerbutton.add(innerDiv);

@@ -1,38 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="DIYProject" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uml/all.uml" afterPath="$PROJECT_DIR$/src/uml/all.uml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uml/gui.uml" afterPath="$PROJECT_DIR$/src/uml/gui.uml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/uml/pages.uml" afterPath="$PROJECT_DIR$/src/uml/pages.uml" />
+    <list default="true" id="83388391-1306-4708-aba7-49260e2ebaa9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/User.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/project/InsulationProject.java" afterPath="$PROJECT_DIR$/src/project/InsulationProject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/project/Project.java" afterPath="$PROJECT_DIR$/src/project/Project.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/project/ProjectManager.java" afterPath="$PROJECT_DIR$/src/project/ProjectManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/user/User.java" afterPath="$PROJECT_DIR$/src/user/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/user/UserManager.java" afterPath="$PROJECT_DIR$/src/user/UserManager.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../../Ryan's Stuff/Ryan's 360 GitHub WS/Projects Package/src/user/UserManagerTest.java" afterPath="$PROJECT_DIR$/src/user/UserManagerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-=======
-    <list default="true" id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="Added">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/control/Style.java" afterPath="$PROJECT_DIR$/src/gui/Style.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GButton.java" afterPath="$PROJECT_DIR$/src/gui/GButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GDropdown.java" afterPath="$PROJECT_DIR$/src/gui/GDropdown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GGraph.java" afterPath="$PROJECT_DIR$/src/gui/GGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/control/General.java" afterPath="$PROJECT_DIR$/src/control/General.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMenuBar.java" afterPath="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GText.java" afterPath="$PROJECT_DIR$/src/gui/GText.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GTextBox.java" afterPath="$PROJECT_DIR$/src/gui/GTextBox.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUI.java" afterPath="$PROJECT_DIR$/src/gui/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUIPage.java" afterPath="$PROJECT_DIR$/src/gui/GUIPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/About.java" afterPath="$PROJECT_DIR$/src/pages/About.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/CreateProject.java" afterPath="$PROJECT_DIR$/src/pages/CreateProject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/EditAccount.java" afterPath="$PROJECT_DIR$/src/pages/EditAccount.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.java" afterPath="$PROJECT_DIR$/src/pages/Home.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Login.java" afterPath="$PROJECT_DIR$/src/pages/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/NewProject.java" afterPath="$PROJECT_DIR$/src/pages/NewProject.java" />
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/RegisterAccount.java" afterPath="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,594 +29,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EasyGUI$Main.coverage" NAME="Main Coverage Results" MODIFIED="1492398191491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUIPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
+    <leaf>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/user/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="84" column="21" lean-forward="false" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="510">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
-                <marker date="1494982476000" expanded="true" signature="2111:2334" ph="{...}" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#905#906#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="General.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/control/General.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding>
-                <marker date="1494741553000" expanded="true" signature="2202:2210" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GWrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="About.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-              <folding>
-                <marker date="1494982476000" expanded="true" signature="878:1011" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <file leaf-file-name="About.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-=======
-      <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
->>>>>>> master
-=======
-      <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
->>>>>>> master
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="215" column="21" lean-forward="false" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <file leaf-file-name="gui.uml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uml/gui.uml">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="481.4150641025643" y="0.0">gui.GMouseListener</node>
-                <node x="2636.3589743589746" y="269.0">gui.GDivider</node>
-                <node x="2343.3589743589746" y="302.0">gui.GGraph</node>
-                <node x="0.0" y="520.0">gui.GUI</node>
-                <node x="1214.3589743589746" y="280.0">gui.GText</node>
-                <node x="2035.3589743589746" y="291.0">gui.GWrapper</node>
-                <node x="1450.3589743589746" y="269.0">gui.GSpacer</node>
-                <node x="1437.8589743589746" y="11.0">gui.GUIComponent</node>
-                <node x="0.0" y="11.0">gui.GKeyListener</node>
-                <node x="78.0" y="930.0">gui.GUI.DrawPanel</node>
-                <node x="2427.809294871795" y="11.0">gui.GSubList</node>
-                <node x="30.358974358974592" y="236.0">gui.GTextBox</node>
-                <node x="394.3589743589746" y="247.0">gui.GDropdown</node>
-                <node x="467.0" y="520.0">gui.GUIPage</node>
-                <node x="1700.3589743589746" y="280.5">gui.GMenuBar</node>
-                <node x="798.3589743589746" y="203.0">gui.GButton</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="gui.GWrapper" target="gui.GUIComponent">
-                  <point x="0.0" y="-48.0" />
-                  <point x="2179.3589743589746" y="113.0" />
-                  <point x="1622.025641025641" y="113.0" />
-                  <point x="56.66666666666663" y="25.5" />
-                </edge>
-                <edge source="gui.GButton" target="gui.GMouseListener">
-                  <point x="-99.0" y="-136.0" />
-                  <point x="897.3589743589746" y="143.0" />
-                  <point x="679.5400641025643" y="143.0" />
-                  <point x="39.625" y="36.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GUIComponent">
-                  <point x="114.66666666666674" y="-103.0" />
-                  <point x="317.02564102564133" y="153.0" />
-                  <point x="1452.0256410256413" y="153.0" />
-                  <point x="-113.33333333333331" y="25.5" />
-                </edge>
-                <edge source="gui.GUI.DrawPanel" target="gui.GUI">
-                  <point x="0.0" y="-25.5" />
-                  <point x="0.0" y="180.0" />
-                </edge>
-                <edge source="gui.GDropdown" target="gui.GMouseListener">
-                  <point x="-96.0" y="-92.0" />
-                  <point x="490.3589743589746" y="143.0" />
-                  <point x="600.2900641025643" y="143.0" />
-                  <point x="-39.625" y="36.5" />
-                </edge>
-                <edge source="gui.GText" target="gui.GUIComponent">
-                  <point x="0.0" y="-59.0" />
-                  <point x="1322.3589743589746" y="183.0" />
-                  <point x="1537.025641025641" y="183.0" />
-                  <point x="-28.33333333333337" y="25.5" />
-                </edge>
-                <edge source="gui.GButton" target="gui.GUIComponent">
-                  <point x="99.0" y="-136.0" />
-                  <point x="1095.3589743589746" y="173.0" />
-                  <point x="1508.6923076923078" y="173.0" />
-                  <point x="-56.666666666666686" y="25.5" />
-                </edge>
-                <edge source="gui.GSpacer" target="gui.GUIComponent">
-                  <point x="0.0" y="-70.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GKeyListener">
-                  <point x="-114.66666666666674" y="-103.0" />
-                  <point x="87.69230769230785" y="183.0" />
-                  <point x="112.5" y="183.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GMouseListener">
-                  <point x="0.0" y="-103.0" />
-                  <point x="202.3589743589746" y="133.0" />
-                  <point x="521.0400641025643" y="133.0" />
-                  <point x="-118.875" y="36.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GMouseListener">
-                  <point x="-105.0" y="-58.5" />
-                  <point x="1752.8589743589746" y="133.0" />
-                  <point x="758.7900641025643" y="133.0" />
-                  <point x="118.875" y="36.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GSubList">
-                  <point x="105.0" y="-58.5" />
-                  <point x="1962.8589743589746" y="183.0" />
-                  <point x="2532.309294871795" y="183.0" />
-                  <point x="-104.5" y="25.5" />
-                </edge>
-                <edge source="gui.GDivider" target="gui.GSubList">
-                  <point x="57.5" y="-70.0" />
-                  <point x="2808.8589743589746" y="183.0" />
-                  <point x="2741.309294871795" y="183.0" />
-                  <point x="104.5" y="25.5" />
-                </edge>
-                <edge source="gui.GDivider" target="gui.GUIComponent">
-                  <point x="-57.5" y="-70.0" />
-                  <point x="2693.8589743589746" y="93.0" />
-                  <point x="1678.6923076923078" y="93.0" />
-                  <point x="113.33333333333326" y="25.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GUIComponent">
-                  <point x="0.0" y="-58.5" />
-                  <point x="1857.8589743589746" y="123.0" />
-                  <point x="1593.6923076923078" y="123.0" />
-                  <point x="28.333333333333314" y="25.5" />
-                </edge>
-                <edge source="gui.GGraph" target="gui.GUIComponent">
-                  <point x="0.0" y="-37.0" />
-                  <point x="2479.8589743589746" y="103.0" />
-                  <point x="1650.3589743589746" y="103.0" />
-                  <point x="85.0" y="25.5" />
-                </edge>
-                <edge source="gui.GDropdown" target="gui.GUIComponent">
-                  <point x="96.0" y="-92.0" />
-                  <point x="682.3589743589746" y="163.0" />
-                  <point x="1480.3589743589746" y="163.0" />
-                  <point x="-85.0" y="25.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="213.85714285714283" y="0.8571428571428328" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Inner Classes</Category>
-                <Category>Constructors</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>public</VISIBILITY>
-=======
-=======
->>>>>>> master
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="243" column="21" lean-forward="false" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
-              <folding>
-                <marker date="1494982476000" expanded="true" signature="2297:2350" ph="{...}" />
-              </folding>
-<<<<<<< HEAD
->>>>>>> master
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="pages.uml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="0.0" y="111.0">pages.CreateProject</node>
-                <node x="380.8833333333333" y="323.0">main.Main</node>
-                <node x="803.0" y="111.0">pages.About</node>
-                <node x="645.0" y="111.0">pages.Home</node>
-                <node x="487.0" y="111.0">pages.Login</node>
-                <node x="159.0" y="111.0">pages.RegisterAccount</node>
-                <node x="329.0" y="111.0">pages.EditAccount</node>
-                <node x="329.0" y="0.0">gui.GUIPage</node>
-                <node x="39.75" y="212.0">pages.NewProject</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="main.Main" target="pages.About">
-                  <point x="76.66666666666663" y="-25.5" />
-                  <point x="549.55" y="303.0" />
-                  <point x="872.0" y="303.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="pages.EditAccount" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="main.Main" target="pages.Login">
-                  <point x="15.333333333333314" y="-25.5" />
-                  <point x="488.21666666666664" y="283.0" />
-                  <point x="556.0" y="283.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="pages.Login" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="556.0" y="91.0" />
-                  <point x="417.71428571428567" y="91.0" />
-                  <point x="19.714285714285694" y="25.5" />
-                </edge>
-                <edge source="main.Main" target="pages.RegisterAccount">
-                  <point x="-46.0" y="-25.5" />
-                  <point x="426.8833333333333" y="293.0" />
-                  <point x="233.99999999999997" y="293.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="pages.Home" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="714.0" y="81.0" />
-                  <point x="437.42857142857133" y="81.0" />
-                  <point x="39.42857142857139" y="25.5" />
-                </edge>
-                <edge source="pages.NewProject" target="gui.GUIPage">
-                  <point x="34.5" y="-25.5" />
-                  <point x="143.25" y="187.0" />
-                  <point x="148.5" y="187.0" />
-                  <point x="148.5" y="81.0" />
-                  <point x="358.57142857142856" y="81.0" />
-                  <point x="-39.42857142857143" y="25.5" />
-                </edge>
-                <edge source="main.Main" target="pages.EditAccount">
-                  <point x="-15.333333333333371" y="-25.5" />
-                  <point x="457.54999999999995" y="283.0" />
-                  <point x="398.0" y="283.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="main.Main" target="pages.Home">
-                  <point x="46.0" y="-25.5" />
-                  <point x="518.8833333333333" y="293.0" />
-                  <point x="714.0" y="293.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="pages.RegisterAccount" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="234.0" y="91.0" />
-                  <point x="378.2857142857142" y="91.0" />
-                  <point x="-19.714285714285722" y="25.5" />
-                </edge>
-                <edge source="pages.CreateProject" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="69.0" y="71.0" />
-                  <point x="338.85714285714283" y="71.0" />
-                  <point x="-59.14285714285714" y="25.5" />
-                </edge>
-                <edge source="main.Main" target="pages.NewProject">
-                  <point x="-76.66666666666674" y="-25.5" />
-                  <point x="396.2166666666666" y="303.0" />
-                  <point x="108.75" y="303.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-                <edge source="pages.About" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="872.0" y="71.0" />
-                  <point x="457.1428571428571" y="71.0" />
-                  <point x="59.14285714285711" y="25.5" />
-                </edge>
-                <edge source="pages.NewProject" target="pages.CreateProject">
-                  <point x="-34.5" y="-25.5" />
-                  <point x="74.25" y="187.0" />
-                  <point x="69.0" y="187.0" />
-                  <point x="0.0" y="25.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="-37.3461538461537" y="-152.3076923076922" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Properties</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>public</VISIBILITY>
-=======
-      <file leaf-file-name="Style.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/gui/Style.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding>
-                <element signature="e#2857#2858#0" expanded="true" />
-                <element signature="e#2904#2905#0" expanded="true" />
-              </folding>
->>>>>>> master
-=======
->>>>>>> master
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <file leaf-file-name="all.uml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uml/all.uml">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="1941.7790322580645" y="997.5">pages.CreateProject</node>
-                <node x="3200.0728046594995" y="275.0">gui.GDivider</node>
-                <node x="454.0" y="931.5">main.User</node>
-                <node x="1520.6227822580645" y="297.0">gui.GGraph</node>
-                <node x="1419.9978046594993" y="997.5">pages.Home</node>
-                <node x="0.0" y="843.0">gui.GUI</node>
-                <node x="1795.6227822580645" y="297.0">gui.GText</node>
-                <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
-                <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
-                <node x="2276.2290322580648" y="1602.0">pages.Login</node>
-                <node x="2256.4125" y="11.0">gui.GUIComponent</node>
-                <node x="825.0" y="297.0">gui.GKeyListener</node>
-                <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
-                <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
-                <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
-                <node x="902.0" y="0.0">gui.GMouseListener</node>
-                <node x="2175.2790546594993" y="1713.0">main.Main</node>
-                <node x="2839.25" y="997.5">pages.About</node>
-                <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
-                <node x="1125.3249999999998" y="532.0">gui.GTextBox</node>
-                <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
-                <node x="2932.070833333333" y="11.0">gui.GSubList</node>
-                <node x="2515.1" y="587.0">gui.GUIPage</node>
-                <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
-                <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="gui.GWrapper" target="gui.GUIComponent">
-                  <point x="0.0" y="-36.5" />
-                  <point x="2208.1227822580645" y="233.0" />
-                  <point x="2373.2875" y="233.0" />
-                  <point x="-10.625" y="25.5" />
-                </edge>
-                <edge source="gui.GButton" target="gui.GMouseListener">
-                  <point x="-73.5" y="-69.5" />
-                  <point x="1884.5290322580645" y="1233.0" />
-                  <point x="814.5" y="1233.0" />
-                  <point x="814.5" y="173.0" />
-                  <point x="997.1000000000004" y="173.0" />
-                  <point x="-63.399999999999636" y="36.5" />
-                </edge>
-                <edge source="pages.Login" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="2345.2290322580648" y="1512.0" />
-                  <point x="2744.25" y="1512.0" />
-                  <point x="2744.25" y="803.0" />
-                  <point x="2618.6" y="803.0" />
-                  <point x="34.5" y="25.5" />
-                </edge>
-                <edge source="pages.Home" target="gui.GUIPage">
-                  <point x="55.200000000000045" y="-25.5" />
-                  <point x="1544.1978046594993" y="793.0" />
-                  <point x="2549.6" y="793.0" />
-                  <point x="-34.5" y="25.5" />
-                </edge>
-                <edge source="pages.NewProject" target="gui.GUIPage">
-                  <point x="0.0" y="-25.5" />
-                  <point x="2503.2290322580648" y="1522.0" />
-                  <point x="2828.75" y="1522.0" />
-                  <point x="2828.75" y="793.0" />
-                  <point x="2632.4" y="793.0" />
-                  <point x="48.30000000000018" y="25.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GUIComponent">
-                  <point x="0.0" y="-80.5" />
-                  <point x="1258.3249999999998" y="422.0" />
-                  <point x="1507.3727822580645" y="422.0" />
-                  <point x="1507.3727822580645" y="203.0" />
-                  <point x="2309.5375" y="203.0" />
-                  <point x="-74.375" y="25.5" />
-                </edge>
-                <edge source="gui.GUI.DrawPanel" target="gui.GUI">
-                  <point x="-88.66666666666697" y="-25.5" />
-                  <point x="122.33333333333303" y="1243.0" />
-                  <point x="70.33333333333303" y="1243.0" />
-                  <point x="-140.66666666666697" y="180.0" />
-                </edge>
-                <edge source="gui.GDropdown" target="gui.GMouseListener">
-                  <point x="-83.75" y="-69.5" />
-                  <point x="1245.6227822580645" y="173.0" />
-                  <point x="1123.8999999999996" y="173.0" />
-                  <point x="63.399999999999636" y="36.5" />
-                </edge>
-                <edge source="gui.GText" target="gui.GUIComponent">
-                  <point x="0.0" y="-25.5" />
-                  <point x="1923.1227822580645" y="223.0" />
-                  <point x="2352.0375" y="223.0" />
-                  <point x="-31.875" y="25.5" />
-                </edge>
-                <edge source="gui.GButton" target="gui.GUIComponent">
-                  <point x="122.5" y="-69.5" />
-                  <point x="2080.5290322580645" y="1243.0" />
-                  <point x="3189.5728046594995" y="1243.0" />
-                  <point x="3189.5728046594995" y="123.0" />
-                  <point x="2458.2875" y="123.0" />
-                  <point x="74.375" y="25.5" />
-                </edge>
-                <edge source="pages.About" target="gui.GUIPage">
-                  <point x="-46.0" y="-25.5" />
-                  <point x="2862.25" y="783.0" />
-                  <point x="2646.2" y="783.0" />
-                  <point x="62.09999999999991" y="25.5" />
-                </edge>
-                <edge source="gui.GSpacer" target="gui.GUIComponent">
-                  <point x="0.0" y="-47.5" />
-                  <point x="3011.4477822580648" y="133.0" />
-                  <point x="2437.0375" y="133.0" />
-                  <point x="53.125" y="25.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GKeyListener">
-                  <point x="-106.39999999999964" y="-80.5" />
-                  <point x="1151.9250000000002" y="502.0" />
-                  <point x="993.75" y="502.0" />
-                  <point x="56.25" y="25.5" />
-                </edge>
-                <edge source="gui.GTextBox" target="gui.GMouseListener">
-                  <point x="-53.19999999999982" y="-80.5" />
-                  <point x="1205.125" y="492.0" />
-                  <point x="1060.5" y="492.0" />
-                  <point x="0.0" y="36.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GMouseListener">
-                  <point x="-118.125" y="-58.5" />
-                  <point x="2404.9977822580645" y="163.0" />
-                  <point x="1187.3000000000002" y="163.0" />
-                  <point x="126.80000000000018" y="36.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GSubList">
-                  <point x="118.125" y="-58.5" />
-                  <point x="2641.2477822580645" y="233.0" />
-                  <point x="3036.570833333333" y="233.0" />
-                  <point x="-104.5" y="25.5" />
-                </edge>
-                <edge source="pages.EditAccount" target="gui.GUIPage">
-                  <point x="27.59999999999991" y="-25.5" />
-                  <point x="2157.954032258064" y="1502.0" />
-                  <point x="2673.55" y="1502.0" />
-                  <point x="2673.55" y="813.0" />
-                  <point x="2604.7999999999997" y="813.0" />
-                  <point x="20.699999999999818" y="25.5" />
-                </edge>
-                <edge source="gui.GDivider" target="gui.GSubList">
-                  <point x="88.66666666666652" y="-47.5" />
-                  <point x="3421.7394713261656" y="93.0" />
-                  <point x="3245.570833333333" y="93.0" />
-                  <point x="104.5" y="25.5" />
-                </edge>
-                <edge source="gui.GDivider" target="gui.GUIComponent">
-                  <point x="-88.66666666666652" y="-47.5" />
-                  <point x="3244.4061379928326" y="113.0" />
-                  <point x="2479.5375" y="113.0" />
-                  <point x="95.625" y="25.5" />
-                </edge>
-                <edge source="gui.GMenuBar" target="gui.GUIComponent">
-                  <point x="-39.375" y="-58.5" />
-                  <point x="2483.7477822580645" y="153.0" />
-                  <point x="2394.5375" y="153.0" />
-                  <point x="10.625" y="25.5" />
-                </edge>
-                <edge source="gui.GGraph" target="gui.GUIComponent">
-                  <point x="0.0" y="-25.5" />
-                  <point x="1648.1227822580645" y="213.0" />
-                  <point x="2330.7875" y="213.0" />
-                  <point x="-53.125" y="25.5" />
-                </edge>
-                <edge source="pages.RegisterAccount" target="gui.GUIPage">
-                  <point x="37.5" y="-25.5" />
-                  <point x="2003.8540322580645" y="1492.0" />
-                  <point x="2591.0" y="1492.0" />
-                  <point x="6.900000000000091" y="25.5" />
-                </edge>
-                <edge source="pages.CreateProject" target="gui.GUIPage">
-                  <point x="27.59999999999991" y="-25.5" />
-                  <point x="2038.3790322580644" y="803.0" />
-                  <point x="2563.4" y="803.0" />
-                  <point x="-20.699999999999818" y="25.5" />
-                </edge>
-                <edge source="gui.GDropdown" target="gui.GUIComponent">
-                  <point x="83.75" y="-69.5" />
-                  <point x="1413.1227822580645" y="193.0" />
-                  <point x="2288.2875" y="193.0" />
-                  <point x="-95.625" y="25.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.9" x="2247.4444444444443" y="419.7777777777777" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Inner Classes</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>public</VISIBILITY>
-=======
-=======
-      <file leaf-file-name="Style.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/gui/Style.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding>
-                <element signature="e#2857#2858#0" expanded="true" />
-                <element signature="e#2904#2905#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
->>>>>>> master
-      <file leaf-file-name="GGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-              <folding />
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
             </state>
           </provider>
         </entry>
@@ -637,91 +49,98 @@
       <file leaf-file-name="NewProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <state relative-caret-position="405">
-              <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-=======
-            <state relative-caret-position="30">
-              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
->>>>>>> master
-=======
-            <state relative-caret-position="30">
-              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
->>>>>>> master
+            <state relative-caret-position="284">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="e#943#944#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="1734">
+              <caret line="159" column="23" lean-forward="false" selection-start-line="159" selection-start-column="23" selection-end-line="159" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUIPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1072">
+              <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsulationProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Singleton" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>pressed</find>
-      <find>components</find>
-      <find>GUI.window.getWidth()</find>
-      <find>GUI.getWidth()</find>
-      <find>darkgray</find>
-      <find>Color.white</find>
-      <find>388E3C</find>
-      <find>4CAF50</find>
-      <find>New Project</find>
-      <find>getHeight()</find>
-      <find>Home</find>
-      <find>GTextB</find>
-      <find>Login</find>
-      <find>GTextBo</find>
-      <find>removeList</find>
-      <find>addLis</find>
-      <find>new Font(&quot;Helvetica&quot;, Font.PLAIN, 20)</find>
-      <find>defaultFont</find>
-      <find>anotherColor</find>
-      <find>animationThreshold</find>
-      <find>sideColor</find>
-      <find>g.setFont</find>
-      <find>g.setFon</find>
-      <find>hover</find>
-      <find>textColor</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>pagePressed</replace>
-      <replace>pageComponents</replace>
-      <replace>GUI.getWidth()</replace>
-      <replace>GUI.getWindowWidth()</replace>
-      <replace>darkGray</replace>
-      <replace>textColor</replace>
-      <replace>4CAF50</replace>
-      <replace>2E7D32</replace>
-      <replace>New</replace>
-      <replace>height</replace>
-      <replace>defaultFont</replace>
-      <replace>Style.defaultFont</replace>
-      <replace>Style.menuSideBarColor</replace>
-      <replace>Style.graphSpawnThreshold</replace>
-      <replace>Style.textBoxSecondaryColor</replace>
-      <replace>Style.menuTextColor</replace>
-      <replace>Style.dropdownBorderColor</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -734,40 +153,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/gui/Test.form" />
-        <option value="$PROJECT_DIR$/src/gui/GTitle.java" />
-        <option value="$PROJECT_DIR$/src/gui/JTest.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/pages/Login.java" />
-        <option value="$PROJECT_DIR$/src/pages/NewProject.java" />
-        <option value="$PROJECT_DIR$/src/junit/JTest.java" />
-        <option value="$PROJECT_DIR$/src/junit/GeneralTest.java" />
-        <option value="$PROJECT_DIR$/src/control/Style.java" />
-        <option value="$PROJECT_DIR$/src/control/General.java" />
-        <option value="$PROJECT_DIR$/src/pages/EditAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
-        <option value="$PROJECT_DIR$/src/pages/CreateProject.java" />
-        <option value="$PROJECT_DIR$/src/pages/Home.java" />
-        <option value="$PROJECT_DIR$/src/main/User.java" />
-        <option value="$PROJECT_DIR$/src/pages/About.java" />
-        <option value="$PROJECT_DIR$/src/gui/GButton.java" />
-        <option value="$PROJECT_DIR$/src/gui/GDivider.java" />
-        <option value="$PROJECT_DIR$/src/gui/GDropdown.java" />
-        <option value="$PROJECT_DIR$/src/gui/GGraph.java" />
-        <option value="$PROJECT_DIR$/src/gui/GKeyListener.java" />
         <option value="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-        <option value="$PROJECT_DIR$/src/gui/GMouseListener.java" />
-        <option value="$PROJECT_DIR$/src/gui/GSpacer.java" />
-        <option value="$PROJECT_DIR$/src/gui/GSubList.java" />
-        <option value="$PROJECT_DIR$/src/gui/GText.java" />
-        <option value="$PROJECT_DIR$/src/gui/GTextBox.java" />
-        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
-        <option value="$PROJECT_DIR$/src/gui/GUIComponent.java" />
+        <option value="$PROJECT_DIR$/src/pages/EditAccount.java" />
+        <option value="$PROJECT_DIR$/src/pages/Home.java" />
+        <option value="$PROJECT_DIR$/ThePiratesProjectSave" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/pages/Login.java" />
+        <option value="$PROJECT_DIR$/src/control/General.java" />
+        <option value="$PROJECT_DIR$/src/user/UserManager.java" />
+        <option value="$PROJECT_DIR$/src/user/UserManagerTest.java" />
+        <option value="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
+        <option value="$PROJECT_DIR$/src/user/User.java" />
+        <option value="$PROJECT_DIR$/src/pages/CreateProject.java" />
         <option value="$PROJECT_DIR$/src/gui/GUIPage.java" />
-        <option value="$PROJECT_DIR$/src/gui/GWrapper.java" />
-        <option value="$PROJECT_DIR$/src/gui/Style.java" />
+        <option value="$PROJECT_DIR$/src/gui/GUI.java" />
       </list>
     </option>
   </component>
@@ -779,57 +179,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-<<<<<<< HEAD
-<<<<<<< HEAD
     <option name="width" value="2560" />
     <option name="height" value="1413" />
-=======
-    <option name="width" value="1440" />
-    <option name="height" value="872" />
->>>>>>> master
-=======
-    <option name="width" value="1440" />
-    <option name="height" value="872" />
->>>>>>> master
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>ArquillianJava</id>
-          </State>
-          <State>
-            <id>GeneralJava</id>
-          </State>
-          <State>
-            <id>Internationalization issuesJava</id>
-          </State>
-          <State>
-            <id>JUnit issuesJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>TestNGJava</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>JUnit issuesJava</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -845,19 +197,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EasyGUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="EasyGUI" />
@@ -879,6 +223,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -931,6 +315,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -954,35 +352,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EasyGUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <pane id="PackagesPane" />
-=======
-=======
->>>>>>> master
-      <pane id="Scope" />
->>>>>>> master
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="GG&#9;FILE&#9;file:///Users/robertcordingly/Documents/GitHub/ThePirates/Java Program/EasyGUI/src/gui/GGraph.java" />
-    <property name="AnalyzeApkAction.lastApkPath" value="$USER_HOME$/Desktop/Workspace" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="gui" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/user" />
+      <recent name="$PROJECT_DIR$/src/project" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -997,26 +392,42 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration default="false" name="UserManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="EasyGUI" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.UserManagerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="EasyGUI" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="EasyGUI" />
+      <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
@@ -1033,7 +444,7 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="false" />
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
         <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
         <option name="SUPPORT_LIB_ENABLED" value="true" />
@@ -1071,17 +482,19 @@
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="0" />
-      <option name="HEIGHT" value="0" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="file://$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -1243,7 +656,6 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1252,12 +664,12 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1329,6 +741,14 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1346,9 +766,9 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -1364,12 +784,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1385,482 +799,122 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Unnamed" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="0" />
-      <option name="HEIGHT" value="0" />
+    <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="EasyGUI" />
+      <envs />
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Applet.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserManagerTest" />
     </list>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserManagerTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5d0303be-2a48-49c7-a832-a9f9aec6f94f" name="Default" comment="" />
-      <created>1491975260336</created>
+      <changelist id="83388391-1306-4708-aba7-49260e2ebaa9" name="Default" comment="" />
+      <created>1495089137771</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1491975260336</updated>
-      <workItem from="1491975263122" duration="2387000" />
-      <workItem from="1492023216793" duration="7242000" />
-      <workItem from="1492032983415" duration="4000" />
-      <workItem from="1492033601612" duration="1080000" />
-      <workItem from="1492040517772" duration="1076000" />
-      <workItem from="1492043809411" duration="2081000" />
-      <workItem from="1492055592056" duration="3090000" />
-      <workItem from="1492112279897" duration="293000" />
-      <workItem from="1492132345845" duration="722000" />
-      <workItem from="1492151722396" duration="1381000" />
-      <workItem from="1492153201612" duration="2292000" />
-      <workItem from="1492203235051" duration="3212000" />
-      <workItem from="1492211320953" duration="1707000" />
-      <workItem from="1492227579997" duration="3043000" />
-      <workItem from="1492230728405" duration="1401000" />
-      <workItem from="1492235331813" duration="2393000" />
-      <workItem from="1492246157571" duration="77000" />
-      <workItem from="1492288218032" duration="2028000" />
-      <workItem from="1492315514464" duration="1176000" />
-      <workItem from="1492397393807" duration="83000" />
-      <workItem from="1492397813755" duration="2539000" />
-      <workItem from="1492415777027" duration="138000" />
-      <workItem from="1492820410850" duration="82000" />
-      <workItem from="1492826547860" duration="100000" />
-      <workItem from="1492827037286" duration="1999000" />
-      <workItem from="1492831303777" duration="957000" />
-      <workItem from="1492920486784" duration="2973000" />
-      <workItem from="1492930003981" duration="642000" />
-      <workItem from="1492930660421" duration="2015000" />
-      <workItem from="1493015209592" duration="1048000" />
-      <workItem from="1493159812703" duration="3359000" />
-      <workItem from="1493190796824" duration="32000" />
-      <workItem from="1493190841904" duration="615000" />
-      <workItem from="1493196722144" duration="133000" />
-      <workItem from="1493269338404" duration="63000" />
-      <workItem from="1493432248282" duration="2512000" />
-      <workItem from="1493454758585" duration="89000" />
-      <workItem from="1493496128565" duration="3741000" />
-      <workItem from="1493510717742" duration="2784000" />
-      <workItem from="1493526032703" duration="602000" />
-      <workItem from="1493583978341" duration="304000" />
-      <workItem from="1493590431029" duration="449000" />
-      <workItem from="1493608432389" duration="3987000" />
-      <workItem from="1493668920936" duration="3616000" />
-      <workItem from="1493694179928" duration="1441000" />
-      <workItem from="1493763572398" duration="1851000" />
-      <workItem from="1493771347337" duration="2050000" />
-      <workItem from="1493786236013" duration="701000" />
-      <workItem from="1494195930311" duration="6446000" />
-      <workItem from="1494223390819" duration="1849000" />
-      <workItem from="1494277623851" duration="1107000" />
-      <workItem from="1494372168671" duration="199000" />
-      <workItem from="1494373646431" duration="162000" />
-      <workItem from="1494379578821" duration="1648000" />
-      <workItem from="1494457856674" duration="85000" />
-      <workItem from="1494457945644" duration="2964000" />
-      <workItem from="1494463155763" duration="1922000" />
-      <workItem from="1494532039060" duration="304000" />
-      <workItem from="1494541124070" duration="4492000" />
-      <workItem from="1494548489459" duration="606000" />
-      <workItem from="1494568917384" duration="2365000" />
-      <workItem from="1494619152057" duration="395000" />
-      <workItem from="1494626460412" duration="1364000" />
-      <workItem from="1494640370602" duration="3628000" />
-      <workItem from="1494644019543" duration="8000" />
-      <workItem from="1494658441466" duration="4997000" />
-      <workItem from="1494751489629" duration="402000" />
-<<<<<<< HEAD
-      <workItem from="1494751987896" duration="1428000" />
-      <workItem from="1494906683475" duration="1810000" />
-=======
-      <workItem from="1494751987896" duration="1285000" />
-      <workItem from="1494969806008" duration="144000" />
-      <workItem from="1494981818420" duration="124000" />
-      <workItem from="1494982054824" duration="631000" />
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
+      <updated>1495089137771</updated>
+      <workItem from="1495089140533" duration="3825000" />
     </task>
-    <task id="LOCAL-00001" summary="Testing github in IntelliJ">
-      <created>1492415888552</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1492415888552</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added slide over animation and am quite happy with how it turned out. &#10;&#10;It fixed the button overlap bug but introduces a problem if you change&#10;pages with the menubar open. That should be a really easy fix though.">
-      <created>1492828982015</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1492828982015</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed a bug where the sidebar and page contents would be out of&#10;sync when the slide animation was playing.&#10;&#10;Buttons can no longer be pressed while an animation is playing. This&#10;will prevent future potential bugs.">
-      <created>1492921526685</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1492921526685</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fixed a bug that would cause page contents to not line up exactly right&#10;(off by a few pixels) after the slide animation. Now it's perfect.">
-      <created>1492922382405</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1492922382405</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Probably fixed the bug that cause part of the screen to be outside&#10;the window on Windows. I don't use Windows so I really don't know it&#10;this actually fixed it, probably did though.">
-      <created>1492923338041</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1492923338041</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Started working on the login screen a bit more. Added a new GDivider&#10;class that allows placing components horizontally together and still&#10;dynamically scales and repositions things properly.">
-      <created>1492932605038</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1492932605038</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Updated the Login Screen to be more similar to the paper prototype and tested GDividers so that we can stack components both horizontally and vertically. It's pretty awesome.&#10;Changed around a bit of the colors mostly getting rid of the super ugly blue and red to the slightly less ugly dark gray and gray.&#10;Increased the account button's click area so you can now just click the name.">
-      <created>1493161242636</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1493161242636</updated>
-    </task>
-    <task id="LOCAL-00008" summary="General improvements to menu bar UI.&#10;&#10;* Buttons now properly center their text vertically.&#10;* Changed color scheme from shades of gray to greens.&#10;* Added drop shadow and underline to menu bar.&#10;* Sidebar backgrounds now extend to the button of the screen.">
-      <created>1493434736333</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1493434736333</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added Edit Account page.">
-      <created>1493496588590</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1493496588590</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Buttons have a few new constructors that allow padding to be added&#10;around the sides of the button.">
-      <created>1493497669997</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1493497669997</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Started designing the New Project page.">
-      <created>1493498717620</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1493498717620</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Buttons can now display images on them. Added images to the placeholder&#10;buttons on the new project page. Moved the menu bar title.">
-      <created>1493512943093</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1493512943093</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added small click animation to buttons.">
-      <created>1493609878192</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1493609878192</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Started working on the graph GUIComponent. It currently works but&#10;drawing it is sort of broken and I'll fix it later.">
-      <created>1493612476579</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1493612476579</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed GGraph to render graphs properly.">
-      <created>1493669975324</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1493669975324</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Updated login screen and button colors to match the new green theme.">
-      <created>1493676197596</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1493676197596</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Added animation to graphs and increased the amount of padding on the &#10;side of pages.">
-      <created>1494225285639</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1494225285639</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Added a comment.">
-      <created>1494459112712</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1494459112712</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Created the General class, a static class that holds simple methods&#10;that multiple classes use. &#10;&#10;Also removed all Checkstyle errors from the pages classes.">
-      <created>1494460349046</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1494460349046</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Removed a line.">
-      <created>1494460415900</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1494460415900</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Added import and export buttons to the login screen.">
-      <created>1494460889966</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1494460889966</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Update GWrapper to work better. If we wanted we could replace GTextBox's with JTextFields">
-      <created>1494465183402</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1494465183402</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Upgraded the graph to have a slightly better animation.">
-      <created>1494532293807</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1494532293807</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added a new dropdown menu component.">
-      <created>1494545457525</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1494545457525</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Added a page that will be used to create projects.">
-      <created>1494571183791</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1494571183791</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Separated most colors, fonts, and animation variables into their&#10;own Style class (in control) to make editing these variable easier.">
-      <created>1494643923805</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1494643923805</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Adding comments and cleaning up my code.">
-      <created>1494663409543</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1494663409543</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added UML diagrams. Requires simpleUML plugin!!">
-      <created>1494753321432</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1494753321432</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added UML diagrams. Requires simpleUML plugin!!">
-      <created>1494753342416</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1494753342416</updated>
-    </task>
-    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="115771000" />
-=======
-    <option name="totallyTimeSpent" value="114717000" />
->>>>>>> master
-=======
-    <option name="totallyTimeSpent" value="114717000" />
->>>>>>> master
+  <component name="TestHistory">
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 52m 44s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 53m 27s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 54m 46s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 55m 30s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 57m 19s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserManagerTest - 2017.05.17 at 23h 57m 48s.xml">
+      <configuration name="UserManagerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3825000" />
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <frame x="0" y="23" width="2560" height="1413" extended-state="0" />
-=======
-    <frame x="0" y="23" width="1440" height="872" extended-state="6" />
->>>>>>> master
-=======
-    <frame x="0" y="23" width="1440" height="872" extended-state="6" />
->>>>>>> master
+    <frame x="0" y="23" width="2560" height="1413" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
->>>>>>> master
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
->>>>>>> master
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32129514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> master
-=======
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32129514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> master
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1388889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="573" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> master
-=======
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> master
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0875" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started working on the login screen a bit more. Added a new GDivider&#10;class that allows placing components horizontally together and still&#10;dynamically scales and repositions things properly." />
-    <MESSAGE value="Updated the Login Screen to be more similar to the paper prototype and tested GDividers so that we can stack components both horizontally and vertically. It's pretty awesome.&#10;Changed around a bit of the colors mostly getting rid of the super ugly blue and red to the slightly less ugly dark gray and gray.&#10;Increased the account button's click area so you can now just click the name." />
-    <MESSAGE value="General improvements to menu bar UI.&#10;&#10;* Buttons now properly center their text vertically.&#10;* Changed color scheme from shades of gray to greens.&#10;* Added drop shadow and underline to menu bar.&#10;* Sidebar backgrounds now extend to the button of the screen." />
-    <MESSAGE value="Added Edit Account page." />
-    <MESSAGE value="Buttons have a few new constructors that allow padding to be added&#10;around the sides of the button." />
-    <MESSAGE value="Started designing the New Project page." />
-    <MESSAGE value="Buttons can now display images on them. Added images to the placeholder&#10;buttons on the new project page. Moved the menu bar title." />
-    <MESSAGE value="Added small click animation to buttons." />
-    <MESSAGE value="Started working on the graph GUIComponent. It currently works but&#10;drawing it is sort of broken and I'll fix it later." />
-    <MESSAGE value="Fixed GGraph to render graphs properly." />
-    <MESSAGE value="Updated login screen and button colors to match the new green theme." />
-    <MESSAGE value="Added space" />
-    <MESSAGE value="Added animation to graphs and increased the amount of padding on the &#10;side of pages." />
-    <MESSAGE value="Added a comment." />
-    <MESSAGE value="Added more fields to GUIPage that other pages will share. For example default colors and fonts." />
-    <MESSAGE value="Created the General class, a static class that holds simple methods&#10;that multiple classes use. &#10;&#10;Also removed all Checkstyle errors from the pages classes." />
-    <MESSAGE value="Removed a line." />
-    <MESSAGE value="Added import and export buttons to the login screen." />
-    <MESSAGE value="Update GWrapper to work better. If we wanted we could replace GTextBox's with JTextFields" />
-    <MESSAGE value="Upgraded the graph to have a slightly better animation." />
-    <MESSAGE value="Added a new dropdown menu component." />
-    <MESSAGE value="Added a page that will be used to create projects." />
-    <MESSAGE value="Separated most colors, fonts, and animation variables into their&#10;own Style class (in control) to make editing these variable easier." />
-    <MESSAGE value="Adding comments and cleaning up my code." />
-    <MESSAGE value="Added UML diagrams. Requires simpleUML plugin!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UML diagrams. Requires simpleUML plugin!!" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>13</line>
+          <properties class="main.Main" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1869,198 +923,43 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1494741553000" expanded="true" signature="785:786" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="66" column="27" lean-forward="false" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1494741553000" expanded="true" signature="785:786" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Test.form" />
-    <entry file="file://$PROJECT_DIR$/src/gui/TEst.java" />
-    <entry file="file://$PROJECT_DIR$/img/insulation.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/fridge.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="1148" column="242" lean-forward="false" selection-start-line="1148" selection-start-column="242" selection-end-line="1148" selection-end-column="242" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/junit/GeneralTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/control/Style.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="375">
+          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
+    <entry file="file://$PROJECT_DIR$/src/main/UserOld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="200" column="69" lean-forward="false" selection-start-line="200" selection-start-column="69" selection-end-line="200" selection-end-column="69" />
+        <state relative-caret-position="135">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1494642908000" expanded="true" signature="3334:3407" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="91" column="84" lean-forward="false" selection-start-line="91" selection-start-column="84" selection-end-line="91" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GDropdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2197">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GDivider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="77" column="20" lean-forward="false" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+        <state relative-caret-position="532">
+          <caret line="155" column="33" lean-forward="false" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/GMouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="135">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2072,1109 +971,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> master
-=======
->>>>>>> master
-    <entry file="file://$PROJECT_DIR$/EasyGUI.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <marker date="1494741553000" expanded="true" signature="2435:2782" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="180">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/gui.GUI">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>gui.GUI</OriginalElement>
-          <nodes>
-            <node x="" y="">java.awt.event.KeyListener</node>
-            <node x="" y="">java.awt.Frame</node>
-            <node x="" y="">java.awt.Window</node>
-            <node x="" y="">javax.swing.RootPaneContainer</node>
-            <node x="" y="">java.awt.MenuContainer</node>
-            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
-            <node x="" y="">javax.accessibility.Accessible</node>
-            <node x="" y="">java.awt.Component</node>
-            <node x="" y="">gui.GUI</node>
-            <node x="" y="">java.awt.image.ImageObserver</node>
-            <node x="" y="">java.io.Serializable</node>
-            <node x="" y="">java.util.EventListener</node>
-            <node x="" y="">java.awt.event.MouseWheelListener</node>
-            <node x="" y="">java.awt.Container</node>
-            <node x="" y="">javax.swing.JFrame</node>
-            <node x="" y="">java.awt.event.MouseListener</node>
-            <node x="" y="">javax.swing.WindowConstants</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7563451776649747" x="680.0" y="257.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/control.General">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>control.General</OriginalElement>
-          <nodes>
-            <node x="" y="">control.General</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="48.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/main.User">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>main.User</OriginalElement>
-          <nodes>
-            <node x="" y="">main.User</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="58.0" y="54.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="67" column="11" lean-forward="false" selection-start-line="67" selection-start-column="11" selection-end-line="67" selection-end-column="11" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding />
-=======
->>>>>>> master
-=======
->>>>>>> master
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/GUI" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/view.uml" />
-    <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/gui.uml">
-=======
-    <entry file="file://$PROJECT_DIR$/src/uml/view.uml" />
-    <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
->>>>>>> master
-=======
-    <entry file="file://$PROJECT_DIR$/src/uml/view.uml" />
-    <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
->>>>>>> master
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <node x="481.4150641025643" y="0.0">gui.GMouseListener</node>
-            <node x="2636.3589743589746" y="269.0">gui.GDivider</node>
-            <node x="2343.3589743589746" y="302.0">gui.GGraph</node>
-            <node x="0.0" y="520.0">gui.GUI</node>
-            <node x="1214.3589743589746" y="280.0">gui.GText</node>
-            <node x="2035.3589743589746" y="291.0">gui.GWrapper</node>
-            <node x="1450.3589743589746" y="269.0">gui.GSpacer</node>
-            <node x="1437.8589743589746" y="11.0">gui.GUIComponent</node>
-            <node x="0.0" y="11.0">gui.GKeyListener</node>
-            <node x="78.0" y="930.0">gui.GUI.DrawPanel</node>
-            <node x="2427.809294871795" y="11.0">gui.GSubList</node>
-            <node x="30.358974358974592" y="236.0">gui.GTextBox</node>
-            <node x="394.3589743589746" y="247.0">gui.GDropdown</node>
-            <node x="467.0" y="520.0">gui.GUIPage</node>
-            <node x="1700.3589743589746" y="280.5">gui.GMenuBar</node>
-            <node x="798.3589743589746" y="203.0">gui.GButton</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="gui.GWrapper" target="gui.GUIComponent">
-              <point x="0.0" y="-48.0" />
-              <point x="2179.3589743589746" y="113.0" />
-              <point x="1622.025641025641" y="113.0" />
-              <point x="56.66666666666663" y="25.5" />
-            </edge>
-            <edge source="gui.GButton" target="gui.GMouseListener">
-              <point x="-99.0" y="-136.0" />
-              <point x="897.3589743589746" y="143.0" />
-              <point x="679.5400641025643" y="143.0" />
-              <point x="39.625" y="36.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GUIComponent">
-              <point x="114.66666666666674" y="-103.0" />
-              <point x="317.02564102564133" y="153.0" />
-              <point x="1452.0256410256413" y="153.0" />
-              <point x="-113.33333333333331" y="25.5" />
-            </edge>
-            <edge source="gui.GUI.DrawPanel" target="gui.GUI">
-              <point x="0.0" y="-25.5" />
-              <point x="0.0" y="180.0" />
-=======
-=======
->>>>>>> master
-            <node x="-713.0" y="-216.0">pages.CreateProject</node>
-            <node x="-332.0" y="-4.0">main.Main</node>
-            <node x="89.0" y="-115.0">pages.Home</node>
-            <node x="-227.0" y="-115.0">pages.About</node>
-            <node x="-397.0" y="-115.0">pages.RegisterAccount</node>
-            <node x="-69.0" y="-115.0">pages.Login</node>
-            <node x="-555.0" y="-115.0">pages.EditAccount</node>
-            <node x="-713.0" y="-115.0">pages.NewProject</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="main.Main" target="pages.Home">
-              <point x="76.66666666666663" y="-25.5" />
-              <point x="-163.33333333333337" y="-24.0" />
-              <point x="158.0" y="-24.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.About">
-              <point x="15.333333333333314" y="-25.5" />
-              <point x="-224.66666666666663" y="-44.0" />
-              <point x="-158.0" y="-44.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.RegisterAccount">
-              <point x="-15.333333333333371" y="-25.5" />
-              <point x="-255.33333333333337" y="-44.0" />
-              <point x="-322.0" y="-44.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.Login">
-              <point x="46.0" y="-25.5" />
-              <point x="-194.0" y="-34.0" />
-              <point x="0.0" y="-34.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.NewProject">
-              <point x="-76.66666666666674" y="-25.5" />
-              <point x="-316.66666666666674" y="-24.0" />
-              <point x="-644.0" y="-24.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.NewProject" target="pages.CreateProject">
-              <point x="0.0" y="-25.5" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.EditAccount">
-              <point x="-46.0" y="-25.5" />
-              <point x="-286.0" y="-34.0" />
-              <point x="-486.0" y="-34.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-830.0" y="-348.0" />
-          <SelectedNodes>
-            <node>pages.About</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/gui.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="191.60000000000014" y="-2245.0">gui.GMouseListener</node>
-            <node x="1399.911" y="-1986.0">gui.GDivider</node>
-            <node x="2572.411" y="-1953.0">gui.GGraph</node>
-            <node x="1059.411" y="-1552.0">gui.GUI</node>
-            <node x="2453.911" y="-1730.0">gui.GText</node>
-            <node x="1649.911" y="-1964.0">gui.GWrapper</node>
-            <node x="1957.911" y="-1986.0">gui.GSpacer</node>
-            <node x="1592.35" y="-2234.0">gui.GUIComponent</node>
-            <node x="2208.911" y="-1696.5">gui.GKeyListener</node>
-            <node x="1137.411" y="-1142.0">gui.GUI.DrawPanel</node>
-            <node x="2298.4743333333336" y="-1475.0">gui.GTextBox</node>
-            <node x="959.0035000000003" y="-2234.0">gui.GSubList</node>
-            <node x="660.9110000000001" y="-2008.0">gui.GDropdown</node>
-            <node x="1126.411" y="-1708.0">gui.GUIPage</node>
-            <node x="1064.911" y="-1974.5">gui.GMenuBar</node>
-            <node x="244.91100000000006" y="-2052.0">gui.GButton</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="gui.GWrapper" target="gui.GUIComponent">
-              <point x="0.0" y="-48.0" />
-              <point x="1793.911" y="-2072.0" />
-              <point x="1730.475" y="-2072.0" />
-              <point x="10.625" y="25.5" />
-            </edge>
-            <edge source="gui.GUI" target="gui.GUI.DrawPanel">
-              <point x="140.66666666666652" y="180.0" />
-              <point x="1411.0776666666666" y="-1167.0" />
-              <point x="1359.0776666666668" y="-1167.0" />
-              <point x="88.66666666666674" y="-25.5" />
-            </edge>
-            <edge source="gui.GButton" target="gui.GMouseListener">
-              <point x="-99.0" y="-136.0" />
-              <point x="343.91100000000006" y="-2072.0" />
-              <point x="350.10000000000014" y="-2072.0" />
-              <point x="0.0" y="36.5" />
-            </edge>
-            <edge source="gui.GUI" target="gui.GKeyListener">
-              <point x="168.79999999999995" y="-180.0" />
-              <point x="1439.211" y="-1572.0" />
-              <point x="2265.161" y="-1572.0" />
-              <point x="-56.25" y="25.5" />
-            </edge>
-            <edge source="gui.GUI" target="gui.GUIComponent">
-              <point x="84.40000000000009" y="-180.0" />
-              <point x="1354.8110000000001" y="-1582.0" />
-              <point x="2198.411" y="-1582.0" />
-              <point x="2198.411" y="-2092.0" />
-              <point x="1772.975" y="-2092.0" />
-              <point x="53.125" y="25.5" />
-            </edge>
-            <edge source="gui.GUIPage" target="gui.GSpacer">
-              <point x="72.0" y="-37.0" />
-              <point x="1294.411" y="-1750.0" />
-              <point x="2072.911" y="-1750.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GUIComponent">
-              <point x="137.60000000000002" y="-103.0" />
-              <point x="2608.074333333334" y="-1572.0" />
-              <point x="2855.911" y="-1572.0" />
-              <point x="2855.911" y="-2122.0" />
-              <point x="1836.725" y="-2122.0" />
-              <point x="116.875" y="25.5" />
->>>>>>> master
-            </edge>
-            <edge source="gui.GDropdown" target="gui.GMouseListener">
-              <point x="-96.0" y="-92.0" />
-              <point x="490.3589743589746" y="143.0" />
-              <point x="600.2900641025643" y="143.0" />
-              <point x="-39.625" y="36.5" />
-            </edge>
-            <edge source="gui.GText" target="gui.GUIComponent">
-              <point x="0.0" y="-59.0" />
-              <point x="1322.3589743589746" y="183.0" />
-              <point x="1537.025641025641" y="183.0" />
-              <point x="-28.33333333333337" y="25.5" />
-            </edge>
-            <edge source="gui.GButton" target="gui.GUIComponent">
-              <point x="99.0" y="-136.0" />
-              <point x="1095.3589743589746" y="173.0" />
-              <point x="1508.6923076923078" y="173.0" />
-              <point x="-56.666666666666686" y="25.5" />
-            </edge>
-            <edge source="gui.GSpacer" target="gui.GUIComponent">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GKeyListener">
-              <point x="-114.66666666666674" y="-103.0" />
-              <point x="87.69230769230785" y="183.0" />
-              <point x="112.5" y="183.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GMouseListener">
-              <point x="0.0" y="-103.0" />
-              <point x="202.3589743589746" y="133.0" />
-              <point x="521.0400641025643" y="133.0" />
-              <point x="-118.875" y="36.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GMouseListener">
-              <point x="-105.0" y="-58.5" />
-              <point x="1752.8589743589746" y="133.0" />
-              <point x="758.7900641025643" y="133.0" />
-              <point x="118.875" y="36.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GSubList">
-              <point x="105.0" y="-58.5" />
-              <point x="1962.8589743589746" y="183.0" />
-              <point x="2532.309294871795" y="183.0" />
-              <point x="-104.5" y="25.5" />
-            </edge>
-            <edge source="gui.GDivider" target="gui.GSubList">
-              <point x="57.5" y="-70.0" />
-              <point x="2808.8589743589746" y="183.0" />
-              <point x="2741.309294871795" y="183.0" />
-              <point x="104.5" y="25.5" />
-            </edge>
-            <edge source="gui.GDivider" target="gui.GUIComponent">
-              <point x="-57.5" y="-70.0" />
-              <point x="2693.8589743589746" y="93.0" />
-              <point x="1678.6923076923078" y="93.0" />
-              <point x="113.33333333333326" y="25.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GUIComponent">
-              <point x="0.0" y="-58.5" />
-              <point x="1857.8589743589746" y="123.0" />
-              <point x="1593.6923076923078" y="123.0" />
-              <point x="28.333333333333314" y="25.5" />
-            </edge>
-            <edge source="gui.GGraph" target="gui.GUIComponent">
-              <point x="0.0" y="-37.0" />
-              <point x="2479.8589743589746" y="103.0" />
-              <point x="1650.3589743589746" y="103.0" />
-              <point x="85.0" y="25.5" />
-            </edge>
-            <edge source="gui.GDropdown" target="gui.GUIComponent">
-              <point x="96.0" y="-92.0" />
-              <point x="682.3589743589746" y="163.0" />
-              <point x="1480.3589743589746" y="163.0" />
-              <point x="-85.0" y="25.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="213.85714285714283" y="0.8571428571428328" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Inner Classes</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/pages.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="0.0" y="111.0">pages.CreateProject</node>
-            <node x="380.8833333333333" y="323.0">main.Main</node>
-            <node x="803.0" y="111.0">pages.About</node>
-            <node x="645.0" y="111.0">pages.Home</node>
-            <node x="487.0" y="111.0">pages.Login</node>
-            <node x="159.0" y="111.0">pages.RegisterAccount</node>
-            <node x="329.0" y="111.0">pages.EditAccount</node>
-            <node x="329.0" y="0.0">gui.GUIPage</node>
-            <node x="39.75" y="212.0">pages.NewProject</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="main.Main" target="pages.About">
-              <point x="76.66666666666663" y="-25.5" />
-              <point x="549.55" y="303.0" />
-              <point x="872.0" y="303.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.EditAccount" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.Login">
-              <point x="15.333333333333314" y="-25.5" />
-              <point x="488.21666666666664" y="283.0" />
-              <point x="556.0" y="283.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.Login" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="556.0" y="91.0" />
-              <point x="417.71428571428567" y="91.0" />
-              <point x="19.714285714285694" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.RegisterAccount">
-              <point x="-46.0" y="-25.5" />
-              <point x="426.8833333333333" y="293.0" />
-              <point x="233.99999999999997" y="293.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.Home" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="714.0" y="81.0" />
-              <point x="437.42857142857133" y="81.0" />
-              <point x="39.42857142857139" y="25.5" />
-            </edge>
-            <edge source="pages.NewProject" target="gui.GUIPage">
-              <point x="34.5" y="-25.5" />
-              <point x="143.25" y="187.0" />
-              <point x="148.5" y="187.0" />
-              <point x="148.5" y="81.0" />
-              <point x="358.57142857142856" y="81.0" />
-              <point x="-39.42857142857143" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.EditAccount">
-              <point x="-15.333333333333371" y="-25.5" />
-              <point x="457.54999999999995" y="283.0" />
-              <point x="398.0" y="283.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.Home">
-              <point x="46.0" y="-25.5" />
-              <point x="518.8833333333333" y="293.0" />
-              <point x="714.0" y="293.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.RegisterAccount" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="234.0" y="91.0" />
-              <point x="378.2857142857142" y="91.0" />
-              <point x="-19.714285714285722" y="25.5" />
-            </edge>
-            <edge source="pages.CreateProject" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="69.0" y="71.0" />
-              <point x="338.85714285714283" y="71.0" />
-              <point x="-59.14285714285714" y="25.5" />
-            </edge>
-            <edge source="main.Main" target="pages.NewProject">
-              <point x="-76.66666666666674" y="-25.5" />
-              <point x="396.2166666666666" y="303.0" />
-              <point x="108.75" y="303.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="pages.About" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="872.0" y="71.0" />
-              <point x="457.1428571428571" y="71.0" />
-              <point x="59.14285714285711" y="25.5" />
-            </edge>
-            <edge source="pages.NewProject" target="pages.CreateProject">
-              <point x="-34.5" y="-25.5" />
-              <point x="74.25" y="187.0" />
-              <point x="69.0" y="187.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="-37.3461538461537" y="-152.3076923076922" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
-=======
->>>>>>> master
-=======
->>>>>>> master
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/all.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="1941.7790322580645" y="997.5">pages.CreateProject</node>
-            <node x="3200.0728046594995" y="275.0">gui.GDivider</node>
-            <node x="454.0" y="931.5">main.User</node>
-            <node x="1520.6227822580645" y="297.0">gui.GGraph</node>
-            <node x="1419.9978046594993" y="997.5">pages.Home</node>
-            <node x="0.0" y="843.0">gui.GUI</node>
-            <node x="1795.6227822580645" y="297.0">gui.GText</node>
-            <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
-            <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
-            <node x="2276.2290322580648" y="1602.0">pages.Login</node>
-            <node x="2256.4125" y="11.0">gui.GUIComponent</node>
-            <node x="825.0" y="297.0">gui.GKeyListener</node>
-            <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
-            <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
-            <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
-            <node x="902.0" y="0.0">gui.GMouseListener</node>
-            <node x="2175.2790546594993" y="1713.0">main.Main</node>
-            <node x="2839.25" y="997.5">pages.About</node>
-            <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
-            <node x="1125.3249999999998" y="532.0">gui.GTextBox</node>
-            <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
-            <node x="2932.070833333333" y="11.0">gui.GSubList</node>
-            <node x="2515.1" y="587.0">gui.GUIPage</node>
-            <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
-            <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="gui.GWrapper" target="gui.GUIComponent">
-              <point x="0.0" y="-36.5" />
-              <point x="2208.1227822580645" y="233.0" />
-              <point x="2373.2875" y="233.0" />
-              <point x="-10.625" y="25.5" />
-            </edge>
-            <edge source="gui.GButton" target="gui.GMouseListener">
-              <point x="-73.5" y="-69.5" />
-              <point x="1884.5290322580645" y="1233.0" />
-              <point x="814.5" y="1233.0" />
-              <point x="814.5" y="173.0" />
-              <point x="997.1000000000004" y="173.0" />
-              <point x="-63.399999999999636" y="36.5" />
-            </edge>
-            <edge source="pages.Login" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="2345.2290322580648" y="1512.0" />
-              <point x="2744.25" y="1512.0" />
-              <point x="2744.25" y="803.0" />
-              <point x="2618.6" y="803.0" />
-              <point x="34.5" y="25.5" />
-            </edge>
-            <edge source="pages.Home" target="gui.GUIPage">
-              <point x="55.200000000000045" y="-25.5" />
-              <point x="1544.1978046594993" y="793.0" />
-              <point x="2549.6" y="793.0" />
-              <point x="-34.5" y="25.5" />
-            </edge>
-            <edge source="pages.NewProject" target="gui.GUIPage">
-              <point x="0.0" y="-25.5" />
-              <point x="2503.2290322580648" y="1522.0" />
-              <point x="2828.75" y="1522.0" />
-              <point x="2828.75" y="793.0" />
-              <point x="2632.4" y="793.0" />
-              <point x="48.30000000000018" y="25.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GUIComponent">
-              <point x="0.0" y="-80.5" />
-              <point x="1258.3249999999998" y="422.0" />
-              <point x="1507.3727822580645" y="422.0" />
-              <point x="1507.3727822580645" y="203.0" />
-              <point x="2309.5375" y="203.0" />
-              <point x="-74.375" y="25.5" />
-            </edge>
-            <edge source="gui.GUI.DrawPanel" target="gui.GUI">
-              <point x="-88.66666666666697" y="-25.5" />
-              <point x="122.33333333333303" y="1243.0" />
-              <point x="70.33333333333303" y="1243.0" />
-              <point x="-140.66666666666697" y="180.0" />
-            </edge>
-            <edge source="gui.GDropdown" target="gui.GMouseListener">
-              <point x="-83.75" y="-69.5" />
-              <point x="1245.6227822580645" y="173.0" />
-              <point x="1123.8999999999996" y="173.0" />
-              <point x="63.399999999999636" y="36.5" />
-            </edge>
-            <edge source="gui.GText" target="gui.GUIComponent">
-              <point x="0.0" y="-25.5" />
-              <point x="1923.1227822580645" y="223.0" />
-              <point x="2352.0375" y="223.0" />
-              <point x="-31.875" y="25.5" />
-            </edge>
-            <edge source="gui.GButton" target="gui.GUIComponent">
-              <point x="122.5" y="-69.5" />
-              <point x="2080.5290322580645" y="1243.0" />
-              <point x="3189.5728046594995" y="1243.0" />
-              <point x="3189.5728046594995" y="123.0" />
-              <point x="2458.2875" y="123.0" />
-              <point x="74.375" y="25.5" />
-            </edge>
-            <edge source="pages.About" target="gui.GUIPage">
-              <point x="-46.0" y="-25.5" />
-              <point x="2862.25" y="783.0" />
-              <point x="2646.2" y="783.0" />
-              <point x="62.09999999999991" y="25.5" />
-            </edge>
-            <edge source="gui.GSpacer" target="gui.GUIComponent">
-              <point x="0.0" y="-47.5" />
-              <point x="3011.4477822580648" y="133.0" />
-              <point x="2437.0375" y="133.0" />
-              <point x="53.125" y="25.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GKeyListener">
-              <point x="-106.39999999999964" y="-80.5" />
-              <point x="1151.9250000000002" y="502.0" />
-              <point x="993.75" y="502.0" />
-              <point x="56.25" y="25.5" />
-            </edge>
-            <edge source="gui.GTextBox" target="gui.GMouseListener">
-              <point x="-53.19999999999982" y="-80.5" />
-              <point x="1205.125" y="492.0" />
-              <point x="1060.5" y="492.0" />
-              <point x="0.0" y="36.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GMouseListener">
-              <point x="-118.125" y="-58.5" />
-              <point x="2404.9977822580645" y="163.0" />
-              <point x="1187.3000000000002" y="163.0" />
-              <point x="126.80000000000018" y="36.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GSubList">
-              <point x="118.125" y="-58.5" />
-              <point x="2641.2477822580645" y="233.0" />
-              <point x="3036.570833333333" y="233.0" />
-              <point x="-104.5" y="25.5" />
-            </edge>
-            <edge source="pages.EditAccount" target="gui.GUIPage">
-              <point x="27.59999999999991" y="-25.5" />
-              <point x="2157.954032258064" y="1502.0" />
-              <point x="2673.55" y="1502.0" />
-              <point x="2673.55" y="813.0" />
-              <point x="2604.7999999999997" y="813.0" />
-              <point x="20.699999999999818" y="25.5" />
-            </edge>
-            <edge source="gui.GDivider" target="gui.GSubList">
-              <point x="88.66666666666652" y="-47.5" />
-              <point x="3421.7394713261656" y="93.0" />
-              <point x="3245.570833333333" y="93.0" />
-              <point x="104.5" y="25.5" />
-            </edge>
-            <edge source="gui.GDivider" target="gui.GUIComponent">
-              <point x="-88.66666666666652" y="-47.5" />
-              <point x="3244.4061379928326" y="113.0" />
-              <point x="2479.5375" y="113.0" />
-              <point x="95.625" y="25.5" />
-            </edge>
-            <edge source="gui.GMenuBar" target="gui.GUIComponent">
-              <point x="-39.375" y="-58.5" />
-              <point x="2483.7477822580645" y="153.0" />
-              <point x="2394.5375" y="153.0" />
-              <point x="10.625" y="25.5" />
-            </edge>
-            <edge source="gui.GGraph" target="gui.GUIComponent">
-              <point x="0.0" y="-25.5" />
-              <point x="1648.1227822580645" y="213.0" />
-              <point x="2330.7875" y="213.0" />
-              <point x="-53.125" y="25.5" />
-            </edge>
-            <edge source="pages.RegisterAccount" target="gui.GUIPage">
-              <point x="37.5" y="-25.5" />
-              <point x="2003.8540322580645" y="1492.0" />
-              <point x="2591.0" y="1492.0" />
-              <point x="6.900000000000091" y="25.5" />
-            </edge>
-            <edge source="pages.CreateProject" target="gui.GUIPage">
-              <point x="27.59999999999991" y="-25.5" />
-              <point x="2038.3790322580644" y="803.0" />
-              <point x="2563.4" y="803.0" />
-              <point x="-20.699999999999818" y="25.5" />
-            </edge>
-            <edge source="gui.GDropdown" target="gui.GUIComponent">
-              <point x="83.75" y="-69.5" />
-              <point x="1413.1227822580645" y="193.0" />
-              <point x="2288.2875" y="193.0" />
-              <point x="-95.625" y="25.5" />
-            </edge>
-          </edges>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <settings layout="Hierarchic Group" zoom="0.9" x="2247.4444444444443" y="419.7777777777777" />
-=======
-          <settings layout="Hierarchic Group" zoom="0.9" x="247.0" y="267.0" />
->>>>>>> master
-=======
-          <settings layout="Hierarchic Group" zoom="0.9" x="247.0" y="267.0" />
->>>>>>> master
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Inner Classes</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1494741553000" expanded="true" signature="785:786" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GDivider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="49" column="21" lean-forward="false" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GDropdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1540">
-          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GMouseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSpacer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-<<<<<<< HEAD
-=======
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GSubList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1001">
-          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+        <state relative-caret-position="135">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="243" column="21" lean-forward="false" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
-          <folding>
-            <marker date="1494982476000" expanded="true" signature="2297:2350" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
->>>>>>> master
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/gui/GSubList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GTextBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1001">
-          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="243" column="21" lean-forward="false" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
-          <folding>
-            <marker date="1494982476000" expanded="true" signature="2297:2350" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> master
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="84" column="21" lean-forward="false" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-          <folding>
-            <marker date="1494982476000" expanded="true" signature="2111:2334" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <marker date="1494982476000" expanded="true" signature="878:1011" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="215" column="21" lean-forward="false" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding>
-            <marker date="1494741553000" expanded="true" signature="2202:2210" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="135">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Style.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GDivider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/About.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThePiratesProjectSave.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="88" lean-forward="true" selection-start-line="0" selection-start-column="88" selection-end-line="0" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThePiratesProjectSave">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="487" column="0" lean-forward="false" selection-start-line="487" selection-start-column="0" selection-end-line="487" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="80" column="35" lean-forward="false" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/General.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
           <folding>
-            <element signature="e#2857#2858#0" expanded="true" />
-            <element signature="e#2904#2905#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>DIYProject</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>EasyGUI</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/user/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/UserManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/ProjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="159" column="23" lean-forward="false" selection-start-line="159" selection-start-column="23" selection-end-line="159" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>

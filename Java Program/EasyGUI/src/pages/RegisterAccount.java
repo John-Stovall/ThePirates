@@ -2,7 +2,8 @@ package pages;
 
 import control.General;
 import gui.*;
-import main.User;
+import user.User;
+import user.UserManager;
 
 /**
  * Created by Robert on 5/10/17.
@@ -45,8 +46,7 @@ public class RegisterAccount extends GUIPage {
 
                 if (General.testName(myName) && General.testEmail(myEmail) && General.isEmailFree(myEmail)) {
                     User newUser = new User(myName, myEmail);
-                    User.getUsers().add(newUser);
-                    User.setLoadedUser(newUser);
+                    UserManager.setLoadedUser(newUser);
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
@@ -60,7 +60,7 @@ public class RegisterAccount extends GUIPage {
             }
         });
 
-        if (!User.getUsers().isEmpty()) {
+        if (!UserManager.getUsers().isEmpty()) {
             GUI.window.add(new GSpacer(5));
             GUI.window.add(new GButton(25, "Back") {
                 @Override
@@ -74,8 +74,7 @@ public class RegisterAccount extends GUIPage {
                 @Override
                 public void clickAction() {
                     User validUser = new User("You", "");
-                    User.getUsers().add(validUser);
-                    User.setLoadedUser(validUser);
+                    UserManager.setLoadedUser(validUser);
                     GUI.window.gotoPage("Home");
                 }
             });

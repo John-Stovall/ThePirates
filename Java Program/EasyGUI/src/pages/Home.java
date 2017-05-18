@@ -2,7 +2,7 @@ package pages;
 
 import gui.Style;
 import gui.*;
-import main.User;
+import user.UserManager;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class Home extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GDropdown(options));
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Hello, " + User.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", Style.defaultFont));
+        GUI.window.add(new GText("Hello, " + UserManager.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", Style.defaultFont));
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GSpacer(5));
 
