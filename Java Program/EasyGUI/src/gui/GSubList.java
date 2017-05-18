@@ -14,6 +14,7 @@ public interface GSubList {
      * Get the lists of GUIComponents that this class holds.
      *
      * @return A list of GUIComponent lists.
+     * @author Robert
      */
     ArrayList<ArrayList<GUIComponent>> getComponents();
 }

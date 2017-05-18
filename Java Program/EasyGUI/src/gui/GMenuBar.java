@@ -1,7 +1,6 @@
 package gui;
 
 import control.General;
-import control.Style;
 import main.User;
 
 import java.awt.*;
@@ -14,8 +13,6 @@ import java.util.ArrayList;
  *
  * This class is by far the messiest class out of all of them and
  * this handles ALL of the logic and stuff for the menu bar.
- *
- * I'll clean it up eventually.
  */
 public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
@@ -56,6 +53,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Create a menu bar with some height.
      *
      * @param height The height.
+     * @author Robert
      */
     GMenuBar(final int height) {
         this.height = height;
@@ -65,6 +63,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Adds a component to the left menu bar.
      *
      * @param c The component to add.
+     * @author Robert
      */
     void addPage(GUIComponent c) {
         if (c instanceof GButton) {
@@ -77,6 +76,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Adds a component to the right menu bar.
      *
      * @param c The component to add.
+     * @author Robert
      */
     void addAccount(GUIComponent c) {
         if (c instanceof GButton) {
@@ -169,7 +169,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         else goalPosition = 0;
         GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
 
-        return height;
+        return 0;
     }
 
     @Override

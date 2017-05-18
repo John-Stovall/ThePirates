@@ -1,0 +1,41 @@
+package user;
+
+import java.io.Serializable;
+
+/**
+ * @author Ryan Hansen
+ *
+ * stores basic information for each user.
+ */
+public class User implements Serializable{
+		
+	/**
+	 * generated serial ID
+	 */
+	private static final long serialVersionUID = 1074418663306939530L;
+	
+	private String name;
+	private String email;
+
+	
+	public User(final String theName, final String theEmail) {
+        this.name = theName;
+        this.email = theEmail;
+    }
+	
+	public String getName() {
+        return name;
+    }
+	
+	public void setName(String name) {
+        this.name = name;
+    }
+	
+	public String getEmail() {
+        return email;
+    }
+	
+	public void setEmail(String email) {
+        this.email = email;
+    }
+}

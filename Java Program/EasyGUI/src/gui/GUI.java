@@ -1,7 +1,5 @@
 package gui;
 
-import control.Style;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -18,28 +16,28 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     public static final GUI window = new GUI();
 
     /** All of the pages to use. */
-    private ArrayList<GUIPage> pages = new ArrayList<>();
+    private static final ArrayList<GUIPage> pages = new ArrayList<>();
 
     /** All of the current loaded GUIComponents. */
-    private ArrayList<GUIComponent> components = new ArrayList<>();
+    private static final ArrayList<GUIComponent> components = new ArrayList<>();
 
     /** All of the GUIComponents that use the MouseListener. */
-    private ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
+    private static final ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
 
     /** All of the GUIComponents that use the KeyListener. */
-    private ArrayList<GKeyListener> keyComponents = new ArrayList<>();
+    private static final ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
     /** The max width of the window's contents before it starts adding padding. */
-    private int maxWidth = 720;
+    private static final int maxWidth = 720;
 
     /** The padding added to the sides of all components. */
-    private int sidePadding = 24;
+    private static final int sidePadding = 24;
 
     /** The horizontal offset of components. Used in the slide-over animation. */
     static int horizontalOffset = 0;
 
     /** The vertical offset controlled by scrolling. */
-    private int scrollOffset;
+    private static int scrollOffset;
 
     /** The drawing panel that everything is drawn to. */
     private static DrawPanel panel;
@@ -50,8 +48,12 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     /** The height of the currently drawn page. */
     private static int pageHeight;
 
+    /** Changes how fast you can scroll the page. */
+    private static final double scrollSpeedMultiplier = 4.0;
+
     /**
      * Starts the GUI with some basic settings.
+     * @author Robert
      */
     private GUI() {
         super();
@@ -70,13 +72,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel.setLayout(null);
         panel.repaint();
 
-        /** The animation clock. */
-        Timer clock = new Timer(Style.frameRate, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                panel.repaint();
-            }
-        });
+        //The animation clock.
+        Timer clock = new Timer(Style.frameRate, e -> panel.repaint());
         clock.start();
     }
 
@@ -84,6 +81,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * Add a GUIPage to the list of pages.
      *
      * @param page The page to add.
+     * @author Robert
      */
     public void addPage(final GUIPage page) {
         pages.add(page);
@@ -93,6 +91,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * Returned the list of currently loaded components.
      *
      * @return The ArrayList of components
+     * @author Robert
      */
     ArrayList<GUIComponent> getItems() {
         return components;
@@ -102,8 +101,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * Gets the inner width of the window.
      *
      * @return The width of the panel
+     * @author Robert
      */
-    public static int getWindowWidth() {
+    static int getWindowWidth() {
         return panel.getWidth();
     }
 
@@ -111,6 +111,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * This method adds a GUIComponent to the current page.
      *
      * @param c The GUIComponent to add.
+     * @author Robert
      */
     public void add(final GUIComponent c) {
         components.add(c);
@@ -126,6 +127,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * the pages's name to find the correct page to go to. A little slow but works.
      *
      * @param page The NAME of the page to go to.
+     * @author Robert
      */
     public void gotoPage(final String page) {
         for (GUIPage p : pages) {
@@ -141,6 +143,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * to reassemble the page.
      *
      * @param page The page to build.
+     * @author Robert
      */
     public void gotoPage(final GUIPage page) {
         scrollOffset = 0;
@@ -162,10 +165,11 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * This loops through all of the GUIComponents and
-     * through any sublists like GDivider and GMenuBar.
+     * through any sub lists like GDivider and GMenuBar.
      * It gets all of the GUIComponents that use listeners and adds them to their own lists.
      *
-     * @param list
+     * @param list The GUI components to loop through.
+     * @author Robert
      */
     private void constructLists(ArrayList<GUIComponent> list) {
         for (GUIComponent c : list) {
@@ -187,6 +191,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * Gets the title of the currently loaded page.
      *
      * @return The title of the page.
+     * @author Robert
      */
     static String getPageTitle() {
         return currentPage.getName();
@@ -195,9 +200,11 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         if (pageHeight > panel.getHeight()) {
-            scrollOffset -= e.getUnitsToScroll();
+            scrollOffset -= e.getUnitsToScroll() * scrollSpeedMultiplier;
             if (scrollOffset > 0) scrollOffset = 0;
             if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
+        } else if (scrollOffset != 0) {
+            scrollOffset = 0;
         }
     }
 
@@ -239,6 +246,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * This class handles all of the drawing.
+     * @author Robert
      */
     private class DrawPanel extends JPanel {
         @Override

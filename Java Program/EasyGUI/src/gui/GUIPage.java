@@ -1,7 +1,5 @@
 package gui;
 
-import control.Style;
-
 import java.awt.*;
 
 /**
@@ -24,6 +22,7 @@ public abstract class GUIPage {
      * Create a page and sets it's name.
      *
      * @param name The name of the page.
+     * @author Robert
      */
     public GUIPage(final String name) {
 
@@ -75,6 +74,7 @@ public abstract class GUIPage {
      * Returns the name of the page.
      *
      * @return The name of the page.
+     * @author Robert
      */
     String getName() {
         return name;
@@ -82,6 +82,7 @@ public abstract class GUIPage {
 
     /**
      * Assemble this page. Override this method with the proper functions.
+     * @author Robert
      */
     public void build() {}
 

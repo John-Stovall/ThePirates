@@ -1,7 +1,6 @@
 package gui;
 
 import control.General;
-import control.Style;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -60,6 +59,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      *
      * @param height The height of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
+     * @author Robert
      */
     public GTextBox(final int height, final String text) {
         this.height = height;
@@ -73,6 +73,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      *
      * @param height The height of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
+     * @author Robert
      */
     public GTextBox(final int height, final String text, final int maxLength) {
         this.height = height;
@@ -86,6 +87,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * This method returns whatever text is in the text box.
      *
      * @return The typed text.
+     * @author Robert
      */
     public String getText() {
         return text;
@@ -95,6 +97,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Open the error message for this text box.
      *
      * @param message The error to show.
+     * @author Robert
      */
     public void failed(final String message) {
         failed = true;

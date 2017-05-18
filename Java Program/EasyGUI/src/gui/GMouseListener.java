@@ -18,6 +18,7 @@ public interface GMouseListener {
      *
      * @param e The mouse event.
      * @return Whether a mouse event has been correctly fired.
+     * @author Robert
      */
     boolean mousePressed(MouseEvent e);
 
@@ -30,6 +31,7 @@ public interface GMouseListener {
      *
      * @param e The mouse event.
      * @return Whether a mouse event has been correctly fired.
+     * @author Robert
      */
     boolean mouseReleased(MouseEvent e);
 

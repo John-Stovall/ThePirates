@@ -1,12 +1,9 @@
 package gui;
 
 import control.General;
-import control.Style;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.ImageObserver;
 
 /**
  * Created by Robert on 4/12/17.
@@ -59,6 +56,7 @@ public class GButton implements GUIComponent, GMouseListener {
      *
      * @param height The height of the button.
      * @param text The text on the button.
+     * @author Robert
      */
     public GButton(final int height, final String text) {
         this.height = height;
@@ -72,6 +70,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param height The height of the button.
      * @param text The text on the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
     public GButton(final int height, final String text, final int padding) {
         this.height = height;
@@ -86,6 +85,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param height The height of the button.
      * @param text The text on the button.
      * @param font The font of the button.
+     * @author Robert
      */
     public GButton(final int height, final String text, final Font font) {
         this.height = height;
@@ -99,6 +99,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param height The height of the button.
      * @param text The text on the button.
      * @param font The font of the button.
+     * @author Robert
      */
     public GButton(final int height, final Color main, final Color hover, final String text, final Font font) {
         this.color = main;
@@ -115,6 +116,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param text The text on the button.
      * @param font The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
     public GButton(final int height, final String text, final Font font, final int padding) {
         this.height = height;
@@ -130,6 +132,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * @param text The text on the button.
      * @param font The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
     public GButton(final int height, final String text,
                    final Font font, final int padding, final Image icon) {
@@ -144,6 +147,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * Set whether the button can be pressed or not.
      *
      * @param state Can it be pressed?
+     * @author Robert
      */
     public void setActive(boolean state) {
         isActive = state;
@@ -209,6 +213,7 @@ public class GButton implements GUIComponent, GMouseListener {
     /**
      * When you create a button override this method to add
      * custom functionality to certain buttons.
+     * @author Robert
      */
     public void clickAction() {}
 }

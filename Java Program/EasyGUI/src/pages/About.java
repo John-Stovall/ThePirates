@@ -1,6 +1,6 @@
 package pages;
 
-import control.Style;
+import gui.Style;
 import gui.GSpacer;
 import gui.GText;
 import gui.GUI;

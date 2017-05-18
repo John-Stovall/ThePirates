@@ -6,7 +6,7 @@ package project;
  * Insulation Project class.
  * Used for creating a new insulation project.
  */
-public class InsulationProject extends AbstractProject {
+public class InsulationProject extends Project {
 
 	/**
 	 * default version ID for serialization
