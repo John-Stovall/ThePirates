@@ -1,5 +1,7 @@
 package project;
 
+import gui.GUIPage;
+
 import java.io.Serializable;
 
 /**
@@ -21,11 +23,21 @@ public class Project  implements Serializable{
 	protected double electricityUsage;
 	protected double gasUsage;
 	protected double waterUsage;
+	protected GUIPage summaryPage;
+	protected GUIPage editPage;
+
+	public GUIPage getSummaryPage() {
+	    return summaryPage;
+    }
+
+    public GUIPage getEditPage() {
+	    return editPage;
+    }
 	
 	public void setName(String theName) {
 		this.name = theName;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}

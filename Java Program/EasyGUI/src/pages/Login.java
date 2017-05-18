@@ -53,7 +53,7 @@ public class Login extends GUIPage {
 
         GUI.window.add(new GSpacer(15));
 
-        GDivider centerbutton = new GDivider(240, 1);
+        GDivider buttons = new GDivider(240, 1);
         GDivider innerDiv = new GDivider(240, 3);
         innerDiv.add(new GButton(40, "Add new Account", Style.defaultFont, 8) {
             @Override
@@ -81,7 +81,7 @@ public class Login extends GUIPage {
                 UserManager.save();
             }
         });
-        centerbutton.add(innerDiv);
-        GUI.window.add(centerbutton);
+        buttons.add(innerDiv);
+        GUI.window.add(buttons);
     }
 }

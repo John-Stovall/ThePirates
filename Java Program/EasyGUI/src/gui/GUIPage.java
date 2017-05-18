@@ -59,7 +59,7 @@ public abstract class GUIPage {
                         Style.menuSideBarSecondaryColor, p.getName(), Style.defaultFont) {
                     @Override
                     public void clickAction() {
-
+                        GUI.window.gotoPage(p.getSummaryPage());
                     }
                 });
             }

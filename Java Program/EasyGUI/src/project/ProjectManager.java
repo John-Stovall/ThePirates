@@ -11,9 +11,9 @@ public class ProjectManager {
 
 	public ArrayList<Project> allProjects = new ArrayList<Project>();
 	
-	public void createNewInsulationProject(String theName) {
-		InsulationProject newProject = new InsulationProject();
-		newProject.setName(theName);
-		allProjects.add(newProject);
-	}	
+//	public void createNewInsulationProject(String theName) {
+//		InsulationProject newProject = new InsulationProject();
+//		newProject.setName(theName);
+//		allProjects.add(newProject);
+//	}
 }
