@@ -1,5 +1,9 @@
 package gui;
 
+import project.Project;
+import user.User;
+import user.UserManager;
+
 import java.awt.*;
 
 /**
@@ -26,6 +30,12 @@ public abstract class GUIPage {
      */
     public GUIPage(final String name) {
 
+        refresh();
+
+        this.name = name;
+    }
+
+    public void refresh() {
         menu = new GMenuBar(40);
         menu.addPage(new GButton(40, Style.menuSideBarColor,
                 Style.menuSideBarSecondaryColor, "Home", Style.defaultFont) {
@@ -42,6 +52,19 @@ public abstract class GUIPage {
                 GUI.window.gotoPage("New");
             }
         });
+
+        if (UserManager.getLoadedUser() != null) {
+            for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+                menu.addPage(new GButton(40, Style.menuSideBarColor,
+                        Style.menuSideBarSecondaryColor, p.getName(), Style.defaultFont) {
+                    @Override
+                    public void clickAction() {
+
+                    }
+                });
+            }
+        }
+
         menu.addPage(new GSpacer(2, Color.decode("#1B5E20")));
         menu.addPage(new GButton(40, Style.menuSideBarColor,
                 Style.menuSideBarSecondaryColor, "About Us", Style.defaultFont) {
@@ -62,12 +85,11 @@ public abstract class GUIPage {
                 Style.menuSideBarSecondaryColor, "Log Out", Style.defaultFont) {
             @Override
             public void clickAction() {
+                UserManager.save();
                 GUI.window.gotoPage("Login");
                 GUI.horizontalOffset = 0;
             }
         });
-
-        this.name = name;
     }
 
     /**

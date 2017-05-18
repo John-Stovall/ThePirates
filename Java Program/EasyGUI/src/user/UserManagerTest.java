@@ -13,9 +13,9 @@ public class UserManagerTest {
 	
 	@BeforeClass
 	public static void beforeClass() {
-		UserManager.createNewUser("1st User Project Name", "test@uw.edu");	
-		UserManager.createNewUser("2nd User Project Name", "tester@uw.edu");
-		UserManager.createNewUser("3rd User Project Name", "tested@uw.edu");
+		//UserManager.createNewUser("1st User Project Name", "test@uw.edu");
+		//UserManager.createNewUser("2nd User Project Name", "tester@uw.edu");
+		//UserManager.createNewUser("3rd User Project Name", "tested@uw.edu");
 		
 		System.out.println("Before Class:");
 		
@@ -30,12 +30,14 @@ public class UserManagerTest {
 	
 	@Test
 	public void test() {
+		UserManager.getUsers().clear();
+
 		UserManager.load();
 		
 		System.out.println("After Loading:");
 		
-		for (int i = 0; i < UserManager.savedUsers.size(); i++) {
-			System.out.println(UserManager.savedUsers.get(i).getName());			
+		for (int i = 0; i < UserManager.getUsers().size(); i++) {
+			System.out.println(UserManager.getUsers().get(i).getName());
 		}
 	}
 

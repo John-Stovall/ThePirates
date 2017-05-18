@@ -157,6 +157,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         components.clear();
         mouseComponents.clear();
         keyComponents.clear();
+        page.refresh();
         page.build();
         panel.revalidate();
         currentPage = page;

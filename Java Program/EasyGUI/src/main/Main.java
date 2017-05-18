@@ -2,6 +2,7 @@ package main;
 
 import gui.*;
 import pages.*;
+import user.UserManager;
 
 /**
  * Main is used to build all the the page layouts. Eventually this will be broken up into
@@ -12,6 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        UserManager.load();
+
         GUI.window.setTitle("DIY Program");
 
         GUI.window.addPage(new Login());
@@ -21,7 +24,7 @@ public class Main {
         GUI.window.addPage(new EditAccount());
         GUI.window.addPage(new NewProject());
 
-        if (User.getUsers().isEmpty()) {
+        if (UserManager.getUsers().isEmpty()) {
             GUI.window.gotoPage("Register");
         } else {
             GUI.window.gotoPage("Login");

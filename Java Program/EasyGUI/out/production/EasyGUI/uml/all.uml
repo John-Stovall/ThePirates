@@ -10,9 +10,15 @@
     <node x="1419.9978046594993" y="997.5">pages.Home</node>
     <node x="0.0" y="843.0">gui.GUI</node>
     <node x="1795.6227822580645" y="297.0">gui.GText</node>
+<<<<<<< HEAD
+    <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
+    <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
+    <node x="2276.2290322580648" y="1602.0">pages.Login</node>
+=======
     <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
     <node x="2276.2290322580648" y="1602.0">pages.Login</node>
     <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
+>>>>>>> master
     <node x="2256.4125" y="11.0">gui.GUIComponent</node>
     <node x="825.0" y="297.0">gui.GKeyListener</node>
     <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
@@ -23,14 +29,28 @@
     <node x="2839.25" y="997.5">pages.About</node>
     <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
     <node x="1125.3249999999998" y="532.0">gui.GTextBox</node>
+<<<<<<< HEAD
+    <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
+    <node x="2932.070833333333" y="11.0">gui.GSubList</node>
+=======
     <node x="2932.070833333333" y="11.0">gui.GSubList</node>
     <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
+>>>>>>> master
     <node x="2515.1" y="587.0">gui.GUIPage</node>
     <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
     <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
   </nodes>
   <notes />
   <edges>
+<<<<<<< HEAD
+    <edge source="gui.GWrapper" target="gui.GUIComponent">
+      <point x="0.0" y="-36.5" />
+      <point x="2208.1227822580645" y="233.0" />
+      <point x="2373.2875" y="233.0" />
+      <point x="-10.625" y="25.5" />
+    </edge>
+=======
+>>>>>>> master
     <edge source="gui.GButton" target="gui.GMouseListener">
       <point x="-73.5" y="-69.5" />
       <point x="1884.5290322580645" y="1233.0" />
@@ -39,6 +59,23 @@
       <point x="997.1000000000004" y="173.0" />
       <point x="-63.399999999999636" y="36.5" />
     </edge>
+<<<<<<< HEAD
+    <edge source="pages.Login" target="gui.GUIPage">
+      <point x="0.0" y="-25.5" />
+      <point x="2345.2290322580648" y="1512.0" />
+      <point x="2744.25" y="1512.0" />
+      <point x="2744.25" y="803.0" />
+      <point x="2618.6" y="803.0" />
+      <point x="34.5" y="25.5" />
+    </edge>
+    <edge source="pages.Home" target="gui.GUIPage">
+      <point x="55.200000000000045" y="-25.5" />
+      <point x="1544.1978046594993" y="793.0" />
+      <point x="2549.6" y="793.0" />
+      <point x="-34.5" y="25.5" />
+    </edge>
+=======
+>>>>>>> master
     <edge source="pages.NewProject" target="gui.GUIPage">
       <point x="0.0" y="-25.5" />
       <point x="2503.2290322580648" y="1522.0" />
@@ -47,12 +84,38 @@
       <point x="2632.4" y="793.0" />
       <point x="48.30000000000018" y="25.5" />
     </edge>
+<<<<<<< HEAD
+    <edge source="gui.GTextBox" target="gui.GUIComponent">
+      <point x="0.0" y="-80.5" />
+      <point x="1258.3249999999998" y="422.0" />
+      <point x="1507.3727822580645" y="422.0" />
+      <point x="1507.3727822580645" y="203.0" />
+      <point x="2309.5375" y="203.0" />
+      <point x="-74.375" y="25.5" />
+    </edge>
+    <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+      <point x="-88.66666666666697" y="-25.5" />
+      <point x="122.33333333333303" y="1243.0" />
+      <point x="70.33333333333303" y="1243.0" />
+      <point x="-140.66666666666697" y="180.0" />
+    </edge>
+=======
+>>>>>>> master
     <edge source="gui.GDropdown" target="gui.GMouseListener">
       <point x="-83.75" y="-69.5" />
       <point x="1245.6227822580645" y="173.0" />
       <point x="1123.8999999999996" y="173.0" />
       <point x="63.399999999999636" y="36.5" />
     </edge>
+<<<<<<< HEAD
+    <edge source="gui.GText" target="gui.GUIComponent">
+      <point x="0.0" y="-25.5" />
+      <point x="1923.1227822580645" y="223.0" />
+      <point x="2352.0375" y="223.0" />
+      <point x="-31.875" y="25.5" />
+    </edge>
+=======
+>>>>>>> master
     <edge source="gui.GButton" target="gui.GUIComponent">
       <point x="122.5" y="-69.5" />
       <point x="2080.5290322580645" y="1243.0" />
@@ -79,6 +142,15 @@
       <point x="993.75" y="502.0" />
       <point x="56.25" y="25.5" />
     </edge>
+<<<<<<< HEAD
+    <edge source="gui.GTextBox" target="gui.GMouseListener">
+      <point x="-53.19999999999982" y="-80.5" />
+      <point x="1205.125" y="492.0" />
+      <point x="1060.5" y="492.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+=======
+>>>>>>> master
     <edge source="gui.GMenuBar" target="gui.GMouseListener">
       <point x="-118.125" y="-58.5" />
       <point x="2404.9977822580645" y="163.0" />
@@ -105,6 +177,8 @@
       <point x="3245.570833333333" y="93.0" />
       <point x="104.5" y="25.5" />
     </edge>
+<<<<<<< HEAD
+=======
     <edge source="pages.CreateProject" target="gui.GUIPage">
       <point x="27.59999999999991" y="-25.5" />
       <point x="2038.3790322580644" y="803.0" />
@@ -163,6 +237,7 @@
       <point x="1060.5" y="492.0" />
       <point x="0.0" y="36.5" />
     </edge>
+>>>>>>> master
     <edge source="gui.GDivider" target="gui.GUIComponent">
       <point x="-88.66666666666652" y="-47.5" />
       <point x="3244.4061379928326" y="113.0" />
@@ -187,6 +262,27 @@
       <point x="2591.0" y="1492.0" />
       <point x="6.900000000000091" y="25.5" />
     </edge>
+<<<<<<< HEAD
+    <edge source="pages.CreateProject" target="gui.GUIPage">
+      <point x="27.59999999999991" y="-25.5" />
+      <point x="2038.3790322580644" y="803.0" />
+      <point x="2563.4" y="803.0" />
+      <point x="-20.699999999999818" y="25.5" />
+    </edge>
+    <edge source="gui.GDropdown" target="gui.GUIComponent">
+      <point x="83.75" y="-69.5" />
+      <point x="1413.1227822580645" y="193.0" />
+      <point x="2288.2875" y="193.0" />
+      <point x="-95.625" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="2709.0" y="960.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+=======
   </edges>
   <settings layout="Hierarchic Group" zoom="0.9" x="2709.4444444444443" y="960.0" />
   <SelectedNodes />
@@ -194,6 +290,7 @@
     <Category>Methods</Category>
     <Category>Fields</Category>
     <Category>Inner Classes</Category>
+>>>>>>> master
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>public</VISIBILITY>

@@ -1,9 +1,9 @@
 package pages;
 
 import gui.*;
-import main.User;
 
 import control.General;
+import user.UserManager;
 
 /**
  * Created by Robert on 5/10/17.
@@ -24,8 +24,8 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(40));
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, User.getLoadedUser().getName(), 10);
-        GTextBox email = new GTextBox(32, User.getLoadedUser().getEmail());
+        GTextBox name = new GTextBox(32, UserManager.getLoadedUser().getName(), 10);
+        GTextBox email = new GTextBox(32, UserManager.getLoadedUser().getEmail());
 
         //Place all of the components in the right places.
         GUI.window.add(new GSpacer(25));
@@ -49,9 +49,9 @@ public class EditAccount extends GUIPage {
 
                 //TODO: Fix the bug here. You can't change things when you don't change the email.
                 if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail)
-                        && !myEmail.equals(User.getLoadedUser().getEmail()))) {
-                    User.getLoadedUser().setName(myName);
-                    User.getLoadedUser().setEmail(myEmail);
+                        && !myEmail.equals(UserManager.getLoadedUser().getEmail()))) {
+                    UserManager.getLoadedUser().setName(myName);
+                    UserManager.getLoadedUser().setEmail(myEmail);
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {

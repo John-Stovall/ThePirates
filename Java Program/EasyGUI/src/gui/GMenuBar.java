@@ -1,7 +1,7 @@
 package gui;
 
 import control.General;
-import main.User;
+import user.UserManager;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -153,7 +153,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
         //Draw user's name.
         g.setFont(new Font("Helvetica", Font.PLAIN, 26));
-        String text = User.getLoadedUser().getName();
+        String text = UserManager.getLoadedUser().getName();
         int length = g.getFontMetrics().stringWidth(text);
         nameWidth = length - 4;
         g.drawString(text, GUI.getWindowWidth() - height - length - 4, height - 10);

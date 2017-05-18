@@ -2,6 +2,8 @@ package pages;
 
 import gui.Style;
 import gui.*;
+import project.InsulationProject;
+import user.UserManager;
 
 /**
  * Created by Robert on 5/11/17.
@@ -53,6 +55,17 @@ public class CreateProject extends GUIPage {
                     name.failed("• A name is required.");
                 } else {
                     //TODO: Program this to do stuff.
+
+                    switch (dropdown.getSelection()) {
+                        case ("Insulation"):
+                            InsulationProject project = new InsulationProject();
+                            project.setName(name.getText());
+                            UserManager.getLoadedUser().getMyProjects().add(project);
+                            GUI.window.gotoPage("Home");
+                            break;
+
+                    }
+
                 }
             }
         });
