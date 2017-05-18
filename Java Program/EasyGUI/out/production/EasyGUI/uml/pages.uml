@@ -4,6 +4,7 @@
   <OriginalElement />
   <nodes>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <node x="0.0" y="0.0">pages.CreateProject</node>
     <node x="372.0" y="212.0">main.Main</node>
     <node x="158.0" y="101.0">pages.About</node>
@@ -51,6 +52,8 @@
     <Category>Properties</Category>
     <Category>Methods</Category>
 =======
+=======
+>>>>>>> master
     <node x="-713.0" y="-216.0">pages.CreateProject</node>
     <node x="-332.0" y="-4.0">main.Main</node>
     <node x="89.0" y="-115.0">pages.Home</node>
@@ -117,6 +120,9 @@
   <Categories>
     <Category>Methods</Category>
     <Category>Fields</Category>
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   </Categories>
   <SCOPE>All</SCOPE>

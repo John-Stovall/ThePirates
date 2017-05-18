@@ -4,6 +4,7 @@
   <OriginalElement />
   <nodes>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <node x="1161.5" y="443.5">gui.GMouseListener</node>
     <node x="1605.0" y="730.0">gui.GDivider</node>
     <node x="343.5" y="1003.0">gui.GGraph</node>
@@ -21,6 +22,8 @@
     <node x="1162.5" y="581.5">gui.GMenuBar</node>
     <node x="1122.0" y="24.0">gui.GButton</node>
 =======
+=======
+>>>>>>> master
     <node x="191.60000000000014" y="-2245.0">gui.GMouseListener</node>
     <node x="1399.911" y="-1986.0">gui.GDivider</node>
     <node x="2572.411" y="-1953.0">gui.GGraph</node>
@@ -37,11 +40,15 @@
     <node x="1126.411" y="-1708.0">gui.GUIPage</node>
     <node x="1064.911" y="-1974.5">gui.GMenuBar</node>
     <node x="244.91100000000006" y="-2052.0">gui.GButton</node>
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   </nodes>
   <notes />
   <edges>
     <edge source="gui.GWrapper" target="gui.GUIComponent">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <point x="144.0" y="0.0" />
       <point x="-127.5" y="0.0" />
@@ -126,6 +133,8 @@
     <Category>Constructors</Category>
     <Category>Methods</Category>
 =======
+=======
+>>>>>>> master
       <point x="0.0" y="-48.0" />
       <point x="1793.911" y="-2072.0" />
       <point x="1730.475" y="-2072.0" />
@@ -314,6 +323,9 @@
     <Category>Constructors</Category>
     <Category>Methods</Category>
     <Category>Inner Classes</Category>
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   </Categories>
   <SCOPE>All</SCOPE>
