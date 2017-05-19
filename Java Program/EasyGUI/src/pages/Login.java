@@ -64,13 +64,13 @@ public class Login extends GUIPage {
         innerDiv.add(new GButton(40, "Import", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
-
+                UserManager.importFile();
             }
         });
         innerDiv.add(new GButton(40, "Export", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
-
+                UserManager.export();
             }
         });
         innerDiv.add(new GButton(40, "Clear All Users", Style.defaultFont, 8) {

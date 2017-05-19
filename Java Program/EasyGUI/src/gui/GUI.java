@@ -138,6 +138,10 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         }
     }
 
+    public void refresh() {
+        gotoPage(currentPage);
+    }
+
     /**
      * Remove all objects from the page and call the new Page object's build method
      * to reassemble the page.
