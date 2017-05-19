@@ -188,7 +188,12 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
             if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE && text.length() > 0) {
                 text = text.substring(0, text.length() - 1);
             } else {
-                if (e.getKeyChar() != KeyEvent.VK_TAB && text.length() < maxLength) {
+                if (e.getKeyChar() != KeyEvent.VK_TAB &&
+                        e.getKeyChar() != KeyEvent.VK_BACK_SPACE &&
+                        e.getKeyChar() != KeyEvent.VK_SHIFT &&
+                        e.getKeyChar() != KeyEvent.VK_CONTROL &&
+                        e.getKeyChar() != KeyEvent.VK_ALT &&
+                        text.length() < maxLength) {
                     text += e.getKeyChar();
                 }
             }
