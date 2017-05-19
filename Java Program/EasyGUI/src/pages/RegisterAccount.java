@@ -38,7 +38,7 @@ public class RegisterAccount extends GUIPage {
         GUI.window.add(new GSpacer(5));
         GUI.window.add(email);
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GButton(25, "Submit") {
+        GUI.window.add(new GButton(40, "Submit", Style.defaultFont) {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();
@@ -61,16 +61,16 @@ public class RegisterAccount extends GUIPage {
         });
 
         if (!UserManager.getUsers().isEmpty()) {
-            GUI.window.add(new GSpacer(5));
-            GUI.window.add(new GButton(25, "Back") {
+            GUI.window.add(new GSpacer(10));
+            GUI.window.add(new GButton(40, "Back", Style.defaultFont) {
                 @Override
                 public void clickAction() {
                     GUI.window.gotoPage("Login");
                 }
             });
         } else {
-            GUI.window.add(new GSpacer(5));
-            GUI.window.add(new GButton(25, "Skip Login") {
+            GUI.window.add(new GSpacer(10));
+            GUI.window.add(new GButton(40, "Skip Login", Style.defaultFont) {
                 @Override
                 public void clickAction() {
                     User validUser = new User("You", "");

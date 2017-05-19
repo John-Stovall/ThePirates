@@ -31,13 +31,13 @@ public final class Style {
 
     static final Color menuSideBarSecondaryColor = Color.decode("#388E3C");
 
-    static final Color primaryButtonColor        = Color.decode("#2E7D32");
+    static final Color primaryButtonColor        = Color.decode("#43A047");
 
     static final Color secondaryButtonColor      = Color.decode("#388E3C");
 
     static final Color buttonTextColor           = Color.white;
 
-    static final Color primaryDropdownColor      = Color.decode("#2E7D32");
+    static final Color primaryDropdownColor      = Color.decode("#43A047");
 
     static final Color secondaryDropdownColor    = Color.decode("#388E3C");
 

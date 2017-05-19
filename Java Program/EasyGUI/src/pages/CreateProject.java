@@ -45,7 +45,7 @@ public class CreateProject extends GUIPage {
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GText("Project Name:", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GTextBox name = new GTextBox(32, "");
+        GTextBox name = new GTextBox(32, "", 10);
         GUI.window.add(name);
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GButton(25, "Create Project") {
@@ -58,12 +58,12 @@ public class CreateProject extends GUIPage {
 
                     switch (dropdown.getSelection()) {
                         case ("Insulation"):
-                            InsulationProject project = new InsulationProject();
-                            project.setName(name.getText());
+                            InsulationProject project = new InsulationProject(name.getText());
                             UserManager.getLoadedUser().getMyProjects().add(project);
-                            GUI.window.gotoPage("Home");
+                            GUI.window.gotoPage(project.getEditPage());
                             break;
-
+                        default:
+                            name.failed("• That project is unavailable. Please purchase DIYApp Pro for $2.99");
                     }
 
                 }
