@@ -27,7 +27,12 @@ public class Main {
         if (UserManager.getUsers().isEmpty()) {
             GUI.window.gotoPage("Register");
         } else {
-            GUI.window.gotoPage("Login");
+            if (UserManager.getUsers().size() == 1) {
+                UserManager.setLoadedUser(UserManager.getUsers().get(0));
+                GUI.window.gotoPage("Home");
+            } else {
+                GUI.window.gotoPage("Login");
+            }
         }
     }
 }

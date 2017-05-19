@@ -41,15 +41,14 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(5));
 
         //Add the submit button and program what it does.
-        GUI.window.add(new GButton(25, "Save Changes") {
+        GUI.window.add(new GButton(40, "Save Changes") {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();
                 String myEmail = email.getText().trim();
 
-                //TODO: Fix the bug here. You can't change things when you don't change the email.
-                if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail)
-                        && !myEmail.equals(UserManager.getLoadedUser().getEmail()))) {
+                //TODO: Fix the bug here. You can't change the name when you don't change the email.
+                if (General.testName(myName) && General.testEmail(myEmail) && General.isEmailFree(myEmail)) {
                     UserManager.getLoadedUser().setName(myName);
                     UserManager.getLoadedUser().setEmail(myEmail);
                     GUI.window.gotoPage("Home");

@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial") // suppressing warning about no serialization number because this class
 							// will not be instantiated.
-public class Project  implements Serializable{
+public abstract class Project  implements Serializable {
 
 	protected String name;
 	protected double initialCost;
@@ -23,18 +23,12 @@ public class Project  implements Serializable{
 	protected double electricityUsage;
 	protected double gasUsage;
 	protected double waterUsage;
-	protected GUIPage summaryPage;
-	protected GUIPage editPage;
 
-	public GUIPage getSummaryPage() {
-	    return summaryPage;
-    }
+	public abstract GUIPage getSummaryPage();
 
-    public GUIPage getEditPage() {
-	    return editPage;
-    }
-	
-	public void setName(String theName) {
+    public abstract GUIPage getEditPage();
+
+    public void setName(String theName) {
 		this.name = theName;
 	}
 
