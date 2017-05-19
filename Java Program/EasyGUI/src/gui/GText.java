@@ -17,18 +17,16 @@ public class GText implements GUIComponent {
     private String text;
 
     /** The default font. */
-    private Font font = new Font("Helvetica", Font.PLAIN, 32);
+    private Font font = Style.titleFont;
 
     /** The default color. */
-    private Color color = Color.black;
-
-    /** The padding on the left and right side of text. */
-    private int sidePadding = 5;
+    private Color color = Style.defaultTextColor;
 
     /**
      * Basic constructor to create text with default settings.
      *
      * @param text The text.
+     * @author Robert
      */
     public GText(final String text) {
         this.text = text;
@@ -39,10 +37,11 @@ public class GText implements GUIComponent {
      *
      * @param text The text.
      * @param font The font.
+     * @author Robert
      */
     public GText(final String text, final Font font) {
         this.text = text;
-        setFont(font);
+        this.font = font;
     }
 
     /**
@@ -51,19 +50,11 @@ public class GText implements GUIComponent {
      * @param text The text.
      * @param font The font.
      * @param color The color.
+     * @author Robert
      */
     public GText(final String text, final Font font, final Color color) {
         this(text, font);
         this.color = color;
-    }
-
-    /**
-     * Sets the font of the text.
-     *
-     * @param font The font to change to.
-     */
-    public void setFont(final Font font) {
-        this.font = font;
     }
 
     @Override
@@ -76,6 +67,7 @@ public class GText implements GUIComponent {
             ArrayList<String> lines = new ArrayList<>();
             int spaceIndex = -1;
             int lastIndex = 0;
+            int sidePadding = 5;
             for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == ' ') {
                     spaceIndex = i;
@@ -102,7 +94,6 @@ public class GText implements GUIComponent {
         } else {
             g.drawString(text, x, y + font.getSize());
             h = font.getSize();
-
         }
 
         return h;
@@ -111,9 +102,10 @@ public class GText implements GUIComponent {
     /**
      * This method sets the text that this text object draws.
      *
-     * @param text
+     * @param text The text to change to.
+     * @author Robert
      */
-    public void setText(String text) {
+    void setText(String text) {
         this.text = text;
     }
 }

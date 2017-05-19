@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">pages.CreateProject</node>
+    <node x="372.0" y="212.0">main.Main</node>
+    <node x="158.0" y="101.0">pages.About</node>
+    <node x="316.0" y="101.0">pages.Home</node>
+    <node x="474.0" y="101.0">pages.Login</node>
+    <node x="790.0" y="101.0">pages.RegisterAccount</node>
+    <node x="632.0" y="101.0">pages.EditAccount</node>
+    <node x="79.57692307692321" y="-88.46153846153837">gui.GUIPage</node>
+    <node x="0.0" y="101.0">pages.NewProject</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pages.RegisterAccount" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.EditAccount" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.Login" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.CreateProject" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.About" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.Home" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="pages.NewProject" target="gui.GUIPage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="601.5" y="160.00000000000006" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

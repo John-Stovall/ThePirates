@@ -17,7 +17,7 @@ public class GGraph implements GUIComponent {
     private double largestValue = 0;
 
     /** The color of the various lines. */
-    private Color[] lines = {Color.black, Color.red};
+    private Color[] lines = Style.graphBarColors;
 
     /** Used for the intro animation. */
     private double[] animation;
@@ -28,6 +28,7 @@ public class GGraph implements GUIComponent {
      * @param dataPoints The lines of the graph. Each element of the outer ArrayList is
      *                   a x point of the graph while each element of the double array is the y
      *                   value of a line on the graph.
+     * @author Robert
      */
     public GGraph(final ArrayList<double[]> dataPoints) {
         times = dataPoints;
@@ -61,7 +62,7 @@ public class GGraph implements GUIComponent {
         int ticks = height / 30;
         if (ticks < 2) ticks = 2;
 
-        g.setFont(new Font("Helvetica", Font.PLAIN, 12));
+        g.setFont(Style.graphTicks);
         for (int i = 0; i < ticks; i++) {
             g.drawString(Integer.toString((int)(Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
         }
@@ -92,10 +93,10 @@ public class GGraph implements GUIComponent {
 
         for (int i = 0; i < times.size(); i++) {
             if (i == 0) {
-                animation[i] += (1 - animation[i]) / 10.0;
+                animation[i] += (1 - animation[i]) / Style.graphMoveSpeed;
             } else {
-                if (animation[i - 1] > 0.5) {
-                    animation[i] += (1 - animation[i]) / 10.0;
+                if (animation[i - 1] > Style.graphSpawnThreshold) {
+                    animation[i] += (1 - animation[i]) / Style.graphMoveSpeed;
                 }
             }
         }

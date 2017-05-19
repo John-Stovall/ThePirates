@@ -17,6 +17,7 @@ public interface GUIComponent {
      * @param y The y origin of this object.
      * @param width The width of this object.
      * @return The height of this object.
+     * @author Robert
      */
     int draw(Graphics g, final int x, final int y, final int width);
 }

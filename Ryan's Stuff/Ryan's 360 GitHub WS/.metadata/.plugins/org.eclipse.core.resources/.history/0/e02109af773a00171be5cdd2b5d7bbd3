@@ -1,0 +1,26 @@
+package user;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class UserManagerTest {
+
+	
+	
+	@BeforeClass
+	public static void beforeClass() {
+		UserManager.createNewUser("1st User Project Name", "test@uw.edu");	
+		UserManager.createNewUser("2nd User Project Name", "tester@uw.edu");
+		UserManager.createNewUser("3rd User Project Name", "tested@uw.edu");
+	}
+	
+	
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

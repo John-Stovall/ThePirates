@@ -1,10 +1,10 @@
 package gui;
 
+import control.General;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Created by Robert on 4/12/17.
@@ -24,12 +24,6 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
 
     /** The width of the button. Used to get mouse clicks. */
     private int width;
-
-    /** The 'standby' color of the button. */
-    private Color color;
-
-    /** The color the button changes to when you click it. */
-    private Color hover;
 
     /** Whether the button is pressed or not. */
     private boolean pressed = false;
@@ -64,13 +58,10 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Create a super awesome text box!
      *
      * @param height The height of the text box.
-     * @param main The main color of the text box.
-     * @param hover The secondary color of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
+     * @author Robert
      */
-    public GTextBox(final int height, final Color main, final Color hover, final String text) {
-        this.color = main;
-        this.hover = hover;
+    public GTextBox(final int height, final String text) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -81,13 +72,10 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Create an even better textbox!
      *
      * @param height The height of the text box.
-     * @param main The main color of the text box.
-     * @param hover The secondary color of the text box.
      * @param text The starting text in the box. Leave this blank for the most part.
+     * @author Robert
      */
-    public GTextBox(final int height, final Color main, final Color hover, final String text, final int maxLength) {
-        this.color = main;
-        this.hover = hover;
+    public GTextBox(final int height, final String text, final int maxLength) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -99,6 +87,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * This method returns whatever text is in the text box.
      *
      * @return The typed text.
+     * @author Robert
      */
     public String getText() {
         return text;
@@ -108,6 +97,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
      * Open the error message for this text box.
      *
      * @param message The error to show.
+     * @author Robert
      */
     public void failed(final String message) {
         failed = true;
@@ -119,37 +109,32 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        ticks += 0.02;
+        //Save some variables for later.
         int boxHeight = textObj.draw(g, x + 4, y, width - 8) + 6;
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = boxHeight;
 
-        if (failed) {
-            failMessagePos += ((boxHeight / 2 + 35) - failMessagePos) / 10.0;
-        } else {
-            failMessagePos += (-failMessagePos) / 10.0;
-        }
-
-        g.setColor(Color.red);
-        g.setFont(new Font("Helvetica", Font.PLAIN, 16));
+        //Draw the failed message text under everything.
+        g.setColor(Style.textBoxErrorColor);
+        g.setFont(Style.textBoxFail);
         g.drawString(failedMessage, x, y + failMessagePos + boxHeight / 2);
 
+        //Draw the background rectangle.
         if (pressed || selected) {
-            g.setColor(hover);
+            g.setColor(Style.textBoxSecondaryColor);
         } else {
-            g.setColor(color);
+            g.setColor(Style.textBoxColor);
         }
-
         g.fillRect(x, y, width, boxHeight);
 
-        g.setColor(Color.white);
+        //Set variables for the border rectangle.
         g.setFont(font);
-        g.setColor(Color.black);
+        g.setColor(Style.textBoxBorderColor);
 
+        //Prepare the text, add the | to the end if the timing is correct.
         textObj.setText(text);
-
         if (selected) {
             if (((int)ticks) % 2 == 0) {
                 textObj.setText(text + "|");
@@ -157,42 +142,49 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
             g.drawRect(x, y, width, boxHeight);
         }
 
+        //Draw the text.
         textObj.draw(g, x + 4, y, width - 8);
 
+        //Draw the red border if failed.
         if (failed) {
-            g.setColor(Color.red);
+            g.setColor(Style.textBoxErrorColor);
             g.drawRect(x, y, width, boxHeight);
         }
+
+        //Increment the counter for the cursor.
+        ticks += Style.textBoxFlashSpeed;
+
+        //Increment the animation.
+        failMessagePos += Style.exponentialTweenRound(failMessagePos, (failed) ? (boxHeight / 2 + 25) : 0,
+                Style.textBoxMessageMoveSpeed);
 
         return boxHeight + Math.max(failMessagePos - boxHeight / 2 + 10, 0);
     }
 
     @Override
     public boolean mousePressed(MouseEvent e) {
-        boolean result = false;
         selected = false;
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height) {
+        if (General.clickedInside(x, y, width, height, e)) {
             pressed = true;
-            result = true;
             failed = false;
         }
-        return result;
+        return false;
     }
 
     @Override
     public boolean mouseReleased(MouseEvent e) {
-        boolean result = false;
-        if (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height && pressed) {
+        if (General.clickedInside(x, y, width, height, e) && pressed) {
             selected = true;
-            result = true;
         }
         pressed = false;
-        return result;
+        return false;
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
         if (selected) {
+
+            //Add characters if selected.
             if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE && text.length() > 0) {
                 text = text.substring(0, text.length() - 1);
             } else {
@@ -201,6 +193,7 @@ public class GTextBox implements GUIComponent, GMouseListener, GKeyListener {
                 }
             }
 
+            //Allow tabbing between boxes.
             if (e.getKeyChar() == KeyEvent.VK_TAB) {
                 boolean found = false;
                 for (GUIComponent c : GUI.window.getItems()) {

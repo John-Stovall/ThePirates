@@ -1,0 +1,49 @@
+package user;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+import project.Project;
+
+public class UserManager {
+
+	public static ArrayList<Project> userList = new ArrayList<Project>();
+	
+	
+	
+	
+	// Saves the ArrayList of projects to a file in the current working directory.
+	public static void save() {
+		
+		//long name making it easy to search for
+		String filename = "ThePiratesProjectSave";
+		
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream(filename));			
+			oos.writeObject(userList);	
+			oos.flush();
+		} catch (FileNotFoundException e){
+			System.out.print(e);
+		} catch (IOException e){
+			System.out.print(e);
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+					System.out.print("oos closing error\n");
+					System.out.print(e);
+				}
+			}
+		}	
+	}
+	
+	public static void load() {
+		//in development
+	}
+	
+}

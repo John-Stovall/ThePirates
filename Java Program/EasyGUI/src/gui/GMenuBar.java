@@ -1,6 +1,7 @@
 package gui;
 
-import main.User;
+import control.General;
+import user.UserManager;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -12,8 +13,6 @@ import java.util.ArrayList;
  *
  * This class is by far the messiest class out of all of them and
  * this handles ALL of the logic and stuff for the menu bar.
- *
- * I'll clean it up eventually.
  */
 public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
@@ -32,14 +31,8 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
     /** Whether the right button has been properly pressed. */
     private boolean accountSelected = false;
 
-    /** It's the width of something, I don't remember. */
-    private int width;
-
     /** The width of the slide over menus. */
     private int dropdownWidth;
-
-    /** The padding slide over menus have off the screen. */
-    private int tabPadding = 8;
 
     /** The width, in pixels, of the username. */
     private int nameWidth;
@@ -49,21 +42,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     /** The total height of the right side bar. */
     private int accountTotalHeight;
-
-    /** How fast the menus scroll. Lower numbers are faster and exponential! */
-    private double scrollSpeed = 7.0;
-
-    /** The main color of the menu bar. */
-    private static final Color mainColor = Color.decode("#43A047");
-
-    /** The secondary color of the menu bar. */
-    private static final Color secondaryColor = Color.decode("#2E7D32");
-
-    /** The color of the text in the menu bar. */
-    private static final Color textColor = Color.white;
-
-    /** The color of the side bars. */
-    private static final Color sideColor = Color.decode("#2E7D32");
 
     /** The GUIComponents in the left menu. */
     private ArrayList<GUIComponent> pageComponents = new ArrayList<>();
@@ -75,8 +53,9 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Create a menu bar with some height.
      *
      * @param height The height.
+     * @author Robert
      */
-    public GMenuBar(final int height) {
+    GMenuBar(final int height) {
         this.height = height;
     }
 
@@ -84,8 +63,9 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Adds a component to the left menu bar.
      *
      * @param c The component to add.
+     * @author Robert
      */
-    public void addPage(GUIComponent c) {
+    void addPage(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);
         }
@@ -96,8 +76,9 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
      * Adds a component to the right menu bar.
      *
      * @param c The component to add.
+     * @author Robert
      */
-    public void addAccount(GUIComponent c) {
+    void addAccount(GUIComponent c) {
         if (c instanceof GButton) {
             ((GButton) c).setActive(false);
         }
@@ -106,20 +87,20 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        dropdownWidth = Math.min((int) Math.round(GUI.getWindowWidth() * 0.8), 512);
-        this.width = width;
 
+        //Save some variables.
+        dropdownWidth = Math.min((int) Math.round(GUI.getWindowWidth() * 0.8), 512);
         Graphics2D g2d = ((Graphics2D) g);
 
         //Draw the main rectangle.
-        g.setColor(mainColor);
+        g.setColor(Style.menuColor);
         g.fillRect(0, 0, GUI.getWindowWidth(), height);
 
-        //Draw the little rectangle.
-        g.setColor(mainColor.darker());
+        //Draw the little rectangle at the bottom.
+        g.setColor(Style.menuColor.darker());
         g.fillRect(0, height - 2, GUI.getWindowWidth(), 2);
 
-        //Draw drop shadow.
+        //Draw drop shadow using g2d.
         GradientPaint shadow = new GradientPaint(0, 0, Color.BLACK, 0, 55, new Color(0, 0, 0, 0));
         g2d.setPaint(shadow);
         g2d.fillRect(0, height, GUI.getWindowWidth(), 50);
@@ -128,77 +109,78 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         g2d = ((Graphics2D) g);
 
         //Draw the page bar.
-        g.setColor(sideColor);
+        g.setColor(Style.menuSideBarColor);
+
+        int tabPadding = 8;
         g.fillRect(GUI.horizontalOffset - dropdownWidth - tabPadding, height, dropdownWidth, GUI.window.getHeight());
 
-        g.setColor(secondaryColor);
+        //Draw the right sidebar.
         int y2 = height;
+        g.setColor(Style.menuSideBarColor);
         if (pageSelected || pagePressed) {
             g.fillRect(0, 0, height, height);
         }
         for (GUIComponent c : pageComponents) {
             y2 += c.draw(g, GUI.horizontalOffset - dropdownWidth - tabPadding, y2, dropdownWidth);
         }
-        g.setColor(textColor);
+
+        //Draw the bars icon.
+        g.setColor(Style.menuTextColor);
         for (int i = 0; i < 3; i++) {
             g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)),
                     (height / 8) * 6, height / 7);
         }
         pageTotalHeight = y2 - height;
 
-        //Draw the account bar.
-        g.setColor(sideColor);
+        //Draw the left sidebar.
         int newX = GUI.getWindowWidth() - dropdownWidth;
-        g.fillRect(newX + dropdownWidth + GUI.horizontalOffset + tabPadding, height, dropdownWidth, GUI.window.getHeight());
-
-        g.setColor(secondaryColor);
         int y3 = height;
+        g.setColor(Style.menuSideBarColor);
+        g.fillRect(newX + dropdownWidth + GUI.horizontalOffset + tabPadding, height, dropdownWidth, GUI.window.getHeight());
+        g.setColor(Style.menuSideBarColor);
         if (accountSelected || accountPressed) {
             g.fillRect(GUI.getWindowWidth() - height - nameWidth - 16, 0, height + nameWidth + 16, height);
         }
         for (GUIComponent c : accountComponents) {
             y3 += c.draw(g, newX + dropdownWidth + GUI.horizontalOffset + tabPadding, y3, dropdownWidth);
         }
-        g.setColor(textColor);
-
-        Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
-        g2d.fill(circle);
+        g.setColor(Style.menuTextColor);
         accountTotalHeight = y3 - height;
 
-        g.setFont(new Font("Helvetica", Font.PLAIN, 26));
+        //Draw the circle in the corner.
+        Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
+        g2d.fill(circle);
 
-        //Draw name
-        String text = User.getLoadedUser().getName();
+        //Draw user's name.
+        g.setFont(new Font("Helvetica", Font.PLAIN, 26));
+        String text = UserManager.getLoadedUser().getName();
         int length = g.getFontMetrics().stringWidth(text);
         nameWidth = length - 4;
-
         g.drawString(text, GUI.getWindowWidth() - height - length - 4, height - 10);
 
-        //Draw Page title if there is room.
+        //Draw the page title.
         String roomName = GUI.getPageTitle();
-
         g.drawString(roomName, height + 4, height - 10);
 
         //Process slide over animation
-        if (pageSelected) {
-            GUI.horizontalOffset += Math.ceil((dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
-        } else if (accountSelected) {
-            GUI.horizontalOffset += Math.floor((-dropdownWidth - GUI.horizontalOffset) / scrollSpeed);
-        } else {
-            GUI.horizontalOffset += Math.ceil(Math.abs((-GUI.horizontalOffset) / scrollSpeed)) * (Math.signum((-GUI.horizontalOffset) / scrollSpeed));
-        }
+        int goalPosition;
+        if (pageSelected) goalPosition = dropdownWidth;
+        else if (accountSelected) goalPosition = -dropdownWidth;
+        else goalPosition = 0;
+        GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
 
-        return height;
+        return 0;
     }
 
     @Override
     public boolean mousePressed(MouseEvent e) {
         boolean result = false;
-        if (e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height) {
+        if (General.clickedInside(0, 0, height, height, e)) {
             pagePressed = true;
             result = true;
         }
-        if (e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height) {
+        if (General.clickedInside(GUI.getWindowWidth() - height - nameWidth - 16, 0,
+                GUI.getWindowWidth(), height, e)) {
             accountPressed = true;
             result = true;
         }
@@ -207,24 +189,19 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     @Override
     public boolean mouseReleased(MouseEvent e) {
-        if ((e.getX() > 0 && e.getX() < height && e.getY() > 0 && e.getY() < height && pagePressed) &&
-        !(e.getX() > 0 && e.getX() < dropdownWidth && e.getY() > height && e.getY() < height + pageTotalHeight)) {
-            pageSelected = !pageSelected;
-        } else {
-            pageSelected = false;
-        }
+        pageSelected = General.clickedInside(0, 0, height, height, e) && pagePressed
+                && !General.clickedInside(0, height, dropdownWidth, pageTotalHeight, e) && !pageSelected;
+
         for (GUIComponent c : pageComponents) {
             if (c instanceof GButton) {
                 ((GButton) c).setActive(pageSelected);
             }
         }
 
-        if ((e.getX() > GUI.getWindowWidth() - height - nameWidth - 16 && e.getX() < GUI.getWindowWidth() && e.getY() > 0 && e.getY() < height && accountPressed) &&
-                !(e.getX() > GUI.getWindowWidth() - dropdownWidth && e.getX() < GUI.getWindowWidth() && e.getY() > height && e.getY() < height + accountTotalHeight)) {
-            accountSelected = !accountSelected;
-        } else {
-            accountSelected = false;
-        }
+        accountSelected = (General.clickedInside(GUI.getWindowWidth() - height - nameWidth - 16, 0, GUI.getWindowWidth(), height, e)
+                && accountPressed) && !General.clickedInside(GUI.getWindowWidth() - dropdownWidth, height, dropdownWidth, accountTotalHeight, e)
+                && !accountSelected;
+
 
         for (GUIComponent c : accountComponents) {
             if (c instanceof GButton) {
@@ -235,7 +212,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         pagePressed = false;
         accountPressed = false;
 
-        return pageSelected || accountSelected;
+        return false;
     }
 
     @Override

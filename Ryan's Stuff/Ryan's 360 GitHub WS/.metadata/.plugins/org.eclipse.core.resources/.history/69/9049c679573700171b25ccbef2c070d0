@@ -1,0 +1,9 @@
+package user;
+
+public class UserManager {
+
+	public UserManager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

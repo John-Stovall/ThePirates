@@ -1,9 +1,9 @@
 package gui;
 
+import control.General;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.image.ImageObserver;
 
 /**
  * Created by Robert on 4/12/17.
@@ -25,10 +25,10 @@ public class GButton implements GUIComponent, GMouseListener {
     private int width;
 
     /** The 'standby' color of the button. */
-    private Color color;
+    private Color color = Style.primaryButtonColor;
 
     /** The color the button changes to when you click it. */
-    private Color hover;
+    private Color hover = Style.secondaryButtonColor;
 
     /** Whether the button is pressed or not. */
     private boolean pressed = false;
@@ -51,19 +51,14 @@ public class GButton implements GUIComponent, GMouseListener {
     /** The progress through the hover animation. */
     private int hoverAnimation = 0;
 
-    private boolean triggered = false;
-
     /**
      * Create a button!
      *
      * @param height The height of the button.
-     * @param main The main color of the button.
-     * @param hover The secondary color of the button.
      * @param text The text on the button.
+     * @author Robert
      */
-    public GButton(final int height, final Color main, final Color hover, final String text) {
-        this.color = main;
-        this.hover = hover;
+    public GButton(final int height, final String text) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -73,14 +68,11 @@ public class GButton implements GUIComponent, GMouseListener {
      * Create a somewhat special button!
      *
      * @param height The height of the button.
-     * @param main The main color of the button.
-     * @param hover The secondary color of the button.
      * @param text The text on the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
-    public GButton(final int height, final Color main, final Color hover, final String text, final int padding) {
-        this.color = main;
-        this.hover = hover;
+    public GButton(final int height, final String text, final int padding) {
         this.height = height;
         this.font = new Font("Helvetica", Font.PLAIN, height - 6);
         this.text = text;
@@ -91,10 +83,23 @@ public class GButton implements GUIComponent, GMouseListener {
      * Create a mystical button!
      *
      * @param height The height of the button.
-     * @param main The main color of the button.
-     * @param hover The secondary color of the button.
      * @param text The text on the button.
      * @param font The font of the button.
+     * @author Robert
+     */
+    public GButton(final int height, final String text, final Font font) {
+        this.height = height;
+        this.font = font;
+        this.text = text;
+    }
+
+    /**
+     * Create a mystical button!
+     *
+     * @param height The height of the button.
+     * @param text The text on the button.
+     * @param font The font of the button.
+     * @author Robert
      */
     public GButton(final int height, final Color main, final Color hover, final String text, final Font font) {
         this.color = main;
@@ -108,16 +113,12 @@ public class GButton implements GUIComponent, GMouseListener {
      * Create a super special awesome button!
      *
      * @param height The height of the button.
-     * @param main The main color of the button.
-     * @param hover The secondary color of the button.
      * @param text The text on the button.
      * @param font The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
-    public GButton(final int height, final Color main, final Color hover, final String text,
-                   final Font font, final int padding) {
-        this.color = main;
-        this.hover = hover;
+    public GButton(final int height, final String text, final Font font, final int padding) {
         this.height = height;
         this.font = font;
         this.text = text;
@@ -128,16 +129,13 @@ public class GButton implements GUIComponent, GMouseListener {
      * Create a the GREATEST BUTTON THE WORLD HAS EVER SEEN!!!
      *
      * @param height The height of the button.
-     * @param main The main color of the button.
-     * @param hover The secondary color of the button.
      * @param text The text on the button.
      * @param font The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
+     * @author Robert
      */
-    public GButton(final int height, final Color main, final Color hover, final String text,
+    public GButton(final int height, final String text,
                    final Font font, final int padding, final Image icon) {
-        this.color = main;
-        this.hover = hover;
         this.height = height;
         this.font = font;
         this.text = text;
@@ -149,6 +147,7 @@ public class GButton implements GUIComponent, GMouseListener {
      * Set whether the button can be pressed or not.
      *
      * @param state Can it be pressed?
+     * @author Robert
      */
     public void setActive(boolean state) {
         isActive = state;
@@ -156,39 +155,36 @@ public class GButton implements GUIComponent, GMouseListener {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        g.setColor(color);
-        g.fillRect(x + padding / 2, y, width - padding, height);
 
-        g.setColor(hover);
-        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
-        if (hoverAnimation < width && pressed) {
-            hoverAnimation += Math.ceil((width - hoverAnimation) / 3.0);
-        } else if (!pressed) {
-            hoverAnimation += Math.ceil(Math.abs((-hoverAnimation) / 3.0)) * (Math.signum((-hoverAnimation) / 3.0));
-        }
-
-        if (triggered && hoverAnimation >= width) {
-            triggered = false;
-        }
-
+        //Save variables for later.
         this.x = x;
         this.y = y;
         this.width = width;
-        g.setColor(Color.white);
-        g.setFont(font);
 
+        //Draw the background rectangle.
+        g.setColor(color);
+        g.fillRect(x + padding / 2, y, width - padding, height);
+        g.setColor(hover);
+        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
+
+        //Prepare variables to draw the text and icon.
+        g.setColor(Style.buttonTextColor);
+        g.setFont(font);
         int textWidth = g.getFontMetrics().stringWidth(text);
         int textHeight = g.getFontMetrics().getHeight();
 
+        //Draw the text and icon in the proper orientation.
         if (icon != null) {
             double imageRatio = icon.getHeight(null) / icon.getWidth(null);
             int imageHeight = (int) ((width - padding * 2) * imageRatio);
             g.drawImage(icon, x + padding, y + padding, width - padding * 2, imageHeight, null);
             g.drawString(text, x + width / 2 - textWidth / 2, y + imageHeight + padding + (height - imageHeight) / 2 + textHeight / 2 - 4);
-
         } else {
             g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
         }
+
+        //Increment the animation.
+        hoverAnimation += Style.exponentialTweenRound(hoverAnimation, (pressed) ? width : 0, Style.buttonMoveSpeed);
 
         return height;
     }
@@ -196,7 +192,7 @@ public class GButton implements GUIComponent, GMouseListener {
 
     @Override
     public boolean mousePressed(MouseEvent e) {
-        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && isActive) {
+        if (General.clickedInside(x + padding / 2, y, width - padding, height, e) && isActive) {
             pressed = true;
             return true;
         }
@@ -206,9 +202,8 @@ public class GButton implements GUIComponent, GMouseListener {
     @Override
     public boolean mouseReleased(MouseEvent e) {
         boolean result = false;
-        if (e.getX() > x + padding / 2 && e.getX() < x + width - padding / 2 && e.getY() > y && e.getY() < y + height && pressed) {
+        if (General.clickedInside(x + padding / 2, y, width - padding, height, e) && pressed) {
             clickAction();
-            triggered = true;
             result = true;
         }
         pressed = false;
@@ -218,6 +213,7 @@ public class GButton implements GUIComponent, GMouseListener {
     /**
      * When you create a button override this method to add
      * custom functionality to certain buttons.
+     * @author Robert
      */
     public void clickAction() {}
 }
