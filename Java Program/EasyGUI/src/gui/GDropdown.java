@@ -12,7 +12,7 @@ import java.util.Arrays;
  *
  * This class creates a simple drop down menu that can be used to select specific things.
  */
-public class GDropdown implements GUIComponent, GMouseListener {
+public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
 
     /** The options in the menu. */
     private ArrayList<String> options;
@@ -111,9 +111,6 @@ public class GDropdown implements GUIComponent, GMouseListener {
             g.drawString("^", x + width - 18, y + height - 3);
         }
 
-        //Increment Animation.
-        animation += Style.exponentialTween(animation, (open) ? 1 : 0, Style.dropdownMoveSpeed);
-
         return h;
     }
 
@@ -162,5 +159,11 @@ public class GDropdown implements GUIComponent, GMouseListener {
      */
     public void setSelection(final String selection) {
         this.selection = selection;
+    }
+
+    @Override
+    public void updateAnimations() {
+        //Increment Animation.
+        animation += Style.exponentialTween(animation, (open) ? 1 : 0, Style.dropdownMoveSpeed);
     }
 }

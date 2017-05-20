@@ -24,7 +24,7 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(40));
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, UserManager.getLoadedUser().getName(), 10);
+        GTextBox name = new GTextBox(32, UserManager.getLoadedUser().getName());
         GTextBox email = new GTextBox(32, UserManager.getLoadedUser().getEmail());
 
         //Place all of the components in the right places.
@@ -33,15 +33,15 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Name:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(name);
+        GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(5));
         GUI.window.add(new GText("Email:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(email);
+        GUI.window.add((GUIComponent) email);
         GUI.window.add(new GSpacer(5));
 
         //Add the submit button and program what it does.
-        GUI.window.add(new GButton(40, "Save Changes") {
+        GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont) {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();
@@ -57,8 +57,7 @@ public class EditAccount extends GUIPage {
                         name.failed("• Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
                         email.failed("• Must be a valid email.");
-                    } else if (!General.isEmailFree(myEmail)) {
-                        email.failed("• This Email is already taken.");
+                    } else if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
                     }
                 }
             }

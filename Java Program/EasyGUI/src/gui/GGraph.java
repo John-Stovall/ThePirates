@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * This class draws a simple graph of a supplied data array.
  */
-public class GGraph implements GUIComponent {
+public class GGraph implements GUIComponent, GAnimation {
 
     /** All of the data that this graph will draw. */
     private static ArrayList<double[]> times;
@@ -91,6 +91,11 @@ public class GGraph implements GUIComponent {
             }
         }
 
+        return height;
+    }
+
+    @Override
+    public void updateAnimations() {
         for (int i = 0; i < times.size(); i++) {
             if (i == 0) {
                 animation[i] += (1 - animation[i]) / Style.graphMoveSpeed;
@@ -100,7 +105,5 @@ public class GGraph implements GUIComponent {
                 }
             }
         }
-
-        return height;
     }
 }

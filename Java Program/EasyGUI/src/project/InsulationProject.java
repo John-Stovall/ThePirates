@@ -85,23 +85,23 @@ public class InsulationProject extends Project implements Serializable {
 
                 GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(areaToBeUpgraded);
+                GUI.window.add((GUIComponent) areaToBeUpgraded);
 
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Heating Degree Days:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(heatingDegreeDays);
+                GUI.window.add((GUIComponent) heatingDegreeDays);
 
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Current Insulation R-Value:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(currentR);
+                GUI.window.add((GUIComponent) currentR);
 
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("New Insulation R-Value:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(newR);
+                GUI.window.add((GUIComponent) newR);
 
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Gas Type:", Style.defaultFont));
@@ -111,7 +111,7 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Furnace Efficiency Percentage:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(furnaceEfficency);
+                GUI.window.add((GUIComponent) furnaceEfficency);
 
                 GUI.window.add(new GSpacer(5));
 

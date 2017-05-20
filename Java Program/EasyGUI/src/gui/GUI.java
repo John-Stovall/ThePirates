@@ -27,6 +27,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     /** All of the GUIComponents that use the KeyListener. */
     private static final ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
+    /** All of the GUIComponents that have an animation. */
+    private static final ArrayList<GAnimation> animatedComponents = new ArrayList<>();
+
     /** The max width of the window's contents before it starts adding padding. */
     private static final int maxWidth = 720;
 
@@ -73,7 +76,18 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel.repaint();
 
         //The animation clock.
-        Timer clock = new Timer(Style.frameRate, e -> panel.repaint());
+        //Timer clock = new Timer(Style.frameRate, {e -> panel.repaint(); validRepaint = true;});
+
+        Timer clock = new Timer(Style.frameRate, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for (GAnimation c: animatedComponents) {
+                    c.updateAnimations();
+                }
+                panel.repaint();
+            }
+        });
+
         clock.start();
     }
 
@@ -161,6 +175,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         components.clear();
         mouseComponents.clear();
         keyComponents.clear();
+        animatedComponents.clear();
         page.refresh();
         page.build();
         panel.revalidate();
@@ -188,6 +203,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
                 for (ArrayList<GUIComponent> lists : ((GSubList) c).getComponents()) {
                     constructLists(lists);
                 }
+            }
+            if (c instanceof GAnimation) {
+                animatedComponents.add((GAnimation) c);
             }
         }
     }
@@ -256,20 +274,21 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     private class DrawPanel extends JPanel {
         @Override
         public void paintComponent(Graphics theGraphics) {
-            Graphics2D g = (Graphics2D) theGraphics;
-            super.paintComponent(g);
+            super.paintComponent(theGraphics);
 
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-            int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
-            int y = scrollOffset;
+                Graphics2D g = (Graphics2D) theGraphics;
+                this.setDoubleBuffered(true);
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
+                int y = scrollOffset;
 
-            // Loop through the list of currently loaded components and call their draw methods.
-            for (GUIComponent c : components) {
-                g.setColor(Color.black);
-                int width = (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding;
-                y += c.draw(g, x, y, width);
-            }
+                // Loop through the list of currently loaded components and call their draw methods.
+                for (GUIComponent c : components) {
+                    g.setColor(Color.black);
+                    int width = (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding;
+                    y += c.draw(g, x, y, width);
+                }
             pageHeight = y - scrollOffset;
         }
     }

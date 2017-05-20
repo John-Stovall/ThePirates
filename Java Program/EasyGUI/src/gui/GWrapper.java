@@ -27,6 +27,7 @@ public class GWrapper extends JPanel implements GUIComponent {
     public GWrapper(final int height, final JComponent item) {
         this.height = height;
         this.item = item;
+        setOpaque(false);
         setLayout(new BorderLayout());
         add(item, BorderLayout.CENTER);
         setVisible(true);
@@ -34,8 +35,11 @@ public class GWrapper extends JPanel implements GUIComponent {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-        setBounds(0, 0, width, height);
+
+        //g.fillRect(x - 8, y - 8, width + 16, height + 16);
+
         setLocation(x, y);
+        //setBounds(x, y, width, height);
         setSize(width, height);
         revalidate();
         return height;

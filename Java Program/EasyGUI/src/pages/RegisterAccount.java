@@ -23,7 +23,7 @@ public class RegisterAccount extends GUIPage {
     public void build() {
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, "", 10);
+        GTextBox name = new GTextBox(32, "");
         GTextBox email = new GTextBox(32, "");
 
         //Place all the stuff in the right order...
@@ -32,11 +32,11 @@ public class RegisterAccount extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Name:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(name);
+        GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(5));
         GUI.window.add(new GText("Email:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(email);
+        GUI.window.add((GUIComponent) email);
         GUI.window.add(new GSpacer(5));
         GUI.window.add(new GButton(40, "Submit", Style.defaultFont) {
             @Override

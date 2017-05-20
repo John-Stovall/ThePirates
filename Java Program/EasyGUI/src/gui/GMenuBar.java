@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * This class is by far the messiest class out of all of them and
  * this handles ALL of the logic and stuff for the menu bar.
  */
-public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
+public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimation {
 
     /** The height of the menu bar. */
     private int height;
@@ -42,6 +42,8 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
 
     /** The total height of the right side bar. */
     private int accountTotalHeight;
+
+    private int goalPosition;
 
     /** The GUIComponents in the left menu. */
     private ArrayList<GUIComponent> pageComponents = new ArrayList<>();
@@ -162,13 +164,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         String roomName = GUI.getPageTitle();
         g.drawString(roomName, height + 4, height - 10);
 
-        //Process slide over animation
-        int goalPosition;
-        if (pageSelected) goalPosition = dropdownWidth;
-        else if (accountSelected) goalPosition = -dropdownWidth;
-        else goalPosition = 0;
-        GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
-
         return 0;
     }
 
@@ -184,6 +179,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
             accountPressed = true;
             result = true;
         }
+
         return result;
     }
 
@@ -201,7 +197,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         accountSelected = (General.clickedInside(GUI.getWindowWidth() - height - nameWidth - 16, 0, GUI.getWindowWidth(), height, e)
                 && accountPressed) && !General.clickedInside(GUI.getWindowWidth() - dropdownWidth, height, dropdownWidth, accountTotalHeight, e)
                 && !accountSelected;
-
 
         for (GUIComponent c : accountComponents) {
             if (c instanceof GButton) {
@@ -221,5 +216,13 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList {
         list.add(pageComponents);
         list.add(accountComponents);
         return list;
+    }
+
+    @Override
+    public void updateAnimations() {
+        goalPosition = 0;
+        if (pageSelected) goalPosition = dropdownWidth;
+        else if (accountSelected) goalPosition = -dropdownWidth;
+        GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
     }
 }
