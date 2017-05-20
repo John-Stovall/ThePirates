@@ -45,7 +45,7 @@ public class CreateProject extends GUIPage {
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GText("Project Name:", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GTextBox name = new GTextBox(32, "");
+        GTextBox name = new GTextBox(40, "");
         GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GButton(40, "Create Project", Style.defaultFont) {
@@ -70,7 +70,7 @@ public class CreateProject extends GUIPage {
             }
         });
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(menu);
+        GUI.window.showMenu();
     }
 
 }

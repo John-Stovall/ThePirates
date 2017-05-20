@@ -24,8 +24,8 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(40));
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, UserManager.getLoadedUser().getName());
-        GTextBox email = new GTextBox(32, UserManager.getLoadedUser().getEmail());
+        GTextBox name = new GTextBox(40, UserManager.getLoadedUser().getName());
+        GTextBox email = new GTextBox(40, UserManager.getLoadedUser().getEmail());
 
         //Place all of the components in the right places.
         GUI.window.add(new GSpacer(25));
@@ -56,12 +56,12 @@ public class EditAccount extends GUIPage {
                     if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
-                        email.failed("• Must be a valid email.");
-                    } else if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
+                        email.failed("• Must be a valid email. This is a really long message to see if it work. Hello, the quick brown fox jumps over the lazy dog. Wow, does this actually work?");
+                    }  if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
                     }
                 }
             }
         });
-        GUI.window.add(menu);
+        GUI.window.showMenu();
     }
 }

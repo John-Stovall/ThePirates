@@ -23,8 +23,8 @@ public class RegisterAccount extends GUIPage {
     public void build() {
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, "");
-        GTextBox email = new GTextBox(32, "");
+        GTextBox name = new GTextBox(40, "");
+        GTextBox email = new GTextBox(40, "");
 
         //Place all the stuff in the right order...
         GUI.window.add(new GSpacer(25));

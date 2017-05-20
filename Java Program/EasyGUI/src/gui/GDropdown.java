@@ -27,7 +27,7 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
     private boolean pressed = false;
 
     /** The height of each cell. */
-    private int height = 26;
+    private int height = 40;
 
     /** Obvious variables are obvious. */
     private int x;

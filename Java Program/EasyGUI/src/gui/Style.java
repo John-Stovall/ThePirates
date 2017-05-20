@@ -82,7 +82,7 @@ public final class Style {
 
     static final double dropdownMoveSpeed        = Math.max(3.0 * speedModifier, 1);
 
-    static final double textBoxMessageMoveSpeed  = Math.max(10.0 * speedModifier, 1);
+    static final double textBoxMessageMoveSpeed  = Math.max(5.0 * speedModifier, 1);
 
     static final double textBoxFlashSpeed        = 0.03 / speedModifier;
 

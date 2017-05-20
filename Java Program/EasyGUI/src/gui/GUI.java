@@ -54,6 +54,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     /** Changes how fast you can scroll the page. */
     private static final double scrollSpeedMultiplier = 4.0;
 
+    /** Whether to show the menu bar or not. */
+    private static boolean showMenu = false;
+
     /**
      * Starts the GUI with some basic settings.
      * @author Robert
@@ -75,17 +78,11 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel.setLayout(null);
         panel.repaint();
 
-        //The animation clock.
-        //Timer clock = new Timer(Style.frameRate, {e -> panel.repaint(); validRepaint = true;});
-
-        Timer clock = new Timer(Style.frameRate, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (GAnimation c: animatedComponents) {
-                    c.updateAnimations();
-                }
-                panel.repaint();
+        Timer clock = new Timer(Style.frameRate, e -> {
+            for (GAnimation c: animatedComponents) {
+                c.updateAnimations();
             }
+            panel.repaint();
         });
 
         clock.start();
@@ -137,6 +134,21 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     }
 
     /**
+     * Refreshes the contents of the current page.
+     */
+    public void refresh() {
+        gotoPage(currentPage);
+    }
+
+    /**
+     * Allows this page to show the menu bar.
+     */
+    public void showMenu() {
+        showMenu = true;
+        add(GUIPage.menu);
+    }
+
+    /**
      * If you don't have access to the particular page object you can use
      * the pages's name to find the correct page to go to. A little slow but works.
      *
@@ -152,10 +164,6 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         }
     }
 
-    public void refresh() {
-        gotoPage(currentPage);
-    }
-
     /**
      * Remove all objects from the page and call the new Page object's build method
      * to reassemble the page.
@@ -164,6 +172,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * @author Robert
      */
     public void gotoPage(final GUIPage page) {
+        showMenu = false;
         scrollOffset = 0;
         panel.removeAll();
         for (GUIComponent c : components) {
@@ -272,24 +281,39 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * @author Robert
      */
     private class DrawPanel extends JPanel {
+
+        private DrawPanel() {
+            this.setOpaque(true);
+        }
+
         @Override
         public void paintComponent(Graphics theGraphics) {
             super.paintComponent(theGraphics);
 
-                Graphics2D g = (Graphics2D) theGraphics;
-                this.setDoubleBuffered(true);
-                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-                int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
-                int y = scrollOffset;
+            Graphics2D g = (Graphics2D) theGraphics;
+            this.setDoubleBuffered(true);
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
+            int y = scrollOffset;
 
-                // Loop through the list of currently loaded components and call their draw methods.
-                for (GUIComponent c : components) {
+            // Loop through the list of currently loaded components and call their draw methods.
+            for (GUIComponent c : components) {
+                if (!(c instanceof GMenuBar)) {
                     g.setColor(Color.black);
                     int width = (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding;
                     y += c.draw(g, x, y, width);
                 }
+            }
             pageHeight = y - scrollOffset;
+        }
+
+        @Override
+        public void paint(Graphics theGraphics) {
+            super.paint(theGraphics);
+            if (showMenu) {
+                GUIPage.menu.draw(theGraphics, 0, 0, 0);
+            }
         }
     }
 }

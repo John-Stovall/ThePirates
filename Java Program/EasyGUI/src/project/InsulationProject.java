@@ -59,7 +59,7 @@ public class InsulationProject extends Project implements Serializable {
                 buttons.add(innerDiv);
                 GUI.window.add(buttons);
                 GUI.window.add(new GSpacer(40));
-                GUI.window.add(menu);
+                GUI.window.showMenu();
             }
         };
     }
@@ -74,14 +74,16 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GText("Edit " + name));
                 GUI.window.add(new GSpacer(25));
 
-                GTextBox currentR = new GTextBox(32, "");
-                GTextBox newR = new GTextBox(32, "");
-                GTextBox areaToBeUpgraded = new GTextBox(32, "");
-                GTextBox heatingDegreeDays = new GTextBox(32, "");
+                GTextBox currentR = new GTextBox(40, "", "R-Value determines how well the insulation resists heat flow.");
+                GTextBox newR = new GTextBox(40, "", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
+                GTextBox areaToBeUpgraded = new GTextBox(40, "", "The surface area, in square feet, of the room where insulation is being upgraded.");
+                GTextBox heatingDegreeDays = new GTextBox(40, "", "HDD ");
 
-                GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricty"});
+                GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
 
-                GTextBox furnaceEfficency = new GTextBox(32, "");
+                GTextBox pricePerUnit = new GTextBox(40, "", "For natural gas and fuel oil used dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
+
+                GTextBox furnaceEfficency = new GTextBox(40, "");
 
                 GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -104,9 +106,15 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add((GUIComponent) newR);
 
                 GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GText("Gas Type:", Style.defaultFont));
+                GUI.window.add(new GText("Fuel Type:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(gasType);
+
+
+                GUI.window.add(new GSpacer(20));
+                GUI.window.add(new GText("Fuel Price", Style.defaultFont));
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add((GUIComponent) pricePerUnit);
 
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(new GText("Furnace Efficiency Percentage:", Style.defaultFont));
@@ -123,7 +131,7 @@ public class InsulationProject extends Project implements Serializable {
                     }
                 });
                 GUI.window.add(new GSpacer(40));
-                GUI.window.add(menu);
+                GUI.window.showMenu();
             }
         };
     }

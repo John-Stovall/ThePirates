@@ -54,7 +54,7 @@ public class Home extends GUIPage {
         //GUI.window.add((GUIComponent) new GWrapper(50, new JTextField()));
         //GUI.window.add((GUIComponent) new GWrapper(50, new JButton("This is a magical JButton")));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(menu);
+        GUI.window.showMenu();
     }
 
 }

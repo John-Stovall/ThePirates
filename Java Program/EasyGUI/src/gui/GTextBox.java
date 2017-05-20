@@ -17,31 +17,29 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
     /** The font of the text in the text box. */
     private Font font;
 
-    /** The currently typed text in the text box. */
-    private String text;
-
-    /** The max number of characters in a textbox. */
-    private int maxLength = Integer.MAX_VALUE;
-
     /** Whether a failed input has been passed in. */
     private boolean failed = false;
-
-    /** The message to be displayed when a failed even has triggered. */
-    private String failedMessage = "Invalid Input!";
-
-    /** Just a number representing the time for this box. */
-    private double ticks = 0;
 
     /** The position of the failed message. */
     private int failMessagePos = 0;
 
-    private GText textObj;
+    private GText message = new GText("", Style.textBoxFail);
 
     private JTextField textField;
 
-    private int boxHeight = 36;
+    private int boxHeight;
 
     private String lastString = "";
+
+    private int goalHeight = boxHeight;
+
+    private int currentHeight = boxHeight;
+
+    private final int textPadding = 10;
+
+    private boolean showDetails = false;
+
+    private String description = "";
 
     /**
      * Create a super awesome text box!
@@ -52,12 +50,19 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
      */
     public GTextBox(final int height, final String text) {
         super(height, new JTextField());
+        boxHeight = height;
         textField = (JTextField) getComponent();
-        this.font = new Font("Helvetica", Font.PLAIN, height - 6);
+        this.font = Style.defaultFont;
         textField.setFont(font);
         textField.setText(text);
-        this.text = text;
-        textObj = new GText(text, font);
+
+        goalHeight = boxHeight + Math.max(failMessagePos - boxHeight + textPadding, 0) + Style.textBoxFail.getSize();
+        currentHeight = boxHeight + Math.max(failMessagePos - boxHeight + textPadding, 0) + Style.textBoxFail.getSize();
+    }
+
+    public GTextBox(final int height, final String text, final String description) {
+        this(height, text);
+        this.description = description;
     }
 
     /**
@@ -65,81 +70,64 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
      *
      * @return The typed text.
      * @author Robert
-     */
-    public String getText() {
-        return textField.getText();
-    }
+                */
+        public String getText() {
+            return textField.getText();
+        }
 
-    /**
-     * Open the error message for this text box.
-     *
-     * @param message The error to show.
-     * @author Robert
-     */
+        /**
+         * Open the error message for this text box.
+         *
+         * @param message The error to show.
+         * @author Robert
+         */
     public void failed(final String message) {
         failed = true;
-        failedMessage = message;
+        this.message.setText(message);
+        this.message.setColor(Color.red);
     }
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        //Draw the failed message text under everything.
-        g.setColor(Style.textBoxErrorColor);
-        g.setFont(Style.textBoxFail);
-        g.drawString(failedMessage, x, y + failMessagePos + boxHeight / 2);
+        if (!failed && textField.isFocusOwner() && !description.equals("")) {
+            showDetails = true;
+            message.setText(description);
+            message.setColor(Color.black);
+        } else {
+            showDetails = false;
+        }
+
+        int textHeight = message.draw(g, x + 4, y + failMessagePos, width - 8);
 
         super.draw(g, x, y, width);
 
-        //Draw the background rectangle.
-//        if (pressed || selected) {
-//            g.setColor(Style.textBoxSecondaryColor);
-//        } else {
-//            g.setColor(Style.textBoxColor);
-//        }
-//        g.fillRect(x, y, width, boxHeight);
+        goalHeight = boxHeight + Math.max(failMessagePos - boxHeight + textPadding, 0) + textHeight;
 
-        //Set variables for the border rectangle.
-        g.setFont(font);
-        g.setColor(Style.textBoxBorderColor);
-
-        //Prepare the text, add the | to the end if the timing is correct.
-//        textObj.setText(text);
-//        if (selected) {
-//            if (((int)ticks) % 2 == 0) {
-//                textObj.setText(text + "|");
-//            }
-//            g.drawRect(x, y, width, boxHeight);
-//        }
-
-        //Draw the text.
-//        texttextObj.draw(g, x + 4, y, width - 8);
-//
-//        //Draw the red border if failed.
-//        if (failed) {
-//            g.setColor(Style.textBoxErrorColor);
-//            g.drawRect(x, y, width, boxHeight);
-//        }
-
-        //Increment the counter for the cursor.
-        //ticks += Style.textBoxFlashSpeed;
-
-        return boxHeight + Math.max(failMessagePos - boxHeight / 2 + 10, 0);
+        return currentHeight;
     }
 
     @Override
     public void updateAnimations() {
+
+        currentHeight += Style.exponentialTweenRound(currentHeight, goalHeight, Style.textBoxMessageMoveSpeed / 2);
+
         if (!lastString.equals(getText())) {
             lastString = getText();
             failed = false;
         }
 
         //Increment the animation.
-        failMessagePos += Style.exponentialTweenRound(failMessagePos, (failed) ? (boxHeight / 2 + 25) : 0,
-                Style.textBoxMessageMoveSpeed);
+        int goalPosition = 0;
+        if (failed || showDetails) {
+            goalPosition = boxHeight + textPadding;
+        }
 
-        if (failMessagePos < 4) {
-            failedMessage = "";
+
+        failMessagePos += Style.exponentialTweenRound(failMessagePos, goalPosition, Style.textBoxMessageMoveSpeed);
+
+        if (failMessagePos < (boxHeight + textPadding) / 2 && !failed && !showDetails) {
+            message.setText("");
         }
     }
 }

@@ -3,100 +3,140 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="1161.5" y="443.5">gui.GMouseListener</node>
-    <node x="1605.0" y="730.0">gui.GDivider</node>
-    <node x="343.5" y="1003.0">gui.GGraph</node>
-    <node x="-11.0" y="1140.0">gui.GUI</node>
-    <node x="1932.0" y="861.0">gui.GText</node>
-    <node x="-24.0" y="872.0">gui.GWrapper</node>
-    <node x="365.0" y="-30.0">gui.GSpacer</node>
-    <node x="352.5" y="894.5">gui.GUIComponent</node>
-    <node x="2127.5" y="454.5">gui.GKeyListener</node>
-    <node x="67.0" y="1574.5">gui.GUI.DrawPanel</node>
-    <node x="1111.0" y="774.5">gui.GSubList</node>
-    <node x="1708.0" y="377.0">gui.GTextBox</node>
-    <node x="728.0" y="388.0">gui.GDropdown</node>
-    <node x="464.0" y="1123.0">gui.GUIPage</node>
-    <node x="1162.5" y="581.5">gui.GMenuBar</node>
-    <node x="1122.0" y="24.0">gui.GButton</node>
+    <node x="1698.0" y="0.0">gui.GMouseListener</node>
+    <node x="1977.5" y="230.0">gui.GDivider</node>
+    <node x="10.5" y="252.0">gui.GGraph</node>
+    <node x="0.0" y="682.0">gui.GUI</node>
+    <node x="881.5000000000001" y="241.0">gui.GText</node>
+    <node x="573.5000000000001" y="252.0">gui.GWrapper</node>
+    <node x="323.5000000000001" y="230.0">gui.GSpacer</node>
+    <node x="862.0000000000001" y="11.0">gui.GUIComponent</node>
+    <node x="724.0" y="682.0">gui.GKeyListener</node>
+    <node x="78.0" y="1092.0">gui.GUI.DrawPanel</node>
+    <node x="2165.391025641026" y="11.0">gui.GSubList</node>
+    <node x="1553.5" y="197.0">gui.GDropdown</node>
+    <node x="198.6538461538463" y="497.0">gui.GTextBox</node>
+    <node x="467.0" y="682.0">gui.GUIPage</node>
+    <node x="1117.5" y="153.0">gui.GButton</node>
+    <node x="2227.5" y="230.5">gui.GMenuBar</node>
+    <node x="581.4285714285713" y="65.85714285714283">gui.GAnimation</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="gui.GMenuBar" target="gui.GSubList">
+      <point x="111.66666666666674" y="-69.5" />
+      <point x="2506.666666666667" y="133.0" />
+      <point x="2478.891025641026" y="133.0" />
+      <point x="104.5" y="25.5" />
+    </edge>
+    <edge source="gui.GButton" target="gui.GAnimation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="gui.GDivider" target="gui.GSubList">
+      <point x="57.5" y="-70.0" />
+      <point x="2150.0" y="133.0" />
+      <point x="2269.891025641026" y="133.0" />
+      <point x="-104.5" y="25.5" />
+    </edge>
     <edge source="gui.GWrapper" target="gui.GUIComponent">
-      <point x="144.0" y="0.0" />
-      <point x="-127.5" y="0.0" />
+      <point x="0.0" y="-48.0" />
+      <point x="717.5000000000001" y="133.0" />
+      <point x="961.1666666666667" y="133.0" />
+      <point x="-28.33333333333337" y="25.5" />
+    </edge>
+    <edge source="gui.GDivider" target="gui.GUIComponent">
+      <point x="-57.5" y="-70.0" />
+      <point x="2035.0" y="113.0" />
+      <point x="1074.5" y="113.0" />
+      <point x="85.0" y="25.5" />
     </edge>
     <edge source="gui.GButton" target="gui.GMouseListener">
-      <point x="0.0" y="136.0" />
-      <point x="0.0" y="-36.5" />
+      <point x="104.0" y="-147.0" />
+      <point x="1429.5" y="133.0" />
+      <point x="1750.8333333333335" y="133.0" />
+      <point x="-105.66666666666674" y="36.5" />
+    </edge>
+    <edge source="gui.GTextBox" target="gui.GWrapper">
+      <point x="71.0" y="-70.0" />
+      <point x="411.6538461538463" y="472.0" />
+      <point x="717.5000000000001" y="472.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="gui.GMenuBar" target="gui.GUIComponent">
+      <point x="-111.66666666666674" y="-69.5" />
+      <point x="2283.333333333333" y="103.0" />
+      <point x="1102.8333333333335" y="103.0" />
+      <point x="113.33333333333326" y="25.5" />
     </edge>
     <edge source="gui.GTextBox" target="gui.GUIComponent">
+      <point x="-71.0" y="-70.0" />
+      <point x="269.6538461538463" y="472.0" />
+      <point x="0.0" y="472.0" />
       <point x="0.0" y="103.0" />
-      <point x="1880.0" y="910.0" />
-      <point x="127.5" y="-10.0" />
+      <point x="876.1666666666667" y="103.0" />
+      <point x="-113.33333333333331" y="25.5" />
+    </edge>
+    <edge source="gui.GDropdown" target="gui.GMouseListener">
+      <point x="101.0" y="-103.0" />
+      <point x="0.0" y="36.5" />
     </edge>
     <edge source="gui.GUI.DrawPanel" target="gui.GUI">
       <point x="0.0" y="-25.5" />
       <point x="0.0" y="180.0" />
     </edge>
-    <edge source="gui.GDropdown" target="gui.GMouseListener">
-      <point x="192.0" y="0.0" />
-      <point x="-158.5" y="0.0" />
+    <edge source="gui.GGraph" target="gui.GUIComponent">
+      <point x="0.0" y="-48.0" />
+      <point x="157.0" y="113.0" />
+      <point x="904.5000000000001" y="113.0" />
+      <point x="-85.0" y="25.5" />
+    </edge>
+    <edge source="gui.GDropdown" target="gui.GAnimation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="gui.GText" target="gui.GUIComponent">
-      <point x="-108.0" y="0.0" />
-      <point x="127.5" y="0.0" />
-    </edge>
-    <edge source="gui.GButton" target="gui.GUIComponent">
-      <point x="-198.0" y="0.0" />
-      <point x="520.0" y="160.0" />
-      <point x="40.0" y="-25.5" />
-    </edge>
-    <edge source="gui.GSpacer" target="gui.GUIComponent">
-      <point x="0.0" y="70.0" />
-      <point x="0.0" y="-25.5" />
-    </edge>
-    <edge source="gui.GTextBox" target="gui.GKeyListener">
-      <point x="172.0" y="0.0" />
-      <point x="-112.5" y="0.0" />
-    </edge>
-    <edge source="gui.GTextBox" target="gui.GMouseListener">
-      <point x="-172.0" y="0.0" />
-      <point x="158.5" y="0.0" />
-    </edge>
-    <edge source="gui.GMenuBar" target="gui.GMouseListener">
-      <point x="0.0" y="-58.5" />
-      <point x="0.0" y="36.5" />
-    </edge>
-    <edge source="gui.GMenuBar" target="gui.GSubList">
-      <point x="0.0" y="58.5" />
-      <point x="0.0" y="-25.5" />
-    </edge>
-    <edge source="gui.GDivider" target="gui.GSubList">
-      <point x="-115.0" y="0.0" />
-      <point x="209.0" y="0.0" />
-    </edge>
-    <edge source="gui.GDivider" target="gui.GUIComponent">
-      <point x="0.0" y="70.0" />
-      <point x="1720.0" y="900.0" />
-      <point x="127.5" y="-20.0" />
-    </edge>
-    <edge source="gui.GMenuBar" target="gui.GUIComponent">
-      <point x="-157.5" y="0.0" />
-      <point x="600.0" y="640.0" />
-      <point x="120.0" y="-25.5" />
-    </edge>
-    <edge source="gui.GGraph" target="gui.GUIComponent">
-      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="-59.0" />
       <point x="0.0" y="25.5" />
     </edge>
+    <edge source="gui.GButton" target="gui.GUIComponent">
+      <point x="-104.0" y="-147.0" />
+      <point x="1221.5" y="133.0" />
+      <point x="1017.8333333333335" y="133.0" />
+      <point x="28.333333333333314" y="25.5" />
+    </edge>
+    <edge source="gui.GMenuBar" target="gui.GAnimation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="gui.GTextBox" target="gui.GAnimation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="gui.GGraph" target="gui.GAnimation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="gui.GSpacer" target="gui.GUIComponent">
+      <point x="0.0" y="-70.0" />
+      <point x="438.5000000000001" y="123.0" />
+      <point x="932.8333333333335" y="123.0" />
+      <point x="-56.666666666666686" y="25.5" />
+    </edge>
     <edge source="gui.GDropdown" target="gui.GUIComponent">
-      <point x="-192.0" y="0.0" />
-      <point x="560.0" y="480.0" />
-      <point x="80.0" y="-25.5" />
+      <point x="-101.0" y="-103.0" />
+      <point x="1654.5" y="123.0" />
+      <point x="1046.1666666666667" y="123.0" />
+      <point x="56.66666666666663" y="25.5" />
+    </edge>
+    <edge source="gui.GMenuBar" target="gui.GMouseListener">
+      <point x="0.0" y="-69.5" />
+      <point x="2395.0" y="93.0" />
+      <point x="1962.166666666667" y="93.0" />
+      <point x="105.66666666666674" y="36.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="1379.2857142857142" y="800.8571428571428" />
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="1367.142857142857" y="460.1428571428571" />
   <SelectedNodes>
     <node>gui.GDropdown</node>
   </SelectedNodes>
