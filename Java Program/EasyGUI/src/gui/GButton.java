@@ -1,16 +1,18 @@
 package gui;
 
+import com.sun.corba.se.impl.orbutil.graph.Graph;
 import control.General;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.geom.RoundRectangle2D;
 
 /**
  * Created by Robert on 4/12/17.
  *
  * This class handles a logic and stuff for buttons.
  */
-public class GButton implements GUIComponent, GMouseListener {
+public class GButton implements GUIComponent, GMouseListener, GAnimation {
 
     /** The height of the button. Used to get mouse clicks. */
     private int height;
@@ -154,6 +156,12 @@ public class GButton implements GUIComponent, GMouseListener {
     }
 
     @Override
+    public void updateAnimations() {
+        //Increment the animation.
+        hoverAnimation += Style.exponentialTweenRound(hoverAnimation, (pressed) ? width : 0, Style.buttonMoveSpeed);
+    }
+
+    @Override
     public int draw(Graphics g, int x, int y, int width) {
 
         //Save variables for later.
@@ -161,11 +169,17 @@ public class GButton implements GUIComponent, GMouseListener {
         this.y = y;
         this.width = width;
 
+        Graphics2D g2d = (Graphics2D) g;
+        RoundRectangle2D background = new RoundRectangle2D.Double(x + padding / 2, y, width - padding, height, 16, 16);
+        RoundRectangle2D animation = new RoundRectangle2D.Double(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height, 16, 16);
+
         //Draw the background rectangle.
         g.setColor(color);
-        g.fillRect(x + padding / 2, y, width - padding, height);
+        //g.fillRect(x + padding / 2, y, width - padding, height);
+        g2d.fill(background);
         g.setColor(hover);
-        g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
+        //g.fillRect(x + width / 2 - hoverAnimation / 2, y, hoverAnimation, height);
+        g2d.fill(animation);
 
         //Prepare variables to draw the text and icon.
         g.setColor(Style.buttonTextColor);
@@ -182,9 +196,6 @@ public class GButton implements GUIComponent, GMouseListener {
         } else {
             g.drawString(text, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
         }
-
-        //Increment the animation.
-        hoverAnimation += Style.exponentialTweenRound(hoverAnimation, (pressed) ? width : 0, Style.buttonMoveSpeed);
 
         return height;
     }

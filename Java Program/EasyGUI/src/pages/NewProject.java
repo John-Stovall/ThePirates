@@ -97,6 +97,6 @@ public class NewProject extends GUIPage {
         div.add(cell4);
         div.add(cell5);
         GUI.window.add(div);
-        GUI.window.add(menu);
+        GUI.window.showMenu();
     }
 }

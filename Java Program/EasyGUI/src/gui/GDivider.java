@@ -60,6 +60,7 @@ public class GDivider implements GUIComponent, GSubList {
 
         if (cells == 0) {
             cellsPerRow = (int)(Math.floor(width / cellWidth));
+            if (cellsPerRow == 0) cellsPerRow = 1;
             widthPerCell = cellWidth;
             if (width > cellsPerRow * widthPerCell) {
                 cellOffset = (width - cellsPerRow * widthPerCell) / cellsPerRow / 2;
@@ -69,7 +70,13 @@ public class GDivider implements GUIComponent, GSubList {
             widthPerCell = width / cellsPerRow;
             while (widthPerCell < cellWidth) {
                 cellsPerRow--;
-                widthPerCell = width / cellsPerRow;
+                if (cellsPerRow > 0) {
+                    widthPerCell = width / cellsPerRow;
+                } else {
+                    cellsPerRow = 1;
+                    widthPerCell = width;
+                    break;
+                }
             }
         }
 

@@ -108,4 +108,34 @@ public class GText implements GUIComponent {
     void setText(String text) {
         this.text = text;
     }
+
+    /**
+     * This method gets the text that this text object draws.
+     *
+     * @return The text.
+     * @author Robert
+     */
+    String getText() {
+        return text;
+    }
+
+    /**
+     * This method sets the color of the text.
+     *
+     * @param color The color to change to.
+     * @author Robert
+     */
+    void setColor(Color color) {
+        this.color = color;
+    }
+
+    /**
+     * This method gets the color of the text.
+     *
+     * @return The color of the text.
+     * @author Robert
+     */
+    Color getColor() {
+        return color;
+    }
 }

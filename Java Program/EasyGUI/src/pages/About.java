@@ -34,6 +34,6 @@ public class About extends GUIPage {
         GUI.window.add(new GSpacer(15));
 
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(menu);
+        GUI.window.showMenu();
     }
 }

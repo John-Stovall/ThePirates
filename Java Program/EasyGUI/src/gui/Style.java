@@ -11,8 +11,7 @@ import java.awt.*;
 public final class Style {
 
     /**
-     * Blank constructor so this class cannot be
-     * instantiated.
+     * Blank constructor so this class cannot be instantiated.
      * @author Robert
      */
     private Style() {}
@@ -31,7 +30,7 @@ public final class Style {
 
     static final Color menuSideBarSecondaryColor = Color.decode("#388E3C");
 
-    static final Color primaryButtonColor        = Color.decode("#43A047");
+    public static final Color primaryButtonColor        = Color.decode("#43A047");
 
     static final Color secondaryButtonColor      = Color.decode("#388E3C");
 
@@ -69,30 +68,53 @@ public final class Style {
      * Animation Variables
      */
 
-    static final int frameRate                   = 1000 / 60;
+    private static final double speedModifier     = 1;
 
-    static final double sidebarSlideSpeed        = 7.0;
+    static final int frameRate                   = (int) ((1000 / 60) / speedModifier);
 
-    static final double graphMoveSpeed           = 3.0;
+    static final double sidebarSlideSpeed        = Math.max(7.0 * speedModifier, 1);
+
+    static final double graphMoveSpeed           = Math.max(3.0 * speedModifier, 1);
 
     static final double graphSpawnThreshold      = 0.9;
 
-    static final double buttonMoveSpeed          = 3.0;
+    static final double buttonMoveSpeed          = Math.max(3.0 * speedModifier, 1);
 
-    static final double dropdownMoveSpeed        = 3.0;
+    static final double dropdownMoveSpeed        = Math.max(3.0 * speedModifier, 1);
 
-    static final double textBoxMessageMoveSpeed  = 10.0;
+    static final double textBoxMessageMoveSpeed  = Math.max(5.0 * speedModifier, 1);
 
-    static final double textBoxFlashSpeed        = 0.02;
+    static final double textBoxFlashSpeed        = 0.03 / speedModifier;
 
     /**
      * Animation Functions
      */
 
+    /**
+     * This method takes a current position, goal and speed and returns the
+     * distance to travel using an exponential tween. If the value is between -1 and 1
+     * the value will be rounded to one of those two.
+     *
+     * @param current The current position of the object being animated.
+     * @param goal The goal position.
+     * @param speed The speed to travel. LOW VALUES ARE FASTER!!
+     * @return The distance to travel this frame.
+     * @author Robert
+     */
     static double exponentialTweenRound(double current, double goal, double speed) {
         return Math.ceil(Math.abs((goal - current ) / speed)) * (Math.signum((goal - current) / speed));
     }
 
+    /**
+     * This method takes a current position, goal and speed and returns the
+     * distance to travel using an exponential tween. Values are not rounded.
+     *
+     * @param current The current position of the object being animated.
+     * @param goal The goal position.
+     * @param speed The speed to travel. LOW VALUES ARE FASTER!!
+     * @return The distance to travel this frame.
+     * @author Robert
+     */
     static double exponentialTween(double current, double goal, double speed) {
         return (goal - current) / speed;
     }

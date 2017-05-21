@@ -2,8 +2,12 @@ package pages;
 
 import gui.Style;
 import gui.*;
+import user.User;
 import user.UserManager;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -21,40 +25,39 @@ public class Home extends GUIPage {
     public void build() {
         GUI.window.add(new GSpacer(40));
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Projected Earnings:"));
-        GUI.window.add(new GSpacer(25));
-        ArrayList<double[]> data = new ArrayList<>();
-        data.add(new double[] {5, 2});
-        data.add(new double[] {10, 7});
-        data.add(new double[] {8, 5});
-        data.add(new double[] {1, 9});
-        data.add(new double[] {4, 6});
-        data.add(new double[] {1, 3});
-        data.add(new double[] {5, 2});
-        data.add(new double[] {10, 7});
-        data.add(new double[] {8, 5});
-        data.add(new double[] {1, 9});
-        data.add(new double[] {4, 6});
-        data.add(new double[] {1, 3});
-        GUI.window.add(new GGraph(data));
-        ArrayList<String> options = new ArrayList<>();
-        options.add("Hello World");
-        options.add("1");
-        options.add("2");
-        options.add("3");
+        if (UserManager.getLoadedUser().getMyProjects().isEmpty()) {
+            GUI.window.add(new GText("Hello, " + UserManager.getLoadedUser().getName() + "!"));
+            GUI.window.add(new GSpacer(10));
+            GUI.window.add(new GText("It looks like you don't have any projects yet.", Style.defaultFont));
+            GUI.window.add(new GSpacer(30));
+            GDivider div = new GDivider(720, 1);
 
-        GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GDropdown(options));
-        GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Hello, " + UserManager.getLoadedUser().getName() + "! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor id est facilisis sodales pulvinar congue lectus. Nullam suscipit vulputate ligula quis congue. Ut consectetur fringilla lacinia. Aenean in ornare magna, tristique lacinia est. Aenean at elit vehicula, tincidunt leo at, convallis tellus. Nam mollis, odio quis efficitur porttitor, ante mi tincidunt ligula, quis ornare mauris nunc sed quam. Donec molestie enim odio, id viverra risus convallis a. Praesent et mi mauris. Nam sagittis eu sapien non accumsan.", Style.defaultFont));
-        GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GSpacer(5));
+            BufferedImage image;
+            try {
+                image = ImageIO.read(new File("img/pageIcon.png"));
+            } catch (Exception ex) {
+                image = null;
+            }
+            div.add(new GButton(277, "", Style.defaultFont, 32, image) {
+                @Override
+                public void clickAction() {
+                }
+            });
 
 
-        //GUI.window.add((GUIComponent) new GWrapper(50, new JTextField()));
-        //GUI.window.add((GUIComponent) new GWrapper(50, new JButton("This is a magical JButton")));
-        GUI.window.add(new GSpacer(5));
-        GUI.window.add(menu);
+            GUI.window.add(div);
+            GUI.window.add(new GText("Starting Projects:"));
+            GUI.window.add(new GSpacer(10));
+            GUI.window.add(new GText("To navigate between pages, projects, and start new projects click on the button in the top left corner next to the page title.", Style.defaultFont));
+            GUI.window.add(new GSpacer(30));
+            GUI.window.add(new GText("Editing Your Account:"));
+            GUI.window.add(new GSpacer(10));
+            GUI.window.add(new GText("If you want to change anything about your account open the right sidebar by clicking the round button in the top right corner. ", Style.defaultFont));
+        } else {
+
+        }
+
+        GUI.window.showMenu();
     }
 
 }

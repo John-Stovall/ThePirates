@@ -24,8 +24,8 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(40));
 
         //Instantiate the Checkboxes...
-        GTextBox name = new GTextBox(32, UserManager.getLoadedUser().getName(), 10);
-        GTextBox email = new GTextBox(32, UserManager.getLoadedUser().getEmail());
+        GTextBox name = new GTextBox(40, UserManager.getLoadedUser().getName());
+        GTextBox email = new GTextBox(40, UserManager.getLoadedUser().getEmail());
 
         //Place all of the components in the right places.
         GUI.window.add(new GSpacer(25));
@@ -33,15 +33,15 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Name:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(name);
+        GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(5));
         GUI.window.add(new GText("Email:"));
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(email);
+        GUI.window.add((GUIComponent) email);
         GUI.window.add(new GSpacer(5));
 
         //Add the submit button and program what it does.
-        GUI.window.add(new GButton(40, "Save Changes") {
+        GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont) {
             @Override
             public void clickAction() {
                 String myName = name.getText().trim();
@@ -56,13 +56,30 @@ public class EditAccount extends GUIPage {
                     if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
-                        email.failed("• Must be a valid email.");
-                    } else if (!General.isEmailFree(myEmail)) {
-                        email.failed("• This Email is already taken.");
+                        email.failed("• Must be a valid email. This is a really long message to see if it work. Hello, the quick brown fox jumps over the lazy dog. Wow, does this actually work?");
+                    }  if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
                     }
                 }
             }
         });
-        GUI.window.add(menu);
+
+
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GText("Other Settings"));
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GButton(40, "Delete Account", Style.defaultFont) {
+            @Override
+            public void clickAction() {
+                UserManager.getUsers().remove(UserManager.getLoadedUser());
+                UserManager.save();
+                if (UserManager.getUsers().size() == 0) {
+                    GUI.window.gotoPage("Register");
+                } else {
+                    GUI.window.gotoPage("Login");
+                }
+            }
+        });
+
+        GUI.window.showMenu();
     }
 }
