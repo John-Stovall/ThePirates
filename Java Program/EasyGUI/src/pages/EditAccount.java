@@ -62,6 +62,24 @@ public class EditAccount extends GUIPage {
                 }
             }
         });
+
+
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GText("Other Settings"));
+        GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GButton(40, "Delete Account", Style.defaultFont) {
+            @Override
+            public void clickAction() {
+                UserManager.getUsers().remove(UserManager.getLoadedUser());
+                UserManager.save();
+                if (UserManager.getUsers().size() == 0) {
+                    GUI.window.gotoPage("Register");
+                } else {
+                    GUI.window.gotoPage("Login");
+                }
+            }
+        });
+
         GUI.window.showMenu();
     }
 }

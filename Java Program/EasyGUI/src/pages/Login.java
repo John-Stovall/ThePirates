@@ -73,14 +73,6 @@ public class Login extends GUIPage {
                 UserManager.export();
             }
         });
-        innerDiv.add(new GButton(40, "Clear All Users", Style.defaultFont, 8) {
-            @Override
-            public void clickAction() {
-                UserManager.getUsers().clear();
-                GUI.window.gotoPage("Register");
-                UserManager.save();
-            }
-        });
         buttons.add(innerDiv);
         GUI.window.add(buttons);
     }
