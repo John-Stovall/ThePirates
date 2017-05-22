@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83388391-1306-4708-aba7-49260e2ebaa9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThePiratesProjectSave.diy" afterPath="$PROJECT_DIR$/ThePiratesProjectSave.diy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/pageIcon.png" afterPath="$PROJECT_DIR$/img/pageIcon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GImage.java" afterPath="$PROJECT_DIR$/src/gui/GImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GMenuBar.java" afterPath="$PROJECT_DIR$/src/gui/GMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/GUI.java" afterPath="$PROJECT_DIR$/src/gui/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Style.java" afterPath="$PROJECT_DIR$/src/gui/Style.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/EditAccount.java" afterPath="$PROJECT_DIR$/src/pages/EditAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.java" afterPath="$PROJECT_DIR$/src/pages/Home.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Login.java" afterPath="$PROJECT_DIR$/src/pages/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/RegisterAccount.java" afterPath="$PROJECT_DIR$/src/pages/RegisterAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/InsulationProject.java" afterPath="$PROJECT_DIR$/src/project/InsulationProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/user/User.java" afterPath="$PROJECT_DIR$/src/user/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -854,7 +841,7 @@
       <workItem from="1495336317075" duration="7046000" />
       <workItem from="1495412983644" duration="2379000" />
       <workItem from="1495433538116" duration="2706000" />
-      <workItem from="1495479678916" duration="2995000" />
+      <workItem from="1495479678916" duration="3041000" />
     </task>
     <task id="LOCAL-00001" summary="Started formatting the insulation page.">
       <created>1495144696394</created>
@@ -898,7 +885,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495339249059</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Starting to polish pages to their final version.">
+      <created>1495489512989</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1495489512989</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -922,7 +916,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49470000" />
+    <option name="totallyTimeSpent" value="49516000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -981,7 +975,8 @@
     <MESSAGE value="Big Updates!&#10;&#10;- Animations are no longer tied to when components are repainted. &#10;&#10;This caused a weird bug on pages with GWrappers. Animations would play faster&#10;since JComponents like to repaint themselves a lot.&#10;&#10;- GTextBox now uses JTextFields instead of my custom code.&#10;&#10;I was rather disappointed with my code since it was missing a lot of basic features&#10;and had some bugs with Windows. Now GTextBox uses a JTextField as a base&#10;and adds on features like the animated error messages. I still have the old boxes&#10;as GTextBoxOLD.&#10;&#10;- Buttons now have rounded corners." />
     <MESSAGE value="Mostly updating the features of GTextBox." />
     <MESSAGE value="Mid update commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mid update commit." />
+    <MESSAGE value="Starting to polish pages to their final version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to polish pages to their final version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
