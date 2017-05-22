@@ -291,7 +291,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             super.paintComponent(theGraphics);
 
             Graphics2D g = (Graphics2D) theGraphics;
-            this.setDoubleBuffered(true);
+            setDoubleBuffered(true);
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
@@ -312,6 +312,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         public void paint(Graphics theGraphics) {
             super.paint(theGraphics);
             if (showMenu) {
+                Graphics2D g = (Graphics2D) theGraphics;
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
                 GUIPage.menu.draw(theGraphics, 0, 0, 0);
             }
         }

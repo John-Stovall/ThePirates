@@ -3,9 +3,12 @@ package gui;
 import control.General;
 import user.UserManager;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -51,6 +54,8 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
     /** The GUIComponents in the right menu. */
     private ArrayList<GUIComponent> accountComponents = new ArrayList<>();
 
+    private BufferedImage icon;
+
     /**
      * Create a menu bar with some height.
      *
@@ -59,6 +64,12 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
      */
     GMenuBar(final int height) {
         this.height = height;
+
+        try {
+            icon = ImageIO.read(new File("img/userIcon1.png"));
+        } catch (Exception ex) {
+            icon = null;
+        }
     }
 
     /**
@@ -150,8 +161,10 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
         accountTotalHeight = y3 - height;
 
         //Draw the circle in the corner.
-        Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
-        g2d.fill(circle);
+        g2d.drawImage(icon, (int) (GUI.getWindowWidth() - height * 0.875), height / 4 / 2, (int) (height * 0.75), (int) (height * 0.75), null);
+
+        //Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
+        //g2d.fill(circle);
 
         //Draw user's name.
         g.setFont(new Font("Helvetica", Font.PLAIN, 26));

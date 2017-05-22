@@ -43,20 +43,35 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GText(name));
                 GUI.window.add(new GSpacer(25));
 
-                GDivider buttons = new GDivider(240, 1);
-                GDivider innerDiv = new GDivider(240, 2);
-                innerDiv.add(new GButton(40, "Edit Project", Style.defaultFont, 8) {
-                    @Override
-                    public void clickAction() {
-                        GUI.window.gotoPage(getEditPage());
-                    }
-                });
-                innerDiv.add(new GButton(40, "Completed", Style.defaultFont, 8) {
-                    @Override
-                    public void clickAction() { GUI.window.gotoPage("Home");
-                    }
-                });
-                buttons.add(innerDiv);
+                GDivider buttons = new GDivider(240, 2);
+                GDivider innerDiv1 = new GDivider(240, 1);
+                GDivider innerDiv2 = new GDivider(240, 1);
+                if (UserManager.getLoadedUser().getMyProjects().contains(InsulationProject.this)) {
+                    innerDiv1.add(new GButton(40, "Edit Project", Style.defaultFont, 8) {
+                        @Override
+                        public void clickAction() {
+                            GUI.window.gotoPage(getEditPage());
+                        }
+                    });
+                    innerDiv1.add(new GSpacer(10));
+                    innerDiv2.add(new GButton(40, "Completed", Style.defaultFont, 8) {
+                        @Override
+                        public void clickAction() {
+                            UserManager.getLoadedUser().projectComplete(InsulationProject.this);
+                            GUI.window.gotoPage("Home");
+                        }
+                    });
+                } else {
+//                    innerDiv2.add(new GButton(40, "Resume Project", Style.defaultFont, 8) {
+//                        @Override
+//                        public void clickAction() {
+//
+//                        }
+//                    });
+                }
+                innerDiv2.add(new GSpacer(10));
+                buttons.add(innerDiv1);
+                buttons.add(innerDiv2);
                 GUI.window.add(buttons);
                 GUI.window.add(new GSpacer(40));
                 GUI.window.showMenu();
@@ -123,11 +138,22 @@ public class InsulationProject extends Project implements Serializable {
 
                 GUI.window.add(new GSpacer(5));
 
-                GUI.window.add(new GButton(40, "Submit", Style.defaultFont, 8) {
+                GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont, 8) {
                     @Override
                     public void clickAction() {
                         //TODO: Write checks and setters for all of the textboxes.
                         GUI.window.gotoPage(getSummaryPage());
+                    }
+                });
+                GUI.window.add(new GSpacer(40));
+
+                GUI.window.add(new GText("Other Settings"));
+                GUI.window.add(new GSpacer(25));
+                GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Project", Style.defaultFont) {
+                    @Override
+                    public void clickAction() {
+                        UserManager.getLoadedUser().getMyProjects().remove(InsulationProject.this);
+                        GUI.window.gotoPage("Home");
                     }
                 });
                 GUI.window.add(new GSpacer(40));

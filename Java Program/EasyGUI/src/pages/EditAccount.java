@@ -31,11 +31,11 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Edit Account"));
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("Name:"));
+        GUI.window.add(new GText("Name:", Style.defaultFont));
         GUI.window.add(new GSpacer(5));
         GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(5));
-        GUI.window.add(new GText("Email:"));
+        GUI.window.add(new GText("Email:", Style.defaultFont));
         GUI.window.add(new GSpacer(5));
         GUI.window.add((GUIComponent) email);
         GUI.window.add(new GSpacer(5));
@@ -67,7 +67,7 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Other Settings"));
         GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GButton(40, "Delete Account", Style.defaultFont) {
+        GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Account", Style.defaultFont) {
             @Override
             public void clickAction() {
                 UserManager.getUsers().remove(UserManager.getLoadedUser());
