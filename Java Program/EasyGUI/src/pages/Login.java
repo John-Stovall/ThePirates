@@ -53,27 +53,34 @@ public class Login extends GUIPage {
 
         GUI.window.add(new GSpacer(15));
 
-        GDivider buttons = new GDivider(240, 1);
-        GDivider innerDiv = new GDivider(240, 3);
-        innerDiv.add(new GButton(40, "Add new Account", Style.defaultFont, 8) {
+        GDivider buttons = new GDivider(240, 3);
+        GDivider innerDiv1 = new GDivider(240, 1);
+        innerDiv1.add(new GButton(40, "Add new Account", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
                 GUI.window.gotoPage("Register");
             }
         });
-        innerDiv.add(new GButton(40, "Import", Style.defaultFont, 8) {
+        innerDiv1.add(new GSpacer(10));
+        GDivider innerDiv2 = new GDivider(240, 3);
+        innerDiv2.add(new GButton(40, "Import", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
                 UserManager.importFile();
             }
         });
-        innerDiv.add(new GButton(40, "Export", Style.defaultFont, 8) {
+        innerDiv2.add(new GSpacer(10));
+        GDivider innerDiv3 = new GDivider(240, 3);
+        innerDiv3.add(new GButton(40, "Export", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
                 UserManager.export();
             }
         });
-        buttons.add(innerDiv);
+        innerDiv3.add(new GSpacer(10));
+        buttons.add(innerDiv1);
+        buttons.add(innerDiv2);
+        buttons.add(innerDiv3);
         GUI.window.add(buttons);
     }
 }
