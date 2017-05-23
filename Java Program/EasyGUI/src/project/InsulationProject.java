@@ -4,9 +4,11 @@ import gui.*;
 import user.UserManager;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * @author Ryan Hansen
+ * @author Robert Cordingly
  *
  * Insulation Project class.
  * Used for creating a new insulation project.
@@ -29,9 +31,18 @@ public class InsulationProject extends Project implements Serializable {
 		this.waterUsage = -1.0;
 	}
 
-	public int getRValue() {
-		return this.rValue;
-	}
+	@Override
+    public double getMonthlySavings() {
+	    //TODO: Program this to properly calculate the monthly savings.
+
+
+	    return 2.0;
+    }
+
+    @Override
+    public double getInitialCost() {
+	    return initialCost;
+    }
 
     @Override
     public GUIPage getSummaryPage() {
@@ -41,8 +52,17 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText(name));
-                GUI.window.add(new GSpacer(25));
+                GUI.window.add(new GSpacer(25));ArrayList<double[]> data = new ArrayList<>();
 
+                data.add(new double[] {0, 0});
+
+                double potential = -getInitialCost();
+                for (int i = 0; i < 12; i++) {
+                    potential += getMonthlySavings();
+                    data.add(new double[] {potential});
+                }
+                GUI.window.add(new GGraph(data));
+                GUI.window.add(new GSpacer(20));
                 GDivider buttons = new GDivider(240, 2);
                 GDivider innerDiv1 = new GDivider(240, 1);
                 GDivider innerDiv2 = new GDivider(240, 1);
@@ -89,16 +109,15 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GText("Edit " + name));
                 GUI.window.add(new GSpacer(25));
 
+                //Create all of the text boxes and drop downs for this page.
                 GTextBox currentR = new GTextBox(40, "", "R-Value determines how well the insulation resists heat flow.");
                 GTextBox newR = new GTextBox(40, "", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
                 GTextBox areaToBeUpgraded = new GTextBox(40, "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, "", "HDD ");
-
+                GTextBox heatingDegreeDays = new GTextBox(40, "", "Heating degree days depends on how much often you use your heater.");
+                GTextBox pricePerUnit = new GTextBox(40, "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
+                GTextBox furnaceEfficency = new GTextBox(40, "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
+                GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
                 GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
-
-                GTextBox pricePerUnit = new GTextBox(40, "", "For natural gas and fuel oil used dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
-
-                GTextBox furnaceEfficency = new GTextBox(40, "");
 
                 GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -125,7 +144,6 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(gasType);
 
-
                 GUI.window.add(new GSpacer(20));
                 GUI.window.add(new GText("Fuel Price", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -137,18 +155,37 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add((GUIComponent) furnaceEfficency);
 
                 GUI.window.add(new GSpacer(5));
+                GUI.window.add(new GText("Initial Costs:", Style.defaultFont));
+                GUI.window.add(new GSpacer(5));
+                GUI.window.add((GUIComponent) insulationPrice);
+                GUI.window.add(new GSpacer(5));
 
+                //Program what the button does when it is clicked.
                 GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont, 8) {
                     @Override
                     public void clickAction() {
                         //TODO: Write checks and setters for all of the textboxes.
-                        GUI.window.gotoPage(getSummaryPage());
+                        boolean good = true;
+
+
+                        //Example:
+                        try {
+                            initialCost = Double.parseDouble(insulationPrice.getText());
+                        } catch (NumberFormatException e) {
+                            insulationPrice.failed("This value must be a number.");
+                            good = false;
+                        }
+
+                        if (good) {
+                            GUI.window.gotoPage(getSummaryPage());
+                        }
                     }
                 });
-                GUI.window.add(new GSpacer(40));
 
+                GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GText("Other Settings"));
                 GUI.window.add(new GSpacer(25));
+
                 GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Project", Style.defaultFont) {
                     @Override
                     public void clickAction() {

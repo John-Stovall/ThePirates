@@ -119,7 +119,7 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
         g2d.fill(hover);
         //g.fillRect(x, y, width, height);
         g.setColor(Style.dropdownBorderColor);
-        g2d.draw(main);
+    //    g2d.draw(main);
         //g.drawRect(x, y, width, height);
 
         //Draw the icon.

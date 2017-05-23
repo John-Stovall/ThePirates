@@ -15,6 +15,9 @@ import java.io.Serializable;
 							// will not be instantiated.
 public abstract class Project  implements Serializable {
 
+    //TODO: Clean up this class. This class really should only have variables/methods that ALL projects will use.
+    //TODO: Along with that, many of methods should be abstract/don't need public access.
+
 	protected String name;
 	protected double initialCost;
 	protected double monthlyCost;
@@ -23,6 +26,7 @@ public abstract class Project  implements Serializable {
 	protected double electricityUsage;
 	protected double gasUsage;
 	protected double waterUsage;
+	protected double monthlySavings;
 
 	public abstract GUIPage getSummaryPage();
 
@@ -41,9 +45,7 @@ public abstract class Project  implements Serializable {
 		this.initialCost = theInitialCost;
 	}
 	
-	public double getIntialCost() {
-		return this.initialCost;
-	}
+	public abstract double getInitialCost();
 	
 	//Getters and setters for monthlyCost
 	public void setMonthlyCost(double theMonthlyCost) {
@@ -96,4 +98,6 @@ public abstract class Project  implements Serializable {
 	public double getWaterUsage() {
 		return this.waterUsage;
 	}
+
+	public abstract double getMonthlySavings();
 }
