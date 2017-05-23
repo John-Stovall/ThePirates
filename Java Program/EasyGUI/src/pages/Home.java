@@ -56,7 +56,7 @@ public class Home extends GUIPage {
             GDivider div2 = new GDivider(240, 2);
             BufferedImage image2;
             try {
-                image2 = ImageIO.read(new File("img/pageIcon.png"));
+                image2 = ImageIO.read(new File("img/userIcon.png"));
             } catch (Exception ex) {
                 image2 = null;
             }
