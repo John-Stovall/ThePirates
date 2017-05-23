@@ -298,7 +298,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             int y = scrollOffset;
 
             // Loop through the list of currently loaded components and call their draw methods.
-            for (GUIComponent c : components) {
+            for (int i = 0; i < components.size(); i++) { //DO NOT CHANGE THIS TO A FOR EACH LOOP!!
+                GUIComponent c = components.get(i);
                 if (!(c instanceof GMenuBar)) {
                     g.setColor(Color.black);
                     int width = (getWidth() > maxWidth + sidePadding) ? maxWidth : getWidth() - sidePadding;
