@@ -4,6 +4,7 @@ import control.General;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -76,40 +77,63 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
         int h = height;
         g.setFont(Style.defaultFont);
 
+        int yPos;
+        int innerPadding = 16;
+
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Style.secondaryDropdownColor);
+        RoundRectangle2D holder = new RoundRectangle2D.Double(x + innerPadding, y + 1, width - innerPadding * 2, height * (options.size() + 1) * animation - 3, 64, 64);
+        g2d.fill(holder);
+
         //Draw all the elements in the list.
         for (int i = 0; i < options.size(); i++) {
             String s = options.get(i);
+            yPos = (int) (y + (height * (i + 1)) * animation);
+
             if (s.equals(selection)) {
                 g.setColor(Style.secondaryDropdownColor.brighter());
+                RoundRectangle2D select = new RoundRectangle2D.Double(x + innerPadding, yPos, width - innerPadding * 2, height, 16, 16);
+                g2d.fill(select);
             } else {
                 g.setColor(Style.secondaryDropdownColor);
             }
-            int yPos = (int) (y + (height * (i + 1)) * animation);
+
             h += height * animation;
 
             // The padding around the sides of the dropdown portion of the menu.
-            int innerPadding = 16;
-            g.fillRect(x + innerPadding, yPos, width - innerPadding * 2, height);
+            int textWidth = g.getFontMetrics().stringWidth(s);
+            int textHeight = g.getFontMetrics().getHeight();
             g.setColor(Color.white);
-            g.drawString(s, x + innerPadding + 4, yPos + height - 4);
-            g.setColor(Style.dropdownBorderColor);
-            g.drawRect(x + innerPadding, yPos, width - innerPadding * 2, height);
+            g.drawString(s, x + width / 2 - textWidth / 2, yPos + height / 2 + textHeight / 2 - 4);
         }
 
+
         //Draw the top item.
-        g.setColor(Style.dropdownBorderColor);
-        g.drawRect(x, y, width, height);
+
+        RoundRectangle2D main = new RoundRectangle2D.Double(x, y, width, height, 40, 40);
+        RoundRectangle2D hover = new RoundRectangle2D.Double(x + width / 2 - (width * animation) / 2, y, width * animation, height, 40, 40);
+
         g.setColor(Style.primaryDropdownColor);
-        g.fillRect(x, y, width, height);
+        g2d.fill(main);
+        g.setColor(Style.secondaryButtonColor);
+        g2d.fill(hover);
+        //g.fillRect(x, y, width, height);
+        g.setColor(Style.dropdownBorderColor);
+        g2d.draw(main);
+        //g.drawRect(x, y, width, height);
 
         //Draw the icon.
         g.setColor(Color.white);
-        g.drawString(selection, x + 4, y + height - 6);
-        if (!open) {
-            g.drawString("v", x + width - 18, y + height - 8);
-        } else {
-            g.drawString("^", x + width - 18, y + height - 3);
-        }
+        int textWidth = g.getFontMetrics().stringWidth(selection);
+        int textHeight = g.getFontMetrics().getHeight();
+        g.drawString(selection, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
+//        if (!open) {
+//            g.drawString("v", x + width - 18, y + height - 15);
+//            g.drawString("v", x + 10, y + height - 15);
+//        } else {
+//            g.drawString("^", x + width - 18, y + height - 10);
+//            g.drawString("^", x + 10, y + height - 10);
+//        }
 
         return h;
     }
