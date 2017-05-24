@@ -98,7 +98,7 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
             showDetails = false;
         }
 
-        int textHeight = message.draw(g, x + 4, y + failMessagePos, width - 8);
+        int textHeight = message.draw(g, x + 16, y + failMessagePos, width - 32);
 
         super.draw(g, x, y, width);
 

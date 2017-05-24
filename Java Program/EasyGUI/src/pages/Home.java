@@ -74,18 +74,31 @@ public class Home extends GUIPage {
             GUI.window.add(new GText("Projected Earnings:"));
             GUI.window.add(new GSpacer(25));
             ArrayList<double[]> data = new ArrayList<>();
-            data.add(new double[] {5, 2});
-            data.add(new double[] {10, 7});
-            data.add(new double[] {8, 5});
-            data.add(new double[] {1, 9});
-            data.add(new double[] {4, 6});
-            data.add(new double[] {1, 3});
-            data.add(new double[] {5, 2});
-            data.add(new double[] {10, 7});
-            data.add(new double[] {8, 5});
-            data.add(new double[] {1, 9});
-            data.add(new double[] {4, 6});
-            data.add(new double[] {1, 3});
+
+            data.add(new double[] {0, 0});
+
+            double potential = 0, completed = 0;
+
+            for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+                potential -= p.getInitialCost();
+            }
+
+            for (Project p : UserManager.getLoadedUser().getCompletedProject()) {
+                completed -= p.getInitialCost();
+            }
+
+            for (int i = 0; i < 12; i++) {
+
+                for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+                    potential += p.getMonthlySavings();
+                }
+
+                for (Project p : UserManager.getLoadedUser().getCompletedProject()) {
+                    completed += p.getMonthlySavings();
+                }
+
+                data.add(new double[] {potential, completed});
+            }
             GUI.window.add(new GGraph(data));
             GUI.window.add(new GSpacer(20));
             GDivider div = new GDivider(240, 2);

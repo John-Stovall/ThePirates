@@ -54,7 +54,7 @@ public final class Style {
 
     static final Color textBoxErrorColor         = Color.red;
 
-    static final Color[] graphBarColors          = new Color[] {Color.black, Color.red, Color.yellow};
+    static final Color[] graphBarColors          = new Color[] {Color.black, Color.decode("#43A047"), Color.green};
 
     /**
      * Fonts

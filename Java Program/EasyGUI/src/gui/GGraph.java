@@ -79,7 +79,11 @@ public class GGraph implements GUIComponent, GAnimation {
 
                 g.setColor(lines[j]);
                 int xPos = offsetX + paneX / (times.size() - 1) * i;
-                int yPos = offsetY + (int)((int) (paneY - e[j] / largestValue * paneY) * animation[i]);
+
+                double value = e[j];
+                if (value < 0) value = 0;
+
+                int yPos = offsetY + (int)((int) (paneY - value / largestValue * paneY) * animation[i]);
                 if (animation[i] > 0) {
                     g.fillOval(xPos - 2, yPos - 2, 4, 4);
                     if (i != 0) {
