@@ -51,18 +51,41 @@ public class InsulationProject extends Project implements Serializable {
             public void build() {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText(name));
+                GUI.window.add(new GText(name + " Summary"));
                 GUI.window.add(new GSpacer(25));ArrayList<double[]> data = new ArrayList<>();
 
                 data.add(new double[] {0, 0});
 
+                boolean payedFor = false;
+                int payedDate = 0;
                 double potential = -getInitialCost();
                 for (int i = 0; i < 12; i++) {
                     potential += getMonthlySavings();
+                    if (potential >= 0 && !payedFor) {
+                        payedDate = i + 1;
+                        payedFor = true;
+                    }
                     data.add(new double[] {potential});
                 }
-                GUI.window.add(new GGraph(data));
+
+                if (potential > 0) {
+                    GUI.window.add(new GGraph(data));
+                    GUI.window.add(new GSpacer(20));
+
+                    GUI.window.add(new GText("Details:"));
+                    GUI.window.add(new GSpacer(20));
+                    GUI.window.add(new GText("Nice! After one year this project will save you $" + Math.round(potential) + ".", Style.defaultFont));
+
+                    if (payedDate != 1) {
+                        GUI.window.add(new GSpacer(10));
+                        GUI.window.add(new GText("This project will pay for itself in " + payedDate + " months.", Style.defaultFont));
+                    }
+                } else {
+                    GUI.window.add(new GText("Oh no! This project won't save you any money this year. Try reducing the initial costs and change other settings to make the project more profitable.", Style.defaultFont));
+                }
+
                 GUI.window.add(new GSpacer(20));
+
                 GDivider buttons = new GDivider(240, 2);
                 GDivider innerDiv1 = new GDivider(240, 1);
                 GDivider innerDiv2 = new GDivider(240, 1);
