@@ -64,7 +64,7 @@ public final class Style {
 
     public static final Font defaultFont         = new Font("Helvetica", Font.PLAIN, 20);
 
-    static final Font graphTicks                 = new Font("Helvetica", Font.PLAIN, 12);
+    public static final Font graphTicks          = new Font("Helvetica", Font.PLAIN, 12);
 
     static final Font textBoxFail                = new Font("Helvetica", Font.PLAIN, 16);
 

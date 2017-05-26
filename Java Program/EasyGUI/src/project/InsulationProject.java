@@ -1,6 +1,7 @@
 package project;
 
 import gui.*;
+import pages.ProjectChooser;
 import user.UserManager;
 
 import java.io.Serializable;
@@ -86,10 +87,13 @@ public class InsulationProject extends Project implements Serializable {
 
                 GUI.window.add(new GSpacer(20));
 
-                GDivider buttons = new GDivider(240, 2);
-                GDivider innerDiv1 = new GDivider(240, 1);
-                GDivider innerDiv2 = new GDivider(240, 1);
+                GDivider buttons = new GDivider(240, 3);
                 if (UserManager.getLoadedUser().getMyProjects().contains(InsulationProject.this)) {
+
+                    GDivider innerDiv1 = new GDivider(240, 1);
+                    GDivider innerDiv2 = new GDivider(240, 1);
+                    GDivider innerDiv3 = new GDivider(240, 1);
+
                     innerDiv1.add(new GButton(40, "Edit Project", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
@@ -97,6 +101,13 @@ public class InsulationProject extends Project implements Serializable {
                         }
                     });
                     innerDiv1.add(new GSpacer(10));
+                    innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
+                        @Override
+                        public void clickAction() {
+                            GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
+                        }
+                    });
+                    innerDiv3.add(new GSpacer(10));
                     innerDiv2.add(new GButton(40, "Completed", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
@@ -104,17 +115,21 @@ public class InsulationProject extends Project implements Serializable {
                             GUI.window.gotoPage("Home");
                         }
                     });
+                    innerDiv2.add(new GSpacer(10));
+                    buttons.add(innerDiv1);
+                    buttons.add(innerDiv3);
+                    buttons.add(innerDiv2);
+
+
                 } else {
-//                    innerDiv2.add(new GButton(40, "Resume Project", Style.defaultFont, 8) {
-//                        @Override
-//                        public void clickAction() {
-//
-//                        }
-//                    });
+                    GUI.window.add(new GButton(40, "Resume Project", Style.defaultFont, 8) {
+                        @Override
+                        public void clickAction() {
+                            UserManager.getLoadedUser().projectResume(InsulationProject.this);
+                            GUI.window.gotoPage(getSummaryPage());
+                        }
+                    });
                 }
-                innerDiv2.add(new GSpacer(10));
-                buttons.add(innerDiv1);
-                buttons.add(innerDiv2);
                 GUI.window.add(buttons);
                 GUI.window.add(new GSpacer(40));
                 GUI.window.showMenu();
