@@ -101,13 +101,17 @@ public class InsulationProject extends Project implements Serializable {
                         }
                     });
                     innerDiv1.add(new GSpacer(10));
-                    innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
-                        @Override
-                        public void clickAction() {
-                            GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
-                        }
-                    });
-                    innerDiv3.add(new GSpacer(10));
+                    buttons.add(innerDiv1);
+                    if (UserManager.getLoadedUser().getMyProjects().size() > 1) {
+                        innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
+                            @Override
+                            public void clickAction() {
+                                GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
+                            }
+                        });
+                        innerDiv3.add(new GSpacer(10));
+                        buttons.add(innerDiv3);
+                    }
                     innerDiv2.add(new GButton(40, "Completed", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
@@ -116,8 +120,6 @@ public class InsulationProject extends Project implements Serializable {
                         }
                     });
                     innerDiv2.add(new GSpacer(10));
-                    buttons.add(innerDiv1);
-                    buttons.add(innerDiv3);
                     buttons.add(innerDiv2);
 
 
@@ -209,8 +211,12 @@ public class InsulationProject extends Project implements Serializable {
                         //Example:
                         try {
                             initialCost = Double.parseDouble(insulationPrice.getText());
+                            if (initialCost < 0) {
+                                good = false;
+                                insulationPrice.failed("Initial cost cannot be negative.");
+                            }
                         } catch (NumberFormatException e) {
-                            insulationPrice.failed("This value must be a number.");
+                            insulationPrice.failed("Initial cost must be a number.");
                             good = false;
                         }
 
