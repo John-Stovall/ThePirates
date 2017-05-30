@@ -64,7 +64,7 @@ public final class Style {
 
     public static final Font defaultFont         = new Font("Helvetica", Font.PLAIN, 20);
 
-    static final Font graphTicks                 = new Font("Helvetica", Font.PLAIN, 12);
+    public static final Font graphTicks          = new Font("Helvetica", Font.PLAIN, 12);
 
     static final Font textBoxFail                = new Font("Helvetica", Font.PLAIN, 16);
 
@@ -80,7 +80,7 @@ public final class Style {
 
     static final double graphMoveSpeed           = Math.max(3.0 * speedModifier, 1);
 
-    static final double graphSpawnThreshold      = 0.9;
+    static final double graphSpawnThreshold      = 0.5;
 
     static final double buttonMoveSpeed          = Math.max(3.0 * speedModifier, 1);
 

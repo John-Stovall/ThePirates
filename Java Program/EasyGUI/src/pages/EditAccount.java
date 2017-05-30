@@ -56,7 +56,7 @@ public class EditAccount extends GUIPage {
                     if (!General.testName(myName)) {
                         name.failed("• Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
-                        email.failed("• Must be a valid email. This is a really long message to see if it work. Hello, the quick brown fox jumps over the lazy dog. Wow, does this actually work?");
+                        email.failed("• Must be a valid email.");
                     }  if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
                     }
                 }

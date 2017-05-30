@@ -47,6 +47,22 @@ public class User implements Serializable{
         }
     }
 
+    /**
+     * This method moves a project from the completed list to the current list.
+     *
+     * @param p The project to move.
+     * @author Robert
+     */
+    public void projectResume(Project p) {
+        if (completedProject.contains(p)) {
+            myProjects.add(p);
+            completedProject.remove(p);
+        } else {
+            throw new IllegalArgumentException("Unknown project.");
+        }
+    }
+
+
 	public String getName() {
         return name;
     }

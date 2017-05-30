@@ -82,5 +82,6 @@ public class Login extends GUIPage {
         buttons.add(innerDiv2);
         buttons.add(innerDiv3);
         GUI.window.add(buttons);
+        GUI.window.add(new GSpacer(20));
     }
 }
