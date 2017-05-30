@@ -80,7 +80,7 @@ public final class Style {
 
     static final double graphMoveSpeed           = Math.max(3.0 * speedModifier, 1);
 
-    static final double graphSpawnThreshold      = 0.9;
+    static final double graphSpawnThreshold      = 0.5;
 
     static final double buttonMoveSpeed          = Math.max(3.0 * speedModifier, 1);
 
