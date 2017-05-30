@@ -23,7 +23,13 @@ public class InsulationProject extends Project implements Serializable {
 
 	// Class specific variable used for determining the insulating properties
 	// of the materials being used.
-	private int rValue;
+	private int currRValue;
+	private int newRValue;
+	private double wallArea;
+	private int heatDays;
+	private double ppu;
+	private double furnaceEff;
+
 	
 	// constructor sets the water usage to -1.0 because there is no way for a insulation project
 	// to have an impact on water consumption. This will be beneficial for our 'Math' class.
@@ -149,13 +155,13 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GText("Edit " + name));
                 GUI.window.add(new GSpacer(25));
 
-                //Create all of the text boxes and drop downs for this page.
-                GTextBox currentR = new GTextBox(40, "", "R-Value determines how well the insulation resists heat flow.");
-                GTextBox newR = new GTextBox(40, "", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
-                GTextBox areaToBeUpgraded = new GTextBox(40, "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, "", "Heating degree days depends on how much often you use your heater.");
-                GTextBox pricePerUnit = new GTextBox(40, "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
-                GTextBox furnaceEfficency = new GTextBox(40, "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
+                //Create all of the text boxes and drop down explanations for this page.
+                GTextBox currentR = new GTextBox(40, currRValue + "", "R-Value determines how well the insulation resists heat flow.");
+                GTextBox newR = new GTextBox(40, newRValue +"", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
+                GTextBox areaToBeUpgraded = new GTextBox(40,  wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
+                GTextBox heatingDegreeDays = new GTextBox(40, heatDays + "", "Heating degree days depends on how much often you use your heater.");
+                GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
+                GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
                 GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
 
@@ -208,12 +214,109 @@ public class InsulationProject extends Project implements Serializable {
                         boolean good = true;
 
 
-                        //Example:
+
+
+
+                        //currentR
+                        try {
+                            currRValue = Integer.parseInt(currentR.getText());
+                            if (currRValue < 0) {
+                                good = false;
+                                currentR.failed("Current R value cannot be negative.");
+                            } else if (currRValue > 60) {
+                                good = false;
+                                currentR.failed("Current R cannot exceed 60.");
+                            }
+                        } catch (NumberFormatException e) {
+                            currentR.failed("Current R value must be a number.");
+                            good = false;
+                        }
+
+                        //newR
+                        try {
+                            newRValue = Integer.parseInt(currentR.getText());
+                            if (newRValue < 0) {
+                                good = false;
+                                currentR.failed("New R value cannot be negative.");
+                            } else if (newRValue > 60) {
+                                good = false;
+                                currentR.failed("New R cannot exceed 60.");
+                            }
+                        } catch (NumberFormatException e) {
+                            currentR.failed("New R value must be a number.");
+                            good = false;
+                        }
+
+                        //areaToBeUpgraded
+                        try {
+                            wallArea = Double.parseDouble(areaToBeUpgraded.getText());
+                            if (wallArea < 0) {
+                                good = false;
+                                areaToBeUpgraded.failed("Wall Area cannot be negative.");
+                            } else if (wallArea > 999999) {
+                                good = false;
+                                areaToBeUpgraded.failed("Damn Donald, Back at it again with the Giant Wall!");
+                            }
+                        } catch (NumberFormatException e) {
+                            areaToBeUpgraded.failed("Wall Area must be a number.");
+                            good = false;
+                        }
+
+                        //heatingDegreeDays
+                        try {
+                            heatDays = Integer.parseInt(heatingDegreeDays.getText());
+                            if (heatDays < 0) {
+                                good = false;
+                                heatingDegreeDays.failed("Heating Degree Days cannot be negative.");
+                            } else if (heatDays > 360){
+                                good = false;
+                                heatingDegreeDays.failed("Heating Days can't exceed 360 unless you live on Mars in which case it can take 687 days");
+                            }
+                        } catch (NumberFormatException e) {
+                            heatingDegreeDays.failed("heating Degree Days must be a number.");
+                            good = false;
+                        }
+
+                        //pricePerUnit;
+                        try {
+                            ppu = Double.parseDouble(pricePerUnit.getText());
+                            if (ppu < 0) {
+                                good = false;
+                                pricePerUnit.failed("Price Per Unit cannot be negative.");
+                            } else if (ppu > 999999) {
+                                good = false;
+                                pricePerUnit.failed("Damn Donald, Back at it again with the Giant Wall!");
+                            }
+                        } catch (NumberFormatException e) {
+                            pricePerUnit.failed("Price Per Unit must be a number.");
+                            good = false;
+                        }
+
+
+                        //furnaceEfficency
+                        try {
+                            furnaceEff = Double.parseDouble(furnaceEfficency.getText());
+                            if (furnaceEff < 0) {
+                                good = false;
+                                furnaceEfficency.failed("Furnace Efficiency cannot be negative.");
+                            } else if (furnaceEff > 100) {
+                                good = false;
+                                furnaceEfficency.failed("Furnace Efficiency cannot cannont exceed 100%.");
+                            }
+                        } catch (NumberFormatException e) {
+                            furnaceEfficency.failed("Furnace Efficiency must be a number.");
+                            good = false;
+                        }
+
+                        //insulationPrice
                         try {
                             initialCost = Double.parseDouble(insulationPrice.getText());
                             if (initialCost < 0) {
                                 good = false;
-                                insulationPrice.failed("Initial cost cannot be negative.");
+                                insulationPrice.failed("Insulation Price cost cannot be negative.");
+                            } else if (initialCost > 2) {
+                                good = false;
+                                insulationPrice.failed("Initial cost shouldn't");
                             }
                         } catch (NumberFormatException e) {
                             insulationPrice.failed("Initial cost must be a number.");
