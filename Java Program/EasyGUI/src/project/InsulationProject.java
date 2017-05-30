@@ -10,6 +10,7 @@ import java.util.ArrayList;
 /**
  * @author Ryan Hansen
  * @author Robert Cordingly
+ * @author Reagan Stovall
  *
  * Insulation Project class.
  * Used for creating a new insulation project.
@@ -17,25 +18,28 @@ import java.util.ArrayList;
 public class InsulationProject extends Project implements Serializable {
 
 	/**
-	 * default version ID for serialization
+	 * Default version ID for serialization
 	 */
 	private static final long serialVersionUID = -1950641840941379037L;
 
 	// Class specific variable used for determining the insulating properties
 	// of the materials being used.
-	private int currRValue;
-	private int newRValue;
-	private double wallArea;
-	private int heatDays;
-	private double ppu;
-	private double furnaceEff;
+	private int currRValue = 10;
+	private int newRValue = 20;
+	private double wallArea = 1000;
+	private int heatDays = 5000;
+	private double ppu = 1.50;
+	private double furnaceEff = 80;
 
-	
-	// constructor sets the water usage to -1.0 because there is no way for a insulation project
-	// to have an impact on water consumption. This will be beneficial for our 'Math' class.
+
+    /**
+     * Creates an insulation project and sets the name.
+     *
+     * @param name The name of the insulation project.
+     * @author Ryan
+     */
 	public InsulationProject(final String name) {
 	    this.name = name;
-		this.waterUsage = -1.0;
 	}
 
 	@Override
@@ -44,11 +48,6 @@ public class InsulationProject extends Project implements Serializable {
 
 
 	    return 2.0;
-    }
-
-    @Override
-    public double getInitialCost() {
-	    return initialCost;
     }
 
     @Override
@@ -122,6 +121,7 @@ public class InsulationProject extends Project implements Serializable {
                         @Override
                         public void clickAction() {
                             UserManager.getLoadedUser().projectComplete(InsulationProject.this);
+                            UserManager.save();
                             GUI.window.gotoPage("Home");
                         }
                     });
@@ -134,6 +134,7 @@ public class InsulationProject extends Project implements Serializable {
                         @Override
                         public void clickAction() {
                             UserManager.getLoadedUser().projectResume(InsulationProject.this);
+                            UserManager.save();
                             GUI.window.gotoPage(getSummaryPage());
                         }
                     });
@@ -159,7 +160,7 @@ public class InsulationProject extends Project implements Serializable {
                 GTextBox currentR = new GTextBox(40, currRValue + "", "R-Value determines how well the insulation resists heat flow.");
                 GTextBox newR = new GTextBox(40, newRValue +"", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
                 GTextBox areaToBeUpgraded = new GTextBox(40,  wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, heatDays + "", "Heating degree days depends on how much often you use your heater.");
+                GTextBox heatingDegreeDays = new GTextBox(40, heatDays + "", "Heating degree days depends on how often you use your heater.");
                 GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
                 GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
@@ -324,6 +325,7 @@ public class InsulationProject extends Project implements Serializable {
                         }
 
                         if (good) {
+                            UserManager.save();
                             GUI.window.gotoPage(getSummaryPage());
                         }
                     }
@@ -337,6 +339,7 @@ public class InsulationProject extends Project implements Serializable {
                     @Override
                     public void clickAction() {
                         UserManager.getLoadedUser().getMyProjects().remove(InsulationProject.this);
+                        UserManager.save();
                         GUI.window.gotoPage("Home");
                     }
                 });
