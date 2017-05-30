@@ -23,12 +23,50 @@ public class InsulationProject extends Project implements Serializable {
 
 	// Class specific variable used for determining the insulating properties
 	// of the materials being used.
-	private int currRValue;
+	private int curRValue;
 	private int newRValue;
 	private double wallArea;
-	private int heatDays;
+	private int heatDegreeDays;
 	private double ppu;
 	private double furnaceEff;
+
+    // Natural Gas:
+    private double HeatingValueNG = 100000.0;  // BTU/therm
+    private double FuelCostNG = 1.50;          // cost per therm in US dollars
+    private double FuelInflationNG = 1.1;
+    private double GHGperBTUNG = 0.00012;  // GHG per BTU for Natural Gas
+    private double FurnaceEficNG = 80.0;     // Efficiency of typical NG furnace
+
+    // Fuel Oil:
+    private double HeatingValueOil = 142000.0;  //BTU/gal
+    private double FuelCostOil = 2.30;          // cost per gallon in US dollars
+    private double FuelInflationOil = 1.1;
+    private double GHGperBTUOil = 0.00014;  // GHG per BTU for Fuel Oil
+    private double FurnaceEficOil = 80.0;     // Efficiency of typical Oil furnace
+
+    // Propane:
+    private double HeatingValuePro = 92000.0;  // BTU/gal
+    private double FuelCostPro = 2.10;          // cost per gallon in US dollars
+    private double FuelInflationPro = 1.1;
+    private double GHGperBTUPro = 0.000141;  // GHG per BTU per gallon of Propane
+    private double FurnaceEficPro = 80.0;     // Efficiency of typical Propane furnace
+
+    // Electricity:
+    private double HeatingValueElec = 3412.0;   // BTU per KWH
+    private double FuelCostElec = 0.12;          // cost per KWH in US dollars
+    private double FuelInflationElec = 1.1;
+    private double GHGperBTUElec = 0.00059;  // GHG per BTU for electricity generated at a coal fired power station
+    private double FurnaceEficElec = 100.0;     // Efficiency of typical Elec heater/furnace
+
+
+    private String FuelType = "ng";
+    private double HeatingValue = HeatingValueNG;
+    private double FuelCost = FuelCostNG;
+    private double Efic = FurnaceEficNG;
+    private double GHGperBTU = GHGperBTUNG;
+    private double FuelInflation = FuelInflationNG;
+
+
 
 	
 	// constructor sets the water usage to -1.0 because there is no way for a insulation project
@@ -41,6 +79,7 @@ public class InsulationProject extends Project implements Serializable {
 	@Override
     public double getMonthlySavings() {
 	    //TODO: Program this to properly calculate the monthly savings.
+
 
 
 	    return 2.0;
@@ -156,10 +195,11 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(25));
 
                 //Create all of the text boxes and drop down explanations for this page.
-                GTextBox currentR = new GTextBox(40, currRValue + "", "R-Value determines how well the insulation resists heat flow.");
+                GTextBox currentR = new GTextBox(40, curRValue + "", "R-Value determines how well the insulation resists heat flow.");
                 GTextBox newR = new GTextBox(40, newRValue +"", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
                 GTextBox areaToBeUpgraded = new GTextBox(40,  wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, heatDays + "", "Heating degree days depends on how much often you use your heater.");
+                GTextBox heatingDegreeDays = new GTextBox(40, heatDegreeDays + "",
+                        "Anual Heating degree days depends on how much often you use your heater.");
                 GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
                 GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
@@ -213,17 +253,13 @@ public class InsulationProject extends Project implements Serializable {
                         //TODO: Write checks and setters for all of the textboxes.
                         boolean good = true;
 
-
-
-
-
                         //currentR
                         try {
-                            currRValue = Integer.parseInt(currentR.getText());
-                            if (currRValue < 0) {
+                            curRValue = Integer.parseInt(currentR.getText());
+                            if (curRValue < 0) {
                                 good = false;
                                 currentR.failed("Current R value cannot be negative.");
-                            } else if (currRValue > 60) {
+                            } else if (curRValue > 60) {
                                 good = false;
                                 currentR.failed("Current R cannot exceed 60.");
                             }
@@ -264,11 +300,11 @@ public class InsulationProject extends Project implements Serializable {
 
                         //heatingDegreeDays
                         try {
-                            heatDays = Integer.parseInt(heatingDegreeDays.getText());
-                            if (heatDays < 0) {
+                            heatDegreeDays = Integer.parseInt(heatingDegreeDays.getText());
+                            if (heatDegreeDays < 0) {
                                 good = false;
                                 heatingDegreeDays.failed("Heating Degree Days cannot be negative.");
-                            } else if (heatDays > 360){
+                            } else if (heatDegreeDays > 360){
                                 good = false;
                                 heatingDegreeDays.failed("Heating Days can't exceed 360 unless you live on Mars in which case it can take 687 days");
                             }
