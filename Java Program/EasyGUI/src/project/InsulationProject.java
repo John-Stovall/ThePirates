@@ -23,18 +23,140 @@ public class InsulationProject extends Project implements Serializable {
 
 	// Class specific variable used for determining the insulating properties
 	// of the materials being used.
-	private int rValue;
-	
-	// constructor sets the water usage to -1.0 because there is no way for a insulation project
+	private int curRValue;
+	private int newRValue;
+	private double wallArea;
+	private int heatDegreeDays;
+	private double ppu; //price per unit
+	private double furnaceEff;
+	private String gasType = "Natural Gas";
+
+	private String priceValue;
+
+    // Natural Gas:
+    private double HeatingValueNG = 100000.0;  // BTU/therm
+    private double FuelCostNG = 1.50;          // cost per therm in US dollars
+    private double FuelInflationNG = 1.1;
+    private double GHGperBTUNG = 0.00012;  // GHG per BTU for Natural Gas
+
+    // Fuel Oil:
+    private double HeatingValueOil = 142000.0;  //BTU/gal
+    private double FuelCostOil = 2.30;          // cost per gallon in US dollars
+    private double FuelInflationOil = 1.1;
+    private double GHGperBTUOil = 0.00014;  // GHG per BTU for Fuel Oil
+
+    // Propane:
+    private double HeatingValuePro = 92000.0;  // BTU/gal
+    private double FuelCostPro = 2.10;          // cost per gallon in US dollars
+    private double FuelInflationPro = 1.1;
+    private double GHGperBTUPro = 0.000141;  // GHG per BTU per gallon of Propane
+
+    // Electricity:
+    private double HeatingValueElec = 3412.0;   // BTU per KWH
+    private double FuelCostElec = 0.12;          // cost per KWH in US dollars
+    private double FuelInflationElec = 1.1;
+    private double GHGperBTUElec = 0.00059;  // GHG per BTU for electricity generated at a coal fired power station
+
+
+    private String FuelType = "ng";
+    private double HeatingValue = HeatingValueNG;
+    private double FuelCost = FuelCostNG;
+    private double GHGperBTU = GHGperBTUNG;
+    private double FuelInflation = FuelInflationNG;
+
+    // constructor sets the water usage to -1.0 because there is no way for a insulation project
 	// to have an impact on water consumption. This will be beneficial for our 'Math' class.
 	public InsulationProject(final String name) {
 	    this.name = name;
-		this.waterUsage = -1.0;
-	}
+    }
+
+    // Change Fuel -- changes fuel type, cost and furnace efficiency per user input
+    private void ChangeFuel(int i){
+
+	    System.out.print("changedFuel");
+        //gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
+        if (i == 0) {
+            priceValue = "$'s per therm";
+            FuelType = "ng";
+            HeatingValue = HeatingValueNG;  // BTU/therm
+            GHGperBTU = GHGperBTUNG;  // lbs GHG per BTU of NG
+            ppu = FuelCostNG;
+        }
+        if (i == 1) {
+            priceValue = "$'s per gallon";
+            FuelType = "oil";
+            HeatingValue = HeatingValueOil;  // BTU/gallon
+            GHGperBTU = GHGperBTUOil;  // lbs GHG per BTU of oil
+            ppu = FuelCostOil;
+        }
+        if (i == 2) {
+            priceValue = "$'s per gallon";
+            FuelType = "pro";
+            HeatingValue = HeatingValuePro;  // BTU/gallon
+            GHGperBTU = GHGperBTUPro;  // lbs of GHG per BTU of Propane
+            ppu = FuelCostPro;
+        }
+        if (i == 3) {
+            priceValue = "$'s per KWH";
+            FuelType = "elec";
+            HeatingValue = HeatingValueElec;  // BTU/KWH
+            GHGperBTU = GHGperBTUElec;  // lbs of GHG per BTU of electricity from a coal power station
+            ppu = FuelCostElec;
+        }
+    }
 
 	@Override
     public double getMonthlySavings() {
 	    //TODO: Program this to properly calculate the monthly savings.
+        //"Natural Gas", "Fuel Oil", "Propane", "Electricity"
+        //System.out.println("gasType: " + gasType);
+
+        //if(gasType.equals("Natural Gas")) ChangeFuel(0);
+        //else if(gasType.equals("Fuel Oil")) ChangeFuel(1);
+        //else if(gasType.equals("Propane")) ChangeFuel(2);
+        //else if(gasType.equals("Electricity")) ChangeFuel(3);
+
+        System.out.println("furnaceEff: "+ furnaceEff);
+        double Efic = furnaceEff/100.0;
+
+        System.out.println("Current R " + curRValue);
+        System.out.println("New R " + newRValue);
+        System.out.println("Wall Area" + wallArea);
+        System.out.println("HDD " + heatDegreeDays);
+
+        // Calculate the heat losses and fuel saving
+        // Current and New heat loss:
+        double Qcur, Qnew;
+        Qcur = (wallArea*heatDegreeDays*24.0)/(double)curRValue;
+        Qnew = (wallArea*heatDegreeDays*24.0)/(double)newRValue;
+        System.out.println("Qcur: " + Qcur);
+        System.out.println("Qnew: " + Qnew);
+        // calc $ saving in fuel
+        double Saving;
+        System.out.println("ppu: " + ppu);
+        System.out.println("HeatingValue: " + HeatingValue);
+        Saving = ((Qcur-Qnew)/(HeatingValue*Efic))*ppu;
+        System.out.println("Saving:" + Saving);
+        //10 year saving
+        double Saving10Year = 0.0;
+        double Infla = 1.0;
+        double yrSaving;
+        for(int i=0; i < 10 ;i++){
+            yrSaving = Saving*Infla;
+            Infla = Infla*FuelInflation;
+            Saving10Year = Saving10Year + yrSaving;
+        }
+
+        // Calc greenhouse gas
+        double GHgas;
+        GHgas = (Qcur-Qnew)*GHGperBTU/Efic;
+
+        // write outputs
+        System.out.println("Savings: " + Saving);
+
+        System.out.println("Savings: "+ Math.round(Saving*100)/100);
+        System.out.println("10 year Savings: "+ Math.round(Saving10Year*100)/100);
+        System.out.println("GHgas: "+ Math.round(GHgas));
 
 
 	    return 2.0;
@@ -101,13 +223,17 @@ public class InsulationProject extends Project implements Serializable {
                         }
                     });
                     innerDiv1.add(new GSpacer(10));
-                    innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
-                        @Override
-                        public void clickAction() {
-                            GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
-                        }
-                    });
-                    innerDiv3.add(new GSpacer(10));
+                    buttons.add(innerDiv1);
+                    if (UserManager.getLoadedUser().getMyProjects().size() > 1) {
+                        innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
+                            @Override
+                            public void clickAction() {
+                                GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
+                            }
+                        });
+                        innerDiv3.add(new GSpacer(10));
+                        buttons.add(innerDiv3);
+                    }
                     innerDiv2.add(new GButton(40, "Completed", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
@@ -116,8 +242,6 @@ public class InsulationProject extends Project implements Serializable {
                         }
                     });
                     innerDiv2.add(new GSpacer(10));
-                    buttons.add(innerDiv1);
-                    buttons.add(innerDiv3);
                     buttons.add(innerDiv2);
 
 
@@ -147,15 +271,17 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GText("Edit " + name));
                 GUI.window.add(new GSpacer(25));
 
-                //Create all of the text boxes and drop downs for this page.
-                GTextBox currentR = new GTextBox(40, "", "R-Value determines how well the insulation resists heat flow.");
-                GTextBox newR = new GTextBox(40, "", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
-                GTextBox areaToBeUpgraded = new GTextBox(40, "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, "", "Heating degree days depends on how much often you use your heater.");
-                GTextBox pricePerUnit = new GTextBox(40, "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
-                GTextBox furnaceEfficency = new GTextBox(40, "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
+                //Create all of the text boxes and drop down explanations for this page.
+                GTextBox currentR = new GTextBox(40, curRValue + "", "R-Value determines how well the insulation resists heat flow.");
+                GTextBox newR = new GTextBox(40, newRValue +"", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
+                GTextBox areaToBeUpgraded = new GTextBox(40,  wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
+                GTextBox heatingDegreeDays = new GTextBox(40, heatDegreeDays + "",
+                        "Anual Heating degree days depends on how much often you use your heater.");
+                GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
+                GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
                 GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
+                //TODO: Action listener that calls ChangeFuel(String action)
 
                 GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -182,6 +308,10 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(gasType);
 
+
+
+                //gasType.mouseReleased(ChangeFuel(gasType.getSelection()));
+
                 GUI.window.add(new GSpacer(20));
                 GUI.window.add(new GText("Fuel Price", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -198,23 +328,118 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add((GUIComponent) insulationPrice);
                 GUI.window.add(new GSpacer(5));
 
+
                 //Program what the button does when it is clicked.
                 GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont, 8) {
                     @Override
                     public void clickAction() {
-                        //TODO: Write checks and setters for all of the textboxes.
                         boolean good = true;
 
+                        //currentR
+                        try {
+                            curRValue = Integer.parseInt(currentR.getText());
+                            if (curRValue < 0) {
+                                good = false;
+                                currentR.failed("Current R value cannot be negative.");
+                            } else if (curRValue > 400) {
+                                good = false;
+                                currentR.failed("Current R cannot exceed 400.");
+                            }
+                        } catch (NumberFormatException e) {
+                            currentR.failed("Current R value must be a number.");
+                            good = false;
+                        }
 
-                        //Example:
+                        //newR
+                        try {
+                            newRValue = Integer.parseInt(newR.getText());
+                            if (newRValue < 0) {
+                                good = false;
+                                newR.failed("New R value cannot be negative.");
+                            } else if (newRValue > 400) {
+                                good = false;
+                                newR.failed("New R cannot exceed 400.");
+                            }
+                        } catch (NumberFormatException e) {
+                            newR.failed("New R value must be a number.");
+                            good = false;
+                        }
+
+                        //areaToBeUpgraded
+                        try {
+                            wallArea = Double.parseDouble(areaToBeUpgraded.getText());
+                            if (wallArea < 0) {
+                                good = false;
+                                areaToBeUpgraded.failed("Wall Area cannot be negative.");
+                            } else if (wallArea > 999999) {
+                                good = false;
+                                areaToBeUpgraded.failed("Damn Donald, Back at it again with the Giant Wall!");
+                            }
+                        } catch (NumberFormatException e) {
+                            areaToBeUpgraded.failed("Wall Area must be a number.");
+                            good = false;
+                        }
+
+                        //heatingDegreeDays
+                        try {
+                            heatDegreeDays = Integer.parseInt(heatingDegreeDays.getText());
+                            if (heatDegreeDays < 0) {
+                                good = false;
+                                heatingDegreeDays.failed("Heating Degree Days cannot be negative.");
+                            } else if (heatDegreeDays > 25000){
+                                good = false;
+                                heatingDegreeDays.failed("Heating Days can't exceed 25000 unless you live on Mars in which case it can.");
+                            }
+                        } catch (NumberFormatException e) {
+                            heatingDegreeDays.failed("heating Degree Days must be a number.");
+                            good = false;
+                        }
+
+                        //pricePerUnit;
+                        try {
+                            ppu = Double.parseDouble(pricePerUnit.getText());
+                            if (ppu < 0.01) {
+                                good = false;
+                                pricePerUnit.failed("Price Per Unit cannot be negative.");
+                            } else if (ppu > 999999) {
+                                good = false;
+                                pricePerUnit.failed("Damn Donald, Back at it again with the Giant Wall!");
+                            }
+                        } catch (NumberFormatException e) {
+                            pricePerUnit.failed("Price Per Unit must be a number.");
+                            good = false;
+                        }
+
+
+                        //furnaceEfficency
+                        try {
+                            furnaceEff = Double.parseDouble(furnaceEfficency.getText());
+                            if (furnaceEff < 0) {
+                                good = false;
+                                furnaceEfficency.failed("Furnace Efficiency cannot be negative.");
+                            } else if (furnaceEff > 100) {
+                                good = false;
+                                furnaceEfficency.failed("Furnace Efficiency cannot cannont exceed 100%.");
+                            }
+                        } catch (NumberFormatException e) {
+                            furnaceEfficency.failed("Furnace Efficiency must be a number.");
+                            good = false;
+                        }
+
+                        //insulationPrice
                         try {
                             initialCost = Double.parseDouble(insulationPrice.getText());
+                            if (initialCost < 0) {
+                                good = false;
+                                insulationPrice.failed("Insulation Price cost cannot be negative.");
+                            }
                         } catch (NumberFormatException e) {
-                            insulationPrice.failed("This value must be a number.");
+                            insulationPrice.failed("Initial cost must be a number.");
                             good = false;
                         }
 
                         if (good) {
+                            System.out.println("gasType Selection; " + gasType.getSelection());
                             GUI.window.gotoPage(getSummaryPage());
                         }
                     }

@@ -44,6 +44,13 @@ public class ProjectChooser extends GUIPage {
         }
 
         GUI.window.add(new GSpacer(25));
+        GUI.window.add(new GButton(40, "Back", Style.defaultFont) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(project.getSummaryPage());
+            }
+        });
+        GUI.window.add(new GSpacer(25));
         GUI.window.showMenu();
     }
 }

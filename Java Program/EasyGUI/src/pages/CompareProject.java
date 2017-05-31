@@ -2,7 +2,6 @@ package pages;
 
 import gui.*;
 import project.Project;
-import user.UserManager;
 
 import java.util.ArrayList;
 
@@ -51,7 +50,7 @@ public class CompareProject extends GUIPage {
         }
 
         GUI.window.add(new GGraph(data));
-        GUI.window.add(new GSpacer(10));
+        GUI.window.add(new GSpacer(20));
 
         GDivider rule = new GDivider(160, 2);
         rule.add(new GText("*" + project1.getName(), Style.graphTicks));
@@ -94,6 +93,33 @@ public class CompareProject extends GUIPage {
                         " more every month. If time is not a issue, " + project1.getName() + " will make you more money in the long run.",  Style.defaultFont));
             }
         }
+
+        GUI.window.add(new GSpacer(20));
+        GDivider buttons = new GDivider(240, 2);
+        GDivider slot1 = new GDivider(240, 1);
+
+        slot1.add(new GButton(40, "Edit " + project1.getName(), Style.defaultFont, 8) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(project1.getEditPage());
+            }
+        });
+        slot1.add(new GSpacer(10));
+
+
+        GDivider slot2 = new GDivider(240, 1);
+
+        slot2.add(new GButton(40, "Edit " + project2.getName(), Style.defaultFont, 8) {
+            @Override
+            public void clickAction() {
+                GUI.window.gotoPage(project2.getEditPage());
+            }
+        });
+        slot2.add(new GSpacer(10));
+
+        buttons.add(slot1);
+        buttons.add(slot2);
+        GUI.window.add(buttons);
 
 
         GUI.window.add(new GSpacer(25));
