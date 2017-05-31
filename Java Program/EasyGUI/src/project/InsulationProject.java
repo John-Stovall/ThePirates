@@ -68,8 +68,7 @@ public class InsulationProject extends Project implements Serializable {
 	// to have an impact on water consumption. This will be beneficial for our 'Math' class.
 	public InsulationProject(final String name) {
 	    this.name = name;
-		this.waterUsage = -1.0;
-	}
+    }
 
     // Change Fuel -- changes fuel type, cost and furnace efficiency per user input
     private void ChangeFuel(int i){
