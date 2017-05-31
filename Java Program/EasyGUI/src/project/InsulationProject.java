@@ -119,6 +119,11 @@ public class InsulationProject extends Project implements Serializable {
         System.out.println("furnaceEff: "+ furnaceEff);
         double Efic = furnaceEff/100.0;
 
+        System.out.println("Current R " + curRValue);
+        System.out.println("New R " + newRValue);
+        System.out.println("Wall Area" + wallArea);
+        System.out.println("HDD " + heatDegreeDays);
+
         // Calculate the heat losses and fuel saving
         // Current and New heat loss:
         double Qcur, Qnew;
@@ -347,16 +352,16 @@ public class InsulationProject extends Project implements Serializable {
 
                         //newR
                         try {
-                            newRValue = Integer.parseInt(currentR.getText());
+                            newRValue = Integer.parseInt(newR.getText());
                             if (newRValue < 0) {
                                 good = false;
-                                currentR.failed("New R value cannot be negative.");
+                                newR.failed("New R value cannot be negative.");
                             } else if (newRValue > 400) {
                                 good = false;
-                                currentR.failed("New R cannot exceed 400.");
+                                newR.failed("New R cannot exceed 400.");
                             }
                         } catch (NumberFormatException e) {
-                            currentR.failed("New R value must be a number.");
+                            newR.failed("New R value must be a number.");
                             good = false;
                         }
 
