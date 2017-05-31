@@ -7,58 +7,89 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/11/17.
- *
+ * <p>
  * This is the main class that does all the rendering.
  */
 public final class GUI extends JFrame implements MouseWheelListener, MouseListener, KeyListener {
 
-    /** The window itself. */
+    /**
+     * The window itself.
+     */
     public static final GUI window = new GUI();
 
-    /** All of the pages to use. */
+    /**
+     * All of the pages to use.
+     */
     private static final ArrayList<GUIPage> pages = new ArrayList<>();
 
-    /** All of the current loaded GUIComponents. */
+    /**
+     * All of the current loaded GUIComponents.
+     */
     private static final ArrayList<GUIComponent> components = new ArrayList<>();
 
-    /** All of the GUIComponents that use the MouseListener. */
+    /**
+     * All of the GUIComponents that use the MouseListener.
+     */
     private static final ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
 
-    /** All of the GUIComponents that use the KeyListener. */
+    /**
+     * All of the GUIComponents that use the KeyListener.
+     */
     private static final ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
-    /** All of the GUIComponents that have an animation. */
+    /**
+     * All of the GUIComponents that have an animation.
+     */
     private static final ArrayList<GAnimation> animatedComponents = new ArrayList<>();
 
-    /** The max width of the window's contents before it starts adding padding. */
+    /**
+     * The max width of the window's contents before it starts adding padding.
+     */
     private static final int maxWidth = 720;
 
-    /** The padding added to the sides of all components. */
+    /**
+     * The padding added to the sides of all components.
+     */
     private static final int sidePadding = 24;
 
-    /** The horizontal offset of components. Used in the slide-over animation. */
+    /**
+     * The horizontal offset of components. Used in the slide-over animation.
+     */
     static int horizontalOffset = 0;
 
-    /** The vertical offset controlled by scrolling. */
+    /**
+     * The vertical offset controlled by scrolling.
+     */
     private static int scrollOffset;
 
-    /** The drawing panel that everything is drawn to. */
+    /**
+     * The drawing panel that everything is drawn to.
+     */
     private static DrawPanel panel;
 
-    /** The currently loaded page. */
+    /**
+     * The currently loaded page.
+     */
     private static GUIPage currentPage;
 
-    /** The height of the currently drawn page. */
+    /**
+     * The height of the currently drawn page.
+     */
     private static int pageHeight;
 
-    /** Changes how fast you can scroll the page. */
+    /**
+     * Changes how fast you can scroll the page.
+     */
     private static final double scrollSpeedMultiplier = 4.0;
 
-    /** Whether to show the menu bar or not. */
+    /**
+     * Whether to show the menu bar or not.
+     */
     private static boolean showMenu = false;
 
     /**
      * Starts the GUI with some basic settings.
+     *
      * @author Robert
      */
     private GUI() {
@@ -66,7 +97,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel = new DrawPanel();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setFocusTraversalKeysEnabled(false);
-        setSize(new Dimension(1280,720));
+        setSize(new Dimension(1280, 720));
         setMinimumSize(new Dimension(320, 640));
         setVisible(true);
         setTitle("Hello World!");
@@ -79,7 +110,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         panel.repaint();
 
         Timer clock = new Timer(Style.frameRate, e -> {
-            for (GAnimation c: animatedComponents) {
+            for (GAnimation c : animatedComponents) {
                 c.updateAnimations();
             }
             panel.repaint();
@@ -128,7 +159,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         components.add(c);
         if (c instanceof JPanel) {
             panel.add((JPanel) c);
-            ((JPanel)c).revalidate();
+            ((JPanel) c).revalidate();
         }
         panel.setVisible(true);
     }
@@ -178,7 +209,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         for (GUIComponent c : components) {
             if (c instanceof JPanel) {
                 panel.remove((JPanel) c);
-                ((JPanel)c).revalidate();
+                ((JPanel) c).revalidate();
             }
         }
         components.clear();
@@ -202,10 +233,10 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      */
     private void constructLists(ArrayList<GUIComponent> list) {
         for (GUIComponent c : list) {
-            if (c instanceof  GMouseListener) {
+            if (c instanceof GMouseListener) {
                 mouseComponents.add((GMouseListener) c);
             }
-            if (c instanceof  GKeyListener) {
+            if (c instanceof GKeyListener) {
                 keyComponents.add((GKeyListener) c);
             }
             if (c instanceof GSubList) {
@@ -241,7 +272,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+    }
 
     @Override
     public void mousePressed(MouseEvent e) {
@@ -258,10 +290,12 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {
+    }
 
     @Override
-    public void mouseExited(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -271,13 +305,16 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {}
+    public void keyPressed(KeyEvent e) {
+    }
 
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+    }
 
     /**
      * This class handles all of the drawing.
+     *
      * @author Robert
      */
     private class DrawPanel extends JPanel {

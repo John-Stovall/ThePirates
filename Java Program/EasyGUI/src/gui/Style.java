@@ -4,7 +4,7 @@ import java.awt.*;
 
 /**
  * Created by Robert on 5/12/17.
- *
+ * <p>
  * This class simply holds constant variables that relate to colors, fonts, and animations.
  * If we want to change the colors or fonts we only need to change them here instead of all over the place.
  */
@@ -12,6 +12,7 @@ public final class Style {
 
     /**
      * Blank constructor so this class cannot be instantiated.
+     *
      * @author Robert
      */
     private Style() {}
@@ -87,8 +88,6 @@ public final class Style {
     static final double dropdownMoveSpeed        = Math.max(3.0 * speedModifier, 1);
 
     static final double textBoxMessageMoveSpeed  = Math.max(5.0 * speedModifier, 1);
-
-    static final double textBoxFlashSpeed        = 0.03 / speedModifier;
 
     /**
      * Animation Functions

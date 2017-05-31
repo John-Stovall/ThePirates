@@ -13,47 +13,70 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/14/17.
- *
+ * <p>
  * This class is by far the messiest class out of all of them and
  * this handles ALL of the logic and stuff for the menu bar.
  */
 public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimation {
 
-    /** The height of the menu bar. */
+    /**
+     * The height of the menu bar.
+     */
     private int height;
 
-    /** Whether the left button has been properly pressed. */
+    /**
+     * Whether the left button has been properly pressed.
+     */
     private boolean pageSelected = false;
 
-    /** Whether the right button has been pressed. */
+    /**
+     * Whether the right button has been pressed.
+     */
     private boolean accountPressed = false;
 
-    /** Whether the left button has been pressed. */
+    /**
+     * Whether the left button has been pressed.
+     */
     private boolean pagePressed = false;
 
-    /** Whether the right button has been properly pressed. */
+    /**
+     * Whether the right button has been properly pressed.
+     */
     private boolean accountSelected = false;
 
-    /** The width of the slide over menus. */
+    /**
+     * The width of the slide over menus.
+     */
     private int dropdownWidth;
 
-    /** The width, in pixels, of the username. */
+    /**
+     * The width, in pixels, of the username.
+     */
     private int nameWidth;
 
-    /** The total height of the left side bar. */
+    /**
+     * The total height of the left side bar.
+     */
     private int pageTotalHeight;
 
-    /** The total height of the right side bar. */
+    /**
+     * The total height of the right side bar.
+     */
     private int accountTotalHeight;
 
-    private int goalPosition;
-
-    /** The GUIComponents in the left menu. */
+    /**
+     * The GUIComponents in the left menu.
+     */
     private ArrayList<GUIComponent> pageComponents = new ArrayList<>();
 
-    /** The GUIComponents in the right menu. */
+    /**
+     * The GUIComponents in the right menu.
+     */
     private ArrayList<GUIComponent> accountComponents = new ArrayList<>();
 
+    /**
+     * The user icon in the right corner.
+     */
     private BufferedImage icon;
 
     /**
@@ -140,7 +163,7 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
         //Draw the bars icon.
         g.setColor(Style.menuTextColor);
         for (int i = 0; i < 3; i++) {
-            g.fillRect(height / 8, (int)(height / 7.0 * (((i + 1) * 2) - 1)),
+            g.fillRect(height / 8, (int) (height / 7.0 * (((i + 1) * 2) - 1)),
                     (height / 8) * 6, height / 7);
         }
         pageTotalHeight = y2 - height;
@@ -162,9 +185,6 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
 
         //Draw the circle in the corner.
         g2d.drawImage(icon, (int) (GUI.getWindowWidth() - height * 0.875), height / 4 / 2, (int) (height * 0.75), (int) (height * 0.75), null);
-
-        //Ellipse2D circle = new Ellipse2D.Double(GUI.getWindowWidth() - height * 0.875, height / 4 / 2, height * 0.75, height * 0.75);
-        //g2d.fill(circle);
 
         //Draw user's name.
         g.setFont(new Font("Helvetica", Font.PLAIN, 26));
@@ -233,9 +253,12 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
 
     @Override
     public void updateAnimations() {
-        goalPosition = 0;
-        if (pageSelected) goalPosition = dropdownWidth;
-        else if (accountSelected) goalPosition = -dropdownWidth;
+        int goalPosition = 0;
+        if (pageSelected) {
+            goalPosition = dropdownWidth;
+        } else if (accountSelected) {
+            goalPosition = -dropdownWidth;
+        }
         GUI.horizontalOffset += Style.exponentialTweenRound(GUI.horizontalOffset, goalPosition, Style.sidebarSlideSpeed);
     }
 }

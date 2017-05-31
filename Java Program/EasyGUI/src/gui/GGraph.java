@@ -5,21 +5,29 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 4/30/17.
- *
+ * <p>
  * This class draws a simple graph of a supplied data array.
  */
 public class GGraph implements GUIComponent, GAnimation {
 
-    /** All of the data that this graph will draw. */
+    /**
+     * All of the data that this graph will draw.
+     */
     private static ArrayList<double[]> times;
 
-    /** The largest value in the data. */
+    /**
+     * The largest value in the data.
+     */
     private double largestValue = 0;
 
-    /** The color of the various lines. */
+    /**
+     * The color of the various lines.
+     */
     private Color[] lines = Style.graphBarColors;
 
-    /** Used for the intro animation. */
+    /**
+     * Used for the intro animation.
+     */
     private double[] animation;
 
     /**
@@ -64,7 +72,7 @@ public class GGraph implements GUIComponent, GAnimation {
 
         g.setFont(Style.graphTicks);
         for (int i = 0; i < ticks; i++) {
-            g.drawString(Integer.toString((int)(Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
+            g.drawString(Integer.toString((int) (Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
         }
 
         for (int i = 0; i < times.size(); i++) {
@@ -83,7 +91,7 @@ public class GGraph implements GUIComponent, GAnimation {
                 double value = e[j];
                 if (value < 0) value = 0;
 
-                int yPos = offsetY + (int)((int) (paneY - value / largestValue * paneY) * animation[i]);
+                int yPos = offsetY + (int) ((int) (paneY - value / largestValue * paneY) * animation[i]);
                 if (animation[i] > 0) {
                     g.fillOval(xPos - 2, yPos - 2, 4, 4);
                     if (i != 0) {
@@ -94,7 +102,6 @@ public class GGraph implements GUIComponent, GAnimation {
                 lastY = yPos;
             }
         }
-
         return height;
     }
 

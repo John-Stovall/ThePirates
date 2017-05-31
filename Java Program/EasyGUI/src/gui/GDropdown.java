@@ -10,39 +10,59 @@ import java.util.Arrays;
 
 /**
  * Created by Robert on 5/11/17.
- *
+ * <p>
  * This class creates a simple drop down menu that can be used to select specific things.
  */
 public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
 
-    /** The options in the menu. */
+    /**
+     * The options in the menu.
+     */
     private ArrayList<String> options;
 
-    /** The currently selected option. */
+    /**
+     * The currently selected option.
+     */
     private String selection;
 
-    /** Whether the dropdown menu is open. */
+    /**
+     * Whether the dropdown menu is open.
+     */
     private boolean open = false;
 
-    /** Whether you pressed on the dropdown menu. */
+    /**
+     * Whether you pressed on the dropdown menu.
+     */
     private boolean pressed = false;
 
-    /** The height of each cell. */
+    /**
+     * The height of each cell.
+     */
     private int height = 40;
 
-    /** Obvious variables are obvious. */
+    /**
+     * Obvious variables are obvious.
+     */
     private int x;
 
-    /** The y position of the dropdown menu. */
+    /**
+     * The y position of the dropdown menu.
+     */
     private int y;
 
-    /** The width of the dropdown menu. */
+    /**
+     * The width of the dropdown menu.
+     */
     private int width;
 
-    /** Potential padding to the left and right of the button. */
+    /**
+     * Potential padding to the left and right of the button.
+     */
     private int padding = 0;
 
-    /** Progress through the animation. */
+    /**
+     * Progress through the animation.
+     */
     private double animation = 0.0;
 
     /**
@@ -109,7 +129,6 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
 
 
         //Draw the top item.
-
         RoundRectangle2D main = new RoundRectangle2D.Double(x, y, width, height, 40, 40);
         RoundRectangle2D hover = new RoundRectangle2D.Double(x + width / 2 - (width * animation) / 2, y, width * animation, height, 40, 40);
 
@@ -117,24 +136,13 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
         g2d.fill(main);
         g.setColor(Style.secondaryButtonColor);
         g2d.fill(hover);
-        //g.fillRect(x, y, width, height);
         g.setColor(Style.dropdownBorderColor);
-    //    g2d.draw(main);
-        //g.drawRect(x, y, width, height);
 
         //Draw the icon.
         g.setColor(Color.white);
         int textWidth = g.getFontMetrics().stringWidth(selection);
         int textHeight = g.getFontMetrics().getHeight();
         g.drawString(selection, x + width / 2 - textWidth / 2, y + height / 2 + textHeight / 2 - 4);
-//        if (!open) {
-//            g.drawString("v", x + width - 18, y + height - 15);
-//            g.drawString("v", x + 10, y + height - 15);
-//        } else {
-//            g.drawString("^", x + width - 18, y + height - 10);
-//            g.drawString("^", x + 10, y + height - 10);
-//        }
-
         return h;
     }
 
@@ -188,12 +196,12 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
 
     @Override
     public void updateAnimations() {
-        //Increment Animation.
         animation += Style.exponentialTween(animation, (open) ? 1 : 0, Style.dropdownMoveSpeed);
     }
 
     /**
      * This method is for updating pages with the selected value.
      */
-    public void clickAction() {}
+    public void clickAction() {
+    }
 }

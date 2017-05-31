@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Robert on 5/7/17.
- *
+ * <p>
  * This interface identifies GUIComponents that holds their own lists of GUIComponents like GDivider
  * and GMenuBar.
  */
