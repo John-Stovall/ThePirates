@@ -3,6 +3,7 @@ package pages;
 import gui.Style;
 import gui.*;
 import project.InsulationProject;
+import project.LightProject;
 import user.UserManager;
 
 /**
@@ -61,6 +62,12 @@ public class CreateProject extends GUIPage {
                             InsulationProject project = new InsulationProject(name.getText());
                             UserManager.getLoadedUser().getMyProjects().add(project);
                             GUI.window.gotoPage(project.getEditPage());
+                            break;
+
+                        case ("Lights"):
+                            LightProject projectL = new LightProject(name.getText());
+                            UserManager.getLoadedUser().getMyProjects().add(projectL);
+                            GUI.window.gotoPage(projectL.getEditPage());
                             break;
                         default:
                             name.failed("• That project is unavailable. Please purchase DIYApp Pro for $2.99");
