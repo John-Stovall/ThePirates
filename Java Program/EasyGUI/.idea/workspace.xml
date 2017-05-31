@@ -1,102 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83388391-1306-4708-aba7-49260e2ebaa9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/CompareProject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/ProjectChooser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThePiratesProjectSave.diy" afterPath="$PROJECT_DIR$/ThePiratesProjectSave.diy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Style.java" afterPath="$PROJECT_DIR$/src/gui/Style.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/InsulationProject.java" afterPath="$PROJECT_DIR$/src/project/InsulationProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/user/User.java" afterPath="$PROJECT_DIR$/src/user/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/../JavaDoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/constant-values.html" afterPath="$PROJECT_DIR$/../JavaDoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/control/General.html" afterPath="$PROJECT_DIR$/../JavaDoc/control/General.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/control/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/control/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/control/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/control/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/control/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/control/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/deprecated-list.html" afterPath="$PROJECT_DIR$/../JavaDoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GAnimation.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GAnimation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GButton.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GButton.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GDivider.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GDivider.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GDropdown.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GDropdown.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GGraph.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GGraph.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GImage.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GImage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GKeyListener.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GKeyListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GMenuBar.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GMenuBar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GMouseListener.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GMouseListener.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GSpacer.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GSpacer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GSubList.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GSubList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GText.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GText.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GTextBox.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GTextBox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GTextBoxOLD.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GTextBoxOLD.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GUI.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GUI.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GUIComponent.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GUIComponent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GUIPage.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GUIPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/GWrapper.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/GWrapper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/Style.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/Style.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/gui/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/gui/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/help-doc.html" afterPath="$PROJECT_DIR$/../JavaDoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-19.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-19.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-20.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-21.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-21.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/../JavaDoc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/index.html" afterPath="$PROJECT_DIR$/../JavaDoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/junit/GeneralTest.html" afterPath="$PROJECT_DIR$/../JavaDoc/junit/GeneralTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/junit/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/junit/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/junit/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/junit/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/junit/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/junit/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/main/Main.html" afterPath="$PROJECT_DIR$/../JavaDoc/main/Main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/main/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/main/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/main/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/main/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/main/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/main/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/overview-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/overview-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/overview-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/About.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/About.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/CreateProject.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/CreateProject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/EditAccount.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/EditAccount.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/Home.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/Home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/Login.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/Login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/NewProject.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/NewProject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/RegisterAccount.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/RegisterAccount.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/pages/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/pages/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/InsulationProject.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/InsulationProject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/Project.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/Project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/ProjectManager.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/ProjectManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/project/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/project/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/serialized-form.html" afterPath="$PROJECT_DIR$/../JavaDoc/serialized-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/User.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/User.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/UserManager.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/UserManager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/UserManagerTest.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/UserManagerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/package-frame.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/package-summary.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaDoc/user/package-tree.html" afterPath="$PROJECT_DIR$/../JavaDoc/user/package-tree.html" />
-    </list>
+    <list default="true" id="83388391-1306-4708-aba7-49260e2ebaa9" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,93 +10,59 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="EasyGUI" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="InsulationProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="75" selection-end-column="58" />
+            <state relative-caret-position="194">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LightProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/LightProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
               <folding>
-                <element signature="e#3877#3878#0" expanded="true" />
-                <element signature="e#3996#3997#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectChooser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/ProjectChooser.java">
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#967#968#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompareProject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/CompareProject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterAccount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="609">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/UserManager.java">
+      <file leaf-file-name="ProjectManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/ProjectManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="58" column="28" lean-forward="false" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Home.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="102" column="44" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="102" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Style.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Style.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="66" column="49" lean-forward="true" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -200,18 +71,8 @@
       <file leaf-file-name="CreateProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditAccount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
+            <state relative-caret-position="399">
+              <caret line="69" column="72" lean-forward="true" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -263,7 +124,6 @@
         <option value="$PROJECT_DIR$/src/gui/GTextBoxOLD.java" />
         <option value="$PROJECT_DIR$/src/gui/GText.java" />
         <option value="$PROJECT_DIR$/src/pages/About.java" />
-        <option value="$PROJECT_DIR$/src/pages/CreateProject.java" />
         <option value="$PROJECT_DIR$/src/pages/NewProject.java" />
         <option value="$PROJECT_DIR$/src/gui/GDivider.java" />
         <option value="$PROJECT_DIR$/src/gui/GButton.java" />
@@ -284,6 +144,8 @@
         <option value="$PROJECT_DIR$/src/pages/ProjectChooser.java" />
         <option value="$PROJECT_DIR$/src/gui/Style.java" />
         <option value="$PROJECT_DIR$/src/pages/CompareProject.java" />
+        <option value="$PROJECT_DIR$/src/pages/CreateProject.java" />
+        <option value="$PROJECT_DIR$/src/project/LightProject.java" />
       </list>
     </option>
   </component>
@@ -294,9 +156,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="873" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -313,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -463,9 +327,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,6 +339,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -971,6 +835,7 @@
       <workItem from="1495586541401" duration="2954000" />
       <workItem from="1495674716203" duration="453000" />
       <workItem from="1495747132166" duration="3825000" />
+      <workItem from="1495760409166" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="Started formatting the insulation page.">
       <created>1495144696394</created>
@@ -1052,7 +917,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64075000" />
+    <option name="totallyTimeSpent" value="67476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1064,33 +929,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233831" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.50277776" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2699005" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26840317" sideWeight="0.49722221" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16805555" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17024705" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1127,22 +992,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="47" column="49" lean-forward="true" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#3877#3878#0" expanded="true" />
-            <element signature="e#3996#3997#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,14 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,13 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/About.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1252,13 +1091,6 @@
         <state relative-caret-position="360">
           <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/ProjectManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,39 +1170,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="89" lean-forward="false" selection-start-line="18" selection-start-column="89" selection-end-line="18" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/control/General.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#567#568#0" expanded="false" />
-            <element signature="e#608#609#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,6 +1331,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/user/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1548,57 +1358,103 @@
     <entry file="file://$PROJECT_DIR$/src/pages/Home.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
-          <caret line="102" column="44" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="102" selection-end-column="44" />
+          <caret line="102" column="44" lean-forward="false" selection-start-line="75" selection-start-column="12" selection-end-line="102" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/RegisterAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProjectChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="73" column="20" lean-forward="false" selection-start-line="73" selection-start-column="20" selection-end-line="75" selection-end-column="58" />
-          <folding>
-            <element signature="e#3877#3878#0" expanded="true" />
-            <element signature="e#3996#3997#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Style.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="66" column="49" lean-forward="true" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <caret line="66" column="49" lean-forward="false" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/EditAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/CompareProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        <state relative-caret-position="336">
+          <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/NewProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="854">
+          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/GUIPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProjectChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/InsulationProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/CreateProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="69" column="72" lean-forward="true" selection-start-line="69" selection-start-column="72" selection-end-line="69" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/LightProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding>
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/ProjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
