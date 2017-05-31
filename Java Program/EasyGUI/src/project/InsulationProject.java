@@ -4,6 +4,7 @@ import gui.*;
 import pages.ProjectChooser;
 import user.UserManager;
 
+import java.awt.event.MouseEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -23,12 +24,12 @@ public class InsulationProject extends Project implements Serializable {
 
 	// Class specific variable used for determining the insulating properties
 	// of the materials being used.
-	private int curRValue;
-	private int newRValue;
-	private double wallArea;
-	private int heatDegreeDays;
-	private double ppu; //price per unit
-	private double furnaceEff;
+	private int curRValue = 10;
+	private int newRValue = 20;
+	private double wallArea = 1000;
+	private int heatDegreeDays = 5000;
+	private double ppu = 1.5; //price per unit
+	private double furnaceEff = 80;
 	private String gasType = "Natural Gas";
 
 	private String priceValue;
@@ -159,7 +160,7 @@ public class InsulationProject extends Project implements Serializable {
         System.out.println("GHgas: "+ Math.round(GHgas));
 
 
-	    return 2.0;
+	    return Saving / 12.0;
     }
 
     @Override
@@ -280,7 +281,31 @@ public class InsulationProject extends Project implements Serializable {
                 GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
                 GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
-                GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
+                GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"}) {
+                    @Override
+                    public void clickAction() {
+                        switch (this.getSelection()) {
+                            case ("Natural Gas"):
+                                furnaceEff = 80;
+                                ppu = FuelCostNG;
+                                break;
+                            case ("Fuel Oil"):
+                                furnaceEff = 80;
+                                ppu = FuelCostOil;
+                                break;
+                            case ("Propane"):
+                                furnaceEff = 80;
+                                ppu = FuelCostPro;
+                                break;
+                            case ("Electricity"):
+                                furnaceEff = 100;
+                                ppu = FuelCostElec;
+                                break;
+                        }
+                        pricePerUnit.setValue(ppu + "");
+                        furnaceEfficency.setValue(furnaceEff + "");
+                    }
+                };
                 //TODO: Action listener that calls ChangeFuel(String action)
 
                 GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
