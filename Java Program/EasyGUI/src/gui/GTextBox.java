@@ -5,6 +5,7 @@ import control.General;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
@@ -41,6 +42,8 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
 
     private String description = "";
 
+    private boolean inFocus = false;
+
     /**
      * Create a super awesome text box!
      *
@@ -63,6 +66,10 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
     public GTextBox(final int height, final String text, final String description) {
         this(height, text);
         this.description = description;
+    }
+
+    public void setValue(String value) {
+        textField.setText(value);
     }
 
     /**
@@ -89,6 +96,13 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
+
+        if (!inFocus) {
+            if (textField.isFocusOwner()) {
+                textField.setText("");
+            }
+        }
+        inFocus = textField.isFocusOwner();
 
         if (!failed && textField.isFocusOwner() && !description.equals("")) {
             showDetails = true;

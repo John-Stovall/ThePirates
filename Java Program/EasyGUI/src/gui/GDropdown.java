@@ -157,6 +157,7 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
             if (General.clickedInside(x + padding / 2, y + height,
                     width - padding, (height * options.size()), e)) {
                 selection = options.get((int) Math.floor((e.getY() - y - height) / height));
+                clickAction();
             }
             result = false;
             open = false;
@@ -190,4 +191,9 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
         //Increment Animation.
         animation += Style.exponentialTween(animation, (open) ? 1 : 0, Style.dropdownMoveSpeed);
     }
+
+    /**
+     * This method is for updating pages with the selected value.
+     */
+    public void clickAction() {}
 }
