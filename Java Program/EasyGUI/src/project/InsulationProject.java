@@ -11,6 +11,7 @@ import java.util.ArrayList;
 /**
  * @author Ryan Hansen
  * @author Robert Cordingly
+ * @author Reagan Stovall
  *
  * Insulation Project class.
  * Used for creating a new insulation project.

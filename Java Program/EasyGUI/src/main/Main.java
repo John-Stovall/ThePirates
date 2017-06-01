@@ -5,18 +5,15 @@ import pages.*;
 import user.UserManager;
 
 /**
- * Main is used to build all the the page layouts. Eventually this will be broken up into
- * a few classes so that it's not just one gigantic file. Plus each class will represent a
- * project.
+ * This class loads the users, creates so pages and then goes
+ * to the proper page depending on how many users exist.
  */
 public class Main {
 
     public static void main(String[] args) {
-
         UserManager.load();
 
-        GUI.window.setTitle("DIY Program");
-
+        GUI.window.setTitle("DIY App");
         GUI.window.addPage(new Login());
         GUI.window.addPage(new RegisterAccount());
         GUI.window.addPage(new About());

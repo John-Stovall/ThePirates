@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 
 /**
  * Created by Robert on 5/7/17.
- *
+ * <p>
  * This interface identifies classes that use mouse events.
  */
 public interface GMouseListener {

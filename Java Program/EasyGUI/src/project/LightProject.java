@@ -8,8 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * @author Ryan Hansen
- * @author Robert Cordingly
+ * @author Rand
  *
  * Insulation Project class.
  * Used for creating a new insulation project.

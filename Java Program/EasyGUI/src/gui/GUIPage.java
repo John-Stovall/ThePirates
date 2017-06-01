@@ -1,14 +1,13 @@
 package gui;
 
 import project.Project;
-import user.User;
 import user.UserManager;
 
 import java.awt.*;
 
 /**
  * Created by Robert on 4/12/17.
- *
+ * <p>
  * A GUIPage defines the build method that will be called by
  * the GUI when a page is changed. Basically that method will define what
  * components go on the page and the functions that buttons call also should
@@ -16,11 +15,15 @@ import java.awt.*;
  */
 public abstract class GUIPage {
 
-    /** The name of the page. */
+    /**
+     * The name of the page.
+     */
     private String name;
 
-    /** The menu bar. */
-    protected static GMenuBar menu;
+    /**
+     * The menu bar.
+     */
+    static GMenuBar menu;
 
     /**
      * Create a page and sets it's name.
@@ -35,7 +38,7 @@ public abstract class GUIPage {
         this.name = name;
     }
 
-    public void refresh() {
+    void refresh() {
         menu = new GMenuBar(40);
         menu.addPage(new GButton(40, Style.menuSideBarColor,
                 Style.menuSideBarSecondaryColor, "Home", Style.defaultFont) {
@@ -104,8 +107,10 @@ public abstract class GUIPage {
 
     /**
      * Assemble this page. Override this method with the proper functions.
+     *
      * @author Robert
      */
-    public void build() {}
+    public void build() {
+    }
 
 }

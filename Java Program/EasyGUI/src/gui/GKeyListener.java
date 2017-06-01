@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 
 /**
  * Created by Robert on 5/7/17.
- *
+ * <p>
  * This class identifies GUIComponents that use key listener methods.
  */
 public interface GKeyListener {

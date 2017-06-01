@@ -7,13 +7,19 @@ import java.awt.event.MouseEvent;
 
 /**
  * Created by Robert on 5/10/17.
- *
+ * <p>
  * This is a class that holds general methods that
  * other classes may more may not use.
  */
 public class General {
 
-    private General() {}
+    /**
+     * This is a class that only has static methods. No need to instantiate it.
+     *
+     * @author Robert
+     */
+    private General() {
+    }
 
     /**
      * This is a simple character counter that returns false if there are
@@ -66,16 +72,15 @@ public class General {
     /**
      * This method checks to see if you clicked within a rectangle.
      *
-     * @param x The x position of the top left corner of the rectangle.
-     * @param y The y position of the top left corner of the rectangle.
-     * @param width The width of the rectangle.
+     * @param x      The x position of the top left corner of the rectangle.
+     * @param y      The y position of the top left corner of the rectangle.
+     * @param width  The width of the rectangle.
      * @param height The height of the rectangle.
-     * @param e The mouse event object.
+     * @param e      The mouse event object.
      * @return Whether you clicked inside the box.
      * @author Robert
      */
     public static boolean clickedInside(int x, int y, int width, int height, MouseEvent e) {
         return (e.getX() > x && e.getX() < x + width && e.getY() > y && e.getY() < y + height);
     }
-
 }

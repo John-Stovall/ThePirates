@@ -7,17 +7,21 @@ import java.io.Serializable;
 /**
  * @author Ryan Hansen
  * @author Robert Cordingly
- *
- * Abstract class which declares the getters and setters for the
- * project classes.
+ *         <p>
+ *         Abstract class which declares the getters and setters for the
+ *         project classes.
  */
-public abstract class Project  implements Serializable {
+public abstract class Project implements Serializable {
 
-    /** The name of the project. */
-	protected String name;
+    /**
+     * The name of the project.
+     */
+    protected String name;
 
-	/** The initial cost of the project. */
-	double initialCost;
+    /**
+     * The initial cost of the project.
+     */
+    double initialCost;
 
     /**
      * This method gets the summary page that is associated with
@@ -27,7 +31,7 @@ public abstract class Project  implements Serializable {
      * @return The GUIPage for this project.
      * @author Robert
      */
-	public abstract GUIPage getSummaryPage();
+    public abstract GUIPage getSummaryPage();
 
     /**
      * This method gets the edit page that is associated with
@@ -46,8 +50,8 @@ public abstract class Project  implements Serializable {
      * @author Ryan
      */
     public void setName(String theName) {
-		this.name = theName;
-	}
+        this.name = theName;
+    }
 
     /**
      * This method gets the name of this project.
@@ -55,9 +59,9 @@ public abstract class Project  implements Serializable {
      * @return The name of the project.
      * @author Ryan
      */
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
     /**
      * This method will get the monthly savings for this project.
@@ -67,7 +71,7 @@ public abstract class Project  implements Serializable {
      * @return The amount of money saved every month.
      * @author Robert
      */
-	public abstract double getMonthlySavings();
+    public abstract double getMonthlySavings();
 
     /**
      * This method will get the initial cost of the project.
@@ -75,7 +79,7 @@ public abstract class Project  implements Serializable {
      * @return The initial cost of this project.
      * @author Ryan
      */
-	public double getInitialCost() {
-	    return initialCost;
+    public double getInitialCost() {
+        return initialCost;
     }
 }

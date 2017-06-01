@@ -1,6 +1,5 @@
 package gui;
 
-import com.sun.corba.se.impl.orbutil.graph.Graph;
 import control.General;
 
 import java.awt.*;
@@ -9,55 +8,81 @@ import java.awt.geom.RoundRectangle2D;
 
 /**
  * Created by Robert on 4/12/17.
- *
+ * <p>
  * This class handles a logic and stuff for buttons.
  */
 public class GButton implements GUIComponent, GMouseListener, GAnimation {
 
-    /** The height of the button. Used to get mouse clicks. */
+    /**
+     * The height of the button. Used to get mouse clicks.
+     */
     private int height;
 
-    /** The x position of the button. Used to get mouse clicks. */
+    /**
+     * The x position of the button. Used to get mouse clicks.
+     */
     private int x;
 
-    /** The y position of the button. Used to get mouse clicks. */
+    /**
+     * The y position of the button. Used to get mouse clicks.
+     */
     private int y;
 
-    /** The width of the button. Used to get mouse clicks. */
+    /**
+     * The width of the button. Used to get mouse clicks.
+     */
     private int width;
 
-    /** The 'standby' color of the button. */
+    /**
+     * The 'standby' color of the button.
+     */
     private Color color = Style.primaryButtonColor;
 
-    /** The color the button changes to when you click it. */
+    /**
+     * The color the button changes to when you click it.
+     */
     private Color hover = Style.secondaryButtonColor;
 
-    /** Whether the button is pressed or not. */
+    /**
+     * Whether the button is pressed or not.
+     */
     private boolean pressed = false;
 
-    /** The font of the text on the button. */
+    /**
+     * The font of the text on the button.
+     */
     private Font font;
 
-    /** The text on the button. */
+    /**
+     * The text on the button.
+     */
     private String text;
 
-    /** Whether button can be clicked or not. */
+    /**
+     * Whether button can be clicked or not.
+     */
     private boolean isActive = true;
 
-    /** The amount of padding to be added to the side of the button. */
+    /**
+     * The amount of padding to be added to the side of the button.
+     */
     private int padding = 0;
 
-    /** The image to be drawn on this button. */
+    /**
+     * The image to be drawn on this button.
+     */
     private Image icon;
 
-    /** The progress through the hover animation. */
+    /**
+     * The progress through the hover animation.
+     */
     private int hoverAnimation = 0;
 
     /**
      * Create a button!
      *
      * @param height The height of the button.
-     * @param text The text on the button.
+     * @param text   The text on the button.
      * @author Robert
      */
     public GButton(final int height, final String text) {
@@ -69,8 +94,8 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
     /**
      * Create a somewhat special button!
      *
-     * @param height The height of the button.
-     * @param text The text on the button.
+     * @param height  The height of the button.
+     * @param text    The text on the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
      * @author Robert
      */
@@ -85,8 +110,8 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
      * Create a mystical button!
      *
      * @param height The height of the button.
-     * @param text The text on the button.
-     * @param font The font of the button.
+     * @param text   The text on the button.
+     * @param font   The font of the button.
      * @author Robert
      */
     public GButton(final int height, final String text, final Font font) {
@@ -99,8 +124,8 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
      * Create a mystical button!
      *
      * @param height The height of the button.
-     * @param text The text on the button.
-     * @param font The font of the button.
+     * @param text   The text on the button.
+     * @param font   The font of the button.
      * @author Robert
      */
     public GButton(final int height, final Color main, final Color hover, final String text, final Font font) {
@@ -114,9 +139,9 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
     /**
      * Create a super special awesome button!
      *
-     * @param height The height of the button.
-     * @param text The text on the button.
-     * @param font The font of the button.
+     * @param height  The height of the button.
+     * @param text    The text on the button.
+     * @param font    The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
      * @author Robert
      */
@@ -130,9 +155,9 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
     /**
      * Create a the GREATEST BUTTON THE WORLD HAS EVER SEEN!!!
      *
-     * @param height The height of the button.
-     * @param text The text on the button.
-     * @param font The font of the button.
+     * @param height  The height of the button.
+     * @param text    The text on the button.
+     * @param font    The font of the button.
      * @param padding The amount of padding to be added to the left and right side of the button.
      * @author Robert
      */
@@ -151,7 +176,7 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
      * @param state Can it be pressed?
      * @author Robert
      */
-    public void setActive(boolean state) {
+    void setActive(boolean state) {
         isActive = state;
     }
 
@@ -163,7 +188,6 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
-
         //Save variables for later.
         this.x = x;
         this.y = y;
@@ -224,7 +248,9 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
     /**
      * When you create a button override this method to add
      * custom functionality to certain buttons.
+     *
      * @author Robert
      */
-    public void clickAction() {}
+    public void clickAction() {
+    }
 }
