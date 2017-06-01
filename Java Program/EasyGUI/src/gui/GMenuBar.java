@@ -195,6 +195,9 @@ public class GMenuBar implements GUIComponent, GMouseListener, GSubList, GAnimat
 
         //Draw the page title.
         String roomName = GUI.getPageTitle();
+        while (g.getFontMetrics().stringWidth(roomName) > GUI.getWindowWidth() - height - height - length - 32) {
+            roomName = roomName.substring(0, roomName.length() - 1);
+        }
         g.drawString(roomName, height + 4, height - 10);
 
         return 0;

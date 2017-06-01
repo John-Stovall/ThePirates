@@ -46,14 +46,20 @@ public class CreateProject extends GUIPage {
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GText("Project Name:", Style.defaultFont));
         GUI.window.add(new GSpacer(15));
-        GTextBox name = new GTextBox(40, "");
+
+        int projectNum = UserManager.getLoadedUser().getMyProjects().size()
+                + UserManager.getLoadedUser().getCompletedProject().size() + 1;
+
+        GTextBox name = new GTextBox(40,"Project " + projectNum);
         GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GButton(40, "Create Project", Style.defaultFont) {
             @Override
             public void clickAction() {
-                if (name.getText().length() == 0) {
-                    name.failed("• A name is required.");
+                if (name.getText().length() < 1) {
+                    name.failed("A project name is required.");
+                } else if (name.getText().length() > 15) {
+                    name.failed("Project names can be at most 15 characters.");
                 } else {
                     //TODO: Program this to do stuff.
 
@@ -61,16 +67,18 @@ public class CreateProject extends GUIPage {
                         case ("Insulation"):
                             InsulationProject project = new InsulationProject(name.getText());
                             UserManager.getLoadedUser().getMyProjects().add(project);
+                            UserManager.save();
                             GUI.window.gotoPage(project.getEditPage());
                             break;
 
                         case ("Lights"):
                             LightProject projectL = new LightProject(name.getText());
                             UserManager.getLoadedUser().getMyProjects().add(projectL);
+                            UserManager.save();
                             GUI.window.gotoPage(projectL.getEditPage());
                             break;
                         default:
-                            name.failed("• That project is unavailable. Please purchase DIYApp Pro for $2.99");
+                            name.failed("That project is unavailable. Please purchase DIY App Pro for $2.99");
                     }
 
                 }

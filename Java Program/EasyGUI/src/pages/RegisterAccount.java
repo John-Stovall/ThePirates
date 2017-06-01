@@ -50,11 +50,11 @@ public class RegisterAccount extends GUIPage {
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
-                        name.failed("• Name must be at least 3 characters.");
+                        name.failed("Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
-                        email.failed("• Must be a valid email.");
+                        email.failed("Must be a valid email.");
                     } else if (!General.isEmailFree(myEmail)) {
-                        email.failed("• This Email is already taken.");
+                        email.failed("This Email is already taken.");
                     }
                 }
             }
