@@ -7,6 +7,7 @@ import user.User;
 import user.UserManager;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -108,34 +109,50 @@ public class Home extends GUIPage {
             left.add(new GText("Current Projects:"));
             left.add(new GSpacer(20));
 
-            for (Project p: UserManager.getLoadedUser().getMyProjects()) {
-                left.add(new GButton(40, p.getName(), Style.defaultFont, 32) {
+            if (UserManager.getLoadedUser().getMyProjects().size() > 0) {
+                for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+                    left.add(new GButton(40, p.getName(), Style.defaultFont, 32) {
+                        @Override
+                        public void clickAction() {
+                            GUI.window.gotoPage(p.getSummaryPage());
+                        }
+                    });
+                    left.add(new GSpacer(10));
+                }
+                left.add(new GSpacer(10));
+                left.add(new GButton(40, "+ New Project", Style.defaultFont, 32) {
                     @Override
                     public void clickAction() {
-                        GUI.window.gotoPage(p.getSummaryPage());
+                        GUI.window.gotoPage("New");
                     }
                 });
                 left.add(new GSpacer(10));
+            } else {
+
             }
 
 
             right.add(new GText("Completed Projects:"));
             right.add(new GSpacer(20));
 
-            for (Project p: UserManager.getLoadedUser().getCompletedProject()) {
-                right.add(new GButton(40, p.getName(), Style.defaultFont, 32) {
-                    @Override
-                    public void clickAction() {
-                        GUI.window.gotoPage(p.getSummaryPage());
-                    }
-                });
-                right.add(new GSpacer(10));
+            if (UserManager.getLoadedUser().getCompletedProject().size() > 0) {
+                for (Project p : UserManager.getLoadedUser().getCompletedProject()) {
+                    right.add(new GButton(40, p.getName(), Style.defaultFont, 32) {
+                        @Override
+                        public void clickAction() {
+                            GUI.window.gotoPage(p.getSummaryPage());
+                        }
+                    });
+                    right.add(new GSpacer(10));
+                }
+            } else {
+                right.add(new GText("After you complete a project, it will appear here. Your total savings will be shown on the graph in green.", Style.defaultFont));
             }
-
 
             div.add(left);
             div.add(right);
             GUI.window.add(div);
+            GUI.window.add(new GSpacer(40));
 
         }
 

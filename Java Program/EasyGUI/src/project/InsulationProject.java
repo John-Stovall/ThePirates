@@ -12,28 +12,48 @@ import java.util.ArrayList;
  * @author Ryan Hansen
  * @author Robert Cordingly
  * @author Reagan Stovall
- *
- * Insulation Project class.
- * Used for creating a new insulation project.
+ * @author Gary Reysa
+ *         <p>
+ *         Insulation Project class.
+ *         Used for creating a new insulation project.
+ *         <p>
+ *         Savings calulcated by:
+ *         <p>
+ *         +---------------------------------------------------------+
+ *         |                                                         |
+ *         |  Solar Analysis Tools - Insulation Upgrade Calculator   |
+ *         |                                                         |
+ *         +---------------------------------------------------------+
+ *         Copyright (C) 2006 Gary Reysa (gary@BuildItSolar.com)
+ *         <p>
+ *         This program is free software; you can redistribute it and/or modify it
+ *         under the terms of the GNU General Public License as published by the Free
+ *         Software Foundation; either version 2 of the License, or (at your option)
+ *         any later version.
+ *         <p>
+ *         This program is distributed in the hope that it will be useful and encourage
+ *         further development of solar tools, but   WITHOUT ANY WARRANTY; without even
+ *         the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *         See the GNU General Public License   for more details.
  */
 public class InsulationProject extends Project implements Serializable {
 
-	/**
-	 * default version ID for serialization
-	 */
-	private static final long serialVersionUID = -1950641840941379037L;
+    /**
+     * Default version ID for serialization
+     */
+    private static final long serialVersionUID = -1950641840941379037L;
 
-	// Class specific variable used for determining the insulating properties
-	// of the materials being used.
-	private int curRValue = 10;
-	private int newRValue = 20;
-	private double wallArea = 1000;
-	private int heatDegreeDays = 5000;
-	private double ppu = 1.5; //price per unit
-	private double furnaceEff = 80;
-	private String gasType = "Natural Gas";
+    // Class specific variable used for determining the insulating properties
+    // of the materials being used.
+    private int curRValue = 10;
+    private int newRValue = 20;
+    private double wallArea = 1000;
+    private int heatDegreeDays = 5000;
+    private double ppu = 1.5; //price per unit
+    private double furnaceEff = 80;
+    private String gasType = "Natural Gas";
 
-	private String priceValue;
+    private String priceValue;
 
     // Natural Gas:
     private double HeatingValueNG = 100000.0;  // BTU/therm
@@ -67,15 +87,15 @@ public class InsulationProject extends Project implements Serializable {
     private double FuelInflation = FuelInflationNG;
 
     // constructor sets the water usage to -1.0 because there is no way for a insulation project
-	// to have an impact on water consumption. This will be beneficial for our 'Math' class.
-	public InsulationProject(final String name) {
-	    this.name = name;
+    // to have an impact on water consumption. This will be beneficial for our 'Math' class.
+    public InsulationProject(final String name) {
+        this.name = name;
     }
 
     // Change Fuel -- changes fuel type, cost and furnace efficiency per user input
-    private void ChangeFuel(int i){
+    private void ChangeFuel(int i) {
 
-	    System.out.print("changedFuel");
+        System.out.print("changedFuel");
         //gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
         if (i == 0) {
             priceValue = "$'s per therm";
@@ -107,19 +127,10 @@ public class InsulationProject extends Project implements Serializable {
         }
     }
 
-	@Override
+    @Override
     public double getMonthlySavings() {
-	    //TODO: Program this to properly calculate the monthly savings.
-        //"Natural Gas", "Fuel Oil", "Propane", "Electricity"
-        //System.out.println("gasType: " + gasType);
-
-        //if(gasType.equals("Natural Gas")) ChangeFuel(0);
-        //else if(gasType.equals("Fuel Oil")) ChangeFuel(1);
-        //else if(gasType.equals("Propane")) ChangeFuel(2);
-        //else if(gasType.equals("Electricity")) ChangeFuel(3);
-
-        System.out.println("furnaceEff: "+ furnaceEff);
-        double Efic = furnaceEff/100.0;
+        System.out.println("furnaceEff: " + furnaceEff);
+        double Efic = furnaceEff / 100.0;
 
         System.out.println("Current R " + curRValue);
         System.out.println("New R " + newRValue);
@@ -129,44 +140,43 @@ public class InsulationProject extends Project implements Serializable {
         // Calculate the heat losses and fuel saving
         // Current and New heat loss:
         double Qcur, Qnew;
-        Qcur = (wallArea*heatDegreeDays*24.0)/(double)curRValue;
-        Qnew = (wallArea*heatDegreeDays*24.0)/(double)newRValue;
+        Qcur = (wallArea * heatDegreeDays * 24.0) / (double) curRValue;
+        Qnew = (wallArea * heatDegreeDays * 24.0) / (double) newRValue;
         System.out.println("Qcur: " + Qcur);
         System.out.println("Qnew: " + Qnew);
         // calc $ saving in fuel
         double Saving;
         System.out.println("ppu: " + ppu);
         System.out.println("HeatingValue: " + HeatingValue);
-        Saving = ((Qcur-Qnew)/(HeatingValue*Efic))*ppu;
+        Saving = ((Qcur - Qnew) / (HeatingValue * Efic)) * ppu;
         System.out.println("Saving:" + Saving);
         //10 year saving
         double Saving10Year = 0.0;
         double Infla = 1.0;
         double yrSaving;
-        for(int i=0; i < 10 ;i++){
-            yrSaving = Saving*Infla;
-            Infla = Infla*FuelInflation;
+        for (int i = 0; i < 10; i++) {
+            yrSaving = Saving * Infla;
+            Infla = Infla * FuelInflation;
             Saving10Year = Saving10Year + yrSaving;
         }
 
         // Calc greenhouse gas
         double GHgas;
-        GHgas = (Qcur-Qnew)*GHGperBTU/Efic;
+        GHgas = (Qcur - Qnew) * GHGperBTU / Efic;
 
         // write outputs
         System.out.println("Savings: " + Saving);
 
-        System.out.println("Savings: "+ Math.round(Saving*100)/100);
-        System.out.println("10 year Savings: "+ Math.round(Saving10Year*100)/100);
-        System.out.println("GHgas: "+ Math.round(GHgas));
+        System.out.println("Savings: " + Math.round(Saving * 100) / 100);
+        System.out.println("10 year Savings: " + Math.round(Saving10Year * 100) / 100);
+        System.out.println("GHgas: " + Math.round(GHgas));
 
-
-	    return Saving / 12.0;
+        return Saving / 12.0;
     }
 
     @Override
     public double getInitialCost() {
-	    return initialCost;
+        return initialCost;
     }
 
     @Override
@@ -177,9 +187,10 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GText(name + " Summary"));
-                GUI.window.add(new GSpacer(25));ArrayList<double[]> data = new ArrayList<>();
+                GUI.window.add(new GSpacer(25));
+                ArrayList<double[]> data = new ArrayList<>();
 
-                data.add(new double[] {0, 0});
+                data.add(new double[]{0, 0});
 
                 boolean payedFor = false;
                 int payedDate = 0;
@@ -190,7 +201,7 @@ public class InsulationProject extends Project implements Serializable {
                         payedDate = i + 1;
                         payedFor = true;
                     }
-                    data.add(new double[] {potential});
+                    data.add(new double[]{potential});
                 }
 
                 if (potential > 0) {
@@ -275,14 +286,13 @@ public class InsulationProject extends Project implements Serializable {
 
                 //Create all of the text boxes and drop down explanations for this page.
                 GTextBox currentR = new GTextBox(40, curRValue + "", "R-Value determines how well the insulation resists heat flow.");
-                GTextBox newR = new GTextBox(40, newRValue +"", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value around 2-3. If you live in a colder area you will want a higher R-Value around 5-6.");
-                GTextBox areaToBeUpgraded = new GTextBox(40,  wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
-                GTextBox heatingDegreeDays = new GTextBox(40, heatDegreeDays + "",
-                        "Anual Heating degree days depends on how much often you use your heater.");
+                GTextBox newR = new GTextBox(40, newRValue + "", "Recommended R-Value depends on where you live. If you live in a hot area you would want a lower R-Value. If you live in a colder area you will want a higher R-Value.");
+                GTextBox areaToBeUpgraded = new GTextBox(40, wallArea + "", "The surface area, in square feet, of the room where insulation is being upgraded.");
+                GTextBox heatingDegreeDays = new GTextBox(40, heatDegreeDays + "", "Annual heating degree days depends on how often you use your heater.");
                 GTextBox pricePerUnit = new GTextBox(40, ppu + "", "For natural gas and fuel oil use dollars per therm, for propane use dollars per gallon and for electricity enter dollars per KWH.");
                 GTextBox furnaceEfficency = new GTextBox(40, furnaceEff + "", "How efficiently your heater turns energy into heat. On average, use 100 for electric heaters and 80 for others.");
                 GTextBox insulationPrice = new GTextBox(40, initialCost + "", "The price of the new insulation and any costs of installation.");
-                GDropdown gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"}) {
+                GDropdown gasType = new GDropdown(new String[]{"Natural Gas", "Fuel Oil", "Propane", "Electricity"}) {
                     @Override
                     public void clickAction() {
                         switch (this.getSelection()) {
@@ -334,10 +344,6 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add(gasType);
 
-
-
-                //gasType.mouseReleased(ChangeFuel(gasType.getSelection()));
-
                 GUI.window.add(new GSpacer(20));
                 GUI.window.add(new GText("Fuel Price", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -366,13 +372,13 @@ public class InsulationProject extends Project implements Serializable {
                             curRValue = Integer.parseInt(currentR.getText());
                             if (curRValue < 0) {
                                 good = false;
-                                currentR.failed("Current R value cannot be negative.");
+                                currentR.failed("Current R-Value cannot be negative.");
                             } else if (curRValue > 400) {
                                 good = false;
-                                currentR.failed("Current R cannot exceed 400.");
+                                currentR.failed("Current R-Value cannot exceed 400.");
                             }
                         } catch (NumberFormatException e) {
-                            currentR.failed("Current R value must be a number.");
+                            currentR.failed("Current R-Value must be a number.");
                             good = false;
                         }
 
@@ -381,13 +387,13 @@ public class InsulationProject extends Project implements Serializable {
                             newRValue = Integer.parseInt(newR.getText());
                             if (newRValue < 0) {
                                 good = false;
-                                newR.failed("New R value cannot be negative.");
+                                newR.failed("New R-Value cannot be negative.");
                             } else if (newRValue > 400) {
                                 good = false;
-                                newR.failed("New R cannot exceed 400.");
+                                newR.failed("New R-Value cannot exceed 400.");
                             }
                         } catch (NumberFormatException e) {
-                            newR.failed("New R value must be a number.");
+                            newR.failed("New R-Value must be a number.");
                             good = false;
                         }
 
@@ -396,7 +402,7 @@ public class InsulationProject extends Project implements Serializable {
                             wallArea = Double.parseDouble(areaToBeUpgraded.getText());
                             if (wallArea < 0) {
                                 good = false;
-                                areaToBeUpgraded.failed("Wall Area cannot be negative.");
+                                areaToBeUpgraded.failed("Wall area cannot be negative.");
                             } else if (wallArea > 999999) {
                                 good = false;
                                 areaToBeUpgraded.failed("Damn Donald, Back at it again with the Giant Wall!");
@@ -411,13 +417,13 @@ public class InsulationProject extends Project implements Serializable {
                             heatDegreeDays = Integer.parseInt(heatingDegreeDays.getText());
                             if (heatDegreeDays < 0) {
                                 good = false;
-                                heatingDegreeDays.failed("Heating Degree Days cannot be negative.");
-                            } else if (heatDegreeDays > 25000){
+                                heatingDegreeDays.failed("Heating degree days cannot be negative.");
+                            } else if (heatDegreeDays > 25000) {
                                 good = false;
-                                heatingDegreeDays.failed("Heating Days can't exceed 25000 unless you live on Mars in which case it can.");
+                                heatingDegreeDays.failed("Heating degree days cannot exceed 25000 unless you live on Mars in which case it can.");
                             }
                         } catch (NumberFormatException e) {
-                            heatingDegreeDays.failed("heating Degree Days must be a number.");
+                            heatingDegreeDays.failed("Heating degree days must be a number.");
                             good = false;
                         }
 
@@ -426,13 +432,13 @@ public class InsulationProject extends Project implements Serializable {
                             ppu = Double.parseDouble(pricePerUnit.getText());
                             if (ppu < 0.01) {
                                 good = false;
-                                pricePerUnit.failed("Price Per Unit cannot be negative.");
+                                pricePerUnit.failed("Price per unit cannot be negative.");
                             } else if (ppu > 999999) {
                                 good = false;
                                 pricePerUnit.failed("Damn Donald, Back at it again with the Giant Wall!");
                             }
                         } catch (NumberFormatException e) {
-                            pricePerUnit.failed("Price Per Unit must be a number.");
+                            pricePerUnit.failed("Price per unit must be a number.");
                             good = false;
                         }
 
@@ -442,13 +448,13 @@ public class InsulationProject extends Project implements Serializable {
                             furnaceEff = Double.parseDouble(furnaceEfficency.getText());
                             if (furnaceEff < 0) {
                                 good = false;
-                                furnaceEfficency.failed("Furnace Efficiency cannot be negative.");
+                                furnaceEfficency.failed("Furnace efficiency cannot be negative.");
                             } else if (furnaceEff > 100) {
                                 good = false;
-                                furnaceEfficency.failed("Furnace Efficiency cannot cannont exceed 100%.");
+                                furnaceEfficency.failed("Furnace efficiency cannot exceed 100%.");
                             }
                         } catch (NumberFormatException e) {
-                            furnaceEfficency.failed("Furnace Efficiency must be a number.");
+                            furnaceEfficency.failed("Furnace efficiency must be a number.");
                             good = false;
                         }
 
@@ -457,7 +463,7 @@ public class InsulationProject extends Project implements Serializable {
                             initialCost = Double.parseDouble(insulationPrice.getText());
                             if (initialCost < 0) {
                                 good = false;
-                                insulationPrice.failed("Insulation Price cost cannot be negative.");
+                                insulationPrice.failed("Initial cost cannot be negative.");
                             }
                         } catch (NumberFormatException e) {
                             insulationPrice.failed("Initial cost must be a number.");

@@ -46,18 +46,17 @@ public class EditAccount extends GUIPage {
             public void clickAction() {
                 String myName = name.getText().trim();
                 String myEmail = email.getText().trim();
-
-                //TODO: Fix the bug here. You can't change the name when you don't change the email.
-                if (General.testName(myName) && General.testEmail(myEmail) && General.isEmailFree(myEmail)) {
+                if (General.testName(myName) && General.testEmail(myEmail) && (General.isEmailFree(myEmail) || !myName.equals(UserManager.getLoadedUser().getName()))) {
                     UserManager.getLoadedUser().setName(myName);
                     UserManager.getLoadedUser().setEmail(myEmail);
+                    UserManager.save();
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
-                        name.failed("• Name must be at least 3 characters.");
+                        name.failed("Name must be at least 3 characters.");
                     } if (!General.testEmail(myEmail)) {
-                        email.failed("• Must be a valid email.");
-                    }  if (!General.isEmailFree(myEmail)) {email.failed("• This Email is already taken.");
+                        email.failed("Must be a valid email.");
+                    }  if (!General.isEmailFree(myEmail)) {email.failed("This email is already taken.");
                     }
                 }
             }
