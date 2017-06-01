@@ -134,7 +134,7 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
 
         g.setColor(Style.primaryDropdownColor);
         g2d.fill(main);
-        g.setColor(Style.secondaryButtonColor);
+        g.setColor(Style.primaryDropdownColor.darker());
         g2d.fill(hover);
         g.setColor(Style.dropdownBorderColor);
 

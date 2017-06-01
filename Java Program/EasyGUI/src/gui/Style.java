@@ -73,7 +73,7 @@ public final class Style {
      * Animation Variables
      */
 
-    private static final double speedModifier     = 1;
+    private static final double speedModifier    = 1;
 
     static final int frameRate                   = (int) ((1000 / 60) / speedModifier);
 
