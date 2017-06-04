@@ -1,12 +1,15 @@
 package project;
 
 import gui.*;
+import pages.CompareProject;
+import pages.CreateProject;
 import pages.ProjectChooser;
 import user.UserManager;
 
 import java.awt.event.MouseEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author Ryan Hansen
@@ -92,41 +95,6 @@ public class InsulationProject extends Project implements Serializable {
         this.name = name;
     }
 
-    // Change Fuel -- changes fuel type, cost and furnace efficiency per user input
-    private void ChangeFuel(int i) {
-
-        System.out.print("changedFuel");
-        //gasType = new GDropdown(new String[] {"Natural Gas", "Fuel Oil", "Propane", "Electricity"});
-        if (i == 0) {
-            priceValue = "$'s per therm";
-            FuelType = "ng";
-            HeatingValue = HeatingValueNG;  // BTU/therm
-            GHGperBTU = GHGperBTUNG;  // lbs GHG per BTU of NG
-            ppu = FuelCostNG;
-        }
-        if (i == 1) {
-            priceValue = "$'s per gallon";
-            FuelType = "oil";
-            HeatingValue = HeatingValueOil;  // BTU/gallon
-            GHGperBTU = GHGperBTUOil;  // lbs GHG per BTU of oil
-            ppu = FuelCostOil;
-        }
-        if (i == 2) {
-            priceValue = "$'s per gallon";
-            FuelType = "pro";
-            HeatingValue = HeatingValuePro;  // BTU/gallon
-            GHGperBTU = GHGperBTUPro;  // lbs of GHG per BTU of Propane
-            ppu = FuelCostPro;
-        }
-        if (i == 3) {
-            priceValue = "$'s per KWH";
-            FuelType = "elec";
-            HeatingValue = HeatingValueElec;  // BTU/KWH
-            GHGperBTU = GHGperBTUElec;  // lbs of GHG per BTU of electricity from a coal power station
-            ppu = FuelCostElec;
-        }
-    }
-
     @Override
     public double getMonthlySavings() {
         System.out.println("furnaceEff: " + furnaceEff);
@@ -210,14 +178,21 @@ public class InsulationProject extends Project implements Serializable {
 
                     GUI.window.add(new GText("Details:"));
                     GUI.window.add(new GSpacer(20));
-                    GUI.window.add(new GText("Nice! After one year this project will save you $" + Math.round(potential) + ".", Style.defaultFont));
+
+                    //The RADICAL option is sort of an inside joke with all the games I make.
+                    String[] words = {"Nice", "Awesome", "Great", "Spectacular", "RADICAL", "Wow", "Cool"};
+                    int rnd = new Random().nextInt(words.length);
+
+                    GUI.window.add(new GText(words[rnd] + "! After one year this project will save you $" + Math.round(potential) + ".", Style.defaultFont));
 
                     if (payedDate != 1) {
                         GUI.window.add(new GSpacer(10));
                         GUI.window.add(new GText("This project will pay for itself in " + payedDate + " months.", Style.defaultFont));
                     }
                 } else {
+                    GUI.window.add(new GSpacer(50));
                     GUI.window.add(new GText("Oh no! This project won't save you any money this year. Try reducing the initial costs and change other settings to make the project more profitable.", Style.defaultFont));
+                    GUI.window.add(new GSpacer(50));
                 }
 
                 GUI.window.add(new GSpacer(20));
@@ -241,7 +216,26 @@ public class InsulationProject extends Project implements Serializable {
                         innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
                             @Override
                             public void clickAction() {
-                                GUI.window.gotoPage(new ProjectChooser(InsulationProject.this));
+
+                                ArrayList<GUIComponent> parts = new ArrayList<>();
+                                parts.add(new GText("Compare To..."));
+                                parts.add(new GSpacer(32));
+                                for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+                                    if (p != InsulationProject.this) {
+                                        parts.add(new GButton(40, p.getName(), Style.defaultFont) {
+                                            @Override
+                                            public void clickAction() {
+                                                GUI.window.gotoPage(new CompareProject(InsulationProject.this, p));
+                                                GUI.getPopUp().destroy();
+                                            }
+                                        });
+                                        parts.add(new GSpacer(10));
+                                    }
+                                }
+                                parts.add(new GSpacer(-10));
+
+                                GPopUp popup = new GPopUp(parts);
+                                GUI.showPopUp(popup);
                             }
                         });
                         innerDiv3.add(new GSpacer(10));
@@ -259,13 +253,18 @@ public class InsulationProject extends Project implements Serializable {
 
 
                 } else {
-                    GUI.window.add(new GButton(40, "Resume Project", Style.defaultFont, 8) {
-                        @Override
-                        public void clickAction() {
-                            UserManager.getLoadedUser().projectResume(InsulationProject.this);
-                            GUI.window.gotoPage(getSummaryPage());
-                        }
-                    });
+                    if (UserManager.getLoadedUser().getMyProjects().size() < 10) {
+                        GUI.window.add(new GButton(40, "Resume Project", Style.defaultFont, 8) {
+                            @Override
+                            public void clickAction() {
+                                UserManager.getLoadedUser().projectResume(InsulationProject.this);
+                                GUI.window.gotoPage(getSummaryPage());
+
+                            }
+                        });
+                    } else {
+                        GUI.window.add(new GText("To resume this project either delete one or mark one as completed.", Style.defaultFont));
+                    }
                 }
                 GUI.window.add(buttons);
                 GUI.window.add(new GSpacer(40));
@@ -472,6 +471,7 @@ public class InsulationProject extends Project implements Serializable {
 
                         if (good) {
                             System.out.println("gasType Selection; " + gasType.getSelection());
+                            UserManager.save();
                             GUI.window.gotoPage(getSummaryPage());
                         }
                     }
@@ -484,8 +484,30 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Project", Style.defaultFont) {
                     @Override
                     public void clickAction() {
-                        UserManager.getLoadedUser().getMyProjects().remove(InsulationProject.this);
-                        GUI.window.gotoPage("Home");
+
+                        ArrayList<GUIComponent> parts = new ArrayList<>();
+                        parts.add(new GText("Warning!"));
+                        parts.add(new GSpacer(20));
+                        parts.add(new GText("Are you sure you want to delete this project? You will not be able to recover it.", Style.defaultFont));
+                        parts.add(new GSpacer(20));
+                        GDivider div = new GDivider(1, 2);
+                        div.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete", Style.defaultFont, 16) {
+                            @Override
+                            public void clickAction() {
+                                UserManager.getLoadedUser().getMyProjects().remove(InsulationProject.this);
+                                UserManager.save();
+                                GUI.getPopUp().destroy();
+                                GUI.window.gotoPage("Home");
+                            }
+                        });
+                        div.add(new GButton(40, "Cancel", Style.defaultFont, 16) {
+                            @Override
+                            public void clickAction() {
+                                GUI.getPopUp().destroy();
+                            }
+                        });
+                        parts.add(div);
+                        GUI.showPopUp(new GPopUp(parts));
                     }
                 });
                 GUI.window.add(new GSpacer(40));

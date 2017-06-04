@@ -10,7 +10,10 @@ import gui.GUIPage;
  * Created by Robert on 5/10/17.
  *
  * This is the About Us page.
+ *
+ * This page has been replaced by a popup in GUIPage
  */
+@Deprecated
 public class About extends GUIPage {
 
     public About() {

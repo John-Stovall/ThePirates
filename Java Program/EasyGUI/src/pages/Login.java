@@ -8,6 +8,7 @@ import user.UserManager;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by Robert on 5/10/17.
@@ -66,7 +67,27 @@ public class Login extends GUIPage {
         innerDiv2.add(new GButton(40, "Import", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
-                UserManager.importFile();
+
+                ArrayList<GUIComponent> parts = new ArrayList<>();
+                parts.add(new GText("Warning!"));
+                parts.add(new GSpacer(20));
+                parts.add(new GText("Are you sure you want import accounts? This will delete any accounts and you will not be able to recover them.", Style.defaultFont));
+                parts.add(new GSpacer(20));
+                GDivider div = new GDivider(1, 2);
+                div.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Import", Style.defaultFont, 16) {
+                    @Override
+                    public void clickAction() {
+                        UserManager.importFile();
+                    }
+                });
+                div.add(new GButton(40, "Cancel", Style.defaultFont, 16) {
+                    @Override
+                    public void clickAction() {
+                        GUI.getPopUp().destroy();
+                    }
+                });
+                parts.add(div);
+                GUI.showPopUp(new GPopUp(parts));
             }
         });
         innerDiv2.add(new GSpacer(10));

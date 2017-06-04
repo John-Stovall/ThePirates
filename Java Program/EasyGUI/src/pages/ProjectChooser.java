@@ -8,7 +8,10 @@ import user.UserManager;
  * Created by Robert on 5/25/17.
  *
  * A page used to select another project.
+ *
+ * This page has been replaced by a popup that is defined in each project!
  */
+@Deprecated
 public class ProjectChooser extends GUIPage {
 
     private Project project;
