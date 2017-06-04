@@ -5,28 +5,27 @@
   <nodes>
     <node x="1941.7790322580645" y="997.5">pages.CreateProject</node>
     <node x="3200.0728046594995" y="275.0">gui.GDivider</node>
-    <node x="454.0" y="931.5">main.User</node>
+    <node x="902.0" y="0.0">gui.GMouseListener</node>
     <node x="1520.6227822580645" y="297.0">gui.GGraph</node>
+    <node x="2175.2790546594993" y="1713.0">main.Main</node>
+    <node x="2839.25" y="997.5">pages.About</node>
     <node x="1419.9978046594993" y="997.5">pages.Home</node>
-    <node x="0.0" y="843.0">gui.GUI</node>
     <node x="1795.6227822580645" y="297.0">gui.GText</node>
+    <node x="0.0" y="843.0">gui.GUI</node>
+    <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
     <node x="2883.4477822580648" y="275.0">gui.GSpacer</node>
     <node x="1891.3540322580645" y="1602.0">pages.RegisterAccount</node>
     <node x="2276.2290322580648" y="1602.0">pages.Login</node>
     <node x="2256.4125" y="11.0">gui.GUIComponent</node>
     <node x="825.0" y="297.0">gui.GKeyListener</node>
     <node x="78.0" y="1307.0">gui.GUI.DrawPanel</node>
-    <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
-    <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
-    <node x="902.0" y="0.0">gui.GMouseListener</node>
-    <node x="2175.2790546594993" y="1713.0">main.Main</node>
-    <node x="2839.25" y="997.5">pages.About</node>
-    <node x="2070.6227822580645" y="286.0">gui.GWrapper</node>
-    <node x="1125.3249999999998" y="532.0">gui.GTextBox</node>
-    <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
     <node x="2932.070833333333" y="11.0">gui.GSubList</node>
+    <node x="2061.3540322580648" y="1602.0">pages.EditAccount</node>
+    <node x="1161.8727822580645" y="253.0">gui.GDropdown</node>
+    <node x="1125.3249999999998" y="532.0">gui.GTextBox</node>
     <node x="2515.1" y="587.0">gui.GUIPage</node>
     <node x="2365.6227822580645" y="264.0">gui.GMenuBar</node>
+    <node x="1811.0290322580645" y="1263.0">gui.GButton</node>
     <node x="2434.2290322580648" y="1602.0">pages.NewProject</node>
   </nodes>
   <notes />
@@ -75,17 +74,17 @@
       <point x="2309.5375" y="203.0" />
       <point x="-74.375" y="25.5" />
     </edge>
-    <edge source="gui.GUI.DrawPanel" target="gui.GUI">
-      <point x="-88.66666666666697" y="-25.5" />
-      <point x="122.33333333333303" y="1243.0" />
-      <point x="70.33333333333303" y="1243.0" />
-      <point x="-140.66666666666697" y="180.0" />
-    </edge>
     <edge source="gui.GDropdown" target="gui.GMouseListener">
       <point x="-83.75" y="-69.5" />
       <point x="1245.6227822580645" y="173.0" />
       <point x="1123.8999999999996" y="173.0" />
       <point x="63.399999999999636" y="36.5" />
+    </edge>
+    <edge source="gui.GUI.DrawPanel" target="gui.GUI">
+      <point x="-88.66666666666697" y="-25.5" />
+      <point x="122.33333333333303" y="1243.0" />
+      <point x="70.33333333333303" y="1243.0" />
+      <point x="-140.66666666666697" y="180.0" />
     </edge>
     <edge source="gui.GText" target="gui.GUIComponent">
       <point x="0.0" y="-25.5" />
@@ -112,18 +111,6 @@
       <point x="3011.4477822580648" y="133.0" />
       <point x="2437.0375" y="133.0" />
       <point x="53.125" y="25.5" />
-    </edge>
-    <edge source="gui.GTextBox" target="gui.GKeyListener">
-      <point x="-106.39999999999964" y="-80.5" />
-      <point x="1151.9250000000002" y="502.0" />
-      <point x="993.75" y="502.0" />
-      <point x="56.25" y="25.5" />
-    </edge>
-    <edge source="gui.GTextBox" target="gui.GMouseListener">
-      <point x="-53.19999999999982" y="-80.5" />
-      <point x="1205.125" y="492.0" />
-      <point x="1060.5" y="492.0" />
-      <point x="0.0" y="36.5" />
     </edge>
     <edge source="gui.GMenuBar" target="gui.GMouseListener">
       <point x="-118.125" y="-58.5" />
@@ -157,6 +144,12 @@
       <point x="2479.5375" y="113.0" />
       <point x="95.625" y="25.5" />
     </edge>
+    <edge source="gui.GTextBox" target="gui.GWrapper">
+      <point x="-69.5" y="-69.5" />
+      <point x="1937.1121794871797" y="371.0" />
+      <point x="1497.727564102564" y="371.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
     <edge source="gui.GMenuBar" target="gui.GUIComponent">
       <point x="-39.375" y="-58.5" />
       <point x="2483.7477822580645" y="153.0" />
@@ -188,7 +181,7 @@
       <point x="-95.625" y="25.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9" x="2709.0" y="960.0" />
+  <settings layout="Hierarchic Group" zoom="0.3319072186007388" x="2959.459163608477" y="841.6070332006384" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
