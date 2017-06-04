@@ -1,5 +1,6 @@
 package control;
 
+import project.Project;
 import user.User;
 import user.UserManager;
 
@@ -30,7 +31,7 @@ public class General {
      * @author Reagan
      */
     public static boolean testName(String name) {
-        return name.length() >= 3;
+        return name.length() >= 3 && name.length() <= 15;
     }
 
     /**
@@ -63,6 +64,27 @@ public class General {
     public static boolean isEmailFree(String email) {
         for (User u : UserManager.getUsers()) {
             if (u.getEmail().equals(email)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * This method checks to see if any other project is already using a specified name.
+     *
+     * @param name The name to check for.
+     * @return Whether the name is taken or not.
+     * @author Robert
+     */
+    public static boolean isProjectNameFree(String name) {
+        for (Project p : UserManager.getLoadedUser().getMyProjects()) {
+            if (p.getName().equals(name)) {
+                return false;
+            }
+        }
+        for (Project p : UserManager.getLoadedUser().getCompletedProject()) {
+            if (p.getName().equals(name)) {
                 return false;
             }
         }

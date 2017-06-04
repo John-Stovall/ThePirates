@@ -50,7 +50,7 @@ public class RegisterAccount extends GUIPage {
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
-                        name.failed("Name must be at least 3 characters.");
+                        name.failed("Name must be between 3 and 15 characters.");
                     } if (!General.testEmail(myEmail)) {
                         email.failed("Must be a valid email.");
                     } else if (!General.isEmailFree(myEmail)) {

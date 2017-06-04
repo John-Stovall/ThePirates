@@ -1,5 +1,7 @@
 package gui;
 
+import javafx.embed.swing.JFXPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -88,6 +90,16 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     private static boolean showMenu = false;
 
     /**
+     *
+     */
+    private static ArrayList<GPopUp> popupQueue = new ArrayList<>();
+
+    /**
+     * The popup menu.
+     */
+    private static GPopUp popup;
+
+    /**
      * Starts the GUI with some basic settings.
      *
      * @author Robert
@@ -113,10 +125,82 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             for (GAnimation c : animatedComponents) {
                 c.updateAnimations();
             }
+            if (popup != null) {
+                popup.updateAnimations();
+            }
             panel.repaint();
         });
 
         clock.start();
+    }
+
+    /**
+     * Shows a popup menu. This method also temporarily disables JTextBoxes because they mess
+     * with mouseListeners.
+     *
+     * @param p The Popup to show.
+     * @author Robert
+     */
+    public static void showPopUp(GPopUp p) {
+        if (popup == null) {
+            popup = p;
+            for (GUIComponent c : components) {
+                if (c instanceof JPanel) {
+                    panel.remove((JPanel) c);
+                    ((JPanel) c).revalidate();
+                }
+            }
+            for (GUIComponent c : popup.getComponents().get(0)) {
+                if (c instanceof JPanel) {
+                    panel.add((JPanel) c);
+                    ((JPanel) c).revalidate();
+                }
+            }
+        } else {
+            popupQueue.add(p);
+        }
+    }
+
+    /**
+     * This method enables text boxes after a popup is destroyed.
+     * @author Robert
+     */
+    static void enableTextBoxes() {
+        for (GUIComponent c : components) {
+            if (c instanceof JPanel) {
+                panel.add((JPanel) c);
+                ((JPanel) c).revalidate();
+            }
+        }
+        for (GUIComponent c : popup.getComponents().get(0)) {
+            if (c instanceof JPanel) {
+                panel.remove((JPanel) c);
+                ((JPanel) c).revalidate();
+            }
+        }
+    }
+
+    /**
+     * Removes the popup from memory.
+     * @author Robert
+     */
+    static void destroyPopUp() {
+        enableTextBoxes();
+        popup = null;
+        if (popupQueue.size() != 0) {
+            showPopUp(popupQueue.get(0));
+            popupQueue.remove(0);
+        }
+    }
+
+    /**
+     * Gets the current popup.
+     *
+     * @return The popup.
+     * @author Robert
+     */
+    public static GPopUp getPopUp() {
+        return popup;
     }
 
     /**
@@ -150,6 +234,16 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     }
 
     /**
+     * Gets the inner width of the window.
+     *
+     * @return The width of the panel
+     * @author Robert
+     */
+    static int getWindowHeight() {
+        return panel.getHeight();
+    }
+
+    /**
      * This method adds a GUIComponent to the current page.
      *
      * @param c The GUIComponent to add.
@@ -157,7 +251,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      */
     public void add(final GUIComponent c) {
         components.add(c);
-        if (c instanceof JPanel) {
+        if (c instanceof JPanel && popup == null) {
             panel.add((JPanel) c);
             ((JPanel) c).revalidate();
         }
@@ -262,12 +356,14 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
-        if (pageHeight > panel.getHeight()) {
-            scrollOffset -= e.getUnitsToScroll() * scrollSpeedMultiplier;
-            if (scrollOffset > 0) scrollOffset = 0;
-            if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
-        } else if (scrollOffset != 0) {
-            scrollOffset = 0;
+        if (popup == null) {
+            if (pageHeight > panel.getHeight()) {
+                scrollOffset -= e.getUnitsToScroll() * scrollSpeedMultiplier;
+                if (scrollOffset > 0) scrollOffset = 0;
+                if (scrollOffset < -pageHeight + panel.getHeight()) scrollOffset = -pageHeight + panel.getHeight();
+            } else if (scrollOffset != 0) {
+                scrollOffset = 0;
+            }
         }
     }
 
@@ -277,15 +373,23 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     @Override
     public void mousePressed(MouseEvent e) {
-        for (GMouseListener c : mouseComponents) {
-            if (c.mousePressed(e)) break;
+        if (popup != null) {
+            popup.mousePressed(e);
+        } else {
+            for (GMouseListener c : mouseComponents) {
+                if (c.mousePressed(e)) break;
+            }
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        for (GMouseListener c : mouseComponents) {
-            if (c.mouseReleased(e)) break;
+        if (popup != null) {
+            popup.mouseReleased(e);
+        } else {
+            for (GMouseListener c : mouseComponents) {
+                if (c.mouseReleased(e)) break;
+            }
         }
     }
 
@@ -299,8 +403,12 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     @Override
     public void keyTyped(KeyEvent e) {
-        for (GKeyListener c : keyComponents) {
-            c.keyTyped(e);
+        if (popup != null) {
+            popup.keyTyped(e);
+        } else {
+            for (GKeyListener c : keyComponents) {
+                c.keyTyped(e);
+            }
         }
     }
 
@@ -319,6 +427,9 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      */
     private class DrawPanel extends JPanel {
 
+        /**
+         * @author Robert
+         */
         private DrawPanel() {
             this.setOpaque(true);
         }
@@ -343,13 +454,22 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
                     y += c.draw(g, x, y, width);
                 }
             }
+            if (showMenu && popup != null) {
+                g = (Graphics2D) theGraphics;
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                GUIPage.menu.draw(theGraphics, 0, 0, 0);
+            }
+            if (popup != null) {
+                popup.draw(theGraphics, (getWidth() > (maxWidth / 1.5) + sidePadding) ? (int)(maxWidth / 1.5) : getWidth() - sidePadding);
+            }
             pageHeight = y - scrollOffset;
         }
 
         @Override
         public void paint(Graphics theGraphics) {
             super.paint(theGraphics);
-            if (showMenu) {
+            if (showMenu && popup == null) {
                 Graphics2D g = (Graphics2D) theGraphics;
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);

@@ -87,10 +87,10 @@ public class GText implements GUIComponent {
 
 
             for (int i = 0; i < lines.size(); i++) {
-                g.drawString(lines.get(i), x, y + font.getSize() * (i + 1));
+                g.drawString(lines.get(i), x, y + (font.getSize()) * (i + 1) + ((i > 0) ? 2 : 0));
             }
 
-            h = font.getSize() * lines.size();
+            h = (font.getSize() + 2) * lines.size();
         } else {
             g.drawString(text, x, y + font.getSize());
             h = font.getSize();

@@ -5,11 +5,17 @@ import gui.*;
 import control.General;
 import user.UserManager;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 /**
  * Created by Robert on 5/10/17.
  *
  * This is the Edit Account page.
+ *
+ * THIS Page has been replaced by a GPopUp in the menubar which is defined in GUIPage!!
  */
+@Deprecated
 public class EditAccount extends GUIPage {
 
     /**
@@ -53,7 +59,7 @@ public class EditAccount extends GUIPage {
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
-                        name.failed("Name must be at least 3 characters.");
+                        name.failed("Name must be between 3 and 15 characters.");
                     } if (!General.testEmail(myEmail)) {
                         email.failed("Must be a valid email.");
                     }  if (!General.isEmailFree(myEmail)) {email.failed("This email is already taken.");
@@ -69,13 +75,33 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Account", Style.defaultFont) {
             @Override
             public void clickAction() {
-                UserManager.getUsers().remove(UserManager.getLoadedUser());
-                UserManager.save();
-                if (UserManager.getUsers().size() == 0) {
-                    GUI.window.gotoPage("Register");
-                } else {
-                    GUI.window.gotoPage("Login");
-                }
+                ArrayList<GUIComponent> parts = new ArrayList<>();
+                parts.add(new GText("Warning!"));
+                parts.add(new GSpacer(20));
+                parts.add(new GText("Are you sure you want to delete this account? You will not be able to recover it.", Style.defaultFont));
+                parts.add(new GSpacer(20));
+                GDivider div = new GDivider(1, 2);
+                div.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete", Style.defaultFont, 16) {
+                    @Override
+                    public void clickAction() {
+                        UserManager.getUsers().remove(UserManager.getLoadedUser());
+                        UserManager.save();
+                        GUI.getPopUp().destroy();
+                        if (UserManager.getUsers().size() == 0) {
+                            GUI.window.gotoPage("Register");
+                        } else {
+                            GUI.window.gotoPage("Login");
+                        }
+                    }
+                });
+                div.add(new GButton(40, "Cancel", Style.defaultFont, 16) {
+                    @Override
+                    public void clickAction() {
+                        GUI.getPopUp().destroy();
+                    }
+                });
+                parts.add(div);
+                GUI.showPopUp(new GPopUp(parts));
             }
         });
 

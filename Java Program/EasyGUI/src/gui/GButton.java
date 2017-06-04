@@ -137,6 +137,23 @@ public class GButton implements GUIComponent, GMouseListener, GAnimation {
     }
 
     /**
+     * Create a pretty cool button.
+     *
+     * @param height The height of the button.
+     * @param text   The text on the button.
+     * @param font   The font of the button.
+     * @author Robert
+     */
+    public GButton(final int height, final Color main, final Color hover, final String text, final Font font, final int padding) {
+        this.color = main;
+        this.hover = hover;
+        this.height = height;
+        this.font = font;
+        this.text = text;
+        this.padding = padding;
+    }
+
+    /**
      * Create a super special awesome button!
      *
      * @param height  The height of the button.

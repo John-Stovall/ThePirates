@@ -2,6 +2,7 @@ package pages;
 
 import gui.Style;
 import gui.*;
+import javafx.application.Platform;
 import project.Project;
 import user.User;
 import user.UserManager;
