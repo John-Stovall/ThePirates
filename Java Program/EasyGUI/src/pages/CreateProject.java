@@ -1,5 +1,6 @@
 package pages;
 
+import control.General;
 import gui.Style;
 import gui.*;
 import project.InsulationProject;
@@ -10,10 +11,7 @@ import user.UserManager;
  * Created by Robert on 5/11/17.
  *
  * A generic page used to create a project.
- *
- * This page has been replaced with a the PopupCreateProject class!
  */
-@Deprecated
 public class CreateProject extends GUIPage {
 
     /** The available types of projects. */
@@ -53,6 +51,9 @@ public class CreateProject extends GUIPage {
         int projectNum = UserManager.getLoadedUser().getMyProjects().size()
                 + UserManager.getLoadedUser().getCompletedProject().size() + 1;
 
+        while (!General.isProjectNameFree("Project " + projectNum)) {
+            projectNum++;
+        }
         GTextBox name = new GTextBox(40,"Project " + projectNum);
         GUI.window.add((GUIComponent) name);
         GUI.window.add(new GSpacer(15));
@@ -64,23 +65,29 @@ public class CreateProject extends GUIPage {
                 } else if (name.getText().length() > 15) {
                     name.failed("Project names can be at most 15 characters.");
                 } else if (UserManager.getLoadedUser().getMyProjects().size() >= 10) {
-                    name.failed("Sorry, you can have at most 10 projects! Either delete a project or complete one to make more.");
+                    name.failed("Sorry, you can have at most 10 projects. Either delete a project or complete one to make more room.");
+                } else if (!General.isProjectNameFree(name.getText().trim())) {
+                    name.failed("That project name is already taken.");
                 } else {
                     //TODO: Program this to do stuff.
 
                     switch (dropdown.getSelection()) {
                         case ("Insulation"):
-                            InsulationProject project = new InsulationProject(name.getText());
+                            InsulationProject project = new InsulationProject(name.getText().trim());
                             UserManager.getLoadedUser().getMyProjects().add(project);
                             UserManager.save();
-                            GUI.window.gotoPage(project.getEditPage());
+                            //GUI.window.gotoPage(project.getEditPage());
+                            GUI.getPopUp().destroy();
+                            GUI.showPopUp(project.getEditPage());
                             break;
 
                         case ("Lights"):
-                            LightProject projectL = new LightProject(name.getText());
+                            LightProject projectL = new LightProject(name.getText().trim());
                             UserManager.getLoadedUser().getMyProjects().add(projectL);
                             UserManager.save();
-                            GUI.window.gotoPage(projectL.getEditPage());
+                            //GUI.window.gotoPage(projectL.getEditPage());
+                            GUI.getPopUp().destroy();
+                            GUI.showPopUp(projectL.getEditPage());
                             break;
                         default:
                             name.failed("That project is unavailable. Please purchase DIY App Pro for $2.99");
@@ -89,8 +96,8 @@ public class CreateProject extends GUIPage {
                 }
             }
         });
-        GUI.window.add(new GSpacer(25));
-        GUI.window.showMenu();
+        //GUI.window.add(new GSpacer(25));
+        //GUI.window.showMenu();
     }
 
 }

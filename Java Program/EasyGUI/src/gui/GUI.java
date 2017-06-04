@@ -134,6 +134,34 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         clock.start();
     }
 
+    public static void showPopUp(GUIPage p) {
+        ArrayList<GUIComponent> temp = new ArrayList<>();
+        temp.addAll(components);
+        components.clear();
+        p.build();
+
+        while (components.get(0) instanceof GSpacer) {
+            components.remove(0);
+        }
+
+        ArrayList<GUIComponent> parts = new ArrayList<>();
+
+        for (GUIComponent c : components) {
+            if (!(c instanceof GMenuBar)) {
+                parts.add(c);
+            }
+        }
+
+        //parts.addAll(components);
+        GPopUp popup = new GPopUp(parts);
+
+        components.clear();
+        components.addAll(temp);
+
+        showPopUp(popup);
+
+    }
+
     /**
      * Shows a popup menu. This method also temporarily disables JTextBoxes because they mess
      * with mouseListeners.
@@ -364,6 +392,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             } else if (scrollOffset != 0) {
                 scrollOffset = 0;
             }
+        } else {
+            popup.mouseWheelMoved(e);
         }
     }
 

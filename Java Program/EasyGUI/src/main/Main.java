@@ -22,7 +22,10 @@ public class Main {
         GUI.window.addPage(new NewProject());
 
         if (UserManager.getUsers().isEmpty()) {
-            GUI.window.gotoPage("Register");
+            //GUI.window.gotoPage("Register");
+            GUI.window.gotoPage(new Blank());
+            GUI.showPopUp(new RegisterAccount());
+            GUI.getPopUp().setPermanent();
         } else {
             if (UserManager.getUsers().size() == 1) {
                 UserManager.setLoadedUser(UserManager.getUsers().get(0));

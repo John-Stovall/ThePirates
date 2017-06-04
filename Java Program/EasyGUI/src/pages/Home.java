@@ -156,7 +156,6 @@ public class Home extends GUIPage {
             GUI.window.add(new GSpacer(40));
 
         }
-
         GUI.window.showMenu();
     }
 

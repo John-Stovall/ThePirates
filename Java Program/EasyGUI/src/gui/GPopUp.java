@@ -5,6 +5,7 @@ import control.General;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 
@@ -27,6 +28,8 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
 
     private boolean dead = false;
 
+    private int buttonPos = 40;
+
     private ArrayList<GUIComponent> components;
 
     private ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
@@ -34,6 +37,23 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
     private ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
     private ArrayList<GAnimation> animatedComponents = new ArrayList<>();
+
+    private boolean closable = true;
+
+    /**
+     * The vertical offset controlled by scrolling.
+     */
+    private int scrollOffset = 0;
+
+    /**
+     * The height of the currently drawn page.
+     */
+    private int pageHeight = 0;
+
+    /**
+     * Changes how fast you can scroll the page.
+     */
+    private static final double scrollSpeedMultiplier = 4.0;
 
     public GPopUp(ArrayList<GUIComponent> components) {
         this.components = components;
@@ -70,9 +90,12 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
         }
         height += padding * 2;
 
-
         int xPos = (int) (animation * (GUI.getWindowWidth() / 2) - width / 2.0);
         int yPos = (GUI.getWindowHeight() / 2) - height / 2;
+
+        if (height > GUI.getWindowHeight()) {
+            yPos = 64;
+        }
 
         g.setColor(new Color(0, 0, 0, (int) (190 * fade)));
 
@@ -80,16 +103,24 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
 
         g.setColor(GUI.window.getBackground());
 
-        Graphics2D g2d = (Graphics2D) g;
-        RoundRectangle2D bg = new RoundRectangle2D.Double(xPos, yPos, width, height, 40, 40);
+        if (components.size() > 0) {
+            if (closable) {
+                g.drawOval(xPos - 20 + buttonPos, yPos - 20 + buttonPos + scrollOffset, 20, 20);
+                g.drawLine(xPos - 20 + 6 + buttonPos, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 6 + buttonPos, yPos - 6 + buttonPos + scrollOffset);
+                g.drawLine(xPos - 6 + buttonPos, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 20 + 6 + buttonPos, yPos - 6 + buttonPos + scrollOffset);
+            }
 
-        g2d.fill(bg);
+            Graphics2D g2d = (Graphics2D) g;
+            RoundRectangle2D bg = new RoundRectangle2D.Double(xPos, yPos + scrollOffset, width, height, 40, 40);
+            g2d.fill(bg);
+        }
 
         int hPos = padding;
         for (int i = 0; i < components.size(); i++) {
             GUIComponent c = components.get(i);
-            hPos += c.draw(g, xPos + padding, yPos + hPos, width - padding * 2);
+            hPos += c.draw(g, xPos + padding, yPos + hPos + scrollOffset, width - padding * 2);
         }
+        pageHeight = hPos;
     }
 
     public void destroy() {
@@ -104,9 +135,13 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
         if (!dead) {
             animation += Style.exponentialTween(animation, 1, 5);
             fade += Style.exponentialTween(fade, 1, 7);
+            if (animation > 0.999) {
+                buttonPos += Style.exponentialTweenRound(buttonPos, 0, 5);
+            }
         } else {
             animation += Style.exponentialTween(animation, 3, 10);
             fade += Style.exponentialTween(fade, 0, 7);
+            buttonPos += Style.exponentialTweenRound(buttonPos, 40, 5);
             if (animation > 2.8) {
                 GUI.destroyPopUp();
             }
@@ -149,10 +184,35 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
             int xPos = (int) (animation * (GUI.getWindowWidth() / 2 - width / 2));
             int yPos = (GUI.getWindowHeight() / 2) - height / 2;
 
-            if (!General.clickedInside(xPos, yPos, width, height, e)) {
+            if (!General.clickedInside(xPos, yPos, width, height, e) && closable) {
                 destroy();
             }
         }
         return false;
+    }
+
+    /**
+     * Allows for popups to be scrolled.
+     *
+     * @param e The mouse wheel event.
+     * @author Robert
+     */
+    void mouseWheelMoved(MouseWheelEvent e) {
+        if (pageHeight > GUI.getWindowHeight()) {
+            scrollOffset -= e.getUnitsToScroll() * scrollSpeedMultiplier;
+            if (scrollOffset > 0) scrollOffset = 0;
+            if (scrollOffset < -pageHeight + GUI.getWindowHeight() - 150) scrollOffset = -pageHeight + GUI.getWindowHeight() - 150;
+        } else if (scrollOffset != 0) {
+            scrollOffset = 0;
+        }
+    }
+
+    /**
+     * Calling this method will make it so that this popup cannot be closed by clicking outside it.
+     *
+     * @author Robert
+     */
+    public void setPermanent() {
+        this.closable = false;
     }
 }

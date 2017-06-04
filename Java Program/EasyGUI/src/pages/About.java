@@ -1,19 +1,16 @@
 package pages;
 
-import gui.Style;
-import gui.GSpacer;
-import gui.GText;
-import gui.GUI;
-import gui.GUIPage;
+import gui.*;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by Robert on 5/10/17.
  *
  * This is the About Us page.
- *
- * This page has been replaced by a popup in GUIPage
  */
-@Deprecated
 public class About extends GUIPage {
 
     public About() {
@@ -22,9 +19,13 @@ public class About extends GUIPage {
 
     @Override
     public void build() {
-        GUI.window.add(new GSpacer(40));
-        GUI.window.add(new GSpacer(25));
-        GUI.window.add(new GText("The Pirates:"));
+        BufferedImage image;
+        try {
+            image = ImageIO.read(new File("img/pirateFlag.png"));
+        } catch (Exception ex) {
+            image = null;
+        }
+        GUI.window.add(new GImage(image));
 
         GUI.window.add(new GSpacer(25));
         GUI.window.add(new GText("Robert Cordingly"));
@@ -52,6 +53,5 @@ public class About extends GUIPage {
         GUI.window.add(new GSpacer(15));
 
         GUI.window.add(new GSpacer(25));
-        GUI.window.showMenu();
     }
 }
