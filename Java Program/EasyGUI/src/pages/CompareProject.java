@@ -94,35 +94,35 @@ public class CompareProject extends GUIPage {
             }
         }
 
-        GUI.window.add(new GSpacer(20));
-        GDivider buttons = new GDivider(240, 2);
-        GDivider slot1 = new GDivider(240, 1);
+//        GUI.window.add(new GSpacer(20));
+//        GDivider buttons = new GDivider(240, 2);
+//        GDivider slot1 = new GDivider(240, 1);
+//
+//        slot1.add(new GButton(40, "Back to " + project1.getName(), Style.defaultFont, 8) {
+//            @Override
+//            public void clickAction() {
+//                GUI.window.gotoPage(project1.getSummaryPage());
+//            }
+//        });
+//        slot1.add(new GSpacer(10));
+//
+//
+//        GDivider slot2 = new GDivider(240, 1);
+//
+//        slot2.add(new GButton(40, "Back to " + project2.getName(), Style.defaultFont, 8) {
+//            @Override
+//            public void clickAction() {
+//                GUI.window.gotoPage(project2.getSummaryPage());
+//            }
+//        });
+//        slot2.add(new GSpacer(10));
+//
+//        buttons.add(slot1);
+//        buttons.add(slot2);
+//        GUI.window.add(buttons);
 
-        slot1.add(new GButton(40, "Back to " + project1.getName(), Style.defaultFont, 8) {
-            @Override
-            public void clickAction() {
-                GUI.window.gotoPage(project1.getSummaryPage());
-            }
-        });
-        slot1.add(new GSpacer(10));
 
-
-        GDivider slot2 = new GDivider(240, 1);
-
-        slot2.add(new GButton(40, "Back to " + project2.getName(), Style.defaultFont, 8) {
-            @Override
-            public void clickAction() {
-                GUI.window.gotoPage(project2.getSummaryPage());
-            }
-        });
-        slot2.add(new GSpacer(10));
-
-        buttons.add(slot1);
-        buttons.add(slot2);
-        GUI.window.add(buttons);
-
-
-        GUI.window.add(new GSpacer(25));
-        GUI.window.showMenu();
+        //GUI.window.add(new GSpacer(25));
+        //GUI.window.showMenu();
     }
 }

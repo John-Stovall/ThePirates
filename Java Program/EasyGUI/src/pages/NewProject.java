@@ -35,7 +35,7 @@ public class NewProject extends GUIPage {
         cell1.add(new GButton(277, "Insulation", Style.defaultFont, 32, image) {
             @Override
             public void clickAction() {
-                GUI.showPopUp(new PopupCreateProject("Insulation").getPopUp());
+                GUI.showPopUp(new CreateProject("Insulation"));
             }
         });
         cell1.add(new GSpacer(32));
@@ -48,7 +48,7 @@ public class NewProject extends GUIPage {
         cell2.add(new GButton(277, "Lights", Style.defaultFont, 32, image) {
             @Override
             public void clickAction() {
-                GUI.showPopUp(new PopupCreateProject("Lights").getPopUp());
+                GUI.showPopUp(new CreateProject("Lights"));
             }
         });
         cell2.add(new GSpacer(32));
@@ -61,7 +61,7 @@ public class NewProject extends GUIPage {
         cell3.add(new GButton(277, "Refrigerator", Style.defaultFont, 32, image) {
             @Override
             public void clickAction() {
-                GUI.showPopUp(new PopupCreateProject("Refrigerator").getPopUp());
+                GUI.showPopUp(new CreateProject("Refrigerator"));
             }
         });
         cell3.add(new GSpacer(32));
@@ -74,7 +74,7 @@ public class NewProject extends GUIPage {
         cell4.add(new GButton(277, "Washing Machine", Style.defaultFont, 32, image) {
             @Override
             public void clickAction() {
-                GUI.showPopUp(new PopupCreateProject("Washing Machine").getPopUp());
+                GUI.showPopUp(new CreateProject("Washing Machine"));
             }
         });
         cell4.add(new GSpacer(32));
@@ -87,7 +87,7 @@ public class NewProject extends GUIPage {
         cell5.add(new GButton(277, "Dryer", Style.defaultFont, 32, image) {
             @Override
             public void clickAction() {
-                GUI.showPopUp(new PopupCreateProject("Dryer").getPopUp());
+                GUI.showPopUp(new CreateProject("Dryer"));
             }
         });
         cell5.add(new GSpacer(32));

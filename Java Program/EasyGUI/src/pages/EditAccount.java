@@ -12,10 +12,7 @@ import java.util.ArrayList;
  * Created by Robert on 5/10/17.
  *
  * This is the Edit Account page.
- *
- * THIS Page has been replaced by a GPopUp in the menubar which is defined in GUIPage!!
  */
-@Deprecated
 public class EditAccount extends GUIPage {
 
     /**
@@ -56,6 +53,7 @@ public class EditAccount extends GUIPage {
                     UserManager.getLoadedUser().setName(myName);
                     UserManager.getLoadedUser().setEmail(myEmail);
                     UserManager.save();
+                    GUI.getPopUp().destroy();
                     GUI.window.gotoPage("Home");
                 } else {
                     if (!General.testName(myName)) {
@@ -75,6 +73,7 @@ public class EditAccount extends GUIPage {
         GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Account", Style.defaultFont) {
             @Override
             public void clickAction() {
+                GUI.getPopUp().destroy();
                 ArrayList<GUIComponent> parts = new ArrayList<>();
                 parts.add(new GText("Warning!"));
                 parts.add(new GSpacer(20));
@@ -88,7 +87,9 @@ public class EditAccount extends GUIPage {
                         UserManager.save();
                         GUI.getPopUp().destroy();
                         if (UserManager.getUsers().size() == 0) {
-                            GUI.window.gotoPage("Register");
+                            GUI.window.gotoPage(new Blank());
+                            GUI.showPopUp(new RegisterAccount());
+                            GUI.getPopUp().setPermanent();
                         } else {
                             GUI.window.gotoPage("Login");
                         }
@@ -98,13 +99,12 @@ public class EditAccount extends GUIPage {
                     @Override
                     public void clickAction() {
                         GUI.getPopUp().destroy();
+                        GUI.showPopUp(EditAccount.this);
                     }
                 });
                 parts.add(div);
                 GUI.showPopUp(new GPopUp(parts));
             }
         });
-
-        GUI.window.showMenu();
     }
 }

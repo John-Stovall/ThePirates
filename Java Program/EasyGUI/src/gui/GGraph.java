@@ -13,7 +13,7 @@ public class GGraph implements GUIComponent, GAnimation {
     /**
      * All of the data that this graph will draw.
      */
-    private static ArrayList<double[]> times;
+    private ArrayList<double[]> times;
 
     /**
      * The largest value in the data.

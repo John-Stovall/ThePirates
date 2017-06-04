@@ -59,7 +59,7 @@ public class Login extends GUIPage {
         innerDiv1.add(new GButton(40, "Add new Account", Style.defaultFont, 8) {
             @Override
             public void clickAction() {
-                GUI.window.gotoPage("Register");
+                GUI.showPopUp(new RegisterAccount());
             }
         });
         innerDiv1.add(new GSpacer(10));
@@ -77,6 +77,7 @@ public class Login extends GUIPage {
                 div.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Import", Style.defaultFont, 16) {
                     @Override
                     public void clickAction() {
+                        GUI.getPopUp().destroy();
                         UserManager.importFile();
                     }
                 });

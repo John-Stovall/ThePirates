@@ -48,6 +48,7 @@ public class RegisterAccount extends GUIPage {
                     User newUser = new User(myName, myEmail);
                     UserManager.setLoadedUser(newUser);
                     GUI.window.gotoPage("Home");
+                    GUI.getPopUp().destroy();
                 } else {
                     if (!General.testName(myName)) {
                         name.failed("Name must be between 3 and 15 characters.");
@@ -61,13 +62,13 @@ public class RegisterAccount extends GUIPage {
         });
 
         if (!UserManager.getUsers().isEmpty()) {
-            GUI.window.add(new GSpacer(10));
-            GUI.window.add(new GButton(40, "Back", Style.defaultFont) {
-                @Override
-                public void clickAction() {
-                    GUI.window.gotoPage("Login");
-                }
-            });
+//            GUI.window.add(new GSpacer(10));
+//            GUI.window.add(new GButton(40, "Back", Style.defaultFont) {
+//                @Override
+//                public void clickAction() {
+//                    GUI.window.gotoPage("Login");
+//                }
+//            });
         } else {
             GUI.window.add(new GSpacer(10));
             GUI.window.add(new GButton(40, "Skip Login", Style.defaultFont) {
@@ -76,6 +77,7 @@ public class RegisterAccount extends GUIPage {
                     User validUser = new User("You", "");
                     UserManager.setLoadedUser(validUser);
                     GUI.window.gotoPage("Home");
+                    GUI.getPopUp().destroy();
                 }
             });
         }

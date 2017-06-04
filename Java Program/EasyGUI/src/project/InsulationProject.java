@@ -207,7 +207,8 @@ public class InsulationProject extends Project implements Serializable {
                     innerDiv1.add(new GButton(40, "Edit Project", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
-                            GUI.window.gotoPage(getEditPage());
+                            GUI.showPopUp(getEditPage());
+                            //GUI.window.gotoPage(getEditPage());
                         }
                     });
                     innerDiv1.add(new GSpacer(10));
@@ -216,26 +217,7 @@ public class InsulationProject extends Project implements Serializable {
                         innerDiv3.add(new GButton(40, "Compare To...", Style.defaultFont, 8) {
                             @Override
                             public void clickAction() {
-
-                                ArrayList<GUIComponent> parts = new ArrayList<>();
-                                parts.add(new GText("Compare To..."));
-                                parts.add(new GSpacer(32));
-                                for (Project p : UserManager.getLoadedUser().getMyProjects()) {
-                                    if (p != InsulationProject.this) {
-                                        parts.add(new GButton(40, p.getName(), Style.defaultFont) {
-                                            @Override
-                                            public void clickAction() {
-                                                GUI.window.gotoPage(new CompareProject(InsulationProject.this, p));
-                                                GUI.getPopUp().destroy();
-                                            }
-                                        });
-                                        parts.add(new GSpacer(10));
-                                    }
-                                }
-                                parts.add(new GSpacer(-10));
-
-                                GPopUp popup = new GPopUp(parts);
-                                GUI.showPopUp(popup);
+                                GUI.showPopUp(new ProjectChooser(InsulationProject.this));
                             }
                         });
                         innerDiv3.add(new GSpacer(10));
@@ -473,6 +455,7 @@ public class InsulationProject extends Project implements Serializable {
                             System.out.println("gasType Selection; " + gasType.getSelection());
                             UserManager.save();
                             GUI.window.gotoPage(getSummaryPage());
+                            GUI.getPopUp().destroy();
                         }
                     }
                 });
@@ -504,14 +487,16 @@ public class InsulationProject extends Project implements Serializable {
                             @Override
                             public void clickAction() {
                                 GUI.getPopUp().destroy();
+                                GUI.showPopUp(getEditPage());
                             }
                         });
                         parts.add(div);
+                        GUI.getPopUp().destroy();
                         GUI.showPopUp(new GPopUp(parts));
                     }
                 });
                 GUI.window.add(new GSpacer(40));
-                GUI.window.showMenu();
+                //GUI.window.showMenu();
             }
         };
     }
