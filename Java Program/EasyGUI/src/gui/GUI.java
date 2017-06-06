@@ -1,7 +1,5 @@
 package gui;
 
-import javafx.embed.swing.JFXPanel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -47,7 +45,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     /**
      * The max width of the window's contents before it starts adding padding.
      */
-    private static final int maxWidth = 720;
+    private static final int maxWidth = 900;
 
     /**
      * The padding added to the sides of all components.
@@ -193,7 +191,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      * This method enables text boxes after a popup is destroyed.
      * @author Robert
      */
-    static void enableTextBoxes() {
+    private static void enableTextBoxes() {
         for (GUIComponent c : components) {
             if (c instanceof JPanel) {
                 panel.add((JPanel) c);
@@ -239,16 +237,6 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
      */
     public void addPage(final GUIPage page) {
         pages.add(page);
-    }
-
-    /**
-     * Returned the list of currently loaded components.
-     *
-     * @return The ArrayList of components
-     * @author Robert
-     */
-    ArrayList<GUIComponent> getItems() {
-        return components;
     }
 
     /**
@@ -475,6 +463,15 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             int x = horizontalOffset + ((getWidth() > maxWidth + sidePadding) ? (getWidth() - maxWidth) / 2 : sidePadding / 2);
             int y = scrollOffset;
 
+            int offset = panel.getHeight() / 2 - pageHeight / 2;
+
+            if (pageHeight < panel.getHeight()) {
+                scrollOffset = 0;
+                y = offset;
+            } else {
+                offset = 0;
+            }
+
             // Loop through the list of currently loaded components and call their draw methods.
             for (int i = 0; i < components.size(); i++) { //DO NOT CHANGE THIS TO A FOR EACH LOOP!!
                 GUIComponent c = components.get(i);
@@ -493,7 +490,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             if (popup != null) {
                 popup.draw(theGraphics, (getWidth() > (maxWidth / 1.5) + sidePadding) ? (int)(maxWidth / 1.5) : getWidth() - sidePadding);
             }
-            pageHeight = y - scrollOffset;
+
+            pageHeight = y - scrollOffset - offset;
         }
 
         @Override

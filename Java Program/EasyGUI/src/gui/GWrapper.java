@@ -14,7 +14,7 @@ public class GWrapper extends JPanel implements GUIComponent {
     /**
      * The height of the wrapper.
      */
-    private int height;
+    protected int height;
 
     /**
      * The SWING component that this wrapper will hold.

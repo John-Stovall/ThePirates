@@ -50,8 +50,5 @@ public class About extends GUIPage {
 
         GUI.window.add(new GSpacer(15));
         GUI.window.add(new GText("Project development and testing.", Style.defaultFont));
-        GUI.window.add(new GSpacer(15));
-
-        GUI.window.add(new GSpacer(25));
     }
 }

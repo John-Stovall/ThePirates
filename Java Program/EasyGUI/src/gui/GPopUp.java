@@ -86,14 +86,14 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
         height = 0;
         for (int i = 0; i < components.size(); i++) {
             GUIComponent c = components.get(i);
-            height += c.draw(g, -1000, -1000, width);
+            height += c.draw(g, -1000, -1000, width - padding * 2);
         }
         height += padding * 2;
 
         int xPos = (int) (animation * (GUI.getWindowWidth() / 2) - width / 2.0);
         int yPos = (GUI.getWindowHeight() / 2) - height / 2;
 
-        if (height > GUI.getWindowHeight()) {
+        if (height + 40 > GUI.getWindowHeight()) {
             yPos = 64;
         }
 
@@ -105,9 +105,13 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
 
         if (components.size() > 0) {
             if (closable) {
-                g.drawOval(xPos - 20 + buttonPos, yPos - 20 + buttonPos + scrollOffset, 20, 20);
-                g.drawLine(xPos - 20 + 6 + buttonPos, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 6 + buttonPos, yPos - 6 + buttonPos + scrollOffset);
-                g.drawLine(xPos - 6 + buttonPos, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 20 + 6 + buttonPos, yPos - 6 + buttonPos + scrollOffset);
+                int xOffset = 0;
+                if (xPos - 25 < 0) {
+                    xOffset = -(xPos - 25);
+                }
+                g.drawOval(xPos - 20 + buttonPos + xOffset, yPos - 20 + buttonPos + scrollOffset, 20, 20);
+                g.drawLine(xPos - 20 + 6 + buttonPos + xOffset, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 6 + buttonPos + xOffset, yPos - 6 + buttonPos + scrollOffset);
+                g.drawLine(xPos - 6 + buttonPos + xOffset, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 20 + 6 + buttonPos + xOffset, yPos - 6 + buttonPos + scrollOffset);
             }
 
             Graphics2D g2d = (Graphics2D) g;
@@ -120,7 +124,7 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
             GUIComponent c = components.get(i);
             hPos += c.draw(g, xPos + padding, yPos + hPos + scrollOffset, width - padding * 2);
         }
-        pageHeight = hPos;
+        pageHeight = hPos + 40;
     }
 
     public void destroy() {
