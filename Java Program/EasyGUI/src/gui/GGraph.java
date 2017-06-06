@@ -65,14 +65,14 @@ public class GGraph implements GUIComponent, GAnimation {
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
-        int ticksLength = g.getFontMetrics().stringWidth(largestValue + "") + 10;
+        int ticksLength = g.getFontMetrics().stringWidth((int)(largestValue) + "") + 10;
         g.setFont(Style.graphTicks);
         int height = (int) ((width * 0.35));
         int paneX = (int) (width / 1.2);
         int paneY = (int) (height / 1.1);
         double offsetTest = x + (int) (width * 0.05);
 
-        while (paneX + ticksLength + 20 > GUI.getWindowWidth()) {
+        while (paneX + ticksLength > GUI.getWindowWidth()) {
             paneX--;
             offsetTest += 0.5;
         }

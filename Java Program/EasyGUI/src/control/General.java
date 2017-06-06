@@ -18,6 +18,7 @@ public class General {
      * This is a class that only has static methods. No need to instantiate it.
      *
      * @author Robert
+     * @author Reagan
      */
     private General() {
     }
@@ -41,6 +42,7 @@ public class General {
      * @param email The email the user entered.
      * @return Whether the email is valud.
      * @author Reagan
+     * @author Robert
      */
     public static boolean testEmail(String email) {
 
@@ -50,8 +52,11 @@ public class General {
         if (email.indexOf('@') == -1) {
             return false;
         }
-        // contains a '.com' at the end
-        return email.toLowerCase().endsWith(".com");
+        // contains a '.com' at the end or other domain.
+        return email.toLowerCase().endsWith(".com") ||
+                email.toLowerCase().endsWith(".net") ||
+                email.toLowerCase().endsWith(".edu") ||
+                email.toLowerCase().endsWith(".org");
     }
 
     /**

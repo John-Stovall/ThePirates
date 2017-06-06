@@ -2,18 +2,10 @@ package project;
 
 import control.General;
 import gui.*;
-import pages.CompareProject;
-import pages.CreateProject;
-import pages.ProjectChooser;
 import user.UserManager;
 
-import javax.imageio.ImageIO;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * @author Ryan Hansen
@@ -198,7 +190,7 @@ public class InsulationProject extends Project implements Serializable {
                 gasType.setSelection(gasValue);
                 //TODO: Action listener that calls ChangeFuel(String action)
 
-                GUI.window.add(new GText("Area to be upgraded:", Style.defaultFont));
+                GUI.window.add(new GText("Area to be Upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
                 GUI.window.add((GUIComponent) areaToBeUpgraded);
 

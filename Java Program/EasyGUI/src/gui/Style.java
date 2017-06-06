@@ -47,14 +47,6 @@ public final class Style {
 
     static final Color dropdownBorderColor       = Color.decode("#1B5E20");
 
-    static final Color textBoxColor              = Color.gray;
-
-    static final Color textBoxSecondaryColor     = Color.white;
-
-    static final Color textBoxBorderColor        = Color.black;
-
-    static final Color textBoxErrorColor         = Color.red;
-
     static final Color[] graphBarColors          = new Color[] {Color.black, Color.decode("#43A047"), Color.green};
 
     /**
@@ -65,7 +57,7 @@ public final class Style {
 
     public static final Font defaultFont         = new Font("Helvetica", Font.PLAIN, 20);
 
-    public static final Font graphTicks          = new Font("Helvetica", Font.PLAIN, 12);
+    static final Font graphTicks                 = new Font("Helvetica", Font.PLAIN, 12);
 
     static final Font textBoxFail                = new Font("Helvetica", Font.PLAIN, 16);
 

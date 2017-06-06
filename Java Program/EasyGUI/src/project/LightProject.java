@@ -9,10 +9,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * @author Rand
- *
  * Insulation Project class.
  * Used for creating a new insulation project.
+ *
+ * @author Rand
  */
 public class LightProject extends Project implements Serializable {
 

@@ -25,7 +25,10 @@ public abstract class Project implements Serializable {
      */
     protected String name;
 
-    protected String type;
+    /**
+     * The type of project.
+     */
+    String type;
 
     /**
      * The initial cost of the project.
@@ -74,8 +77,6 @@ public abstract class Project implements Serializable {
                 title.add(right);
                 GUI.window.add(title);
                 GUI.window.add(new GSpacer(20));
-                GUI.window.add(new GText("Potential Savings:"));
-                GUI.window.add(new GSpacer(25));
                 ArrayList<double[]> data = new ArrayList<>();
 
                 data.add(new double[]{0, 0});
@@ -93,6 +94,8 @@ public abstract class Project implements Serializable {
                 }
 
                 if (potential > 0) {
+                    GUI.window.add(new GText("Potential Savings:"));
+                    GUI.window.add(new GSpacer(25));
                     GGraph graph = new GGraph(data);
                     graph.setLabel1("• Project Savings");
                     GUI.window.add(graph);
@@ -148,8 +151,29 @@ public abstract class Project implements Serializable {
                     innerDiv2.add(new GButton(40, "Completed", Style.defaultFont, 8) {
                         @Override
                         public void clickAction() {
-                            UserManager.getLoadedUser().projectComplete(Project.this);
-                            GUI.window.gotoPage("Home");
+                            ArrayList<GUIComponent> parts = new ArrayList<>();
+                            parts.add(new GText("Mark as Completed"));
+                            parts.add(new GSpacer(20));
+                            parts.add(new GText("Have you implemented this project in your home? If you have, marking a project as completed adds it to your list of Completed Projects on the Home page.", Style.defaultFont));
+                            parts.add(new GSpacer(20));
+                            GDivider div = new GDivider(1, 2);
+                            div.add(new GButton(40, "Completed", Style.defaultFont, 16) {
+                                @Override
+                                public void clickAction() {
+                                    GUI.getPopUp().destroy();
+                                    UserManager.getLoadedUser().projectComplete(Project.this);
+                                    GUI.window.gotoPage("Home");
+                                    UserManager.save();
+                                }
+                            });
+                            div.add(new GButton(40, "Cancel", Style.defaultFont, 16) {
+                                @Override
+                                public void clickAction() {
+                                    GUI.getPopUp().destroy();
+                                }
+                            });
+                            parts.add(div);
+                            GUI.showPopUp(new GPopUp(parts));
                         }
                     });
                     innerDiv2.add(new GSpacer(10));
