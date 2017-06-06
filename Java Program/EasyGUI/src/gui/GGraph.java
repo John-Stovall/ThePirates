@@ -83,7 +83,7 @@ public class GGraph implements GUIComponent, GAnimation {
 
         int offsetY = y + (int) (height * 0.05) / 2;
 
-        int ticksLength2 = g.getFontMetrics().stringWidth(largestValue + "") + 10;
+        int ticksLength2 = g.getFontMetrics().stringWidth(((int)largestValue) + "") + 15;
         g.drawString("$", offsetX - ticksLength2 - 8, y + (paneY) / 2 + 6);
         int nameLength = g.getFontMetrics().stringWidth("Months");
         g.drawString("Months", offsetX + paneX - nameLength, y + paneY + 50);

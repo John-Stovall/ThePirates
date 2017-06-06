@@ -109,6 +109,8 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
                 if (xPos - 25 < 0) {
                     xOffset = -(xPos - 25);
                 }
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setStroke(new BasicStroke(1));
                 g.drawOval(xPos - 20 + buttonPos + xOffset, yPos - 20 + buttonPos + scrollOffset, 20, 20);
                 g.drawLine(xPos - 20 + 6 + buttonPos + xOffset, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 6 + buttonPos + xOffset, yPos - 6 + buttonPos + scrollOffset);
                 g.drawLine(xPos - 6 + buttonPos + xOffset, yPos - 20 + 6 + buttonPos + scrollOffset, xPos - 20 + 6 + buttonPos + xOffset, yPos - 6 + buttonPos + scrollOffset);
@@ -188,7 +190,11 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
             int xPos = (int) (animation * (GUI.getWindowWidth() / 2 - width / 2));
             int yPos = (GUI.getWindowHeight() / 2) - height / 2;
 
-            if (!General.clickedInside(xPos, yPos, width, height, e) && closable) {
+            if (height + 40 > GUI.getWindowHeight()) {
+                yPos = 64;
+            }
+
+            if (!General.clickedInside(xPos, yPos + scrollOffset, width, height, e) && closable) {
                 destroy();
             }
         }
