@@ -76,18 +76,18 @@ public class CreateProject extends GUIPage {
                             InsulationProject project = new InsulationProject(name.getText().trim());
                             UserManager.getLoadedUser().getMyProjects().add(project);
                             UserManager.save();
-                            //GUI.window.gotoPage(project.getEditPage());
                             GUI.getPopUp().destroy();
                             GUI.showPopUp(project.getEditPage());
+                            GUI.window.refresh();
                             break;
 
                         case ("Lights"):
                             LightProject projectL = new LightProject(name.getText().trim());
                             UserManager.getLoadedUser().getMyProjects().add(projectL);
                             UserManager.save();
-                            //GUI.window.gotoPage(projectL.getEditPage());
                             GUI.getPopUp().destroy();
                             GUI.showPopUp(projectL.getEditPage());
+                            GUI.window.refresh();
                             break;
                         default:
                             name.failed("That project is unavailable. Please purchase DIY App Pro for $2.99");

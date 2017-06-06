@@ -49,13 +49,11 @@ public class CompareProject extends GUIPage {
             data.add(new double[] {potential, completed});
         }
 
-        GUI.window.add(new GGraph(data));
-        GUI.window.add(new GSpacer(20));
+        GGraph graph = new GGraph(data);
+        graph.setLabel1("• " + project1.getName());
+        graph.setLabel2("• " + project2.getName());
 
-        GDivider rule = new GDivider(160, 2);
-        rule.add(new GText("*" + project1.getName(), Style.graphTicks));
-        rule.add(new GText("*" + project2.getName(), Style.graphTicks, Style.redButtonColor));
-        GUI.window.add(rule);
+        GUI.window.add(graph);
 
         GUI.window.add(new GSpacer(20));
         GUI.window.add(new GText("Tips:"));
@@ -94,35 +92,33 @@ public class CompareProject extends GUIPage {
             }
         }
 
-//        GUI.window.add(new GSpacer(20));
-//        GDivider buttons = new GDivider(240, 2);
-//        GDivider slot1 = new GDivider(240, 1);
-//
-//        slot1.add(new GButton(40, "Back to " + project1.getName(), Style.defaultFont, 8) {
-//            @Override
-//            public void clickAction() {
-//                GUI.window.gotoPage(project1.getSummaryPage());
-//            }
-//        });
-//        slot1.add(new GSpacer(10));
-//
-//
-//        GDivider slot2 = new GDivider(240, 1);
-//
-//        slot2.add(new GButton(40, "Back to " + project2.getName(), Style.defaultFont, 8) {
-//            @Override
-//            public void clickAction() {
-//                GUI.window.gotoPage(project2.getSummaryPage());
-//            }
-//        });
-//        slot2.add(new GSpacer(10));
-//
-//        buttons.add(slot1);
-//        buttons.add(slot2);
-//        GUI.window.add(buttons);
+        GUI.window.add(new GSpacer(20));
+        GDivider buttons = new GDivider(240, 2);
+        GDivider slot1 = new GDivider(240, 1);
+
+        slot1.add(new GButton(40, "Open " + project1.getName(), Style.defaultFont, 8) {
+            @Override
+            public void clickAction() {
+                GUI.getPopUp().destroy();
+                GUI.window.gotoPage(project1.getSummaryPage());
+            }
+        });
+        slot1.add(new GSpacer(10));
 
 
-        //GUI.window.add(new GSpacer(25));
-        //GUI.window.showMenu();
+        GDivider slot2 = new GDivider(240, 1);
+
+        slot2.add(new GButton(40, "Open " + project2.getName(), Style.defaultFont, 8) {
+            @Override
+            public void clickAction() {
+                GUI.getPopUp().destroy();
+                GUI.window.gotoPage(project2.getSummaryPage());
+            }
+        });
+        slot2.add(new GSpacer(10));
+
+        buttons.add(slot1);
+        buttons.add(slot2);
+        GUI.window.add(buttons);
     }
 }

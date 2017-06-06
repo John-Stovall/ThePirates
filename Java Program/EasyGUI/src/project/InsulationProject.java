@@ -1,12 +1,16 @@
 package project;
 
+import control.General;
 import gui.*;
 import pages.CompareProject;
 import pages.CreateProject;
 import pages.ProjectChooser;
 import user.UserManager;
 
+import javax.imageio.ImageIO;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
@@ -154,7 +158,24 @@ public class InsulationProject extends Project implements Serializable {
             public void build() {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GSpacer(25));
-                GUI.window.add(new GText(name + " Summary"));
+                BufferedImage image;
+                try {
+                    image = ImageIO.read(new File("img/insulation.png"));
+                } catch (Exception ex) {
+                    image = null;
+                }
+                GDivider title = new GDivider(1, 2);
+                title.add(new GImage(image, 0.5));
+
+                GDivider right = new GDivider(1, 1);
+                right.add(new GSpacer(40));
+                right.add(new GText(name));
+                right.add(new GSpacer(5));
+                right.add(new GText("Insulation", Style.defaultFont));
+                title.add(right);
+                GUI.window.add(title);
+                GUI.window.add(new GSpacer(20));
+                GUI.window.add(new GText("Potential Savings:"));
                 GUI.window.add(new GSpacer(25));
                 ArrayList<double[]> data = new ArrayList<>();
 
@@ -173,7 +194,9 @@ public class InsulationProject extends Project implements Serializable {
                 }
 
                 if (potential > 0) {
-                    GUI.window.add(new GGraph(data));
+                    GGraph graph = new GGraph(data);
+                    graph.setLabel1("• Project Savings");
+                    GUI.window.add(graph);
                     GUI.window.add(new GSpacer(20));
 
                     GUI.window.add(new GText("Details:"));
@@ -463,7 +486,50 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GText("Other Settings"));
                 GUI.window.add(new GSpacer(25));
+                GUI.window.add(new GButton(40,"Rename Project", Style.defaultFont) {
+                    @Override
+                    public void clickAction() {
 
+                        ArrayList<GUIComponent> parts = new ArrayList<>();
+                        parts.add(new GText("Rename " + InsulationProject.this.getName()));
+                        parts.add(new GSpacer(20));
+                        GTextBox name = new GTextBox(40, InsulationProject.this.getName());
+                        parts.add(name);
+                        parts.add(new GSpacer(10));
+                        GDivider div = new GDivider(1, 2);
+                        div.add(new GButton(40,"Rename", Style.defaultFont, 16) {
+                            @Override
+                            public void clickAction() {
+                                if (name.getText().length() < 1) {
+                                    name.failed("A project name is required.");
+                                } else if (name.getText().length() > 15) {
+                                    name.failed("Project names can be at most 15 characters.");
+                                } else if (UserManager.getLoadedUser().getMyProjects().size() >= 10) {
+                                    name.failed("Sorry, you can have at most 10 projects. Either delete a project or complete one to make more room.");
+                                } else if (!General.isProjectNameFree(name.getText().trim())) {
+                                    name.failed("That project name is already taken.");
+                                } else {
+                                    setName(name.getText().trim());
+                                    UserManager.save();
+                                    GUI.window.refresh();
+                                    GUI.getPopUp().destroy();
+                                    GUI.showPopUp(getEditPage());
+                                }
+                            }
+                        });
+                        div.add(new GButton(40, "Cancel", Style.defaultFont, 16) {
+                            @Override
+                            public void clickAction() {
+                                GUI.getPopUp().destroy();
+                                GUI.showPopUp(getEditPage());
+                            }
+                        });
+                        parts.add(div);
+                        GUI.getPopUp().destroy();
+                        GUI.showPopUp(new GPopUp(parts));
+                    }
+                });
+                GUI.window.add(new GSpacer(25));
                 GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Project", Style.defaultFont) {
                     @Override
                     public void clickAction() {
@@ -495,7 +561,7 @@ public class InsulationProject extends Project implements Serializable {
                         GUI.showPopUp(new GPopUp(parts));
                     }
                 });
-                GUI.window.add(new GSpacer(40));
+                //GUI.window.add(new GSpacer(40));
                 //GUI.window.showMenu();
             }
         };

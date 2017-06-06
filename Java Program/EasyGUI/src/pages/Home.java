@@ -101,8 +101,12 @@ public class Home extends GUIPage {
 
                 data.add(new double[] {potential, completed});
             }
-            GUI.window.add(new GGraph(data));
+            GGraph graph = new GGraph(data);
+            graph.setLabel1("• Current");
+            graph.setLabel2("• Completed");
+            GUI.window.add(graph);
             GUI.window.add(new GSpacer(20));
+
             GDivider div = new GDivider(240, 2);
             GDivider left = new GDivider(240, 1);
             GDivider right = new GDivider(240, 1);

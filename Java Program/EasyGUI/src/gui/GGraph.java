@@ -30,6 +30,10 @@ public class GGraph implements GUIComponent, GAnimation {
      */
     private double[] animation;
 
+    private String label1 = "";
+
+    private String label2 = "";
+
     /**
      * Creates a graph with the supplied data points.
      *
@@ -50,34 +54,82 @@ public class GGraph implements GUIComponent, GAnimation {
         animation = new double[times.size()];
     }
 
+    public void setLabel1(String label1) {
+        this.label1 = label1;
+    }
+
+    public void setLabel2(String label2) {
+        this.label2 = label2;
+    }
 
     @Override
     public int draw(Graphics g, int x, int y, int width) {
 
+        int ticksLength = g.getFontMetrics().stringWidth(largestValue + "") + 10;
+        g.setFont(Style.graphTicks);
         int height = (int) ((width * 0.35));
-        int paneX = (int) (width / 1.1);
+        int paneX = (int) (width / 1.2);
         int paneY = (int) (height / 1.1);
-        int offsetX = x + (int) (width * 0.05);
+        double offsetTest = x + (int) (width * 0.05);
+
+        while (paneX + ticksLength + 20 > GUI.getWindowWidth()) {
+            paneX--;
+            offsetTest += 0.5;
+        }
+
+        int offsetX = (int)offsetTest;
+        paneX += 20;
+        offsetX += 20;
+
         int offsetY = y + (int) (height * 0.05) / 2;
+
+        int ticksLength2 = g.getFontMetrics().stringWidth(largestValue + "") + 10;
+        g.drawString("$", offsetX - ticksLength2 - 8, y + (paneY) / 2 + 6);
+        int nameLength = g.getFontMetrics().stringWidth("Months");
+        g.drawString("Months", offsetX + paneX - nameLength, y + paneY + 50);
+
+        if (!label1.equals("")) {
+            int labelLength = g.getFontMetrics().stringWidth(label1);
+            g.drawString(label1, offsetX, y + paneY + 50);
+            if (!label2.equals("")) {
+                g.setColor(lines[1]);
+                g.drawString(label2, offsetX + labelLength + 10, y + paneY + 50);
+            }
+        }
+
+        g.setColor(Color.black);
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(1));
 
         g.setColor(Color.black);
         g.drawLine(offsetX, offsetY, offsetX, offsetY + paneY);
         g.drawLine(offsetX, offsetY + paneY, offsetX + paneX, offsetY + paneY);
 
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setStroke(new BasicStroke(2));
-
         int ticks = height / 30;
         if (ticks < 2) ticks = 2;
 
-        g.setFont(Style.graphTicks);
         for (int i = 0; i < ticks; i++) {
-            g.drawString(Integer.toString((int) (Math.round(largestValue / (ticks - 1) * i))), x, offsetY + paneY - paneY / (ticks - 1) * i);
+            String tick = Integer.toString((int) (Math.round(largestValue / (ticks - 1) * i)));
+
+            int wordLength = g.getFontMetrics().stringWidth(tick);
+
+
+            g.drawString(tick, offsetX - wordLength - 10, offsetY + paneY - paneY / (ticks - 1) * i + 4);
+            g.drawLine(offsetX - 4, offsetY + paneY - paneY / (ticks - 1) * i, offsetX, offsetY + paneY - paneY / (ticks - 1) * i);
         }
 
         for (int i = 0; i < times.size(); i++) {
-            g.drawString(Integer.toString(i), offsetX + paneX / (times.size() - 1) * i, offsetY + paneY + 20);
+            if (paneX > 300 || i % 2 == 0) {
+                String text = Integer.toString(i);
+                int w = g.getFontMetrics().stringWidth(text);
+                g.drawString(text, offsetX + paneX / (times.size() - 1) * i - w / 2, offsetY + paneY + 20);
+                g.drawLine(offsetX + paneX / (times.size() - 1) * i, offsetY + paneY,
+                        offsetX + paneX / (times.size() - 1) * i, offsetY + paneY + 4);
+            }
         }
+        g2d.setStroke(new BasicStroke(2));
+
         int lastX = 0;
         int lastY = 0;
         double[] e = times.get(0);
@@ -93,7 +145,7 @@ public class GGraph implements GUIComponent, GAnimation {
 
                 int yPos = offsetY + (int) ((int) (paneY - value / largestValue * paneY) * animation[i]);
                 if (animation[i] > 0) {
-                    g.fillOval(xPos - 2, yPos - 2, 4, 4);
+                    //g.fillOval(xPos - 2, yPos - 2, 4, 4);
                     if (i != 0) {
                         g2d.drawLine(lastX, lastY, xPos, yPos);
                     }
@@ -102,7 +154,7 @@ public class GGraph implements GUIComponent, GAnimation {
                 lastY = yPos;
             }
         }
-        return height;
+        return height + 20;
     }
 
     @Override
