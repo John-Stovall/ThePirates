@@ -4,6 +4,11 @@ import control.General;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * This class is used for testing the methods in the General class.
+ *
+ * @author Reagan
+ */
 public class GeneralTest {
 
     //Naming Tests
