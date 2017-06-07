@@ -25,7 +25,7 @@ public class General {
 
     /**
      * This is a simple character counter that returns false if there are
-     * less than 3 characters.
+     * less than 3 characters or more than 15.
      *
      * @param name The name the user entered.
      * @return Whether the name is valid.
@@ -36,8 +36,7 @@ public class General {
     }
 
     /**
-     * This tests that there is an @ sign and a '.com' a bit lacking,
-     * but we can expand it if we want.
+     * This test to make sure that an email is valid.
      *
      * @param email The email the user entered.
      * @return Whether the email is valud.

@@ -30,8 +30,14 @@ public class GGraph implements GUIComponent, GAnimation {
      */
     private double[] animation;
 
+    /**
+     * The first label.
+     */
     private String label1 = "";
 
+    /**
+     * The second label.
+     */
     private String label2 = "";
 
     /**
@@ -54,10 +60,22 @@ public class GGraph implements GUIComponent, GAnimation {
         animation = new double[times.size()];
     }
 
+    /**
+     * Sets the label.
+     *
+     * @param label1 What to set the label to.
+     * @author Robert
+     */
     public void setLabel1(String label1) {
         this.label1 = label1;
     }
 
+    /**
+     * Sets the label.
+     *
+     * @param label2 What to set the label to.
+     * @author Robert
+     */
     public void setLabel2(String label2) {
         this.label2 = label2;
     }

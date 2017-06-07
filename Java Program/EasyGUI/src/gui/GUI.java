@@ -132,6 +132,11 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
         clock.start();
     }
 
+    /**
+     * This method shows a popup from a GUIPage.
+     *
+     * @param p The GUIPage to convert into popup.
+     */
     public static void showPopUp(GUIPage p) {
         ArrayList<GUIComponent> temp = new ArrayList<>();
         temp.addAll(components);
@@ -150,7 +155,6 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
             }
         }
 
-        //parts.addAll(components);
         GPopUp popup = new GPopUp(parts);
 
         components.clear();
@@ -189,6 +193,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * This method enables text boxes after a popup is destroyed.
+     *
      * @author Robert
      */
     private static void enableTextBoxes() {
@@ -208,6 +213,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * Removes the popup from memory.
+     *
      * @author Robert
      */
     static void destroyPopUp() {
@@ -276,6 +282,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * Refreshes the contents of the current page.
+     * @author Robert
      */
     public void refresh() {
         gotoPage(currentPage);
@@ -283,6 +290,7 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
 
     /**
      * Allows this page to show the menu bar.
+     * @author Robert
      */
     public void showMenu() {
         showMenu = true;
@@ -446,6 +454,8 @@ public final class GUI extends JFrame implements MouseWheelListener, MouseListen
     private class DrawPanel extends JPanel {
 
         /**
+         * Private constructor so that only GUI can instantiate it.
+         *
          * @author Robert
          */
         private DrawPanel() {

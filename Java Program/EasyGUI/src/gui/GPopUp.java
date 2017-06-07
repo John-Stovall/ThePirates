@@ -16,28 +16,59 @@ import java.util.ArrayList;
  */
 public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListener {
 
+    /**
+     * The width of this popup.
+     */
     private int width;
 
+    /**
+     * The height of this popup.
+     */
     private int height;
 
-    private int padding = 32;
-
+    /**
+     * The progress through the animations.
+     */
     private double animation = -1.0;
 
+    /**
+     * The progress through the fade animation.
+     */
     private double fade = 0;
 
+    /**
+     * Whether the popup has been killed or not.
+     */
     private boolean dead = false;
 
+    /**
+     * The position of the close button.
+     */
     private int buttonPos = 40;
 
+    /**
+     * The components to draw.
+     */
     private ArrayList<GUIComponent> components;
 
+    /**
+     * The components that use mouse events.
+     */
     private ArrayList<GMouseListener> mouseComponents = new ArrayList<>();
 
+    /**
+     * The components that use key events.
+     */
     private ArrayList<GKeyListener> keyComponents = new ArrayList<>();
 
+    /**
+     * The components that are animated.
+     */
     private ArrayList<GAnimation> animatedComponents = new ArrayList<>();
 
+    /**
+     * Whether this popup can be closed.
+     */
     private boolean closable = true;
 
     /**
@@ -55,11 +86,21 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
      */
     private static final double scrollSpeedMultiplier = 4.0;
 
+    /**
+     * Creates a popup.
+     *
+     * @param components The components that this popup will draw.
+     */
     public GPopUp(ArrayList<GUIComponent> components) {
         this.components = components;
         constructLists(this.components);
     }
 
+    /**
+     * This method constructs the nessessary lists for this popup.
+     *
+     * @param list The list to add objects from.
+     */
     private void constructLists(ArrayList<GUIComponent> list) {
         for (GUIComponent c : list) {
             if (c instanceof GMouseListener) {
@@ -79,11 +120,19 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
         }
     }
 
+    /**
+     * This method draws all aspects of the popup and it's contents.
+     *
+     * @param g The graphics object to draw to.
+     * @param width The width of the area to draw to.
+     * @author Robert
+     */
     public void draw(Graphics g, int width) {
 
         this.width = width;
 
         height = 0;
+        int padding = 32;
         for (int i = 0; i < components.size(); i++) {
             GUIComponent c = components.get(i);
             height += c.draw(g, -1000, -1000, width - padding * 2);

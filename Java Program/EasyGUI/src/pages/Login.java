@@ -16,8 +16,11 @@ import java.util.ArrayList;
  * This class handles the Login page.
  */
 public class Login extends GUIPage {
+
     /**
      * Create a page and sets it's name.
+     *
+     * @author Robert
      */
     public Login() {
         super("Login");

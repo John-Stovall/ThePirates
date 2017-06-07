@@ -1,7 +1,6 @@
 package pages;
 
 import gui.*;
-import project.InsulationProject;
 import project.Project;
 import user.UserManager;
 

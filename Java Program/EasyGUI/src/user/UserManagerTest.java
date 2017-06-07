@@ -1,21 +1,25 @@
 package user;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * This class is used to test the UserManager.
+ *
+ * @author Ryan Hansen
+ */
 public class UserManagerTest {
 
 	
 	
 	@BeforeClass
 	public static void beforeClass() {
-		//UserManager.createNewUser("1st User Project Name", "test@uw.edu");
-		//UserManager.createNewUser("2nd User Project Name", "tester@uw.edu");
-		//UserManager.createNewUser("3rd User Project Name", "tested@uw.edu");
+
+		new User("1st User Project Name", "test@uw.edu");
+		new User("2nd User Project Name", "tester@uw.edu");
+		new User("3rd User Project Name", "tested@uw.edu");
 		
 		System.out.println("Before Class:");
 		

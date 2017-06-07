@@ -15,6 +15,11 @@ import java.io.File;
  */
 public class Blank extends GUIPage {
 
+    /**
+     * Creates a blank page.
+     *
+     * @author Robert
+     */
     public Blank() {
         super("No one should ever see this name. If you do, stop it.");
     }

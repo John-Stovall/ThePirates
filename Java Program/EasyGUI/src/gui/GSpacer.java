@@ -43,18 +43,17 @@ public class GSpacer implements GUIComponent {
      */
     public GSpacer(final int height, final Color color) {
         this(height);
-        setVisible(true);
+        setVisible();
         setColor(color);
     }
 
     /**
      * Sets the spacer to visible or not. Probably useless.
      *
-     * @param visible Should the spacer be visible?
      * @author Robert
      */
-    public void setVisible(final boolean visible) {
-        this.visible = visible;
+    private void setVisible() {
+        this.visible = true;
     }
 
     /**

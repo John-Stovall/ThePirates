@@ -38,7 +38,8 @@ public abstract class Project implements Serializable {
     /**
      * This method gets the summary page that is associated with
      * this project. The summary page draws basic information
-     * like monthly savings and a graph.
+     * like monthly savings and a graph. All projects share the same
+     * summary page format.
      *
      * @return The GUIPage for this project.
      * @author Robert
@@ -133,7 +134,6 @@ public abstract class Project implements Serializable {
                         @Override
                         public void clickAction() {
                             GUI.showPopUp(getEditPage());
-                            //GUI.window.gotoPage(getEditPage());
                         }
                     });
                     innerDiv1.add(new GSpacer(10));
@@ -200,7 +200,6 @@ public abstract class Project implements Serializable {
             }
         };
     }
-
 
     /**
      * This method gets the edit page that is associated with

@@ -66,17 +66,6 @@ public class GDropdown implements GUIComponent, GMouseListener, GAnimation {
     private double animation = 0.0;
 
     /**
-     * Create a super awesome dropdown menu.
-     *
-     * @param options The individual elements of the menu.
-     * @author Robert
-     */
-    public GDropdown(ArrayList<String> options) {
-        this.options = options;
-        selection = options.get(0);
-    }
-
-    /**
      * Creates a Dropdown menu from a standard array string.
      *
      * @param options The individual elements of the menu.

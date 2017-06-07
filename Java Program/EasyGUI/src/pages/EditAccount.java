@@ -17,6 +17,8 @@ public class EditAccount extends GUIPage {
 
     /**
      * Create a page and sets it's name.
+     *
+     * @author Robert
      */
     public EditAccount() {
         super("Edit Account");

@@ -52,8 +52,6 @@ public class InsulationProject extends Project implements Serializable {
     private double furnaceEff = 80;
     private String gasValue = "Natural Gas";
 
-    private String priceValue;
-
     // Natural Gas:
     private double HeatingValueNG = 100000.0;  // BTU/therm
     private double FuelCostNG = 1.50;          // cost per therm in US dollars
@@ -61,22 +59,13 @@ public class InsulationProject extends Project implements Serializable {
     private double GHGperBTUNG = 0.00012;  // GHG per BTU for Natural Gas
 
     // Fuel Oil:
-    private double HeatingValueOil = 142000.0;  //BTU/gal
     private double FuelCostOil = 2.30;          // cost per gallon in US dollars
-    private double FuelInflationOil = 1.1;
-    private double GHGperBTUOil = 0.00014;  // GHG per BTU for Fuel Oil
 
     // Propane:
-    private double HeatingValuePro = 92000.0;  // BTU/gal
     private double FuelCostPro = 2.10;          // cost per gallon in US dollars
-    private double FuelInflationPro = 1.1;
-    private double GHGperBTUPro = 0.000141;  // GHG per BTU per gallon of Propane
 
     // Electricity:
-    private double HeatingValueElec = 3412.0;   // BTU per KWH
     private double FuelCostElec = 0.12;          // cost per KWH in US dollars
-    private double FuelInflationElec = 1.1;
-    private double GHGperBTUElec = 0.00059;  // GHG per BTU for electricity generated at a coal fired power station
 
 
     private String FuelType = "ng";
@@ -188,7 +177,6 @@ public class InsulationProject extends Project implements Serializable {
                     }
                 };
                 gasType.setSelection(gasValue);
-                //TODO: Action listener that calls ChangeFuel(String action)
 
                 GUI.window.add(new GText("Area to be Upgraded:", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));

@@ -23,8 +23,9 @@ public class CompareProject extends GUIPage {
      *
      * @param p1 The first project to compare.
      * @param p2 The second project to compare.
+     * @author Robert
      */
-    public CompareProject(Project p1, Project p2) {
+    CompareProject(Project p1, Project p2) {
         super("Compare");
         project1 = p1;
         project2 = p2;
