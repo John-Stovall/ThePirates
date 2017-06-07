@@ -32,7 +32,7 @@ public class Home extends GUIPage {
                 && UserManager.getLoadedUser().getCompletedProject().isEmpty()) {
             GUI.window.add(new GText("Hello, " + UserManager.getLoadedUser().getName() + "!"));
             GUI.window.add(new GSpacer(10));
-            GUI.window.add(new GText("It looks like you don't have any projects yet. Here is the basics of how to use DIYApp", Style.defaultFont));
+            GUI.window.add(new GText("It looks like you don't have any projects yet. Here is the basics of how to use DIY App.", Style.defaultFont));
             GUI.window.add(new GSpacer(30));
 
             GDivider div = new GDivider(240, 2);
