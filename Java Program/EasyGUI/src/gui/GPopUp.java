@@ -139,15 +139,15 @@ public class GPopUp implements GAnimation, GSubList, GKeyListener, GMouseListene
             c.updateAnimations();
         }
         if (!dead) {
-            animation += Style.exponentialTween(animation, 1, 5);
-            fade += Style.exponentialTween(fade, 1, 7);
+            animation += Style.exponentialTween(animation, 1, Style.popupSpeed);
+            fade += Style.exponentialTween(fade, 1, Style.popupFadeSpeed);
             if (animation > 0.999) {
-                buttonPos += Style.exponentialTweenRound(buttonPos, 0, 5);
+                buttonPos += Style.exponentialTweenRound(buttonPos, 0, Style.popupSpeed);
             }
         } else {
-            animation += Style.exponentialTween(animation, 3, 10);
-            fade += Style.exponentialTween(fade, 0, 7);
-            buttonPos += Style.exponentialTweenRound(buttonPos, 40, 5);
+            animation += Style.exponentialTween(animation, 3, Style.popupSpeed * 2);
+            fade += Style.exponentialTween(fade, 0, Style.popupFadeSpeed);
+            buttonPos += Style.exponentialTweenRound(buttonPos, 40, Style.popupSpeed);
             if (animation > 2.8) {
                 GUI.destroyPopUp();
             }

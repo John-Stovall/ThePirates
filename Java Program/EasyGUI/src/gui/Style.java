@@ -65,7 +65,7 @@ public final class Style {
      * Animation Variables
      */
 
-    private static final double speedModifier    = 1;
+    private static final double speedModifier    = 1;    //Make a lite version with 0.25.
 
     static final int frameRate                   = (int) ((1000 / 60) / speedModifier);
 
@@ -80,6 +80,10 @@ public final class Style {
     static final double dropdownMoveSpeed        = Math.max(3.0 * speedModifier, 1);
 
     static final double textBoxMessageMoveSpeed  = Math.max(5.0 * speedModifier, 1);
+
+    static final double popupSpeed               = Math.max(5.0 * speedModifier, 1);
+
+    static final double popupFadeSpeed           = Math.max(7.0 * speedModifier, 1);
 
     /**
      * Animation Functions
