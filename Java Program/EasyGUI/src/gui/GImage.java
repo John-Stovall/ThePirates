@@ -9,7 +9,11 @@ import java.awt.*;
  */
 public class GImage implements GUIComponent {
 
+    /**
+     * How much to scale the image by.
+     */
     private double scaleFactor = 1;
+
     /**
      * The image to display.
      */

@@ -1,12 +1,7 @@
 package gui;
 
-import control.General;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by Robert on 4/12/17.
@@ -14,11 +9,6 @@ import java.awt.event.MouseEvent;
  * This class handles all the stuffs for the text boxes. Ya.
  */
 public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
-
-    /**
-     * The font of the text in the text box.
-     */
-    private Font font;
 
     /**
      * Whether a failed input has been passed in.
@@ -91,7 +81,7 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
         super(height, new JTextField());
         boxHeight = height;
         textField = (JTextField) getComponent();
-        this.font = Style.defaultFont;
+        Font font = Style.defaultFont;
         textField.setFont(font);
         textField.setText(text);
 

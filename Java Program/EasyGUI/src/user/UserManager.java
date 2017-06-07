@@ -5,7 +5,6 @@ import gui.GUI;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,31 +12,65 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
+ * File which will store all the user information including a list of their projects.
+ *
  * @author Ryan Hansen
- *         <p>
- *         File which will store all the user information including a list of their projects.
+ * @author Robert
  */
 public final class UserManager {
 
-    private UserManager() {
-    }
+    /**
+     * This is a singleton class so the constructor must be private.
+     *
+     * @author Ryan Hansen
+     */
+    private UserManager() {}
 
-    public static ArrayList<User> allUsers = new ArrayList<>();
+    /**
+     * The list of all users.
+     */
+    static ArrayList<User> allUsers = new ArrayList<>();
 
+    /**
+     * The currently loaded user.
+     */
     private static User loadedUser;
 
+    /**
+     * This method gets the currently loaded user.
+     *
+     * @return The currently loaded user.
+     * @author Robert
+     */
     public static User getLoadedUser() {
         return loadedUser;
     }
 
+    /**
+     * This method lets you set the currently loaded user.
+     *
+     * @param u The user to set the loaded user to.
+     * @author Robert
+     */
     public static void setLoadedUser(User u) {
         loadedUser = u;
     }
 
+    /**
+     * This method gets all of the users.
+     *
+     * @return The list of all users.
+     * @author Ryan Hansen
+     */
     public static ArrayList<User> getUsers() {
         return allUsers;
     }
 
+    /**
+     * This method allows the user to save to a location that they define.
+     *
+     * @author Ryan Hansen
+     */
     public static void export() {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -70,6 +103,11 @@ public final class UserManager {
 
     }
 
+    /**
+     * This method allows the user to import a file from a location on their disk.
+     *
+     * @author Ryan Hansen
+     */
     public static void importFile() {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -136,11 +174,12 @@ public final class UserManager {
     }
 
     /**
+     * This method loads the default information.
+     *
      * @author Ryan Hansen
      */
     public static void load() {
         String filename = "ThePiratesProjectSave.diy";
-
 
         ObjectInputStream ois = null;
         try {
@@ -164,5 +203,4 @@ public final class UserManager {
             }
         }
     }
-
 }

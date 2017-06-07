@@ -28,7 +28,7 @@ public class GWrapper extends JPanel implements GUIComponent {
      * @param item   The swing component that this wrapper will hold.
      * @author Robert
      */
-    public GWrapper(final int height, final JComponent item) {
+    GWrapper(final int height, final JComponent item) {
         this.height = height;
         this.item = item;
         setOpaque(false);

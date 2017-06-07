@@ -14,6 +14,8 @@ public class RegisterAccount extends GUIPage {
 
     /**
      * Create a page and sets it's name.
+     *
+     * @author Robert
      */
     public RegisterAccount() {
         super("Register");
@@ -61,15 +63,7 @@ public class RegisterAccount extends GUIPage {
             }
         });
 
-        if (!UserManager.getUsers().isEmpty()) {
-//            GUI.window.add(new GSpacer(10));
-//            GUI.window.add(new GButton(40, "Back", Style.defaultFont) {
-//                @Override
-//                public void clickAction() {
-//                    GUI.window.gotoPage("Login");
-//                }
-//            });
-        } else {
+        if (UserManager.getUsers().isEmpty())  {
             GUI.window.add(new GSpacer(10));
             GUI.window.add(new GButton(40, "Skip Login", Style.defaultFont) {
                 @Override

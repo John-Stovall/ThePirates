@@ -2,13 +2,10 @@ package pages;
 
 import gui.Style;
 import gui.*;
-import javafx.application.Platform;
 import project.Project;
-import user.User;
 import user.UserManager;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -20,6 +17,11 @@ import java.util.ArrayList;
  */
 public class Home extends GUIPage {
 
+    /**
+     * Creates the home page.
+     *
+     * @author Robert
+     */
     public Home() {
         super("Home");
     }

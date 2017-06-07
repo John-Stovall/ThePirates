@@ -15,6 +15,9 @@ public class GDivider implements GUIComponent, GSubList {
      */
     private int cellWidth;
 
+    /**
+     * The number of cells that this divider has.
+     */
     private int cells = 0;
 
     /**

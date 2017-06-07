@@ -13,6 +13,11 @@ import java.io.File;
  */
 public class About extends GUIPage {
 
+    /**
+     * Creates the about page.
+     *
+     * @author Robert
+     */
     public About() {
         super("About");
     }

@@ -96,8 +96,6 @@ public class CreateProject extends GUIPage {
                 }
             }
         });
-        //GUI.window.add(new GSpacer(25));
-        //GUI.window.showMenu();
     }
 
 }

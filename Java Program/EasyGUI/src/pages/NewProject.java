@@ -16,6 +16,8 @@ public class NewProject extends GUIPage {
 
     /**
      * Create a page and sets it's name.
+     *
+     * @author Robert
      */
     public NewProject() {
         super("New");
