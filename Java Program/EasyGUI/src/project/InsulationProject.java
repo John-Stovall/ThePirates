@@ -74,14 +74,23 @@ public class InsulationProject extends Project implements Serializable {
     private double GHGperBTU = GHGperBTUNG;
     private double FuelInflation = FuelInflationNG;
 
-    // constructor sets the water usage to -1.0 because there is no way for a insulation project
-    // to have an impact on water consumption. This will be beneficial for our 'Math' class.
+    /**
+     * Creates insulation project.
+     *
+     * @param name The name of the project.
+     * @author Ryan
+     */
     public InsulationProject(final String name) {
         this.name = name;
         this.type = "Insulation";
     }
 
     @Override
+    /**
+     * This method get's the monthly savings of this insulation project.
+     *
+     * @author Reagan
+     */
     public double getMonthlySavings() {
         System.out.println("furnaceEff: " + furnaceEff);
         double Efic = furnaceEff / 100.0;
@@ -134,6 +143,12 @@ public class InsulationProject extends Project implements Serializable {
     }
 
     @Override
+    /**
+     * This method returns the Edit page GUIPage.
+     *
+     * @author Robert
+     * @author Reagan
+     */
     public GUIPage getEditPage() {
         return new GUIPage("Edit " + name) {
             @Override
