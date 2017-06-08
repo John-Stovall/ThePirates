@@ -162,7 +162,7 @@ public class GTextBox extends GWrapper implements GUIComponent, GAnimation {
 
     @Override
     public void updateAnimations() {
-        currentHeight += Style.exponentialTweenRound(currentHeight, goalHeight, Style.textBoxMessageMoveSpeed / 2);
+        currentHeight += Style.exponentialTweenRound(currentHeight, goalHeight, Style.textBoxMessageMoveSpeed);
 
         if (!lastString.equals(getText())) {
             lastString = getText();
