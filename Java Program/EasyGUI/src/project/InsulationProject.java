@@ -92,27 +92,16 @@ public class InsulationProject extends Project implements Serializable {
      * @author Reagan
      */
     public double getMonthlySavings() {
-        System.out.println("furnaceEff: " + furnaceEff);
         double Efic = furnaceEff / 100.0;
-
-        System.out.println("Current R " + curRValue);
-        System.out.println("New R " + newRValue);
-        System.out.println("Wall Area" + wallArea);
-        System.out.println("HDD " + heatDegreeDays);
 
         // Calculate the heat losses and fuel saving
         // Current and New heat loss:
         double Qcur, Qnew;
         Qcur = (wallArea * heatDegreeDays * 24.0) / (double) curRValue;
         Qnew = (wallArea * heatDegreeDays * 24.0) / (double) newRValue;
-        System.out.println("Qcur: " + Qcur);
-        System.out.println("Qnew: " + Qnew);
         // calc $ saving in fuel
         double Saving;
-        System.out.println("ppu: " + ppu);
-        System.out.println("HeatingValue: " + HeatingValue);
         Saving = ((Qcur - Qnew) / (HeatingValue * Efic)) * ppu;
-        System.out.println("Saving:" + Saving);
         //10 year saving
         double Saving10Year = 0.0;
         double Infla = 1.0;
@@ -122,17 +111,6 @@ public class InsulationProject extends Project implements Serializable {
             Infla = Infla * FuelInflation;
             Saving10Year = Saving10Year + yrSaving;
         }
-
-        // Calc greenhouse gas
-        double GHgas;
-        GHgas = (Qcur - Qnew) * GHGperBTU / Efic;
-
-        // write outputs
-        System.out.println("Savings: " + Saving);
-
-        System.out.println("Savings: " + Math.round(Saving * 100) / 100);
-        System.out.println("10 year Savings: " + Math.round(Saving10Year * 100) / 100);
-        System.out.println("GHgas: " + Math.round(GHgas));
 
         return Saving / 12.0;
     }
