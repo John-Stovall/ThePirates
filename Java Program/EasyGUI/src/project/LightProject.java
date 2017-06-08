@@ -9,8 +9,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Insulation Project class.
- * Used for creating a new insulation project.
+ * Light Project class.
+ * Used for creating a new Light project.
  *
  * @author Rand
  */
@@ -20,10 +20,14 @@ public class LightProject extends Project implements Serializable {
      * default version ID for serialization
      */
     private static final long serialVersionUID = -1950641840941379038L;
+    private int numberOflightBulbValue = 1 ;
+    private double currentWattsValue = 60,
+            lightBulbUsageValue = 12,
+            newWattsValue = 9,
+            pricePerUnitValue = 10.00;
 
-    // Class specific variable used for determining the insulating properties
+    // Class specific variable used for determining the Light properties
     // of the materials being used.
-    private int rValue;
 
     // constructor sets the water usage to -1.0 because there is no way for a insulation project
     // to have an impact on water consumption. This will be beneficial for our 'Math' class.
@@ -36,13 +40,23 @@ public class LightProject extends Project implements Serializable {
     public double getMonthlySavings() {
         //TODO: Program this to properly calculate the monthly savings.
 
+        double oldSystemCost, newSystemCost;
 
-        return 2.0;
+        //watts calculaction
+        //0.093 is the state of Washington KiloWatt for Hour operation
+        oldSystemCost = numberOflightBulbValue * ((currentWattsValue/1000)*lightBulbUsageValue * 30 * 0.093);
+        newSystemCost = numberOflightBulbValue * ((newWattsValue/1000)*lightBulbUsageValue * 30 * 0.093);
+
+        //per month savings
+        double savings;
+
+        savings = oldSystemCost - newSystemCost;
+        return savings;
     }
 
     @Override
     public double getInitialCost() {
-        return initialCost;
+        return pricePerUnitValue * numberOflightBulbValue;
     }
 
     @Override
@@ -56,12 +70,12 @@ public class LightProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(25));
 
                 //Create all of the text boxes and drop downs for this page.
-                GTextBox currentWatts = new GTextBox(40, "", "Current one light bulb wattage.");
-                GTextBox newWatts = new GTextBox(40, "", "Recommended Wattage would be less than the current wattage to save on energy.");
-                GTextBox numberOfLightBulb = new GTextBox(40, "", "Number of light bulbs that desired to change.");
-                GTextBox lightBulbUsage = new GTextBox(40, "", "Hours in which the Light Bulbs are ON per day.");
-                GTextBox pricePerUnit = new GTextBox(40, "", "Dollar amount for one light bulb.");
-                GTextBox lightBulbPrice = new GTextBox(40, initialCost + "", "The price of the new light bulbs.");
+                final GTextBox currentWatts = new GTextBox(40, currentWattsValue + "",  "Current one light bulb wattage.");
+                final GTextBox newWatts = new GTextBox(40, newWattsValue + "",  "Recommended Wattage would be less than the current wattage to save on energy.");
+                GTextBox numberOfLightBulb = new GTextBox(40, numberOflightBulbValue + "",  "Number of light bulbs that desired to change.");
+                GTextBox lightBulbUsage = new GTextBox(40, lightBulbUsageValue + "",  "Hours in which the Light Bulbs are ON per day.");
+                GTextBox pricePerUnit = new GTextBox(40, pricePerUnitValue + "",  "Dollar amount for one light bulb.");
+                GTextBox lightBulbPrice = new GTextBox(40,  pricePerUnitValue + "",  "The price of the new light bulbs.");
 
                 GUI.window.add(new GText("Number of Light Desired to Change: ", Style.defaultFont));
                 GUI.window.add(new GSpacer(5));
@@ -89,26 +103,26 @@ public class LightProject extends Project implements Serializable {
                 GUI.window.add((GUIComponent) pricePerUnit);
 
 
-
-                GUI.window.add(new GSpacer(5));
-                GUI.window.add(new GText("Initial Costs:", Style.defaultFont));
-                GUI.window.add(new GSpacer(5));
-                GUI.window.add((GUIComponent) lightBulbPrice);
-                GUI.window.add(new GSpacer(5));
-
                 //Program what the button does when it is clicked.
                 GUI.window.add(new GButton(40, "Save Changes", Style.defaultFont, 8) {
                     @Override
                     public void clickAction() {
                         //TODO: Write checks and setters for all of the textboxes.
                         boolean good = true;
-
-
-                        //Example:
+                        //current watt values:
                         try {
-                            initialCost = Double.parseDouble(lightBulbPrice.getText());
+                            currentWattsValue = Double.parseDouble(currentWatts.getText());
+
+                            if (currentWattsValue < 0) {
+                                good = false;
+                                currentWatts.failed("Watts cannot be negative.");
+                            } else if (currentWattsValue > 500) {
+                                good = false;
+                                currentWatts.failed("Watts cannot be exceed 500.");
+                            }
+
                         } catch (NumberFormatException e) {
-                            lightBulbPrice.failed("This value must be a number.");
+                            currentWatts.failed("This value must be a number.");
                             good = false;
                         }
 
@@ -117,6 +131,91 @@ public class LightProject extends Project implements Serializable {
                             GUI.window.gotoPage(getSummaryPage());
                             GUI.getPopUp().destroy();
                         }
+
+
+                        try {
+                            newWattsValue = Double.parseDouble(newWatts.getText());
+
+                            if (newWattsValue < 0) {
+                                good = false;
+                                newWatts.failed("Watts cannot be negative.");
+                            } else if (newWattsValue > 500) {
+                                good = false;
+                                newWatts.failed("Watts cannot be exceed 500.");
+                            }
+
+                        } catch (NumberFormatException e) {
+                            newWatts.failed("This value must be a number.");
+                            good = false;
+                        }
+
+                        if (good) {
+                            UserManager.save();
+                            GUI.window.gotoPage(getSummaryPage());
+                            GUI.getPopUp().destroy();
+                        }
+
+                        try {
+                            numberOflightBulbValue = Integer.parseInt(numberOfLightBulb.getText());
+
+                            if (numberOflightBulbValue < 0) {
+                                good = false;
+                                numberOfLightBulb.failed("Number of light bulb cannot be negative.");
+                            }
+                        } catch (NumberFormatException e) {
+                            numberOfLightBulb.failed("This value must be a number.");
+                            good = false;
+                        }
+
+                        if (good) {
+                            UserManager.save();
+                            GUI.window.gotoPage(getSummaryPage());
+                            GUI.getPopUp().destroy();
+                        }
+
+
+                        try {
+                            pricePerUnitValue = Double.parseDouble(pricePerUnit.getText());
+                            if (pricePerUnitValue < 0) {
+                                good = false;
+                                pricePerUnit.failed("Price cannot be negative.");
+                            }
+                        } catch (NumberFormatException e) {
+                            pricePerUnit.failed("This value must be a number.");
+                            good = false;
+                        }
+
+                        if (good) {
+                            UserManager.save();
+                            GUI.window.gotoPage(getSummaryPage());
+                            GUI.getPopUp().destroy();
+                        }
+
+
+
+                        try {
+                            lightBulbUsageValue = Double.parseDouble(lightBulbUsage.getText());
+                            if (lightBulbUsageValue < 0) {
+                                good = false;
+                                lightBulbUsage.failed("Hours cannot be negative.");
+                            }
+                            else if (lightBulbUsageValue > 24) {
+                                good = false;
+                                newWatts.failed("Hours per days cannot be exceed 24.");
+                            }
+
+
+                        } catch (NumberFormatException e) {
+                            lightBulbUsage.failed("This value must be a number.");
+                            good = false;
+                        }
+
+                        if (good) {
+                            UserManager.save();
+                            GUI.window.gotoPage(getSummaryPage());
+                            GUI.getPopUp().destroy();
+                        }
+
                     }
                 });
 
