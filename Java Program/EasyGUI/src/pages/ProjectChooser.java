@@ -36,7 +36,6 @@ public class ProjectChooser extends GUIPage {
                 GUI.window.add(new GButton(40, p.getName(), Style.defaultFont) {
                     @Override
                     public void clickAction() {
-                        //GUI.window.gotoPage(new CompareProject(project, p));
                         GUI.getPopUp().destroy();
                         GUI.showPopUp(new CompareProject(project, p));
                     }

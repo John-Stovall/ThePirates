@@ -1,9 +1,11 @@
-package user;
+package junit;
 
 import java.util.ArrayList;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import user.User;
+import user.UserManager;
 
 /**
  * This class is used to test the UserManager.
@@ -23,8 +25,8 @@ public class UserManagerTest {
 		
 		System.out.println("Before Class:");
 		
-		for (int i = 0; i < UserManager.allUsers.size(); i++) {
-			System.out.println(UserManager.allUsers.get(i).getName());			
+		for (int i = 0; i < UserManager.getUsers().size(); i++) {
+			System.out.println(UserManager.getUsers().get(i).getName());
 		}
 		
 		UserManager.save();

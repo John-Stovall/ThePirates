@@ -356,6 +356,8 @@ public class InsulationProject extends Project implements Serializable {
                 GUI.window.add(new GSpacer(40));
                 GUI.window.add(new GText("Other Settings"));
                 GUI.window.add(new GSpacer(25));
+
+                //Code to rename a project.
                 GUI.window.add(new GButton(40,"Rename Project", Style.defaultFont) {
                     @Override
                     public void clickAction() {
@@ -400,6 +402,8 @@ public class InsulationProject extends Project implements Serializable {
                     }
                 });
                 GUI.window.add(new GSpacer(25));
+
+                //Code to delete a project.
                 GUI.window.add(new GButton(40, Style.redButtonColor, Style.redHoverColor, "Delete Project", Style.defaultFont) {
                     @Override
                     public void clickAction() {
@@ -433,5 +437,105 @@ public class InsulationProject extends Project implements Serializable {
                 });
             }
         };
+    }
+
+    /**
+     * This method is used to test if inputs are tested for properly.
+     *
+     * @param currentR The current R
+     * @param newR The new R
+     * @param Area Area to be upgrades
+     * @param HDD Heating degree days
+     * @param PPU Price per unit
+     * @param EFF Efficiency
+     * @param init Initial Price
+     * @return If values are all good.
+     * @author Reagan
+     */
+    public boolean testInsulation(String currentR, String newR, String Area, String HDD, String PPU, String EFF, String init) {
+        boolean good = true;
+        try {
+            curRValue = Integer.parseInt(currentR);
+            if (curRValue < 0) {
+                good = false;
+            } else if (curRValue > 400) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        //newR
+        try {
+            newRValue = Integer.parseInt(newR);
+            if (newRValue < 0) {
+                good = false;
+            } else if (newRValue > 400) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        //areaToBeUpgraded
+        try {
+            wallArea = Double.parseDouble(Area);
+            if (wallArea < 0) {
+                good = false;
+            } else if (wallArea > 999999) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        //heatingDegreeDays
+        try {
+            heatDegreeDays = Integer.parseInt(HDD);
+            if (heatDegreeDays < 0) {
+                good = false;
+            } else if (heatDegreeDays > 25000) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        //pricePerUnit;
+        try {
+            ppu = Double.parseDouble(PPU);
+            if (ppu < 0.01) {
+                good = false;
+            } else if (ppu > 999999) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+
+        //furnaceEfficency
+        try {
+            furnaceEff = Double.parseDouble(EFF);
+            if (furnaceEff < 0) {
+                good = false;
+            } else if (furnaceEff > 100) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        //insulationPrice
+        try {
+            initialCost = Double.parseDouble(init);
+            if (initialCost < 0) {
+                good = false;
+            }
+        } catch (NumberFormatException e) {
+            good = false;
+        }
+
+        return good;
     }
 }
