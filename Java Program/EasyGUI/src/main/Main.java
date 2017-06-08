@@ -9,13 +9,19 @@ import java.awt.*;
 /**
  * This class loads the users, creates so pages and then goes
  * to the proper page depending on how many users exist.
+ *
+ * @author Robert
  */
 public class Main {
 
+    /**
+     * Starts the program.
+     *
+     * @param args
+     * @author Robert
+     */
     public static void main(String[] args) {
-
         UserManager.load();
-
         GUI.window.setTitle("DIY App");
         GUI.window.addPage(new Login());
         GUI.window.addPage(new RegisterAccount());
@@ -25,7 +31,6 @@ public class Main {
         GUI.window.addPage(new NewProject());
 
         if (UserManager.getUsers().isEmpty()) {
-            //GUI.window.gotoPage("Register");
             GUI.window.gotoPage(new Blank());
             GUI.showPopUp(new RegisterAccount());
             GUI.getPopUp().setPermanent();

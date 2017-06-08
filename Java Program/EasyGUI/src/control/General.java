@@ -30,6 +30,7 @@ public class General {
      * @param name The name the user entered.
      * @return Whether the name is valid.
      * @author Reagan
+     * @author Robert
      */
     public static boolean testName(String name) {
         return name.length() >= 3 && name.length() <= 15;
