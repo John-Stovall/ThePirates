@@ -1,6 +1,6 @@
 # TCSS 360 Project - The Pirates
 
-### Last Update: May 22nd 2017
+### Last Update: June 6th 2017
 
 # Team Members:
 - Robert Cordingly
@@ -13,6 +13,10 @@
 [Minutes](https://github.com/John-Stovall/ThePirates/blob/master/Minutes)
 
 [Check In 2](https://github.com/John-Stovall/ThePirates/blob/master/Check-in-2.pdf)
+
+[Check In 3](https://github.com/John-Stovall/ThePirates/tree/master/Checkin%203)
+
+[Check In 4](https://github.com/John-Stovall/ThePirates/blob/master/Checkin%204.docx)
 
 [Iteration 1](https://github.com/John-Stovall/ThePirates/blob/master/Iteration%201.pdf)
 
