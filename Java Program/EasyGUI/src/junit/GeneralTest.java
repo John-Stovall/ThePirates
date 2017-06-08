@@ -12,6 +12,13 @@ import org.junit.Test;
 public class GeneralTest {
 
     //Naming Tests
+
+    @Test
+    public void test0() {
+        String test0 = "The quick brown fox jumped over the lazy dog.";
+        Assert.assertFalse(General.testName(test0));
+    }
+
     @Test
     public void test1() {
         String test1 = "bob";
@@ -46,7 +53,7 @@ public class GeneralTest {
     @Test
     public void test6() {
         String test6 = "boby.uwt.edu";
-        Assert.assertFalse(General.testEmail(test6));
+        Assert.assertTrue(General.testEmail(test6));
     }
 
     @Test
